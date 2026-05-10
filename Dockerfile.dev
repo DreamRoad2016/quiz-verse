@@ -1,0 +1,17 @@
+# First stage: complete build environment
+FROM maven:3.5.0-jdk-8-alpine AS builder
+WORKDIR /app/quiz-verse
+ADD ./ /app/quiz-verse
+# package jar
+#COPY settings.xml /usr/share/maven/conf/
+RUN mvn -B install -Dmaven.test.skip=true -Pdev
+# Second stage: minimal runtime environment
+FROM eclipse-temurin:8-jre-alpine
+# Change TimeZone
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+# copy jar from the first stage
+COPY --from=builder /app/quiz-verse/target/quiz-verse*.jar /app.jar
+ENV JAVA_OPTS="-Dlog4j2.formatMsgNoLookups=true"
+ENV PARAMS="--spring.profiles.active=dev"
+# run jar
+ENTRYPOINT [ "sh", "-c", "java -Djava.security.egd=file:/dev/./urandom $JAVA_OPTS -jar /app.jar $PARAMS" ]

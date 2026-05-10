@@ -1,0 +1,32 @@
+# =============================================================================
+# Quiz Verse — 本地默认配置
+# =============================================================================
+# Redis：本机安装并启动（默认 127.0.0.1:6379，无密码）
+#   macOS: brew install redis && brew services start redis
+#   Docker: docker run -d --name quiz-verse-redis -p 6379:6379 redis:7-alpine
+#
+# PostgreSQL：尚未接入；后续加 spring-boot-starter-jdbc 与数据源配置即可。
+# =============================================================================
+
+server:
+  port: 8098
+  # 需要双端口时取消下行注释，并启用 TomcatHttpConfig（额外 HTTP 端口）：
+  # http-port: 8099
+
+spring:
+  application:
+    name: quiz-verse
+  web:
+    resources:
+      static-locations: classpath:/static/
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    password: ${REDIS_PASSWORD:}
+    database: ${REDIS_DATABASE:0}
+    timeout: 3000ms
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
