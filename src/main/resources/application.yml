@@ -5,7 +5,7 @@
 #   macOS: brew install redis && brew services start redis
 #   Docker: docker run -d --name quiz-verse-redis -p 6379:6379 redis:7-alpine
 #
-# PostgreSQL：尚未接入；后续加 spring-boot-starter-jdbc 与数据源配置即可。
+# PostgreSQL：captain 只读业务表（建表/导入仍用你的高权限账号执行脚本）
 # =============================================================================
 
 server:
@@ -16,6 +16,14 @@ server:
 spring:
   application:
     name: quiz-verse
+  datasource:
+    url: jdbc:postgresql://${PGHOST:127.0.0.1}:${PGPORT:5432}/${PGDATABASE:quiz_verse}
+    username: ${PGUSER:captain}
+    password: ${PGPASSWORD:123456}
+    driver-class-name: org.postgresql.Driver
+  jdbc:
+    template:
+      query-timeout: 10
   web:
     resources:
       static-locations: classpath:/static/

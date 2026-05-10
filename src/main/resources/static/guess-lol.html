@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>英雄联盟职业选手 · Quiz Verse</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    :root { --bg:#0f1419; --card:#1a2332; --green:#1b5e20; --yellow:#f9a825; --gray:#37474f; --text:#eceff1; --accent:#2962ff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, "Segoe UI", sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    .toplinks { padding:12px 16px; font-size:.85rem; }
+    .toplinks a { color:#64b5f6; text-decoration:none; margin-right:16px; }
+    .wrap { max-width:1200px; margin:0 auto; padding:8px 16px 32px; }
+    h1 { font-size:1.35rem; margin:0 0 8px; }
+    .sub { color:#90a4ae; font-size:.85rem; margin-bottom:16px; line-height:1.6; }
+    .bar { display:flex; flex-wrap:wrap; gap:10px; align-items:flex-start; margin-bottom:16px; }
+    button { padding:10px 16px; border-radius:8px; border:none; cursor:pointer; font-weight:600; }
+    .primary { background:var(--accent); color:#fff; }
+    .ghost { background:#263238; color:#fff; }
+    .meta { font-size:.85rem; color:#90a4ae; align-self:center; }
+    /* 输入 + 联想 */
+    .input-wrap { position:relative; flex:1; min-width:220px; max-width:420px; }
+    .input-wrap input {
+      width:100%; padding:10px 12px; border-radius:8px; border:1px solid #455a64;
+      background:var(--card); color:var(--text); font-size:.95rem;
+    }
+    .input-wrap input:focus { outline:none; border-color:#64b5f6; }
+    .suggest-panel {
+      position:absolute; left:0; right:0; top:100%; margin-top:4px; z-index:20;
+      max-height:240px; overflow-y:auto; border-radius:8px; border:1px solid #455a64;
+      background:#1e2936; box-shadow:0 12px 40px rgba(0,0,0,.45);
+    }
+    .suggest-item {
+      padding:10px 12px; cursor:pointer; font-size:.88rem; border-bottom:1px solid #2d3b4d;
+    }
+    .suggest-item:last-child { border-bottom:none; }
+    .suggest-item:hover, .suggest-item.active { background:#263548; }
+    .suggest-item .gid { color:#90caf9; font-weight:600; }
+    .suggest-item .rn { color:#b0bec5; font-size:.82rem; margin-left:8px; }
+    .hint { font-size:.78rem; color:#78909c; margin-top:6px; }
+    table { width:100%; border-collapse:collapse; font-size:.75rem; }
+    th, td { border:1px solid #37474f; padding:6px 4px; text-align:center; vertical-align:middle; }
+    th { background:#263238; }
+    .inner-val { color:#cfd8dc; margin-bottom:4px; word-break:break-all; }
+    .inner-hint { font-size:.7rem; padding:4px; border-radius:4px; }
+    .c-green { background:var(--green); }
+    .c-yellow { background:var(--yellow); color:#111; }
+    .c-gray { background:var(--gray); }
+    .toast { margin-top:12px; padding:10px; border-radius:8px; background:#263238; }
+    .end { margin-top:12px; padding:12px; border-radius:8px; background:#1b2838; }
+  </style>
+</head>
+<body>
+  <div class="toplinks">
+    <a href="/index.html">← 竞猜宇宙首页</a>
+  </div>
+  <div id="app" class="wrap">
+    <h1>英雄联盟职业选手</h1>
+    <p class="sub">
+      题库 <code>demo_lol_player</code>（约 280+ 条）。每局限 8 次猜测。<br/>
+      在下方<strong>输入选手 ID（gameId）或真实姓名</strong>，输入时会显示联想列表，也可键盘↑↓选择后回车。
+      反馈：<strong style="color:#69f0ae">绿</strong>=一致，<strong style="color:#ffeb3b">黄</strong>=部分重合或数值接近，<strong style="color:#90a4ae">灰</strong>=不一致；数值列 ↑↓ 表示答案相对更大/更小。
+    </p>
+
+    <div class="bar">
+      <button class="primary" @click="start" :disabled="loading">开始新局</button>
+      <div class="input-wrap" v-if="briefs.length">
+        <input
+          ref="guessInput"
+          type="text"
+          v-model="queryInput"
+          placeholder="输入选手 ID 或姓名，如 Faker / 李相赫"
+          :disabled="!matchId || loading"
+          autocomplete="off"
+          @input="onQueryInput"
+          @keydown.down.prevent="navSuggest(1)"
+          @keydown.up.prevent="navSuggest(-1)"
+          @keydown.enter.prevent="onEnter"
+          @keydown.escape="closeSuggest"
+          @focus="showSuggest = queryInput.trim().length > 0"
+          @blur="scheduleBlur"
+        />
+        <div class="suggest-panel" v-if="showSuggest && filteredBriefs.length">
+          <div
+            v-for="(b, idx) in filteredBriefs"
+            :key="b.id"
+            class="suggest-item"
+            :class="{ active: idx === activeSuggest }"
+            @mousedown.prevent="pickBrief(b)"
+          >
+            <span class="gid">{{ b.gameId }}</span>
+            <span class="rn">{{ b.realName || '' }}</span>
+          </div>
+        </div>
+        <p class="hint">联想最多显示 12 条；可直接输入完整 ID 与答案完全一致也可提交。</p>
+      </div>
+      <button class="ghost" @click="submitGuess" :disabled="!matchId || loading">猜一下</button>
+      <span class="meta" v-if="matchId">剩余 {{ remaining }}/{{ maxGuesses }}</span>
+    </div>
+
+    <div v-if="msg" class="toast">{{ msg }}</div>
+    <div v-if="endText" class="end">{{ endText }}</div>
+
+    <div v-if="rows.length" style="overflow-x:auto;margin-top:12px;">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th v-for="c in columns" :key="c.key">{{ c.label }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(row, idx) in rows" :key="idx">
+            <td>{{ idx + 1 }}</td>
+            <td v-for="c in columns" :key="c.key">
+              <div class="inner-val">{{ row.display[c.key] }}</div>
+              <div class="inner-hint" :class="cellClass(row.cells[c.key])">{{ cellText(row.cells[c.key]) }}</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = '';
+    const MAX_SUGGEST = 12;
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          loading: false,
+          matchId: '',
+          maxGuesses: 8,
+          remaining: 0,
+          columns: [],
+          briefs: [],
+          queryInput: '',
+          pickedId: '',
+          showSuggest: false,
+          activeSuggest: 0,
+          blurTimer: null,
+          rows: [],
+          msg: '',
+          endText: ''
+        };
+      },
+      computed: {
+        filteredBriefs() {
+          const q = this.queryInput.trim().toLowerCase();
+          if (!q || !this.briefs.length) return [];
+          const list = this.briefs.filter((b) => {
+            const gid = (b.gameId || '').toLowerCase();
+            const rn = (b.realName || '').toLowerCase();
+            return gid.includes(q) || rn.includes(q);
+          });
+          return list.slice(0, MAX_SUGGEST);
+        }
+      },
+      methods: {
+        onQueryInput() {
+          this.pickedId = '';
+          this.showSuggest = this.queryInput.trim().length > 0;
+          this.activeSuggest = 0;
+        },
+        navSuggest(delta) {
+          if (!this.filteredBriefs.length) return;
+          let i = this.activeSuggest + delta;
+          if (i < 0) i = this.filteredBriefs.length - 1;
+          if (i >= this.filteredBriefs.length) i = 0;
+          this.activeSuggest = i;
+        },
+        onEnter() {
+          if (this.showSuggest && this.filteredBriefs.length) {
+            const b = this.filteredBriefs[this.activeSuggest];
+            if (b) this.pickBrief(b);
+          } else {
+            this.submitGuess();
+          }
+        },
+        pickBrief(b) {
+          this.pickedId = b.id;
+          this.queryInput = b.realName ? `${b.gameId} (${b.realName})` : b.gameId;
+          this.showSuggest = false;
+        },
+        closeSuggest() {
+          this.showSuggest = false;
+        },
+        scheduleBlur() {
+          clearTimeout(this.blurTimer);
+          this.blurTimer = setTimeout(() => { this.showSuggest = false; }, 180);
+        },
+        resolvePlayerId() {
+          if (this.pickedId) return this.pickedId;
+          const q = this.queryInput.trim();
+          if (!q) return null;
+          const lower = q.toLowerCase();
+          const exactGid = this.briefs.find((b) => (b.gameId || '').toLowerCase() === lower);
+          if (exactGid) return exactGid.id;
+          const exactRn = this.briefs.find((b) => (b.realName || '').toLowerCase() === lower);
+          if (exactRn) return exactRn.id;
+          const paren = q.match(/^(.+?)\s*\(([^)]+)\)\s*$/);
+          if (paren) {
+            const gidPart = paren[1].trim().toLowerCase();
+            const rnPart = paren[2].trim().toLowerCase();
+            const hit = this.briefs.find(
+              (b) =>
+                (b.gameId || '').toLowerCase() === gidPart &&
+                (b.realName || '').toLowerCase() === rnPart
+            );
+            if (hit) return hit.id;
+          }
+          const inc = this.briefs.filter((b) => {
+            const gid = (b.gameId || '').toLowerCase();
+            const rn = (b.realName || '').toLowerCase();
+            return gid.includes(lower) || rn.includes(lower);
+          });
+          if (inc.length === 1) return inc[0].id;
+          return null;
+        },
+        async start() {
+          this.loading = true;
+          this.msg = '';
+          this.endText = '';
+          this.rows = [];
+          this.queryInput = '';
+          this.pickedId = '';
+          this.showSuggest = false;
+          try {
+            const { data } = await axios.get(API_BASE + '/api/lol-guess/start');
+            if (!data.isSuccess) throw new Error(data.resultMsg || '失败');
+            const p = data.resultData;
+            this.matchId = p.matchId;
+            this.maxGuesses = p.maxGuesses;
+            this.remaining = p.maxGuesses;
+            this.columns = p.columns || [];
+            this.briefs = p.briefs || [];
+            this.msg = '已开始。输入选手 ID 或姓名进行猜测（带联想提示）。题库 ' + p.poolSize + ' 人。';
+            this.$nextTick(() => this.$refs.guessInput && this.$refs.guessInput.focus());
+          } catch (e) {
+            this.msg = '开始失败: ' + (e.response?.data?.resultMsg || e.message);
+          } finally {
+            this.loading = false;
+          }
+        },
+        async submitGuess() {
+          if (!this.matchId) return;
+          const playerId = this.resolvePlayerId();
+          if (!playerId) {
+            this.msg = '无法匹配：请输入与题库一致的选手 ID 或姓名，或从联想列表中选择一项。若多人匹配请继续输入更精确。';
+            return;
+          }
+          this.loading = true;
+          this.msg = '';
+          try {
+            const { data } = await axios.get(API_BASE + '/api/lol-guess/guess', {
+              params: { matchId: this.matchId, playerId }
+            });
+            if (!data.isSuccess) throw new Error(data.resultMsg || '失败');
+            const r = data.resultData;
+            this.remaining = r.remaining;
+            this.rows.push({ display: { ...r.guessDisplay }, cells: { ...r.cells } });
+            this.queryInput = '';
+            this.pickedId = '';
+            if (r.gameStatus === 'WON') {
+              this.endText = '🎉 猜中！答案：' + (r.answerReveal ? r.answerReveal.gameId + ' (' + r.answerReveal.realName + ')' : '');
+              this.matchId = '';
+            } else if (r.gameStatus === 'LOST') {
+              this.endText = '次数用尽。答案：' + (r.answerReveal ? r.answerReveal.gameId + ' (' + r.answerReveal.realName + ')' : '');
+              this.matchId = '';
+            }
+          } catch (e) {
+            this.msg = '提交失败: ' + (e.response?.data?.resultMsg || e.message);
+          } finally {
+            this.loading = false;
+          }
+        },
+        cellClass(cell) {
+          if (!cell) return 'c-gray';
+          if (cell.color === 'green') return 'c-green';
+          if (cell.color === 'yellow') return 'c-yellow';
+          return 'c-gray';
+        },
+        cellText(cell) {
+          if (!cell) return '';
+          let t = cell.kind || '';
+          if (cell.arrow) t += ' ' + cell.arrow;
+          if (cell.matched && cell.matched.length) t += ' ·' + cell.matched.join(',');
+          return t.trim();
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

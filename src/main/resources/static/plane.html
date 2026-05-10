@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Verse · 猜飞机 Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-primary: #0a0e27;
+      --bg-secondary: #141937;
+      --bg-card: #1a2142;
+      --accent-cyan: #00f5ff;
+      --accent-pink: #ff2d75;
+      --accent-orange: #ff9f1c;
+      --accent-green: #00ff88;
+      --accent-purple: #b24dff;
+      --text-primary: #ffffff;
+      --text-secondary: #8892b0;
+      --grid-border: rgba(0, 245, 255, 0.2);
+      --grid-hover: rgba(0, 245, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background: var(--bg-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* 动态背景 */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(0, 245, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(255, 45, 117, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(178, 77, 255, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* 网格背景 */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* 顶部导航栏 */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: rgba(26, 33, 66, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--grid-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      z-index: 50;
+    }
+
+    .navbar-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .navbar-logo span {
+      font-size: 1.4rem;
+    }
+
+    .navbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .navbar-user {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .navbar-user .username {
+      color: var(--accent-cyan);
+      font-weight: 500;
+    }
+
+    .navbar-btn {
+      font-family: 'Noto Sans SC', sans-serif;
+      font-size: 0.85rem;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-btn-outline {
+      background: transparent;
+      color: var(--accent-cyan);
+      border: 1px solid var(--accent-cyan);
+    }
+
+    .navbar-btn-outline:hover {
+      background: rgba(0, 245, 255, 0.1);
+    }
+
+    .navbar-btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: var(--bg-primary);
+      font-weight: 500;
+    }
+
+    .navbar-btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);
+    }
+
+    .navbar-btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+    }
+
+    .navbar-btn-ghost:hover {
+      color: var(--accent-pink);
+    }
+
+    .navbar-btn-gold {
+      background: linear-gradient(135deg, #ffd700, #ffb347);
+      color: var(--bg-primary);
+      font-weight: 500;
+    }
+
+    .navbar-btn-gold:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    .navbar-btn-help {
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+      color: white;
+      font-weight: 500;
+    }
+
+    .navbar-btn-help:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 头部 */
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-pink) 50%, var(--accent-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 5px;
+      text-shadow: 0 0 40px rgba(0, 245, 255, 0.3);
+    }
+
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+    }
+
+    /* 主游戏区域 */
+    .game-wrapper {
+      display: flex;
+      gap: 30px;
+      flex: 1;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* 信息面板 */
+    .info-panel {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 20px;
+      min-width: 320px;
+      max-width: 360px;
+      border: 1px solid var(--grid-border);
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      animation: fadeInLeft 0.8s ease-out 0.2s both;
+      font-size: 0.9rem;
+    }
+
+    .panel-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.85rem;
+      color: var(--accent-cyan);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .panel-title::before {
+      content: '';
+      width: 3px;
+      height: 16px;
+      background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+      border-radius: 2px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .stat-item {
+      background: var(--bg-secondary);
+      border-radius: 10px;
+      padding: 10px 8px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--grid-border);
+    }
+
+    .stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .stat-value.cyan { color: var(--accent-cyan); }
+    .stat-value.pink { color: var(--accent-pink); }
+    .stat-value.green { color: var(--accent-green); }
+    .stat-value.orange { color: var(--accent-orange); }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 飞机指示器 */
+    .planes-indicator {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .plane-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--bg-secondary);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .plane-icon.found {
+      background: linear-gradient(135deg, var(--accent-pink), var(--accent-orange));
+      border-color: transparent;
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 45, 117, 0.4);
+    }
+
+    .plane-icon.found::after {
+      content: '✓';
+      position: absolute;
+      font-size: 0.8rem;
+    }
+
+    /* 图例 */
+    .legend {
+      margin-top: 15px;
+    }
+
+    .legend-title {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .legend-items {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    .legend-color {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .legend-color.miss {
+      background: linear-gradient(135deg, #3a4a6b, #2d3a54);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .legend-color.hit-body {
+      background: linear-gradient(135deg, var(--accent-green), #00cc6a);
+      box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+    }
+
+    .legend-color.hit-head {
+      background: linear-gradient(135deg, var(--accent-pink), #ff6b9d);
+      box-shadow: 0 0 10px rgba(255, 45, 117, 0.3);
+    }
+
+    .legend-color.reveal {
+      background: linear-gradient(135deg, var(--accent-orange), #ffb347);
+      box-shadow: 0 0 10px rgba(255, 159, 28, 0.3);
+    }
+
+    /* 游戏板 */
+    .game-board-container {
+      animation: fadeInRight 0.8s ease-out 0.4s both;
+    }
+
+    .game-board {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid var(--grid-border);
+      box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    }
+
+    /* 坐标标签 */
+    .board-with-labels {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      grid-template-rows: 30px 1fr;
+      gap: 5px;
+    }
+
+    .corner-cell {
+      /* 左上角空白 */
+    }
+
+    .col-labels {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .col-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .row-labels {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .row-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    /* 棋盘格子 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+      aspect-ratio: 1;
+      max-width: min(83vmin, 605px);
+      min-width: 385px;
+    }
+
+    .cell {
+      aspect-ratio: 1;
+      border-radius: 6px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--grid-border);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      min-width: 35px;
+      min-height: 35px;
+    }
+
+    .cell::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(0, 245, 255, 0.2) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .cell:hover:not(.clicked) {
+      transform: scale(1.05);
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.3);
+    }
+
+    .cell:hover:not(.clicked)::before {
+      opacity: 1;
+    }
+
+    .cell.clicked {
+      cursor: default;
+    }
+
+    /* 格子状态 */
+    .cell.miss {
+      background: linear-gradient(135deg, #3a4a6b, #2d3a54);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cell.miss::after {
+      content: '×';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.3);
+      font-weight: bold;
+    }
+
+    .cell.hit-body {
+      background: linear-gradient(135deg, var(--accent-green), #00cc6a);
+      border-color: var(--accent-green);
+      box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+      animation: pulse-green 1.5s ease-in-out infinite;
+    }
+
+    .cell.hit-body::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+      color: white;
+      font-weight: bold;
+    }
+
+    .cell.hit-head {
+      background: linear-gradient(135deg, var(--accent-pink), #ff6b9d);
+      border-color: var(--accent-pink);
+      box-shadow: 0 0 20px rgba(255, 45, 117, 0.5);
+      animation: pulse-pink 1s ease-in-out infinite;
+    }
+
+    .cell.hit-head::after {
+      content: '✈';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+    }
+
+    .cell.reveal {
+      background: linear-gradient(135deg, var(--accent-orange), #ffb347);
+      border-color: var(--accent-orange);
+      box-shadow: 0 0 15px rgba(255, 159, 28, 0.4);
+      animation: reveal 0.5s ease-out;
+    }
+
+    .cell.reveal::after {
+      content: '◆';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 0.8rem;
+      color: white;
+    }
+
+    /* 按钮 */
+    .btn {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+      color: var(--bg-primary);
+      box-shadow: 0 4px 20px rgba(0, 245, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 30px rgba(0, 245, 255, 0.4);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-secondary {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border: 1px solid var(--grid-border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-secondary);
+      border: 1px solid transparent;
+    }
+
+    .btn-ghost:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    /* 模态框通用样式 */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(10, 14, 39, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-box {
+      background: var(--bg-card);
+      border-radius: 24px;
+      padding: 35px;
+      text-align: center;
+      border: 1px solid var(--grid-border);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease;
+      max-width: 420px;
+      width: 90%;
+    }
+
+    .modal-overlay.show .modal-box {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .modal-close:hover {
+      color: var(--accent-pink);
+    }
+
+    .modal-icon {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    .modal-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.5rem;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .modal-text {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+
+    /* 帮助弹窗样式 */
+    .help-content {
+      max-height: 60vh;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+
+    .help-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .help-content::-webkit-scrollbar-thumb {
+      background: var(--grid-border);
+      border-radius: 3px;
+    }
+
+    .help-section {
+      margin-bottom: 20px;
+    }
+
+    .help-subtitle {
+      font-size: 1.1rem;
+      color: var(--accent-cyan);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .help-section p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .help-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .help-list li {
+      color: var(--text-secondary);
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .result-miss, .result-hit, .result-head {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .result-miss {
+      background: linear-gradient(135deg, #3a4a6b, #2d3a54);
+      color: #8892b0;
+    }
+
+    .result-hit {
+      background: linear-gradient(135deg, var(--accent-green), #00cc6a);
+      color: white;
+    }
+
+    .result-head {
+      background: linear-gradient(135deg, var(--accent-pink), #ff6b9d);
+      color: white;
+    }
+
+    /* 飞机演示 */
+    .plane-demo {
+      background: var(--bg-secondary);
+      border-radius: 12px;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .plane-grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      margin-bottom: 15px;
+    }
+
+    .plane-row {
+      display: flex;
+      gap: 3px;
+    }
+
+    .p-cell {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      background: var(--bg-primary);
+      border: 1px solid var(--grid-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    .p-cell.head {
+      background: linear-gradient(135deg, var(--accent-pink), #ff6b9d);
+      border-color: var(--accent-pink);
+      color: white;
+    }
+
+    .p-cell.body {
+      background: linear-gradient(135deg, var(--accent-green), #00cc6a);
+      border-color: var(--accent-green);
+    }
+
+    .plane-legend {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .plane-legend span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .legend-box {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+    }
+
+    .legend-box.head {
+      background: linear-gradient(135deg, var(--accent-pink), #ff6b9d);
+    }
+
+    .legend-box.body {
+      background: linear-gradient(135deg, var(--accent-green), #00cc6a);
+    }
+
+    /* 图例和飞机并排布局 */
+    .legend-plane-row {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--grid-border);
+    }
+
+    .legend-plane-row .legend {
+      flex: 1;
+      margin-top: 0;
+    }
+
+    .legend-items-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .plane-reference-inline {
+      flex: 1;
+    }
+
+    .plane-demo-mini {
+      background: var(--bg-secondary);
+      border-radius: 8px;
+      padding: 8px;
+      margin-top: 8px;
+    }
+
+    .plane-grid-mini {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+
+    .plane-row-mini {
+      display: flex;
+      gap: 1px;
+    }
+
+    .p-cell-mini {
+      width: 20px;
+      height: 20px;
+      border-radius: 2px;
+      background: var(--bg-primary);
+      border: 1px solid var(--grid-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+    }
+
+    .p-cell-mini.head {
+      background: linear-gradient(135deg, var(--accent-pink), #ff6b9d);
+      border-color: var(--accent-pink);
+      color: white;
+    }
+
+    .p-cell-mini.body {
+      background: linear-gradient(135deg, var(--accent-green), #00cc6a);
+      border-color: var(--accent-green);
+    }
+
+    /* 表单样式 */
+    .form-group {
+      margin-bottom: 18px;
+      text-align: left;
+    }
+
+    .form-label {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 15px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--grid-border);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 15px rgba(0, 245, 255, 0.2);
+    }
+
+    .form-input::placeholder {
+      color: var(--text-secondary);
+      opacity: 0.6;
+    }
+
+    .form-error {
+      color: var(--accent-pink);
+      font-size: 0.8rem;
+      margin-top: 5px;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .form-actions .btn {
+      flex: 1;
+    }
+
+    .form-switch {
+      margin-top: 20px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    .form-switch a {
+      color: var(--accent-cyan);
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .form-switch a:hover {
+      text-decoration: underline;
+    }
+
+    /* 游戏完成弹窗 */
+    .message-stats {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 25px;
+    }
+
+    .message-stat {
+      text-align: center;
+    }
+
+    .message-stat-value {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .message-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 战绩表格 */
+    .records-container {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    .records-container::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .records-container::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+      border-radius: 3px;
+    }
+
+    .records-container::-webkit-scrollbar-thumb {
+      background: var(--grid-border);
+      border-radius: 3px;
+    }
+
+    .records-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+
+    .records-table th {
+      color: var(--accent-cyan);
+      font-weight: 500;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--grid-border);
+      position: sticky;
+      top: 0;
+      background: var(--bg-card);
+    }
+
+    .records-table td {
+      color: var(--text-secondary);
+      padding: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .records-table tr:hover td {
+      background: rgba(0, 245, 255, 0.05);
+    }
+
+    .record-win {
+      color: var(--accent-green) !important;
+    }
+
+    .record-lose {
+      color: var(--accent-pink) !important;
+    }
+
+    .records-empty {
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .records-empty-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      opacity: 0.5;
+    }
+
+    /* 排行榜样式 */
+    .leaderboard-table .rank-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .leaderboard-table .rank-1 {
+      background: linear-gradient(135deg, #ffd700, #ffb347);
+      color: var(--bg-primary);
+      font-size: 1.1rem;
+    }
+
+    .leaderboard-table .rank-2 {
+      background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+      color: var(--bg-primary);
+      font-size: 1.1rem;
+    }
+
+    .leaderboard-table .rank-3 {
+      background: linear-gradient(135deg, #cd7f32, #b8860b);
+      color: var(--bg-primary);
+      font-size: 1.1rem;
+    }
+
+    .leaderboard-table .player-name {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .leaderboard-table tr.is-me {
+      background: rgba(0, 245, 255, 0.1);
+    }
+
+    .leaderboard-table tr.is-me td {
+      color: var(--accent-cyan);
+    }
+
+    /* 游戏结束排名提示 */
+    .rank-result {
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .rank-result strong {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.3rem;
+    }
+
+    .rank-success {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 179, 71, 0.2));
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      color: #ffd700;
+    }
+
+    .rank-exists {
+      background: rgba(0, 245, 255, 0.1);
+      border: 1px solid rgba(0, 245, 255, 0.3);
+      color: var(--accent-cyan);
+    }
+
+    .rank-miss {
+      background: rgba(136, 146, 176, 0.1);
+      border: 1px solid rgba(136, 146, 176, 0.3);
+      color: var(--text-secondary);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .modal-actions .btn {
+      min-width: 120px;
+    }
+
+    /* 提示消息 */
+    .toast {
+      position: fixed;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: var(--bg-card);
+      border: 1px solid var(--grid-border);
+      border-radius: 12px;
+      padding: 12px 24px;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .toast.success {
+      border-color: var(--accent-green);
+    }
+
+    .toast.error {
+      border-color: var(--accent-pink);
+    }
+
+    /* 加载动画 */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loading-spinner {
+      width: 60px;
+      height: 60px;
+      border: 3px solid var(--bg-card);
+      border-top-color: var(--accent-cyan);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    /* 用户模式提示 */
+    .user-mode-tip {
+      background: rgba(0, 245, 255, 0.1);
+      border: 1px solid rgba(0, 245, 255, 0.3);
+      border-radius: 8px;
+      padding: 8px 12px;
+      margin-bottom: 15px;
+      font-size: 0.75rem;
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .guest-mode-tip {
+      background: rgba(255, 159, 28, 0.1);
+      border-color: rgba(255, 159, 28, 0.3);
+      color: var(--accent-orange);
+    }
+
+    /* 动画 */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes pulse-green {
+      0%, 100% {
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(0, 255, 136, 0.6);
+      }
+    }
+
+    @keyframes pulse-pink {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 45, 117, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 35px rgba(255, 45, 117, 0.8);
+      }
+    }
+
+    @keyframes reveal {
+      from {
+        transform: scale(0);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* 点击涟漪效果 */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(0);
+      animation: ripple-effect 0.6s ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes ripple-effect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* 响应式 */
+    @media (max-width: 900px) {
+      .game-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .info-panel {
+        width: 100%;
+        max-width: 605px;
+        order: 2;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .game-board-container {
+        order: 1;
+      }
+
+      .grid {
+        max-width: min(90vmin, 550px);
+        min-width: 330px;
+      }
+
+      .planes-indicator {
+        justify-content: center;
+      }
+
+      .legend-plane-row {
+        display: none;
+      }
+
+      .navbar {
+        padding: 0 15px;
+      }
+
+      .navbar-logo {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 70px 10px 10px;
+      }
+
+      .grid {
+        max-width: 95vmin;
+        min-width: 310px;
+      }
+
+      .stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .btn-group {
+        flex-direction: column;
+      }
+
+      .modal-box {
+        padding: 25px 20px;
+      }
+
+      .navbar-user .welcome-text {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 加载动画 -->
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div id="app">
+    <!-- 顶部导航栏 -->
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <span>✈️</span>
+        <span>小游戏 · 猜飞机</span>
+        <a href="/index.html" style="margin-left:12px;font-size:12px;color:#64b5f6;text-decoration:none;">← 竞猜宇宙</a>
+      </div>
+      <div class="navbar-actions">
+        <!-- 帮助按钮 -->
+        <button class="navbar-btn navbar-btn-help" @click="showHelpModal = true">❓ 帮助</button>
+        <!-- 排行榜按钮（所有人可见） -->
+        <button class="navbar-btn navbar-btn-gold" @click="showLeaderboardModal = true">🏆 排行榜</button>
+        <!-- 未登录状态 -->
+        <template v-if="!isLoggedIn">
+          <button class="navbar-btn navbar-btn-outline" @click="showLoginModal = true">登录</button>
+          <button class="navbar-btn navbar-btn-primary" @click="showRegisterModal = true">注册</button>
+        </template>
+        <!-- 已登录状态 -->
+        <template v-else>
+          <div class="navbar-user">
+            <span class="welcome-text">欢迎,</span>
+            <span class="username">{{ username }}</span>
+          </div>
+          <button class="navbar-btn navbar-btn-outline" @click="showRecordsModal = true">📊 战绩</button>
+          <button class="navbar-btn navbar-btn-ghost" @click="logout">退出</button>
+        </template>
+      </div>
+    </nav>
+
+    <!-- Toast 提示 -->
+    <div class="toast" :class="{ show: toast.show, [toast.type]: true }">{{ toast.message }}</div>
+
+    <div class="container">
+      <!-- 头部 -->
+      <header class="header">
+        <h1 class="title">猜飞机 Demo</h1>
+        <p class="subtitle">Quiz Verse 占位页：10×10 方格 · 3 架飞机 · 命中机头获胜（后续替换为猜人物玩法）</p>
+      </header>
+
+      <!-- 主游戏区域 -->
+      <div class="game-wrapper">
+        <!-- 信息面板 -->
+        <aside class="info-panel">
+          <h2 class="panel-title">游戏状态</h2>
+          
+          <!-- 用户模式提示 -->
+          <div v-if="isLoggedIn" class="user-mode-tip">
+            🎮 已登录，战绩将被记录
+          </div>
+          <div v-else class="user-mode-tip guest-mode-tip">
+            👤 游客模式，登录后可记录战绩
+          </div>
+          
+          <!-- 统计数据 -->
+          <div class="stat-grid">
+            <div class="stat-item">
+              <div class="stat-value cyan">{{ steps }}</div>
+              <div class="stat-label">已用步数</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value pink">{{ planesFound }}</div>
+              <div class="stat-label">已找到</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value green">{{ hitCount }}</div>
+              <div class="stat-label">命中</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value orange">{{ missCount }}</div>
+              <div class="stat-label">未中</div>
+            </div>
+          </div>
+
+          <!-- 飞机状态指示器 -->
+          <div class="planes-indicator">
+            <div class="plane-icon" :class="{ found: planesFound >= 1 }">✈️</div>
+            <div class="plane-icon" :class="{ found: planesFound >= 2 }">✈️</div>
+            <div class="plane-icon" :class="{ found: planesFound >= 3 }">✈️</div>
+          </div>
+
+          <!-- 按钮组 -->
+          <div class="btn-group">
+            <button class="btn btn-primary" @click="restartGame" style="width: 100%;">
+              🔄 重新开始
+            </button>
+          </div>
+
+          <!-- 图例和飞机形状并排 -->
+          <div class="legend-plane-row">
+            <!-- 图例 -->
+            <div class="legend">
+              <h3 class="legend-title">图例说明</h3>
+              <div class="legend-items-vertical">
+                <div class="legend-item">
+                  <div class="legend-color miss"></div>
+                  <span>未命中</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color hit-body"></div>
+                  <span>命中机身</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color hit-head"></div>
+                  <span>命中机头</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-color reveal"></div>
+                  <span>揭示部位</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 飞机形状参考 -->
+            <div class="plane-reference-inline">
+              <h3 class="legend-title">飞机形状</h3>
+              <div class="plane-demo-mini">
+                <div class="plane-grid-mini">
+                  <div class="plane-row-mini">
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini head">✈</span>
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini"></span>
+                  </div>
+                  <div class="plane-row-mini">
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini body"></span>
+                  </div>
+                  <div class="plane-row-mini">
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini"></span>
+                  </div>
+                  <div class="plane-row-mini">
+                    <span class="p-cell-mini"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini body"></span>
+                    <span class="p-cell-mini"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 游戏板 -->
+        <div class="game-board-container">
+          <div class="game-board">
+            <div class="board-with-labels">
+              <div class="corner-cell"></div>
+              <div class="col-labels">
+                <div class="col-label" v-for="i in 10" :key="'col-' + i">{{ i - 1 }}</div>
+              </div>
+              <div class="row-labels">
+                <div class="row-label" v-for="i in 10" :key="'row-' + i">{{ i - 1 }}</div>
+              </div>
+              <div class="grid">
+                <div 
+                  v-for="(cell, index) in flatBoard" 
+                  :key="index"
+                  class="cell"
+                  :class="getCellClass(cell)"
+                  @click="handleClick(Math.floor(index / 10), index % 10, $event)"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 登录弹窗 -->
+    <div class="modal-overlay" :class="{ show: showLoginModal }" @click.self="showLoginModal = false">
+      <div class="modal-box" style="position: relative;">
+        <button class="modal-close" @click="showLoginModal = false">&times;</button>
+        <div class="modal-icon">🔐</div>
+        <h2 class="modal-title">登录</h2>
+        <p class="modal-text">登录后可记录游戏战绩</p>
+        <form @submit.prevent="handleLogin">
+          <div class="form-group">
+            <label class="form-label">用户名</label>
+            <input type="text" class="form-input" v-model="loginForm.username" placeholder="请输入用户名" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">密码</label>
+            <input type="password" class="form-input" v-model="loginForm.password" placeholder="请输入密码" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" :disabled="authLoading">
+              {{ authLoading ? '登录中...' : '登录' }}
+            </button>
+          </div>
+        </form>
+        <p class="form-switch">
+          还没有账号？<a @click="switchToRegister">立即注册</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- 注册弹窗 -->
+    <div class="modal-overlay" :class="{ show: showRegisterModal }" @click.self="showRegisterModal = false">
+      <div class="modal-box" style="position: relative;">
+        <button class="modal-close" @click="showRegisterModal = false">&times;</button>
+        <div class="modal-icon">✨</div>
+        <h2 class="modal-title">注册</h2>
+        <p class="modal-text">创建账号，记录你的辉煌战绩</p>
+        <form @submit.prevent="handleRegister">
+          <div class="form-group">
+            <label class="form-label">用户名</label>
+            <input type="text" class="form-input" v-model="registerForm.username" placeholder="中英文数字，2-20位" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">密码</label>
+            <input type="password" class="form-input" v-model="registerForm.password" placeholder="请输入密码" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" :disabled="authLoading">
+              {{ authLoading ? '注册中...' : '注册' }}
+            </button>
+          </div>
+        </form>
+        <p class="form-switch">
+          已有账号？<a @click="switchToLogin">立即登录</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- 战绩弹窗 -->
+    <div class="modal-overlay" :class="{ show: showRecordsModal }" @click.self="showRecordsModal = false">
+      <div class="modal-box" style="position: relative; max-width: 550px;">
+        <button class="modal-close" @click="showRecordsModal = false">&times;</button>
+        <div class="modal-icon">📊</div>
+        <h2 class="modal-title">我的战绩</h2>
+        <p class="modal-text">{{ username }} 的游戏记录</p>
+        
+        <div class="records-container">
+          <template v-if="records.length > 0">
+            <table class="records-table">
+              <thead>
+                <tr>
+                  <th>时间</th>
+                  <th>步数</th>
+                  <th>耗时</th>
+                  <th>结果</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="record in records" :key="record.gameId">
+                  <td>{{ formatTime(record.gameTime) }}</td>
+                  <td>{{ record.steps }}步</td>
+                  <td>{{ formatDuration(record.duration) }}</td>
+                  <td :class="record.win ? 'record-win' : 'record-lose'">
+                    {{ record.win ? '✓ 胜利' : '✗ 未完成' }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </template>
+          <template v-else>
+            <div class="records-empty">
+              <div class="records-empty-icon">🎮</div>
+              <p>暂无游戏记录</p>
+              <p style="font-size: 0.8rem; margin-top: 5px;">完成游戏后将自动记录战绩</p>
+            </div>
+          </template>
+        </div>
+        
+        <button class="btn btn-secondary" @click="showRecordsModal = false" style="width: 100%;">关闭</button>
+      </div>
+    </div>
+
+    <!-- 排行榜弹窗 -->
+    <div class="modal-overlay" :class="{ show: showLeaderboardModal }" @click.self="showLeaderboardModal = false">
+      <div class="modal-box" style="position: relative; max-width: 550px;">
+        <button class="modal-close" @click="showLeaderboardModal = false">&times;</button>
+        <div class="modal-icon">🏆</div>
+        <h2 class="modal-title">排行榜</h2>
+        <p class="modal-text">步数最少、用时最短的前20名玩家</p>
+        
+        <div class="records-container">
+          <template v-if="leaderboard.length > 0">
+            <table class="records-table leaderboard-table">
+              <thead>
+                <tr>
+                  <th style="width: 50px;">排名</th>
+                  <th>玩家</th>
+                  <th>步数</th>
+                  <th>耗时</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="item in leaderboard" :key="item.rank" :class="{ 'is-me': item.username === username }">
+                  <td>
+                    <span class="rank-badge" :class="'rank-' + item.rank">
+                      {{ item.rank <= 3 ? ['🥇', '🥈', '🥉'][item.rank - 1] : item.rank }}
+                    </span>
+                  </td>
+                  <td class="player-name">{{ item.username }}</td>
+                  <td>{{ item.steps }}步</td>
+                  <td>{{ formatDuration(item.duration) }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </template>
+          <template v-else>
+            <div class="records-empty">
+              <div class="records-empty-icon">🏆</div>
+              <p>暂无排行数据</p>
+              <p style="font-size: 0.8rem; margin-top: 5px;">登录后完成游戏即可参与排名</p>
+            </div>
+          </template>
+        </div>
+        
+        <button class="btn btn-secondary" @click="showLeaderboardModal = false" style="width: 100%;">关闭</button>
+      </div>
+    </div>
+
+    <!-- 帮助弹窗 -->
+    <div class="modal-overlay" :class="{ show: showHelpModal }" @click.self="showHelpModal = false">
+      <div class="modal-box" style="position: relative; max-width: 600px; text-align: left;">
+        <button class="modal-close" @click="showHelpModal = false">&times;</button>
+        <div class="modal-icon">✈️</div>
+        <h2 class="modal-title" style="text-align: center;">游戏说明</h2>
+        
+        <div class="help-content">
+          <div class="help-section">
+            <h3 class="help-subtitle">🎯 游戏目标</h3>
+            <p>在 10×10 的棋盘上隐藏着 <strong>3架飞机</strong>，你需要通过点击格子来找出所有飞机的 <strong>机头位置</strong>（核心点）。用最少的步数、最短的时间完成挑战！</p>
+          </div>
+          
+          <div class="help-section">
+            <h3 class="help-subtitle">✈️ 飞机形状</h3>
+            <p>每架飞机由 <strong>10个格子</strong> 组成，形状如下（可旋转4个方向）：</p>
+            <div class="plane-demo">
+              <div class="plane-grid">
+                <div class="plane-row">
+                  <span class="p-cell"></span>
+                  <span class="p-cell"></span>
+                  <span class="p-cell head">✈</span>
+                  <span class="p-cell"></span>
+                  <span class="p-cell"></span>
+                </div>
+                <div class="plane-row">
+                  <span class="p-cell body"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell body"></span>
+                </div>
+                <div class="plane-row">
+                  <span class="p-cell"></span>
+                  <span class="p-cell"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell"></span>
+                  <span class="p-cell"></span>
+                </div>
+                <div class="plane-row">
+                  <span class="p-cell"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell body"></span>
+                  <span class="p-cell"></span>
+                </div>
+              </div>
+              <div class="plane-legend">
+                <span><span class="legend-box head"></span> 机头（目标）</span>
+                <span><span class="legend-box body"></span> 机身</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="help-section">
+            <h3 class="help-subtitle">🎮 操作说明</h3>
+            <ul class="help-list">
+              <li><span class="result-miss">×</span> <strong>未命中</strong> - 该格子是空的</li>
+              <li><span class="result-hit">✓</span> <strong>命中机身</strong> - 击中飞机身体部分</li>
+              <li><span class="result-head">✈</span> <strong>击毁飞机</strong> - 找到机头，该飞机被击毁！</li>
+            </ul>
+          </div>
+          
+          <div class="help-section">
+            <h3 class="help-subtitle">💡 小提示</h3>
+            <ul class="help-list">
+              <li>登录后游戏记录会被保存</li>
+              <li>成绩优秀可进入排行榜</li>
+              <li>飞机不会重叠，利用已知信息推理</li>
+            </ul>
+          </div>
+        </div>
+        
+        <button class="btn btn-primary" @click="showHelpModal = false" style="width: 100%; margin-top: 20px;">知道了，开始游戏！</button>
+      </div>
+    </div>
+
+    <!-- 游戏完成弹窗 -->
+    <div class="modal-overlay" :class="{ show: showMessage }" @click.self="showMessage = false">
+      <div class="modal-box" style="position: relative;">
+        <button class="modal-close" @click="showMessage = false">&times;</button>
+        <div class="modal-icon" style="animation: bounce 1s ease-in-out infinite;">{{ gameRank > 0 ? '🏆' : '🎉' }}</div>
+        <h2 class="modal-title">游戏完成!</h2>
+        <!-- 排名提示 -->
+        <div v-if="isLoggedIn && gameRank > 0" class="rank-result rank-success">
+          🎉 恭喜上榜！排名第 <strong>{{ gameRank }}</strong> 名
+        </div>
+        <div v-else-if="isLoggedIn && gameRank < 0" class="rank-result rank-exists">
+          📊 本次未刷新记录，当前最好排名第 <strong>{{ Math.abs(gameRank) }}</strong> 名
+        </div>
+        <div v-else-if="isLoggedIn && gameRank === 0" class="rank-result rank-miss">
+          💪 未能上榜，继续努力！
+        </div>
+        <p class="modal-text">恭喜你找到了所有飞机!</p>
+        <div class="message-stats">
+          <div class="message-stat">
+            <div class="message-stat-value">{{ steps }}</div>
+            <div class="message-stat-label">总步数</div>
+          </div>
+          <div class="message-stat">
+            <div class="message-stat-value">{{ hitRate }}%</div>
+            <div class="message-stat-label">命中率</div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" @click="restartGame">🎮 再来一局</button>
+          <button v-if="gameRank !== 0" class="btn btn-secondary" @click="viewLeaderboard">查看排行榜</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const API_BASE = '';  // 前后端同源，使用相对路径
+    
+    const app = Vue.createApp({
+      data() {
+        return {
+          // 游戏相关
+          row: 10,
+          column: 10,
+          gameId: '',
+          checkerboard: [],
+          disabled: false,
+          isLoading: false,
+          planesFound: 0,
+          steps: 0,
+          hitCount: 0,
+          missCount: 0,
+          showMessage: false,
+          gameStartTime: null,
+          
+          // 用户相关
+          token: '',
+          username: '',
+          isLoggedIn: false,
+          
+          // 弹窗控制
+          showLoginModal: false,
+          showRegisterModal: false,
+          showRecordsModal: false,
+          showLeaderboardModal: false,
+          showHelpModal: true,  // 进入页面默认显示帮助
+          
+          // 排行榜
+          leaderboard: [],
+          gameRank: 0, // 本局游戏排名，>0表示上榜，-1表示未上榜，0表示未参与排名
+          
+          // 表单
+          loginForm: { username: '', password: '' },
+          registerForm: { username: '', password: '' },
+          authLoading: false,
+          
+          // 战绩
+          records: [],
+          
+          // Toast
+          toast: { show: false, message: '', type: 'success' }
+        }
+      },
+      computed: {
+        flatBoard() {
+          return this.checkerboard.flat();
+        },
+        hitRate() {
+          if (this.steps === 0) return 0;
+          return Math.round((this.hitCount / this.steps) * 100);
+        }
+      },
+      mounted() {
+        this.checkLoginStatus();
+        this.initArr();
+        this.startGame();
+        // 隐藏加载动画
+        setTimeout(() => {
+          document.getElementById('loading').classList.add('hide');
+        }, 800);
+      },
+      methods: {
+        // ========== 用户相关 ==========
+        checkLoginStatus() {
+          const token = localStorage.getItem('token');
+          const username = localStorage.getItem('username');
+          if (token && username) {
+            // 验证token有效性
+            axios.get(`${API_BASE}/user/check`, { params: { token } })
+              .then(response => {
+                if (response.data.isSuccess) {
+                  this.token = token;
+                  this.username = username;
+                  this.isLoggedIn = true;
+                } else {
+                  this.clearLoginState();
+                }
+              })
+              .catch(() => {
+                this.clearLoginState();
+              });
+          }
+        },
+        
+        clearLoginState() {
+          localStorage.removeItem('token');
+          localStorage.removeItem('username');
+          this.token = '';
+          this.username = '';
+          this.isLoggedIn = false;
+        },
+        
+        async handleLogin() {
+          if (this.authLoading) return;
+          this.authLoading = true;
+          
+          try {
+            const response = await axios.post(`${API_BASE}/user/login`, this.loginForm);
+            if (response.data.isSuccess) {
+              const { token, username } = response.data.resultData;
+              localStorage.setItem('token', token);
+              localStorage.setItem('username', username);
+              this.token = token;
+              this.username = username;
+              this.isLoggedIn = true;
+              this.showLoginModal = false;
+              this.loginForm = { username: '', password: '' };
+              this.showToast('登录成功！', 'success');
+              // 重新开始游戏以使用带token的接口
+              this.restartGame();
+            } else {
+              this.showToast(response.data.resultMsg || '登录失败', 'error');
+            }
+          } catch (error) {
+            this.showToast('登录失败，请检查网络', 'error');
+          } finally {
+            this.authLoading = false;
+          }
+        },
+        
+        async handleRegister() {
+          if (this.authLoading) return;
+          
+          // 验证用户名
+          const usernameRegex = /^[\u4e00-\u9fa5a-zA-Z0-9\-]{2,20}$/;
+          if (!usernameRegex.test(this.registerForm.username)) {
+            this.showToast('用户名需为中英文数字中横线，2-20位', 'error');
+            return;
+          }
+          
+          this.authLoading = true;
+          
+          try {
+            const response = await axios.post(`${API_BASE}/user/register`, this.registerForm);
+            if (response.data.isSuccess) {
+              const { token, username } = response.data.resultData;
+              localStorage.setItem('token', token);
+              localStorage.setItem('username', username);
+              this.token = token;
+              this.username = username;
+              this.isLoggedIn = true;
+              this.showRegisterModal = false;
+              this.registerForm = { username: '', password: '' };
+              this.showToast('注册成功！', 'success');
+              this.restartGame();
+            } else {
+              this.showToast(response.data.resultMsg || '注册失败', 'error');
+            }
+          } catch (error) {
+            this.showToast('注册失败，请检查网络', 'error');
+          } finally {
+            this.authLoading = false;
+          }
+        },
+        
+        logout() {
+          this.clearLoginState();
+          this.showToast('已退出登录', 'success');
+          this.restartGame();
+        },
+        
+        switchToRegister() {
+          this.showLoginModal = false;
+          this.showRegisterModal = true;
+        },
+        
+        switchToLogin() {
+          this.showRegisterModal = false;
+          this.showLoginModal = true;
+        },
+        
+        // ========== 战绩相关 ==========
+        async loadRecords() {
+          if (!this.isLoggedIn) return;
+          
+          try {
+            const response = await axios.get(`${API_BASE}/user/records`, {
+              params: { token: this.token }
+            });
+            if (response.data.isSuccess) {
+              this.records = response.data.resultData || [];
+            }
+          } catch (error) {
+            console.error('获取战绩失败:', error);
+          }
+        },
+        
+        // ========== 排行榜相关 ==========
+        async loadLeaderboard() {
+          try {
+            const response = await axios.get(`${API_BASE}/user/leaderboard`);
+            if (response.data.isSuccess) {
+              this.leaderboard = response.data.resultData || [];
+            }
+          } catch (error) {
+            console.error('获取排行榜失败:', error);
+          }
+        },
+        
+        viewLeaderboard() {
+          this.showMessage = false;
+          this.showLeaderboardModal = true;
+          this.loadLeaderboard();
+        },
+        
+        formatTime(timeStr) {
+          if (!timeStr) return '-';
+          // 简化显示，只显示月-日 时:分
+          const date = new Date(timeStr);
+          return `${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+        },
+        
+        formatDuration(seconds) {
+          if (!seconds) return '-';
+          if (seconds < 60) return `${seconds}秒`;
+          const min = Math.floor(seconds / 60);
+          const sec = seconds % 60;
+          return `${min}分${sec}秒`;
+        },
+        
+        // ========== 游戏相关 ==========
+        getCellClass(value) {
+          const classes = [];
+          if (value !== 0) classes.push('clicked');
+          switch (value) {
+            case -2: classes.push('miss'); break;
+            case 1: classes.push('hit-body'); break;
+            case 2: classes.push('hit-head'); break;
+            case 3: classes.push('reveal'); break;
+          }
+          return classes;
+        },
+        
+        async startGame() {
+          try {
+            let response;
+            if (this.isLoggedIn) {
+              // 登录用户使用带token的接口
+              response = await axios.get(`${API_BASE}/game/startWithUser`, {
+                params: { token: this.token }
+              });
+            } else {
+              // 游客使用普通接口
+              response = await axios.get(`${API_BASE}/game/start`);
+            }
+            this.gameId = response.data.resultData;
+            this.gameStartTime = Date.now();
+          } catch (error) {
+            console.error('开始游戏失败:', error);
+            this.showToast('开始游戏失败，请刷新重试', 'error');
+          }
+        },
+        
+        async setPoint(rowIndex, columnIndex) {
+          this.isLoading = true;
+          const clickPoint = `${rowIndex}-${columnIndex}`;
+          
+          try {
+            let response;
+            if (this.isLoggedIn) {
+              response = await axios.get(`${API_BASE}/game/playWithUser`, {
+                params: { gameId: this.gameId, position: clickPoint, token: this.token }
+              });
+            } else {
+              response = await axios.get(`${API_BASE}/game/play`, {
+                params: { gameId: this.gameId, position: clickPoint }
+              });
+            }
+            
+            this.isLoading = false;
+            const result = response.data.resultData.result;
+            
+            // 更新统计
+            this.steps++;
+            
+            if (result === 0) {
+              this.checkerboard[rowIndex][columnIndex] = -2;
+              this.missCount++;
+            } else {
+              this.checkerboard[rowIndex][columnIndex] = result;
+              this.hitCount++;
+              
+              if (result === 2) {
+                // 命中机头
+                this.planesFound++;
+              }
+            }
+            
+            // 游戏结束
+            if (response.data.resultData.answer) {
+              this.disabled = true;
+              
+              // 获取排名信息（仅登录用户有此字段）
+              const rank = response.data.resultData.rank;
+              if (typeof rank === 'number') {
+                this.gameRank = rank;
+              } else {
+                this.gameRank = 0; // 游客或无排名信息
+              }
+              
+              // 延迟显示未发现的飞机部位
+              setTimeout(() => {
+                response.data.resultData.answer.forEach((rows, rowindex) => {
+                  rows.forEach((colums, columsindex) => {
+                    if (this.checkerboard[rowindex][columsindex] === 0 && colums === 1) {
+                      this.checkerboard[rowindex][columsindex] = 3;
+                    }
+                  });
+                });
+                
+                // 显示完成弹窗
+                setTimeout(() => {
+                  this.showMessage = true;
+                }, 500);
+              }, 300);
+            }
+          } catch (error) {
+            this.isLoading = false;
+            console.error('请求失败:', error);
+          }
+        },
+        
+        initArr() {
+          let arr = [];
+          for (let i = 0; i < this.row; i++) {
+            arr[i] = [];
+            for (let j = 0; j < this.column; j++) {
+              arr[i][j] = 0;
+            }
+          }
+          this.checkerboard = arr;
+        },
+        
+        handleClick(rowIndex, columnIndex, event) {
+          if (this.disabled || this.isLoading) {
+            return;
+          }
+          
+          if (this.checkerboard[rowIndex][columnIndex] === 0) {
+            // 添加涟漪效果
+            this.createRipple(event);
+            this.setPoint(rowIndex, columnIndex);
+          }
+        },
+        
+        createRipple(event) {
+          const cell = event.currentTarget;
+          const ripple = document.createElement('span');
+          ripple.classList.add('ripple');
+          
+          const rect = cell.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
+          ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
+          
+          cell.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        },
+        
+        restartGame() {
+          this.showMessage = false;
+          this.disabled = false;
+          this.planesFound = 0;
+          this.steps = 0;
+          this.hitCount = 0;
+          this.missCount = 0;
+          this.gameRank = 0;
+          this.initArr();
+          this.startGame();
+        },
+        
+        // ========== 工具方法 ==========
+        showToast(message, type = 'success') {
+          this.toast = { show: true, message, type };
+          setTimeout(() => {
+            this.toast.show = false;
+          }, 3000);
+        }
+      },
+      watch: {
+        showRecordsModal(val) {
+          if (val) {
+            this.loadRecords();
+          }
+        },
+        showLeaderboardModal(val) {
+          if (val) {
+            this.loadLeaderboard();
+          }
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+</body>
+
+</html>
