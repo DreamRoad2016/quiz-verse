@@ -8,6 +8,13 @@
 # PostgreSQL：captain 只读业务表（建表/导入仍用你的高权限账号执行脚本）
 # =============================================================================
 
+# 数据管理 API（请求头 X-Admin-Key）。表名白名单：仅列出的表可被通用 CRUD/导入导出。
+quiz:
+  admin:
+    api-key: ${QUIZ_ADMIN_API_KEY:QV-DEV-LOLDATA-9f3c1e8b}
+    tables:
+      - demo_lol_player
+
 server:
   port: 8098
   # 需要双端口时取消下行注释，并启用 TomcatHttpConfig（额外 HTTP 端口）：
