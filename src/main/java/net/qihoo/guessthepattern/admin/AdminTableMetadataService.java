@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
@@ -82,7 +83,7 @@ public class AdminTableMetadataService {
                     String colName = rs.getString("COLUMN_NAME");
                     int dataType = rs.getInt("DATA_TYPE");
                     String typeName = rs.getString("TYPE_NAME");
-                    boolean nullable = "YES".equalsIgnoreCase(rs.getString("NULLABLE"));
+                    boolean nullable = readColumnNullable(rs);
                     boolean searchable = AdminColumn.isSearchableColumn(typeName, dataType);
                     byOrd.put(ord, new AdminColumn(colName, dataType, typeName, nullable, searchable));
                 }
@@ -94,7 +95,7 @@ public class AdminTableMetadataService {
                         String colName = rs.getString("COLUMN_NAME");
                         int dataType = rs.getInt("DATA_TYPE");
                         String typeName = rs.getString("TYPE_NAME");
-                        boolean nullable = "YES".equalsIgnoreCase(rs.getString("NULLABLE"));
+                        boolean nullable = readColumnNullable(rs);
                         boolean searchable = AdminColumn.isSearchableColumn(typeName, dataType);
                         byOrd.put(ord, new AdminColumn(colName, dataType, typeName, nullable, searchable));
                     }
@@ -126,7 +127,11 @@ public class AdminTableMetadataService {
         if (!pk.isEmpty()) {
             return pk;
         }
-        return readPrimaryKeyFromInformationSchema(conn, table);
+        pk = readPrimaryKeyFromInformationSchema(conn, table);
+        if (!pk.isEmpty()) {
+            return pk;
+        }
+        return readPrimaryKeyFromPgCatalog(conn, table);
     }
 
     /**
@@ -134,12 +139,7 @@ public class AdminTableMetadataService {
      * 改用 {@code information_schema} 读取主键列（仍仅支持单列主键业务约束）。
      */
     private static List<String> readPrimaryKeyFromInformationSchema(Connection conn, String table) throws Exception {
-        Set<String> schemas = new LinkedHashSet<>();
-        String current = conn.getSchema();
-        if (current != null && !current.trim().isEmpty()) {
-            schemas.add(current.trim());
-        }
-        schemas.add("public");
+        Set<String> schemas = schemaCandidates(conn);
         List<String> found = new ArrayList<>();
         String sql =
                 "SELECT kcu.column_name "
@@ -166,6 +166,82 @@ public class AdminTableMetadataService {
             found.clear();
         }
         return found;
+    }
+
+    /**
+     * 再退一层：直接查 {@code pg_catalog}（不依赖 JDBC 的 catalog/schema 传参是否被驱动忽略）。
+     */
+    private static List<String> readPrimaryKeyFromPgCatalog(Connection conn, String table) throws Exception {
+        String sql =
+                "SELECT a.attname AS column_name "
+                        + "FROM pg_constraint c "
+                        + "JOIN pg_class t ON c.conrelid = t.oid "
+                        + "JOIN pg_namespace n ON n.oid = t.relnamespace "
+                        + "JOIN LATERAL unnest(c.conkey) WITH ORDINALITY AS u(attnum, ord) ON true "
+                        + "JOIN pg_attribute a ON a.attrelid = t.oid AND a.attnum = u.attnum AND NOT a.attisdropped "
+                        + "WHERE c.contype = 'p' "
+                        + "AND t.relkind IN ('r', 'p') "
+                        + "AND t.relname = ? "
+                        + "AND n.nspname = ? "
+                        + "ORDER BY u.ord";
+        List<String> found = new ArrayList<>();
+        for (String schema : schemaCandidates(conn)) {
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setString(1, table);
+                ps.setString(2, schema);
+                try (ResultSet rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        found.add(rs.getString("column_name"));
+                    }
+                }
+            }
+            if (!found.isEmpty()) {
+                return found;
+            }
+            found.clear();
+        }
+        return found;
+    }
+
+    private static Set<String> schemaCandidates(Connection conn) throws Exception {
+        Set<String> schemas = new LinkedHashSet<>();
+        String current = conn.getSchema();
+        if (current != null && !current.trim().isEmpty()) {
+            schemas.add(current.trim());
+        }
+        schemas.add("public");
+        try (PreparedStatement ps = conn.prepareStatement("SELECT current_schema()")) {
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    String cs = rs.getString(1);
+                    if (cs != null && !cs.trim().isEmpty()) {
+                        schemas.add(cs.trim());
+                    }
+                }
+            }
+        }
+        return schemas;
+    }
+
+    /**
+     * JDBC {@code getColumns} 的 {@code NULLABLE} 在 PostgreSQL 驱动下多为整型
+     * （{@link DatabaseMetaData#columnNullable} / {@link DatabaseMetaData#columnNoNulls}），
+     * 用 {@code "YES".equals(getString)} 会把可空列误判为不可空。
+     */
+    private static boolean readColumnNullable(ResultSet rs) throws SQLException {
+        try {
+            int v = rs.getInt("NULLABLE");
+            if (!rs.wasNull()) {
+                return v != DatabaseMetaData.columnNoNulls;
+            }
+        } catch (SQLException ignored) {
+            // 个别驱动/版本下按整型读取失败则退回字符串判断
+        }
+        String s = rs.getString("NULLABLE");
+        if (s == null || s.trim().isEmpty()) {
+            return true;
+        }
+        return !"NO".equalsIgnoreCase(s.trim());
     }
 
     private static List<String> readPk(DatabaseMetaData md, String table, String schema) throws Exception {
