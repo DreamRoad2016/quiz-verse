@@ -1,7 +1,6 @@
 package net.qihoo.guessthepattern.admin;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -36,6 +35,8 @@ public class GenericDataAdminController {
 
     @Resource
     private GenericTableAdminService genericTableAdminService;
+    @Resource
+    private ObjectMapper objectMapper;
 
     @ApiOperation("白名单表名列表")
     @GetMapping("/meta/tables")
@@ -94,8 +95,7 @@ public class GenericDataAdminController {
         response.setContentType(MediaType.APPLICATION_JSON_VALUE);
         String fn = table + "-export.json";
         response.setHeader("Content-Disposition", "attachment; filename=\"" + fn + "\"");
-        String json = JSON.toJSONString(data, SerializerFeature.PrettyFormat);
-        response.getOutputStream().write(json.getBytes(StandardCharsets.UTF_8));
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(response.getOutputStream(), data);
     }
 
     @ApiOperation("批量导入：JSON 数组，按主键 upsert（UUID 主键缺省则自动生成）")

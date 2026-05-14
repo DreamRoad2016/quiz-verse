@@ -5,6 +5,7 @@ import net.qihoo.guessthepattern.enums.ResultEnum;
 import net.qihoo.guessthepattern.exception.BizException;
 import net.qihoo.guessthepattern.admin.model.AdminColumn;
 import net.qihoo.guessthepattern.admin.model.AdminTableSchema;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -98,7 +99,13 @@ public class GenericTableAdminService {
         for (Map<String, Object> raw : rows) {
             LinkedHashMap<String, Object> row = new LinkedHashMap<>(raw);
             ensurePkForUpsert(s, row);
-            genericTableJdbcAdminRepository.upsert(table, row);
+            try {
+                genericTableJdbcAdminRepository.upsert(table, row);
+            } catch (DataAccessException e) {
+                Throwable c = e.getMostSpecificCause();
+                String msg = c != null ? c.getMessage() : e.getMessage();
+                throw new BizException("第 " + (n + 1) + " 行写入失败: " + msg);
+            }
             n++;
         }
         return new ImportResultView(n);

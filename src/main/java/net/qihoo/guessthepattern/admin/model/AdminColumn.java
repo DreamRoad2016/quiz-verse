@@ -31,6 +31,15 @@ public class AdminColumn {
         return "uuid".equalsIgnoreCase(typeName);
     }
 
+    /** PostgreSQL 的 {@code timestamptz} 在部分驱动下会落在 {@link Types#OTHER}。 */
+    public boolean isTimestampLike() {
+        if (typeName == null) {
+            return false;
+        }
+        String t = typeName.toLowerCase();
+        return t.contains("timestamp");
+    }
+
     public static boolean isSearchableColumn(String typeName, int jdbcType) {
         if (typeName != null && "bytea".equalsIgnoreCase(typeName)) {
             return false;

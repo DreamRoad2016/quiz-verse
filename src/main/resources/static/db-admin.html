@@ -409,7 +409,8 @@
         async doImport() {
           this.msg = '';
           try {
-            const arr = JSON.parse(this.importText);
+            const raw = this.importText.replace(/^\uFEFF/, '').trim();
+            const arr = JSON.parse(raw);
             if (!Array.isArray(arr)) throw new Error('须为 JSON 数组');
             const { data } = await this.http.post('/api/admin/tables/' + encodeURIComponent(this.table) + '/-/import', arr);
             if (!data.isSuccess) throw new Error(data.resultMsg);

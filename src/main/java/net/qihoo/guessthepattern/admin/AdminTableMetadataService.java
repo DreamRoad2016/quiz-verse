@@ -10,11 +10,14 @@ import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Pattern;
@@ -66,7 +69,7 @@ public class AdminTableMetadataService {
     private AdminTableSchema loadSchema(String table) {
         try (Connection conn = dataSource.getConnection()) {
             DatabaseMetaData md = conn.getMetaData();
-            List<String> pkCols = readPrimaryKeyColumns(md, table);
+            List<String> pkCols = readPrimaryKeyColumns(md, conn, table);
             if (pkCols.size() != 1) {
                 throw new BizException(
                         "通用管理仅支持「单列主键」表，当前表 " + table + " 主键列数=" + pkCols.size());
@@ -113,12 +116,56 @@ public class AdminTableMetadataService {
         }
     }
 
-    private static List<String> readPrimaryKeyColumns(DatabaseMetaData md, String table) throws Exception {
+    private static List<String> readPrimaryKeyColumns(DatabaseMetaData md, Connection conn, String table)
+            throws Exception {
         List<String> pk = readPk(md, table, "public");
         if (!pk.isEmpty()) {
             return pk;
         }
-        return readPk(md, table, null);
+        pk = readPk(md, table, null);
+        if (!pk.isEmpty()) {
+            return pk;
+        }
+        return readPrimaryKeyFromInformationSchema(conn, table);
+    }
+
+    /**
+     * 部分 PostgreSQL 版本/驱动下 {@link DatabaseMetaData#getPrimaryKeys} 会返回空行，
+     * 改用 {@code information_schema} 读取主键列（仍仅支持单列主键业务约束）。
+     */
+    private static List<String> readPrimaryKeyFromInformationSchema(Connection conn, String table) throws Exception {
+        Set<String> schemas = new LinkedHashSet<>();
+        String current = conn.getSchema();
+        if (current != null && !current.trim().isEmpty()) {
+            schemas.add(current.trim());
+        }
+        schemas.add("public");
+        List<String> found = new ArrayList<>();
+        String sql =
+                "SELECT kcu.column_name "
+                        + "FROM information_schema.table_constraints tc "
+                        + "JOIN information_schema.key_column_usage kcu "
+                        + "ON tc.constraint_schema = kcu.constraint_schema "
+                        + "AND tc.constraint_name = kcu.constraint_name "
+                        + "WHERE tc.table_schema = ? AND tc.table_name = ? "
+                        + "AND tc.constraint_type = 'PRIMARY KEY' "
+                        + "ORDER BY kcu.ordinal_position";
+        for (String schema : schemas) {
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setString(1, schema);
+                ps.setString(2, table);
+                try (ResultSet rs = ps.executeQuery()) {
+                    while (rs.next()) {
+                        found.add(rs.getString("column_name"));
+                    }
+                }
+            }
+            if (!found.isEmpty()) {
+                return found;
+            }
+            found.clear();
+        }
+        return found;
     }
 
     private static List<String> readPk(DatabaseMetaData md, String table, String schema) throws Exception {

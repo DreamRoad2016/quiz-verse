@@ -14,6 +14,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.sql.Types;
+import java.time.Instant;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -283,6 +285,10 @@ public class GenericTableJdbcAdminRepository {
                     Object u = rs.getObject(n);
                     return u == null ? null : u.toString();
                 }
+                if (c.isTimestampLike()) {
+                    Timestamp ts = rs.getTimestamp(n);
+                    return ts == null ? null : ts.toInstant().toString();
+                }
                 return rs.getString(n);
             default:
                 return rs.getString(n);
@@ -324,10 +330,10 @@ public class GenericTableJdbcAdminRepository {
                 break;
             case Types.FLOAT:
             case Types.REAL:
-                ps.setFloat(idx, ((Number) val).floatValue());
+                ps.setFloat(idx, val instanceof Number ? ((Number) val).floatValue() : Float.parseFloat(val.toString()));
                 break;
             case Types.DOUBLE:
-                ps.setDouble(idx, ((Number) val).doubleValue());
+                ps.setDouble(idx, val instanceof Number ? ((Number) val).doubleValue() : Double.parseDouble(val.toString()));
                 break;
             case Types.NUMERIC:
             case Types.DECIMAL:
@@ -339,7 +345,11 @@ public class GenericTableJdbcAdminRepository {
                 break;
             case Types.TIMESTAMP_WITH_TIMEZONE:
             case Types.TIMESTAMP:
+                bindTimestamp(ps, idx, val);
+                break;
             case Types.DATE:
+                bindDate(ps, idx, val);
+                break;
             case Types.TIME:
             case Types.TIME_WITH_TIMEZONE:
                 ps.setString(idx, val.toString());
@@ -347,13 +357,78 @@ public class GenericTableJdbcAdminRepository {
             case Types.OTHER:
                 if (col.isUuid()) {
                     ps.setObject(idx, UUID.fromString(val.toString()));
+                } else if (col.isTimestampLike()) {
+                    bindTimestamp(ps, idx, val);
                 } else {
                     ps.setString(idx, val.toString());
                 }
                 break;
             default:
-                ps.setString(idx, val.toString());
+                if (col.isTimestampLike()) {
+                    bindTimestamp(ps, idx, val);
+                } else {
+                    ps.setString(idx, val.toString());
+                }
         }
+    }
+
+    private static void bindTimestamp(PreparedStatement ps, int idx, Object val) throws SQLException {
+        Instant inst = toInstant(val);
+        if (inst == null) {
+            ps.setNull(idx, Types.TIMESTAMP_WITH_TIMEZONE);
+            return;
+        }
+        ps.setTimestamp(idx, Timestamp.from(inst));
+    }
+
+    private static void bindDate(PreparedStatement ps, int idx, Object val) throws SQLException {
+        if (val == null) {
+            ps.setNull(idx, Types.DATE);
+            return;
+        }
+        if (val instanceof java.sql.Date) {
+            ps.setDate(idx, (java.sql.Date) val);
+            return;
+        }
+        String s = val.toString().trim();
+        if (s.isEmpty()) {
+            ps.setNull(idx, Types.DATE);
+            return;
+        }
+        if (s.length() >= 10 && s.charAt(4) == '-') {
+            ps.setDate(idx, java.sql.Date.valueOf(LocalDate.parse(s.substring(0, 10))));
+        } else {
+            ps.setDate(idx, java.sql.Date.valueOf(LocalDate.parse(s)));
+        }
+    }
+
+    private static Instant toInstant(Object val) {
+        if (val == null) {
+            return null;
+        }
+        if (val instanceof Instant) {
+            return (Instant) val;
+        }
+        if (val instanceof Timestamp) {
+            return ((Timestamp) val).toInstant();
+        }
+        if (val instanceof java.util.Date) {
+            return Instant.ofEpochMilli(((java.util.Date) val).getTime());
+        }
+        if (val instanceof Number) {
+            return Instant.ofEpochMilli(((Number) val).longValue());
+        }
+        String s = val.toString().trim();
+        if (s.isEmpty()) {
+            return null;
+        }
+        if (!s.contains("T") && s.length() >= 19 && s.charAt(10) == ' ') {
+            s = s.substring(0, 10) + "T" + s.substring(11);
+        }
+        if (s.endsWith("+0000")) {
+            s = s.substring(0, s.length() - 5) + "Z";
+        }
+        return Instant.parse(s);
     }
 
     private static void bindPgArray(Connection con, PreparedStatement ps, int idx, AdminColumn col, Object val)
@@ -366,11 +441,16 @@ public class GenericTableJdbcAdminRepository {
         if (elem == null) {
             elem = "text";
         }
+        if ("varchar".equals(elem) || "name".equals(elem) || "bpchar".equals(elem)) {
+            elem = "text";
+        }
         if ("int4".equals(elem) || "integer".equals(elem)) {
-            Integer[] arr = list.stream().map(x -> x == null ? null : ((Number) x).intValue()).toArray(Integer[]::new);
+            Integer[] arr = list.stream()
+                    .map(x -> x == null ? null : (x instanceof Number ? ((Number) x).intValue() : toInt(x)))
+                    .toArray(Integer[]::new);
             ps.setArray(idx, con.createArrayOf("int4", arr));
         } else if ("int8".equals(elem) || "bigint".equals(elem)) {
-            Long[] arr = list.stream().map(x -> x == null ? null : ((Number) x).longValue()).toArray(Long[]::new);
+            Long[] arr = list.stream().map(x -> x == null ? null : toLong(x)).toArray(Long[]::new);
             ps.setArray(idx, con.createArrayOf("int8", arr));
         } else if ("float8".equals(elem) || "double precision".equals(elem)) {
             Double[] arr = list.stream().map(x -> x == null ? null : ((Number) x).doubleValue()).toArray(Double[]::new);
@@ -385,14 +465,22 @@ public class GenericTableJdbcAdminRepository {
         if (val instanceof Number) {
             return ((Number) val).intValue();
         }
-        return Integer.parseInt(val.toString());
+        String s = val.toString().trim();
+        if (s.contains(".")) {
+            return (int) Double.parseDouble(s);
+        }
+        return Integer.parseInt(s);
     }
 
     private static long toLong(Object val) {
         if (val instanceof Number) {
             return ((Number) val).longValue();
         }
-        return Long.parseLong(val.toString());
+        String s = val.toString().trim();
+        if (s.contains(".")) {
+            return (long) Double.parseDouble(s);
+        }
+        return Long.parseLong(s);
     }
 
     private static boolean toBool(Object val) {
