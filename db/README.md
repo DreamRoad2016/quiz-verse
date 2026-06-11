@@ -21,15 +21,32 @@ createdb quiz_verse
 在仓库根目录执行：
 
 ```bash
+# LoL 选手 Demo（独立表 demo_lol_player，与影视剧管线无关）
 psql -d quiz_verse -f db/demo_lol_schema.sql
+
+# 影视剧猜人物 — 通用三张表（所有作品共用）
+psql -d quiz_verse -f db/work_guess_schema.sql
+
+# 某部作品元数据（可选，首期甄嬛传）
+psql -d quiz_verse -f db/seeds/zhenhuan_2011_seed.sql
 ```
+
+### 2.1 影视剧通用表（不是「甄嬛传表」）
+
+| 表 | 说明 |
+| --- | --- |
+| `work` | 作品注册；一行一部剧，`id` 如 `zhenhuan_2011`（**是数据主键，不是表名**） |
+| `work_column` | 该作品的比对列定义（不同剧可不同列、不同枚举） |
+| `work_character` | 全剧角色；`work_id` 区分归属；`attrs` 为 jsonb |
+
+第二部剧示例：再执行一份 `db/seeds/xxx_seed.sql`（或手动 `INSERT INTO work` + `work_column`），角色仍写 `work_character`，`work_id` 为新 id 即可。
+
+`attrs` 键须与该作品的 `work_column.attrs_path` 一致。甄嬛传字段语义见 **`docs/甄嬛传设计.md`**。
 
 ## 3. 导入 JSON
 
 ```bash
 pip install -r scripts/requirements.txt
-# 若库名/用户不同，设置环境变量后再执行：
-# export PGDATABASE=quiz_verse PGUSER=你的用户名
 python3 scripts/import_lol_players.py
 ```
 
@@ -37,7 +54,6 @@ python3 scripts/import_lol_players.py
 
 ```bash
 psql -d quiz_verse -c "SELECT COUNT(*) FROM demo_lol_player;"
-# 期望: 281
+psql -d quiz_verse -c "SELECT id, title_cn FROM work;"
+psql -d quiz_verse -c "SELECT work_id, COUNT(*) FROM work_character GROUP BY work_id;"
 ```
-
-下一步在 Spring Boot 中增加 `spring-boot-starter-jdbc` + `postgresql` 驱动，配置 `spring.datasource.*`，即可用 `JdbcTemplate` 或 JPA 读 `demo_lol_player` 做猜谜逻辑。
