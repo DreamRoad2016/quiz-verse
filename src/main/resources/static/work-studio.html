@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>影视剧录入 · Quiz Verse</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    :root { --bg:#0a0e14; --card:#141c28; --stroke:#2a3a52; --text:#e8eef8; --muted:#8fa3bf; --accent:#5c9cff; --ok:#69f0ae; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); min-height:100vh; }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 24px 16px 48px; }
+    h1 { font-size:1.35rem; margin:0 0 6px; }
+    .sub { color:var(--muted); font-size:.88rem; line-height:1.55; margin-bottom:20px; }
+    .sub a { color:#7eb8ff; }
+    .gate { max-width:400px; margin:60px auto; padding:24px; background:var(--card); border-radius:12px; border:1px solid var(--stroke); }
+    input, select { width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--stroke); background:#0d1219; color:var(--text); margin:8px 0 12px; }
+    .btn { padding:9px 16px; border-radius:8px; border:1px solid var(--stroke); background:#1a2433; color:var(--text); cursor:pointer; font-weight:600; margin-right:8px; }
+    .btn-primary { background:var(--accent); border-color:transparent; color:#fff; }
+    .btn-sm { padding:6px 10px; font-size:.82rem; }
+    .card { background:var(--card); border:1px solid var(--stroke); border-radius:12px; padding:18px; margin-bottom:18px; }
+    table { width:100%; border-collapse:collapse; font-size:.88rem; }
+    th, td { padding:10px 8px; border-bottom:1px solid var(--stroke); text-align:left; }
+    th { color:var(--muted); font-weight:600; }
+    .tag { display:inline-block; font-size:.72rem; padding:2px 8px; border-radius:999px; background:#1e2d42; color:#a8c4e8; margin-right:4px; }
+    .tag.ok { background:rgba(105,240,174,.15); color:var(--ok); }
+    .msg { padding:10px 12px; border-radius:8px; margin:12px 0; font-size:.86rem; }
+    .msg.err { background:rgba(255,100,100,.12); color:#ffb4b4; }
+    .msg.ok { background:rgba(105,240,174,.1); color:#b9f6ca; }
+    label { display:block; font-size:.82rem; color:var(--muted); margin-top:10px; }
+    .row2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    @media (max-width:640px) { .row2 { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div id="app" class="wrap">
+  <div v-if="!authed" class="gate">
+    <h2 style="margin:0 0 8px;">影视剧录入</h2>
+    <p style="color:var(--muted);font-size:.85rem;">测试环境使用，需管理密钥（与 Data Studio 相同）</p>
+    <input type="password" v-model="keyInput" placeholder="X-Admin-Key" @keydown.enter="enterGate" />
+    <button class="btn btn-primary" @click="enterGate">进入</button>
+    <p v-if="gateErr" class="msg err">{{ gateErr }}</p>
+  </div>
+
+  <template v-else>
+    <h1>影视剧录入</h1>
+    <p class="sub">
+      第一步：在此注册作品。第二步：点「录入角色」进入人物页。
+      <a href="/db-admin.html">Data Studio</a> 仍可用于整表导入导出（上线用）。
+      <a href="/work-character-studio.html" v-if="false"></a>
+    </p>
+
+    <div class="card">
+      <h3 style="margin:0 0 12px;font-size:1rem;">新建影视剧</h3>
+      <div class="row2">
+        <div>
+          <label>作品 ID（英文 slug，如 zhenhuan_2011）</label>
+          <input v-model="form.id" placeholder="xiaozhuan_2024" />
+        </div>
+        <div>
+          <label>中文名</label>
+          <input v-model="form.titleCn" placeholder="甄嬛传" />
+        </div>
+      </div>
+      <label>复制字段模板（config + 比对列）</label>
+      <select v-model="form.templateWorkId">
+        <option value="zhenhuan_2011">甄嬛传模板 zhenhuan_2011</option>
+      </select>
+      <button class="btn btn-primary" @click="createWork" :disabled="saving">创建作品</button>
+    </div>
+
+    <p v-if="msg" class="msg" :class="msgErr ? 'err' : 'ok'">{{ msg }}</p>
+
+    <div class="card">
+      <h3 style="margin:0 0 12px;font-size:1rem;">已注册作品</h3>
+      <table v-if="works.length">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名称</th>
+            <th>角色</th>
+            <th>配置</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="w in works" :key="w.id">
+            <td><code>{{ w.id }}</code></td>
+            <td>{{ w.titleCn }}</td>
+            <td>{{ w.activeCharacterCount }} / {{ w.characterCount }} 上架</td>
+            <td>
+              <span class="tag" :class="{ ok: w.hasFieldConfig }">{{ w.hasFieldConfig ? '有 fields.json' : '缺配置' }}</span>
+            </td>
+            <td>
+              <a class="btn btn-sm btn-primary" :href="'/work-character-studio.html?workId=' + encodeURIComponent(w.id)">录入角色</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p v-else style="color:var(--muted);font-size:.88rem;">暂无作品。请先执行数据库种子，或上方新建。</p>
+    </div>
+  </template>
+</div>
+<script>
+const HDR = 'X-Admin-Key';
+const SK = 'quizAdminDataKey';
+const { createApp } = Vue;
+
+function client(key) {
+  const h = axios.create();
+  h.interceptors.request.use(c => { c.headers[HDR] = key; return c; });
+  return h;
+}
+
+createApp({
+  data() {
+    return {
+      authed: false, keyInput: '', gateErr: '', http: null,
+      works: [], msg: '', msgErr: false, saving: false,
+      form: { id: '', titleCn: '', templateWorkId: 'zhenhuan_2011' }
+    };
+  },
+  mounted() {
+    const k = sessionStorage.getItem(SK);
+    if (k) { this.http = client(k); this.authed = true; this.load(); }
+  },
+  methods: {
+    async enterGate() {
+      this.gateErr = '';
+      const k = this.keyInput.trim();
+      if (!k) { this.gateErr = '请输入密钥'; return; }
+      const h = client(k);
+      try {
+        const { data } = await h.get('/api/studio/works');
+        if (!data.isSuccess) throw new Error(data.resultMsg);
+        sessionStorage.setItem(SK, k);
+        this.http = h; this.authed = true;
+        this.works = data.resultData || [];
+      } catch (e) {
+        this.gateErr = e.response?.data?.resultMsg || e.message;
+      }
+    },
+    async load() {
+      const { data } = await this.http.get('/api/studio/works');
+      if (!data.isSuccess) throw new Error(data.resultMsg);
+      this.works = data.resultData || [];
+    },
+    async createWork() {
+      this.msg = ''; this.saving = true;
+      try {
+        const { data } = await this.http.post('/api/studio/works', this.form);
+        if (!data.isSuccess) throw new Error(data.resultMsg);
+        this.msg = '已创建：' + data.resultData.id;
+        this.msgErr = false;
+        this.form.id = ''; this.form.titleCn = '';
+        await this.load();
+      } catch (e) {
+        this.msg = e.response?.data?.resultMsg || e.message;
+        this.msgErr = true;
+      } finally { this.saving = false; }
+    }
+  }
+}).mount('#app');
+</script>
+</body>
+</html>

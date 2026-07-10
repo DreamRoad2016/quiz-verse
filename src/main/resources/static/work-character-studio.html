@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>角色录入 · Quiz Verse</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    :root { --bg:#0a0e14; --card:#141c28; --stroke:#2a3a52; --text:#e8eef8; --muted:#8fa3bf; --accent:#5c9cff; --ok:#69f0ae; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:var(--text); }
+    .layout { display:grid; grid-template-columns:280px 1fr; min-height:100vh; }
+    @media (max-width:800px) { .layout { grid-template-columns:1fr; } aside { border-right:none !important; border-bottom:1px solid var(--stroke); } }
+    aside { border-right:1px solid var(--stroke); padding:16px; background:#0d1219; }
+    main { padding:20px 22px 40px; }
+    h1 { font-size:1.2rem; margin:0 0 4px; }
+    .sub { color:var(--muted); font-size:.82rem; margin-bottom:16px; }
+    .sub a { color:#7eb8ff; }
+    input, select, textarea { width:100%; padding:9px 10px; border-radius:8px; border:1px solid var(--stroke); background:#0d1219; color:var(--text); font-size:.9rem; }
+    .btn { padding:8px 14px; border-radius:8px; border:1px solid var(--stroke); background:#1a2433; color:var(--text); cursor:pointer; font-weight:600; font-size:.85rem; }
+    .btn-primary { background:var(--accent); border-color:transparent; color:#fff; }
+    .btn-danger { background:rgba(255,80,80,.15); color:#ffb4b4; }
+    .btn-block { width:100%; margin-top:8px; text-align:center; }
+    .char-item { display:block; width:100%; text-align:left; padding:10px 12px; margin-bottom:6px; border-radius:8px; border:1px solid var(--stroke); background:var(--card); color:var(--text); cursor:pointer; }
+    .char-item.active { border-color:var(--accent); background:#1a2840; }
+    .char-item small { display:block; color:var(--muted); font-size:.75rem; margin-top:4px; }
+    .field { margin-bottom:16px; }
+    .field label { display:block; font-size:.8rem; color:var(--muted); margin-bottom:6px; }
+    .hint { font-size:.75rem; color:#6d849e; margin-top:4px; }
+    .checks { display:flex; flex-wrap:wrap; gap:8px 14px; }
+    .checks label { display:inline-flex; align-items:center; gap:6px; color:var(--text); font-size:.85rem; cursor:pointer; }
+    .checks input { width:auto; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .tag { background:#1e2d42; padding:4px 10px; border-radius:6px; font-size:.82rem; display:flex; gap:6px; align-items:center; }
+    .tag button { border:none; background:none; color:#ff8a8a; cursor:pointer; padding:0; }
+    .msg { padding:10px; border-radius:8px; margin-bottom:12px; font-size:.85rem; }
+    .msg.err { background:rgba(255,100,100,.12); color:#ffb4b4; }
+    .msg.ok { background:rgba(105,240,174,.1); color:#b9f6ca; }
+    .gate { max-width:400px; margin:80px auto; padding:24px; background:var(--card); border-radius:12px; border:1px solid var(--stroke); }
+    .row2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .toolbar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; align-items:center; }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div v-if="!authed" class="gate">
+    <h2>角色录入</h2>
+    <input type="password" v-model="keyInput" placeholder="X-Admin-Key" @keydown.enter="enterGate" />
+    <button class="btn btn-primary btn-block" @click="enterGate">进入</button>
+    <p v-if="gateErr" class="msg err">{{ gateErr }}</p>
+  </div>
+
+  <div v-else-if="!workId" class="gate">
+    <p>缺少参数 <code>workId</code></p>
+    <a class="btn btn-primary" href="/work-studio.html">返回影视剧列表</a>
+  </div>
+
+  <div v-else class="layout">
+    <aside>
+      <h1>{{ titleCn || workId }}</h1>
+      <p class="sub"><a href="/work-studio.html">← 影视剧列表</a></p>
+      <button class="btn btn-primary btn-block" @click="newCharacter">+ 新建角色</button>
+      <div style="margin-top:14px; max-height:70vh; overflow:auto;">
+        <button v-for="c in characters" :key="c.id" class="char-item" :class="{ active: editId === c.id }" @click="loadCharacter(c.id)">
+          {{ c.displayName }}
+          <small>{{ c.status }} · {{ c.isActive ? '已上架' : '未上架' }}</small>
+        </button>
+      </div>
+    </aside>
+
+    <main>
+      <p v-if="msg" class="msg" :class="msgErr ? 'err' : 'ok'">{{ msg }}</p>
+
+      <div v-if="!configLoaded" class="msg err">加载配置失败，请确认 config/works/{{ workId }}/fields.json 存在</div>
+
+      <template v-else>
+        <div class="toolbar">
+          <strong>{{ editId ? '编辑角色 #' + editId : '新建角色' }}</strong>
+          <button class="btn btn-primary" @click="save" :disabled="saving">保存</button>
+          <button v-if="editId" class="btn btn-danger" @click="remove">删除</button>
+        </div>
+
+        <div class="field">
+          <label>姓名（规范名）</label>
+          <input v-model="form.displayName" placeholder="甄嬛" />
+        </div>
+
+        <div class="field">
+          <label>称呼（别人怎么叫，不是位分）</label>
+          <input v-model="callNameInput" placeholder="输入后回车添加" @keydown.enter.prevent="addCallName" />
+          <div class="tags">
+            <span class="tag" v-for="(n,i) in form.callNames" :key="i">{{ n }}<button type="button" @click="form.callNames.splice(i,1)">×</button></span>
+          </div>
+        </div>
+
+        <div v-for="f in attrFields" :key="f.key" class="field">
+          <label>{{ f.label }} <span v-if="f.required" style="color:#ff8a8a">*</span></label>
+
+          <select v-if="f.selectMode === 'single' && f.refType !== 'character'" v-model="form.attrs[f.key]">
+            <option value="">— 请选择 —</option>
+            <template v-if="isPlotEnum(f.key)">
+              <option v-for="o in plotOptions(f.key)" :key="o.key" :value="o.key">{{ o.label }}</option>
+            </template>
+            <template v-else>
+              <option v-for="o in enumOptions(f.key)" :key="o" :value="o">{{ o }}</option>
+            </template>
+          </select>
+
+          <div v-else-if="f.refType === 'character'" class="checks">
+            <label v-for="c in otherCharacters" :key="c.id">
+              <input type="checkbox" :value="c.id" v-model="connectionIds" /> {{ c.displayName }}
+            </label>
+            <p v-if="!otherCharacters.length" class="hint">先保存其他角色后，再回来勾选关系网</p>
+          </div>
+
+          <div v-else class="checks">
+            <template v-if="isPlotEnum(f.key)">
+              <label v-for="o in plotOptions(f.key)" :key="o.key">
+                <input type="checkbox" :value="o.key" v-model="multiAttrs[f.key]" /> {{ o.label }}
+              </label>
+            </template>
+            <template v-else>
+              <label v-for="o in enumOptions(f.key)" :key="o">
+                <input type="checkbox" :value="o" v-model="multiAttrs[f.key]" /> {{ o }}
+              </label>
+            </template>
+          </div>
+          <p v-if="f.hint" class="hint">{{ f.hint }}</p>
+        </div>
+
+        <div class="row2 field">
+          <div>
+            <label>录入状态</label>
+            <select v-model="form.status">
+              <option value="draft">draft 录入中</option>
+              <option value="ready">ready 可猜</option>
+            </select>
+          </div>
+          <div>
+            <label>上架猜局题库</label>
+            <select v-model="form.isActive">
+              <option :value="false">否</option>
+              <option :value="true">是（须 ready）</option>
+            </select>
+          </div>
+        </div>
+      </template>
+    </main>
+  </div>
+</div>
+<script>
+const HDR = 'X-Admin-Key';
+const SK = 'quizAdminDataKey';
+const { createApp } = Vue;
+
+function client(key) {
+  const h = axios.create();
+  h.interceptors.request.use(c => { c.headers[HDR] = key; return c; });
+  return h;
+}
+
+function qp(name) {
+  return new URLSearchParams(location.search).get(name) || '';
+}
+
+createApp({
+  data() {
+    return {
+      authed: false, keyInput: '', gateErr: '', http: null,
+      workId: qp('workId'), titleCn: '', configLoaded: false,
+      fieldDef: null, enums: {},
+      characters: [], editId: null,
+      form: { displayName: '', callNames: [], attrs: {}, status: 'draft', isActive: false },
+      multiAttrs: {}, connectionIds: [], callNameInput: '',
+      msg: '', msgErr: false, saving: false
+    };
+  },
+  computed: {
+    attrFields() {
+      return (this.fieldDef && this.fieldDef.attrs) ? this.fieldDef.attrs : [];
+    },
+    otherCharacters() {
+      return this.characters.filter(c => c.id !== this.editId);
+    }
+  },
+  mounted() {
+    const k = sessionStorage.getItem(SK);
+    if (k) { this.http = client(k); this.authed = true; this.bootstrap(); }
+  },
+  methods: {
+    async enterGate() {
+      const k = this.keyInput.trim();
+      const h = client(k);
+      try {
+        const { data } = await h.get('/api/studio/works');
+        if (!data.isSuccess) throw new Error(data.resultMsg);
+        sessionStorage.setItem(SK, k);
+        this.http = h; this.authed = true;
+        await this.bootstrap();
+      } catch (e) {
+        this.gateErr = e.response?.data?.resultMsg || e.message;
+      }
+    },
+    async bootstrap() {
+      if (!this.workId) return;
+      await Promise.all([this.loadConfig(), this.loadCharacters()]);
+    },
+    async loadConfig() {
+      const { data } = await this.http.get('/api/studio/works/' + encodeURIComponent(this.workId) + '/config');
+      if (!data.isSuccess) throw new Error(data.resultMsg);
+      this.titleCn = data.resultData.titleCn;
+      this.fieldDef = data.resultData.fields;
+      this.enums = data.resultData.enums || {};
+      this.configLoaded = true;
+      this.initMultiAttrs();
+    },
+    async loadCharacters() {
+      const { data } = await this.http.get('/api/studio/works/' + encodeURIComponent(this.workId) + '/characters');
+      if (!data.isSuccess) throw new Error(data.resultMsg);
+      this.characters = data.resultData || [];
+    },
+    initMultiAttrs() {
+      const m = {};
+      this.attrFields.forEach(f => {
+        if (f.selectMode === 'multi' && f.refType !== 'character') m[f.key] = [];
+      });
+      this.multiAttrs = m;
+    },
+    isPlotEnum(key) {
+      const arr = this.enums[key];
+      return Array.isArray(arr) && arr.length && arr[0] && typeof arr[0] === 'object' && arr[0].key;
+    },
+    enumOptions(key) {
+      return this.enums[key] || [];
+    },
+    plotOptions(key) {
+      return this.enums[key] || [];
+    },
+    newCharacter() {
+      this.editId = null;
+      this.form = { displayName: '', callNames: [], attrs: {}, status: 'draft', isActive: false };
+      this.connectionIds = [];
+      this.initMultiAttrs();
+      this.msg = '';
+    },
+    async loadCharacter(id) {
+      this.msg = '';
+      const { data } = await this.http.get('/api/studio/works/' + encodeURIComponent(this.workId) + '/characters/' + id);
+      if (!data.isSuccess) { this.msg = data.resultMsg; this.msgErr = true; return; }
+      const row = data.resultData;
+      this.editId = row.id;
+      this.form = {
+        displayName: row.displayName,
+        callNames: [...(row.callNames || [])],
+        attrs: { ...(row.attrs || {}) },
+        status: row.status || 'draft',
+        isActive: !!row.isActive
+      };
+      this.initMultiAttrs();
+      this.attrFields.forEach(f => {
+        if (f.selectMode === 'multi' && f.refType !== 'character') {
+          const v = row.attrs && row.attrs[f.key];
+          this.multiAttrs[f.key] = Array.isArray(v) ? [...v] : [];
+        }
+      });
+      const conn = row.attrs && row.attrs.connections;
+      this.connectionIds = Array.isArray(conn) ? conn.map(Number) : [];
+    },
+    addCallName() {
+      const t = this.callNameInput.trim();
+      if (!t) return;
+      if (!this.form.callNames.includes(t)) this.form.callNames.push(t);
+      this.callNameInput = '';
+    },
+    buildPayload() {
+      const attrs = { ...this.form.attrs };
+      this.attrFields.forEach(f => {
+        if (f.refType === 'character') {
+          attrs.connections = this.connectionIds.map(Number);
+        } else if (f.selectMode === 'multi') {
+          attrs[f.key] = [...(this.multiAttrs[f.key] || [])];
+        } else if (f.selectMode === 'single') {
+          if (attrs[f.key] === '' || attrs[f.key] == null) delete attrs[f.key];
+        }
+      });
+      return {
+        displayName: this.form.displayName,
+        callNames: this.form.callNames,
+        attrs,
+        status: this.form.status,
+        isActive: this.form.isActive
+      };
+    },
+    async save() {
+      this.saving = true; this.msg = '';
+      const body = this.buildPayload();
+      try {
+        let data;
+        if (this.editId) {
+          ({ data } = await this.http.put('/api/studio/works/' + encodeURIComponent(this.workId) + '/characters/' + this.editId, body));
+        } else {
+          ({ data } = await this.http.post('/api/studio/works/' + encodeURIComponent(this.workId) + '/characters', body));
+        }
+        if (!data.isSuccess) throw new Error(data.resultMsg);
+        this.msg = '已保存'; this.msgErr = false;
+        this.editId = data.resultData.id;
+        await this.loadCharacters();
+      } catch (e) {
+        this.msg = e.response?.data?.resultMsg || e.message;
+        this.msgErr = true;
+      } finally { this.saving = false; }
+    },
+    async remove() {
+      if (!this.editId || !confirm('确定删除该角色？')) return;
+      const { data } = await this.http.delete('/api/studio/works/' + encodeURIComponent(this.workId) + '/characters/' + this.editId);
+      if (!data.isSuccess) { this.msg = data.resultMsg; this.msgErr = true; return; }
+      this.newCharacter();
+      await this.loadCharacters();
+      this.msg = '已删除'; this.msgErr = false;
+    }
+  }
+}).mount('#app');
+</script>
+</body>
+</html>

@@ -14,6 +14,9 @@ quiz:
     api-key: ${QUIZ_ADMIN_API_KEY:QV-DEV-LOLDATA-9f3c1e8b}
     tables:
       - demo_lol_player
+      - work
+      - work_column
+      - work_character
 
 server:
   port: 8098
