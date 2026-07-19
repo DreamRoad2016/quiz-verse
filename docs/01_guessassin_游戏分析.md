@@ -1,6 +1,7 @@
 # 1. 标杆游戏分析：guessassin.xyz / Guess the Pro
 
-> 调研日期：2026-04-29，URL：https://guessassin.xyz/#/game
+> 调研日期：2026-04-29，URL：https://guessassin.xyz/#/game  
+> 本文为标杆调研，**不代表本仓库实现**（我们不做客户端比对，见 ADR-002）。
 
 ## 1.1 一图概览
 

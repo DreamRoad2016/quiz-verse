@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Local run helper — prefers Corretto 17 under ~/.jdks, then java_home -v 17
+# Run with JDK 17: uses JAVA_HOME if set, else ~/.jdks Corretto 17, else java_home -v 17
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")" && pwd)"
 if [[ -z "${JAVA_HOME:-}" || ! -x "${JAVA_HOME}/bin/java" ]]; then
@@ -8,8 +8,7 @@ if [[ -z "${JAVA_HOME:-}" || ! -x "${JAVA_HOME}/bin/java" ]]; then
   elif /usr/libexec/java_home -v 17 >/dev/null 2>&1; then
     export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
   else
-    echo "需要 JDK 17。请安装 Amazon Corretto 17，或确认存在:" >&2
-    echo "  ${HOME}/.jdks/amazon-corretto-17.jdk/Contents/Home" >&2
+    echo "需要 JDK 17。请设置 JAVA_HOME，或安装 Corretto/Temurin 17。" >&2
     exit 1
   fi
 fi
