@@ -1,50 +1,30 @@
-# =============================================================================
-# Quiz Verse — 本地默认配置
-# =============================================================================
-# Redis：本机安装并启动（默认 127.0.0.1:6379，无密码）
-#   macOS: brew install redis && brew services start redis
-#   Docker: docker run -d --name quiz-verse-redis -p 6379:6379 redis:7-alpine
-#
-# PostgreSQL：captain 只读业务表（建表/导入仍用你的高权限账号执行脚本）
-# =============================================================================
-
-# 数据管理 API（请求头 X-Admin-Key）。表名白名单：仅列出的表可被通用 CRUD/导入导出。
-quiz:
-  admin:
-    api-key: ${QUIZ_ADMIN_API_KEY:QV-DEV-LOLDATA-9f3c1e8b}
-    tables:
-      - demo_lol_player
-      - work
-      - work_column
-      - work_character
+# Quiz Verse — local defaults
+# Match store: memory (default, no Redis needed) | redis
+# Packs: classpath:/packs  and optional file override via quiz.packs.extra-dir
 
 server:
   port: 8098
-  # 需要双端口时取消下行注释，并启用 TomcatHttpConfig（额外 HTTP 端口）：
-  # http-port: 8099
 
 spring:
   application:
     name: quiz-verse
-  datasource:
-    url: jdbc:postgresql://${PGHOST:127.0.0.1}:${PGPORT:5432}/${PGDATABASE:quiz_verse}
-    username: ${PGUSER:captain}
-    password: ${PGPASSWORD:123456}
-    driver-class-name: org.postgresql.Driver
-  jdbc:
-    template:
-      query-timeout: 10
-  web:
-    resources:
-      static-locations: classpath:/static/
-  redis:
-    host: ${REDIS_HOST:127.0.0.1}
-    port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:}
-    database: ${REDIS_DATABASE:0}
-    timeout: 3000ms
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DATABASE:0}
+      timeout: 3s
+
+quiz:
+  match:
+    store: ${QUIZ_MATCH_STORE:memory}
+    ttl-hours: 24
+  packs:
+    classpath-location: classpath:/packs
+    # Optional absolute/relative dir for local pack overrides (empty = skip)
+    extra-dir: ${QUIZ_PACKS_DIR:}
+
+logging:
+  level:
+    net.quizverse: INFO

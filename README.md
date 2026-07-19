@@ -1,104 +1,99 @@
 # Quiz Verse
 
-「猜人物」类玩法后端（产品规划与数据模型见 `person_memory/guess_all/`）。当前仓库仍保留 **10×10 方格猜飞机** 的完整 Demo（**Spring Boot + Redis**）；**PostgreSQL** 侧已提供 **LoL 选手 Demo 表 + 281 条导入数据**，装好库并执行脚本即可；应用内 JDBC 读写下一步再接。
+猜人物题包引擎。内容以 **pack（题包）** 为单元：`pack.yaml` + `schema.yaml` + `entities.json`，服务端加载并比对，客户端只拿 brief（id / 姓名 / 别名）。
 
 ## 技术栈
 
 | 组件 | 说明 |
 |------|------|
-| Java 8 | 与 `pom.xml` 一致，后续可升级 |
-| Spring Boot 2.6.8 | Web + Redis |
-| Redis | 对局 / 会话（猜飞机逻辑依赖） |
-| PostgreSQL | 已接 JDBC（captain 读 `demo_lol_player`） |
+| Java 17 | Amazon Corretto / Temurin 均可（免费 OpenJDK） |
+| Spring Boot 3.3 | Web |
+| Redis（可选） | 对局状态；默认内存存储，无需 Redis 即可本地跑 |
+| 题包 | classpath `src/main/resources/packs/` |
 
-## 目录结构
+## 题包
+
+| ID | 说明 |
+|----|------|
+| `lol_cn_kr` | Demo：LoL 中韩选手（约 281 人） |
+| `zhenhuan_2011` | 正式：甄嬛传人物 |
+
+目录约定：
 
 ```
-quiz-verse/
-├── pom.xml
-├── Dockerfile.dev
-├── README.md
-├── db/                     # PostgreSQL 建表脚本（Demo 选手表）
-├── scripts/
-│   ├── data/
-│   │   └── lol-players-cn-kr.json   # 抓包/下载的 CN_KR 题库（281 条）
-│   ├── import_lol_players.py        # 导入 PG
-│   └── requirements.txt
-└── src/main/
-    ├── java/net/qihoo/guessthepattern/
-    │   ├── GuessThePatternApplication.java   # 启动类（包名历史遗留）
-    │   ├── config/                           # Web、CORS、Knife4j、Tomcat（可选双端口）
-    │   ├── web/                              # GameController、UserController
-    │   ├── service/ model/ dto/ …
-    └── resources/
-        ├── application.yml                   # 默认本机 Redis + 端口 8098
-        └── static/
-            ├── index.html                   # 竞猜宇宙首页
-            ├── guess-lol.html               # 英雄联盟选手猜谜页
-            └── plane.html                   # 小游戏 · 猜飞机（入口在首页页脚）
+packs/{packId}/
+  pack.yaml       # id / title / maxGuesses
+  schema.yaml     # 比对列：identity | exact | set | number
+  entities.json   # [{ id, name, aliases, attrs }]
 ```
-
-**接口文档**：启动后打开 **http://localhost:8098/doc.html**
-
-**猜选手单人 Demo 页面**：**http://localhost:8098/guess-lol.html**  
-接口：`GET /api/lol-guess/start`、`GET /api/lol-guess/guess?matchId=&playerId=`（`playerId` 为题库 UUID）。
 
 ## 本地运行
 
-### 1. Redis
+本项目需要 **JDK 17**（不要用 1.8，也不要用 26）。若本机尚未安装，可用已下载的 Corretto 17：
+
+`/Users/captain/.jdks/amazon-corretto-17.jdk/Contents/Home`
+
+### 命令行（推荐）
 
 ```bash
-# macOS
-brew install redis
-brew services start redis
-
-# 或 Docker
-docker run -d --name quiz-verse-redis -p 6379:6379 redis:7-alpine
-```
-
-### 2. 启动
-
-```bash
+./run.sh
+# 或手动：
+export JAVA_HOME=$HOME/.jdks/amazon-corretto-17.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:$PATH"
 mvn spring-boot:run
-# 若已修复 Maven Wrapper：./mvnw spring-boot:run
 ```
 
-浏览器：**http://localhost:8098/**（竞猜宇宙首页）  
-猜选手：**http://localhost:8098/guess-lol.html**  
-猜飞机（角落入口）：**http://localhost:8098/plane.html**  
-健康检查：`GET http://localhost:8098/game/hello`
+### IntelliJ IDEA 绑定 JDK 17
 
-### 3. 自定义 Redis（可选）
+1. **File → Project Structure → Project**
+2. **SDK** → **Add SDK → JDK…**
+3. 选目录：`$HOME/.jdks/amazon-corretto-17.jdk/Contents/Home`
+4. 名称建议填 `corretto-17`，Language level 选 **17**
+5. **Apply** 后重新打开 Maven 工具窗口，点 Reload，再 Run `QuizVerseApplication`
+
+若弹窗只列出 1.8 / 26：点 **Add JDK**，不要选已有的 8 或 26。
+
+- 首页：http://localhost:8098/
+- 健康检查：http://localhost:8098/api/health
+- LoL：http://localhost:8098/guess.html?pack=lol_cn_kr
+- 甄嬛传：http://localhost:8098/guess.html?pack=zhenhuan_2011
+
+### 对局存储
+
+默认内存（重启丢对局）：
 
 ```bash
-export REDIS_HOST=127.0.0.1
-export REDIS_PORT=6379
-export REDIS_PASSWORD=
-export REDIS_DATABASE=0
-./mvnw spring-boot:run
+# application.yml 默认 quiz.match.store=memory
 ```
 
-## 与旧 Demo 的差异
+改用 Redis：
 
-- 已去掉原 `application.yml` 中的**内网 Redis 地址与密码**。
-- 默认 **单端口 8098**；需要双端口时在 `application.yml` 增加 `server.http-port`。
-- Maven `artifactId` 为 **quiz-verse**，打包：`target/quiz-verse-0.0.1-SNAPSHOT.jar`。
+```bash
+brew install redis && brew services start redis
+export QUIZ_MATCH_STORE=redis
+mvn spring-boot:run
+```
 
-## PostgreSQL：Demo 选手数据（猜人物流程验证）
+## API
 
-已抓取 **guessassin.xyz** 公开接口 `GET /api/players/CN_KR` 的完整 JSON（**281** 条中韩赛区选手），用于在本地走通「**库里有题 → 后端读库 → 比对逻辑**」，与最终「历史人物 / 明星」题库无关，仅作技术占位。
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| GET | `/api/packs` | 题包列表 |
+| GET | `/api/packs/{id}/briefs` | 联想用 brief（无 attrs） |
+| POST | `/api/matches` | body `{ "packId" }` 开局 |
+| POST | `/api/matches/{id}/guess` | body `{ "entityId" }` 猜测 |
 
-| 步骤 | 说明 |
-|------|------|
-| 数据文件 | `scripts/data/lol-players-cn-kr.json` |
-| 建表 | `db/demo_lol_schema.sql` → 表 `demo_lol_player` |
-| 导入 | `python3 scripts/import_lol_players.py`（依赖见 `scripts/requirements.txt`） |
-| 详细命令 | 见 **`db/README.md`** |
+## 备份与旧代码
 
-**合规**：数据仅供本机开发自测，勿对外分发或商用。
+重写前完整备份：
 
-### 接 Spring Boot（下一步）
+- 本地目录：`../quiz-verse-legacy`
+- Git：分支 `archive/pre-rewrite`，标签 `archive/pre-rewrite-2026-07`
 
-1. `pom.xml` 增加 `spring-boot-starter-jdbc` + `org.postgresql:postgresql`。  
-2. `application.yml` 增加 `spring.datasource.url/username/password`。  
-3. 写 `JdbcTemplate` 或 Repository 读 `demo_lol_player`，实现「开一局 / 猜一次 / 返回绿黄灰」API。
+产品规划仍见 `docs/`。
+
+## 测试
+
+```bash
+mvn test
+```

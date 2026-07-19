@@ -1,0 +1,8 @@
+id: zhenhuan_2011
+title: 甄嬛传
+description: 第一个正式题包。猜《甄嬛传》人物；称呼仅用于联想，位分参与比对。
+maxGuesses: 8
+kind: official
+tags:
+  - drama
+  - zhenhuan

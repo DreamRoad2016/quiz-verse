@@ -1,0 +1,8 @@
+id: lol_cn_kr
+title: 英雄联盟职业选手（中韩）
+description: Demo 题包。数据来自公开接口，仅本地玩法验证，勿商用。
+maxGuesses: 8
+kind: demo
+tags:
+  - lol
+  - esports

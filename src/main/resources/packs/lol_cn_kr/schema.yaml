@@ -1,0 +1,59 @@
+columns:
+  - key: name
+    label: 选手
+    type: identity
+  - key: age
+    label: 年龄
+    type: number
+    attr: age
+    nearThreshold: 3
+  - key: region
+    label: 赛区
+    type: exact
+    attr: region
+  - key: team
+    label: 当前战队
+    type: exact
+    attr: currentTeam
+  - key: histTeams
+    label: 历史战队
+    type: set
+    attr: historicalTeams
+  - key: leagues
+    label: 联赛经历
+    type: set
+    attr: identityRegions
+  - key: positions
+    label: 位置
+    type: set
+    attr: positions
+  - key: birthplace
+    label: 出生地
+    type: exact
+    attr: birthplace
+  - key: champions
+    label: 擅长英雄
+    type: set
+    attr: champions
+  - key: status
+    label: 状态
+    type: exact
+    attr: status
+    enumRef: status
+  - key: worlds
+    label: 世界赛
+    type: number
+    attr: worldsCount
+    nearThreshold: 1
+  - key: champs
+    label: 冠军数
+    type: number
+    attr: championshipsCount
+    nearThreshold: 0
+
+enums:
+  status:
+    - key: Active
+      label: 现役
+    - key: Retired
+      label: 退役
