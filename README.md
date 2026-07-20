@@ -19,7 +19,7 @@
 | ID | 说明 |
 |----|------|
 | `lol_cn_kr` | Demo：LoL 中韩选手 |
-| `zhenhuan_2011` | 正式：甄嬛传人物 |
+| `zhenhuan_2011` | 正式：甄嬛传具名人物 |
 
 ```
 packs/{packId}/

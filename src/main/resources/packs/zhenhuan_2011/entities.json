@@ -2,144 +2,318 @@
   {
     "id": "zh_huan",
     "name": "甄嬛",
-    "aliases": ["嬛嬛", "莞莞", "熹贵妃", "圣母皇太后"],
+    "aliases": [
+      "嬛嬛",
+      "莞莞",
+      "熹贵妃",
+      "圣母皇太后"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["常在", "贵人", "嫔", "妃", "贵妃", "皇贵妃", "太后"],
-      "residences": ["碎玉轩", "永寿宫"],
-      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "dixue_qinzi", "huafei_ci_si"],
-      "connections": ["zh_yixiu", "zh_huafei", "zh_meizhuang", "zh_lingrong", "zh_emperor"]
+      "titles": [
+        "常在",
+        "贵人",
+        "嫔",
+        "妃",
+        "贵妃",
+        "皇贵妃",
+        "太后"
+      ],
+      "residences": [
+        "碎玉轩",
+        "永寿宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "dixue_qinzi",
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_yixiu",
+        "zh_huafei",
+        "zh_meizhuang",
+        "zh_lingrong",
+        "zh_emperor"
+      ]
     }
   },
   {
     "id": "zh_yixiu",
     "name": "乌拉那拉·宜修",
-    "aliases": ["皇后", "宜修"],
+    "aliases": [
+      "皇后",
+      "宜修"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["皇后"],
-      "residences": ["景仁宫"],
-      "major_plots": ["taihou_jiangshi", "dixue_qinzi"],
-      "connections": ["zh_emperor", "zh_huan", "zh_anlingrong"]
+      "titles": [
+        "皇后"
+      ],
+      "residences": [
+        "景仁宫"
+      ],
+      "major_plots": [
+        "taihou_jiangshi",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan",
+        "zh_anlingrong"
+      ]
     }
   },
   {
     "id": "zh_huafei",
     "name": "年世兰",
-    "aliases": ["华妃", "年妃"],
+    "aliases": [
+      "华妃",
+      "年妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["妃", "贵妃"],
-      "residences": ["翊坤宫"],
-      "major_plots": ["huafei_ci_si", "jinghong_wu"],
-      "connections": ["zh_emperor", "zh_huan", "zh_cailin"]
+      "titles": [
+        "妃",
+        "贵妃"
+      ],
+      "residences": [
+        "翊坤宫"
+      ],
+      "major_plots": [
+        "huafei_ci_si",
+        "jinghong_wu"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan",
+        "zh_cailin"
+      ]
     }
   },
   {
     "id": "zh_anlingrong",
     "name": "安陵容",
-    "aliases": ["陵容", "譙婉嫔"],
+    "aliases": [
+      "陵容",
+      "譙婉嫔"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["答应", "常在", "贵人", "嫔"],
-      "residences": ["咸福宫"],
-      "major_plots": ["chuxuan_dianxuan", "jinghong_wu"],
-      "connections": ["zh_huan", "zh_yixiu", "zh_meizhuang"]
+      "titles": [
+        "答应",
+        "常在",
+        "贵人",
+        "嫔"
+      ],
+      "residences": [
+        "咸福宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_yixiu",
+        "zh_meizhuang"
+      ]
     }
   },
   {
     "id": "zh_meizhuang",
     "name": "沈眉庄",
-    "aliases": ["眉庄", "惠贵妃"],
+    "aliases": [
+      "眉庄",
+      "惠贵妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["贵人", "嫔", "妃", "贵妃"],
-      "residences": ["碎玉轩", "咸福宫"],
-      "major_plots": ["chuxuan_dianxuan", "dixue_qinzi"],
-      "connections": ["zh_huan", "zh_anlingrong", "zh_emperor"]
+      "titles": [
+        "贵人",
+        "嫔",
+        "妃",
+        "贵妃"
+      ],
+      "residences": [
+        "碎玉轩",
+        "咸福宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_anlingrong",
+        "zh_emperor"
+      ]
     }
   },
   {
     "id": "zh_lingrong",
     "name": "叶澜依",
-    "aliases": ["浣碧", "杨妃"],
+    "aliases": [
+      "浣碧",
+      "杨妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["宫女", "答应", "常在", "贵人", "嫔", "妃"],
-      "residences": ["碎玉轩", "延禧宫"],
-      "major_plots": ["dixue_qinzi"],
-      "connections": ["zh_huan", "zh_emperor"]
+      "titles": [
+        "宫女",
+        "答应",
+        "常在",
+        "贵人",
+        "嫔",
+        "妃"
+      ],
+      "residences": [
+        "碎玉轩",
+        "延禧宫"
+      ],
+      "major_plots": [
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_emperor"
+      ]
     }
   },
   {
     "id": "zh_emperor",
     "name": "爱新觉罗·胤禛",
-    "aliases": ["皇上", "四爷", "雍正"],
+    "aliases": [
+      "皇上",
+      "四爷",
+      "雍正"
+    ],
     "attrs": {
       "gender": "男",
       "role_type": "皇族",
-      "titles": ["皇帝"],
-      "residences": ["养心殿", "乾清宫"],
-      "major_plots": ["jinghong_wu", "dixue_qinzi", "huafei_ci_si", "taihou_jiangshi"],
-      "connections": ["zh_huan", "zh_yixiu", "zh_huafei", "zh_meizhuang"]
+      "titles": [
+        "皇帝"
+      ],
+      "residences": [
+        "养心殿",
+        "乾清宫"
+      ],
+      "major_plots": [
+        "jinghong_wu",
+        "dixue_qinzi",
+        "huafei_ci_si",
+        "taihou_jiangshi"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_yixiu",
+        "zh_huafei",
+        "zh_meizhuang"
+      ]
     }
   },
   {
     "id": "zh_taihou",
     "name": "乌雅氏",
-    "aliases": ["太后", "德妃"],
+    "aliases": [
+      "太后",
+      "德妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "皇族",
-      "titles": ["太后"],
-      "residences": ["寿康宫"],
-      "major_plots": ["taihou_jiangshi"],
-      "connections": ["zh_emperor", "zh_yixiu", "zh_huan"]
+      "titles": [
+        "太后"
+      ],
+      "residences": [
+        "寿康宫"
+      ],
+      "major_plots": [
+        "taihou_jiangshi"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_yixiu",
+        "zh_huan"
+      ]
     }
   },
   {
     "id": "zh_cailin",
     "name": "曹贵人",
-    "aliases": ["曹琴模", "襄嫔"],
+    "aliases": [
+      "曹琴模",
+      "襄嫔"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["贵人", "嫔"],
-      "residences": ["储秀宫"],
-      "major_plots": ["huafei_ci_si"],
-      "connections": ["zh_huafei", "zh_emperor"]
+      "titles": [
+        "贵人",
+        "嫔"
+      ],
+      "residences": [
+        "储秀宫"
+      ],
+      "major_plots": [
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_huafei",
+        "zh_emperor"
+      ]
     }
   },
   {
     "id": "zh_wenyi",
     "name": "富察·温宜",
-    "aliases": ["温宜公主"],
+    "aliases": [
+      "温宜公主"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "皇族",
-      "titles": ["公主"],
-      "residences": ["景仁宫"],
+      "titles": [
+        "公主"
+      ],
+      "residences": [
+        "景仁宫"
+      ],
       "major_plots": [],
-      "connections": ["zh_yixiu", "zh_emperor"]
+      "connections": [
+        "zh_yixiu",
+        "zh_emperor"
+      ]
     }
   },
   {
     "id": "zh_sun",
     "name": "苏培盛",
-    "aliases": ["苏公公"],
+    "aliases": [
+      "苏公公"
+    ],
     "attrs": {
       "gender": "男",
       "role_type": "太监",
-      "titles": ["总管太监"],
-      "residences": ["养心殿"],
-      "major_plots": ["huafei_ci_si"],
-      "connections": ["zh_emperor", "zh_huan"]
+      "titles": [
+        "总管太监"
+      ],
+      "residences": [
+        "养心殿"
+      ],
+      "major_plots": [
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -149,10 +323,2187 @@
     "attrs": {
       "gender": "女",
       "role_type": "宫女",
-      "titles": ["宫女"],
-      "residences": ["景仁宫"],
-      "major_plots": ["dixue_qinzi"],
-      "connections": ["zh_yixiu"]
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "景仁宫"
+      ],
+      "major_plots": [
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_yixiu"
+      ]
+    }
+  },
+  {
+    "id": "zh_8ea40b5a40",
+    "name": "允礼",
+    "aliases": [
+      "果郡王",
+      "果亲王"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "亲王"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_67dc611108",
+    "name": "温实初",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_b0ba6f96e0",
+    "name": "浣碧",
+    "aliases": [
+      "玉隐",
+      "钮祜禄·玉隐"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "碎玉轩"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_3df91796bf",
+    "name": "崔槿汐",
+    "aliases": [
+      "槿汐"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "碎玉轩"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_86d513da6f",
+    "name": "流朱",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "碎玉轩"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_512f69fe45",
+    "name": "纯元皇后",
+    "aliases": [
+      "菀菀",
+      "纯元"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "皇后"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_71a108b893",
+    "name": "端妃",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_13cb24f8de",
+    "name": "敬嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9e5a293f59",
+    "name": "齐妃",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_14cf63048e",
+    "name": "文鸳",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_8307179eca",
+    "name": "淳常在",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_7188e88339",
+    "name": "欣嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_5429a4fd98",
+    "name": "夏冬春",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "妃",
+        "嫔",
+        "常在",
+        "皇后"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_83d2cb12b2",
+    "name": "富察贵人",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "妃",
+        "嫔",
+        "贵人",
+        "皇后"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_53131e3b5d",
+    "name": "丽嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_6379950406",
+    "name": "采苹",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d056ff3562",
+    "name": "余莺儿",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_0d76f13422",
+    "name": "乔颂芝",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_5d7fd18aaa",
+    "name": "康常在",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_2f3292950e",
+    "name": "贞嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "妃",
+        "嫔",
+        "常在"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_3baaba2ab6",
+    "name": "芳贵人",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "妃",
+        "嫔",
+        "贵人"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d1bf747aa4",
+    "name": "孙答应",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "答应"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_0a032af47f",
+    "name": "舒太妃",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_5eb0e7cfcf",
+    "name": "孟静娴",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_ae007510bb",
+    "name": "允䄉",
+    "aliases": [
+      "敦亲王"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_7131980818",
+    "name": "敦亲王福晋博尔济吉特氏",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "亲王"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_a40fecff53",
+    "name": "允祺",
+    "aliases": [
+      "恒亲王"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_b3d8ebbab4",
+    "name": "允禧",
+    "aliases": [
+      "慎郡王",
+      "慎贝勒"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_3fa1a595fa",
+    "name": "甄玉娆",
+    "aliases": [
+      "玉娆"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_f571cd3606",
+    "name": "弘时",
+    "aliases": [
+      "三阿哥"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_199d80aa8e",
+    "name": "弘历",
+    "aliases": [
+      "四阿哥",
+      "乾隆"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_dd02e24d3c",
+    "name": "五阿哥",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_44b2dd7cad",
+    "name": "富察氏",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_142930c729",
+    "name": "青樱",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_acb1059c4e",
+    "name": "弘曕",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_4d8d8bd03c",
+    "name": "朝瑰公主",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "公主"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_87ded88d14",
+    "name": "胧月公主",
+    "aliases": [
+      "绾绾",
+      "胧月"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "公主"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d017fff900",
+    "name": "灵犀公主",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "公主"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_37edf9f73c",
+    "name": "静和公主",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_c3748bfbca",
+    "name": "元澈",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d863823605",
+    "name": "花穗",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_e6486e327c",
+    "name": "斐雯",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_2326d3ee3c",
+    "name": "玢儿",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_129a88f6f4",
+    "name": "宝鹃",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d162b039bb",
+    "name": "宝鹊",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_a69c5195f9",
+    "name": "菊青",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_07ae41ba93",
+    "name": "吉祥",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_440837f40e",
+    "name": "孙竹息",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_32cef4348f",
+    "name": "春貌",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_a0dab2ebd5",
+    "name": "芳若",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "甘露寺"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_8d09080de0",
+    "name": "福子",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_da60579dc3",
+    "name": "佩儿",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_feaa4fc314",
+    "name": "绘春",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9797959142",
+    "name": "翠果",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_771ced7ef8",
+    "name": "刘嬷嬷",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "嬷嬷",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_f57c4bdda4",
+    "name": "品儿",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_4fe70ef113",
+    "name": "雨儿",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_4080e93a4e",
+    "name": "灵芝",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_35ab8f4a21",
+    "name": "采月",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_0100352321",
+    "name": "采星",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_a55d8c2fae",
+    "name": "茯苓",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_b2a637b8bf",
+    "name": "采蓝",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_13c4c84c25",
+    "name": "如意",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_2c7bb4de70",
+    "name": "含珠",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_1765985cd6",
+    "name": "音袖",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_4304411b6c",
+    "name": "桑儿",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_6e595d03bd",
+    "name": "阿绿",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_dfe8efc696",
+    "name": "张嬷嬷",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "嬷嬷",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d36193e84e",
+    "name": "积云",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_287bdf902a",
+    "name": "景泰",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_10b6b26c98",
+    "name": "精奇嬷嬷",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "嬷嬷",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_4edb8b2a18",
+    "name": "小允子",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_0b53e96b4b",
+    "name": "黄规全",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_dfa08f33dc",
+    "name": "姜忠敏",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_96ea96fb04",
+    "name": "苟总管",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_a33c160510",
+    "name": "梁多瑞",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_3ff05486fb",
+    "name": "卫临",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9fe3531968",
+    "name": "章弥",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_cbd9a6c985",
+    "name": "江诚",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_3d87067fba",
+    "name": "江慎",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_1ae920e097",
+    "name": "刘畚",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_bb6f403a52",
+    "name": "许太医",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_b064066518",
+    "name": "江福海",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_5d29b6b4ad",
+    "name": "周宁海",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_4ddc4b0a8c",
+    "name": "肃喜",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9d6ffdee60",
+    "name": "康禄海",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_23f07d5192",
+    "name": "小印子",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_ae5397e87d",
+    "name": "小荷子",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_b58595b530",
+    "name": "小卫子",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_0113a7770f",
+    "name": "阿晋",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_14b6c8e372",
+    "name": "夏刈",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_ec90ed3875",
+    "name": "季惟生",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d6f0f1a45f",
+    "name": "小厦子",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_35cc82b6ca",
+    "name": "徐进良",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": [
+        "太监"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9ed81c3cc8",
+    "name": "甄远道",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_413502799d",
+    "name": "隆科多",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_1f41264e10",
+    "name": "鄂敏",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_6e7d616a56",
+    "name": "年羹尧",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_8c4c34a952",
+    "name": "年斌",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_5cf5a5306e",
+    "name": "年富",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9db0338b46",
+    "name": "年兴",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_87c4dac1a2",
+    "name": "张廷玉",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_ab94e0bf56",
+    "name": "赵之垣",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_6f75b71a2e",
+    "name": "沈自山",
+    "aliases": [
+      "沈协领",
+      "眉庄之父"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_881f62cce2",
+    "name": "安比槐",
+    "aliases": [
+      "安县丞",
+      "陵容之父"
+    ],
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": [
+        "大臣"
+      ],
+      "residences": [
+        "宫外"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_19ca12b134",
+    "name": "甄母",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_5da0cd95eb",
+    "name": "静岸",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_85bff913d5",
+    "name": "静白",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_da5e31ee6f",
+    "name": "莫言",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": [
+        "太医"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_8e7c23c3c5",
+    "name": "摩格",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_8a079a02e0",
+    "name": "刘莲子",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_847fd235cc",
+    "name": "孙妙青",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "皇族"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_87dbac743e",
+    "name": "敬妃",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "妃"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_e96b000ae0",
+    "name": "襄嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "嫔"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_fceaa7782e",
+    "name": "祺嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "嫔"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_ce1964a40d",
+    "name": "淳贵人",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "贵人"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_55f79cdb9f",
+    "name": "宁嫔",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "嫔"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_3c0b3d4f92",
+    "name": "夏常在",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "常在"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_b050d0f9cc",
+    "name": "瑛贵人",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "贵人"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_0a5ce38ee0",
+    "name": "余答应",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "答应"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_556c6e1e08",
+    "name": "芝答应",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "答应"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_d2330df4a8",
+    "name": "敦亲王福晋",
+    "aliases": [],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": [
+        "亲王"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_1904ad0aa6",
+    "name": "富察氏皇后",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "皇后"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_ced52bbdd8",
+    "name": "娴妃",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": [
+        "妃"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
+    }
+  },
+  {
+    "id": "zh_9a9d896482",
+    "name": "温宜公主",
+    "aliases": [],
+    "attrs": {
+      "gender": "女",
+      "role_type": "皇族",
+      "titles": [
+        "公主"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [],
+      "connections": []
     }
   }
 ]

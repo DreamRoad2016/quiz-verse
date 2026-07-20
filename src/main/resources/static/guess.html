@@ -437,7 +437,7 @@
             ref="guessInput"
             type="text"
             v-model="queryInput"
-            placeholder="输入姓名或别名…"
+            placeholder="姓名 / 别名 / 拼音，如 zhenhuan"
             :disabled="!matchId || loading || endOverlay"
             autocomplete="off"
             @input="onQueryInput"
@@ -478,7 +478,7 @@
       <div v-if="msg" class="toast">{{ msg }}</div>
 
       <div v-if="!rows.length && matchId" class="empty-hint">
-        本局已开始。输入人物姓名或别名，从联想列表选中后提交——表格会显示绿 / 黄 / 灰反馈。
+        本局已开始。可输入汉字姓名、别名，或拼音（如 <code>zhenhuan</code> / <code>zh</code>）联想选人。
       </div>
       <div v-if="!matchId && !loading" class="empty-hint">
         点击「开始新局」进入本场猜谜。
@@ -569,7 +569,9 @@
           return this.briefs.filter((b) => {
             const n = (b.name || '').toLowerCase();
             const al = (b.aliases || []).join(' ').toLowerCase();
-            return n.includes(q) || al.includes(q);
+            const py = (b.pinyinKeys || []).join(' ').toLowerCase();
+            return n.includes(q) || al.includes(q) || py.includes(q)
+              || (b.pinyinKeys || []).some((k) => String(k).toLowerCase().startsWith(q));
           }).slice(0, 12);
         }
       },
@@ -640,7 +642,8 @@
           const q = this.queryInput.trim().toLowerCase();
           const hit = this.briefs.find((b) =>
             (b.name || '').toLowerCase() === q ||
-            (b.aliases || []).some((a) => String(a).toLowerCase() === q)
+            (b.aliases || []).some((a) => String(a).toLowerCase() === q) ||
+            (b.pinyinKeys || []).some((k) => String(k).toLowerCase() === q)
           );
           return hit ? hit.id : '';
         },

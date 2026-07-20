@@ -56,7 +56,13 @@ public class PackRegistry {
         LoadedPack pack = require(packId);
         List<EntityBrief> list = new ArrayList<>();
         for (PackEntity e : pack.getEntities()) {
-            list.add(new EntityBrief(e.getId(), e.getName(), e.getAliases()));
+            List<String> texts = new ArrayList<>();
+            texts.add(e.getName());
+            if (e.getAliases() != null) {
+                texts.addAll(e.getAliases());
+            }
+            List<String> pinyinKeys = PinyinUtils.searchKeys(texts.toArray(new String[0]));
+            list.add(new EntityBrief(e.getId(), e.getName(), e.getAliases(), pinyinKeys));
         }
         return list;
     }

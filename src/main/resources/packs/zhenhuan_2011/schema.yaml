@@ -75,6 +75,9 @@ enums:
     - 太和殿
     - 冷宫
     - 寿康宫
+    - 甘露寺
+    - 宫中
+    - 宫外
   major_plots:
     - key: jinghong_wu
       label: 惊鸿舞宴会
