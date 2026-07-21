@@ -5,9 +5,13 @@
     "aliases": [
       "嬛嬛",
       "莞莞",
+      "莞",
+      "莞嫔",
       "莫愁",
       "熹妃",
       "熹贵妃",
+      "钮祜禄甄嬛",
+      "钮祜禄氏",
       "圣母皇太后"
     ],
     "attrs": {
@@ -49,9 +53,7 @@
         "zh_8ea40b5a40",
         "zh_b0ba6f96e0",
         "zh_67dc611108",
-        "zh_lingrong",
         "zh_taihou",
-        "zh_3df91796bf",
         "zh_512f69fe45"
       ]
     }
@@ -70,13 +72,16 @@
         "皇后"
       ],
       "residences": [
-        "景仁宫"
+        "景仁宫",
+        "冷宫"
       ],
       "major_plots": [
         "chuxuan_dianxuan",
         "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si",
         "chunyuan_jiufu",
+        "ganlu_yunfeng",
         "anling_baiju",
         "dixue_qinzi",
         "houwei_zhongju"
@@ -87,8 +92,11 @@
         "zh_anlingrong",
         "zh_taihou",
         "zh_jiang",
+        "zh_512f69fe45",
+        "zh_huafei",
+        "zh_cailin",
         "zh_wenyi",
-        "zh_512f69fe45"
+        "zh_9e5a293f59"
       ]
     }
   },
@@ -98,7 +106,9 @@
     "aliases": [
       "华妃",
       "年妃",
-      "华贵妃"
+      "华贵妃",
+      "年答应",
+      "年氏"
     ],
     "attrs": {
       "gender": "女",
@@ -106,13 +116,15 @@
       "titles": [
         "妃",
         "贵妃",
-        "答应"
+        "答应",
+        "皇贵妃"
       ],
       "residences": [
         "翊坤宫",
         "冷宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
         "jinghong_wu",
         "huanyi_xiaochang",
         "huafei_ci_si"
@@ -123,7 +135,11 @@
         "zh_cailin",
         "zh_6e7d616a56",
         "zh_0d76f13422",
-        "zh_meizhuang"
+        "zh_53131e3b5d",
+        "zh_yixiu",
+        "zh_taihou",
+        "zh_5d29b6b4ad",
+        "zh_b064066518"
       ]
     }
   },
@@ -132,7 +148,11 @@
     "name": "安陵容",
     "aliases": [
       "陵容",
+      "安答应",
+      "安常在",
+      "安贵人",
       "安嫔",
+      "鹂妃",
       "鸝妃"
     ],
     "attrs": {
@@ -147,14 +167,17 @@
       ],
       "residences": [
         "延禧宫",
-        "咸福宫"
+        "冷宫"
       ],
       "major_plots": [
         "chuxuan_dianxuan",
         "jinghong_wu",
         "huanyi_xiaochang",
         "chunyuan_jiufu",
-        "anling_baiju"
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
@@ -162,7 +185,8 @@
         "zh_meizhuang",
         "zh_emperor",
         "zh_881f62cce2",
-        "zh_129a88f6f4"
+        "zh_129a88f6f4",
+        "zh_huafei"
       ]
     }
   },
@@ -171,6 +195,9 @@
     "name": "沈眉庄",
     "aliases": [
       "眉庄",
+      "沈贵人",
+      "惠贵人",
+      "惠嫔",
       "惠妃",
       "惠贵妃"
     ],
@@ -184,14 +211,15 @@
         "贵妃"
       ],
       "residences": [
-        "碎玉轩",
         "咸福宫"
       ],
       "major_plots": [
         "chuxuan_dianxuan",
         "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si",
         "chunyuan_jiufu",
+        "ganlu_yunfeng",
         "anling_baiju",
         "dixue_qinzi"
       ],
@@ -200,7 +228,10 @@
         "zh_anlingrong",
         "zh_emperor",
         "zh_6f75b71a2e",
-        "zh_67dc611108"
+        "zh_67dc611108",
+        "zh_87dbac743e",
+        "zh_35ab8f4a21",
+        "zh_37edf9f73c"
       ]
     }
   },
@@ -209,22 +240,25 @@
     "name": "叶澜依",
     "aliases": [
       "澜依",
-      "宁嫔",
-      "宁贵人"
+      "叶答应",
+      "宁贵人",
+      "宁嫔"
     ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
       "titles": [
         "答应",
-        "常在",
         "贵人",
         "嫔"
       ],
       "residences": [
-        "宫中"
+        "宫中",
+        "圆明园"
       ],
       "major_plots": [
+        "ganlu_yunfeng",
+        "anling_baiju",
         "dixue_qinzi",
         "heqin_shitan",
         "houwei_zhongju"
@@ -232,7 +266,8 @@
       "connections": [
         "zh_emperor",
         "zh_huan",
-        "zh_yixiu"
+        "zh_yixiu",
+        "zh_6e595d03bd"
       ]
     }
   },
@@ -256,11 +291,13 @@
         "乾清宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
         "jinghong_wu",
         "huanyi_xiaochang",
         "huafei_ci_si",
         "chunyuan_jiufu",
         "ganlu_yunfeng",
+        "anling_baiju",
         "dixue_qinzi",
         "heqin_shitan",
         "houwei_zhongju"
@@ -273,7 +310,9 @@
         "zh_8ea40b5a40",
         "zh_meizhuang",
         "zh_anlingrong",
-        "zh_512f69fe45"
+        "zh_512f69fe45",
+        "zh_sun",
+        "zh_6e7d616a56"
       ]
     }
   },
@@ -283,7 +322,8 @@
     "aliases": [
       "太后",
       "德妃",
-      "成璧"
+      "成璧",
+      "孝恭仁皇后"
     ],
     "attrs": {
       "gender": "女",
@@ -295,15 +335,22 @@
         "寿康宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si",
         "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "dixue_qinzi",
         "houwei_zhongju"
       ],
       "connections": [
         "zh_emperor",
         "zh_yixiu",
         "zh_huan",
-        "zh_sun"
+        "zh_sun",
+        "zh_a0dab2ebd5",
+        "zh_huafei"
       ]
     }
   },
@@ -325,13 +372,17 @@
         "储秀宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si"
       ],
       "connections": [
         "zh_huafei",
         "zh_emperor",
         "zh_huan",
-        "zh_wenyi"
+        "zh_wenyi",
+        "zh_yixiu"
       ]
     }
   },
@@ -352,12 +403,14 @@
         "景仁宫"
       ],
       "major_plots": [
+        "jinghong_wu",
         "huafei_ci_si"
       ],
       "connections": [
         "zh_cailin",
         "zh_yixiu",
-        "zh_emperor"
+        "zh_emperor",
+        "zh_huafei"
       ]
     }
   },
@@ -377,13 +430,21 @@
         "养心殿"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "huanyi_xiaochang",
         "huafei_ci_si",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi",
+        "heqin_shitan",
         "houwei_zhongju"
       ],
       "connections": [
         "zh_emperor",
         "zh_huan",
-        "zh_taihou"
+        "zh_taihou",
+        "zh_3df91796bf"
       ]
     }
   },
@@ -401,6 +462,10 @@
         "景仁宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
         "dixue_qinzi",
         "anling_baiju",
         "houwei_zhongju"
@@ -428,16 +493,21 @@
         "宫外"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
+        "chunyuan_jiufu",
         "ganlu_yunfeng",
+        "dixue_qinzi",
         "heqin_shitan",
         "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
         "zh_b0ba6f96e0",
-        "zh_5eb0e7cfcf",
         "zh_0a032af47f",
         "zh_emperor",
+        "zh_5eb0e7cfcf",
         "zh_acb1059c4e",
         "zh_c3748bfbca"
       ]
@@ -459,9 +529,13 @@
         "宫中"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
         "huanyi_xiaochang",
+        "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "dixue_qinzi"
+        "dixue_qinzi",
+        "anling_baiju",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
@@ -474,27 +548,37 @@
     "name": "浣碧",
     "aliases": [
       "玉隐",
-      "钮祜禄·玉隐"
+      "钮祜禄·玉隐",
+      "玉福晋"
     ],
     "attrs": {
       "gender": "女",
       "role_type": "宫女",
       "titles": [
-        "宫女"
+        "宫女",
+        "福晋"
       ],
       "residences": [
         "碎玉轩",
+        "甘露寺",
+        "永寿宫",
         "宫外"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "huanyi_xiaochang",
+        "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "heqin_shitan"
+        "dixue_qinzi",
+        "heqin_shitan",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
         "zh_8ea40b5a40",
         "zh_86d513da6f",
-        "zh_5eb0e7cfcf"
+        "zh_5eb0e7cfcf",
+        "zh_c3748bfbca"
       ]
     }
   },
@@ -512,16 +596,23 @@
       ],
       "residences": [
         "碎玉轩",
-        "永寿宫"
+        "甘露寺",
+        "永寿宫",
+        "寿康宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "huanyi_xiaochang",
         "chunyuan_jiufu",
         "ganlu_yunfeng",
         "dixue_qinzi",
+        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_huan"
+        "zh_huan",
+        "zh_4edb8b2a18",
+        "zh_sun"
       ]
     }
   },
@@ -553,18 +644,23 @@
     "name": "纯元皇后",
     "aliases": [
       "菀菀",
-      "纯元"
+      "纯元",
+      "孝敬皇太后"
     ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
       "titles": [
-        "皇后"
+        "皇后",
+        "太后"
       ],
       "residences": [
         "宫外"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "chunyuan_jiufu",
         "houwei_zhongju"
       ],
@@ -578,19 +674,29 @@
   {
     "id": "zh_71a108b893",
     "name": "端妃",
-    "aliases": [],
+    "aliases": [
+      "端皇贵妃",
+      "皇贵太妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
       "titles": [
         "妃",
-        "皇贵妃"
+        "皇贵妃",
+        "太妃"
       ],
       "residences": [
         "宫中"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "anling_baiju",
         "dixue_qinzi",
         "houwei_zhongju"
       ],
@@ -612,14 +718,18 @@
         "妃"
       ],
       "residences": [
-        "宫中"
+        "长春宫"
       ],
       "major_plots": [
-        "anling_baiju"
+        "chuxuan_dianxuan",
+        "huanyi_xiaochang",
+        "ganlu_yunfeng"
       ],
       "connections": [
         "zh_emperor",
-        "zh_f571cd3606"
+        "zh_f571cd3606",
+        "zh_huan",
+        "zh_yixiu"
       ]
     }
   },
@@ -627,8 +737,9 @@
     "id": "zh_14cf63048e",
     "name": "文鸳",
     "aliases": [
+      "祺贵人",
       "祺嫔",
-      "祺贵人"
+      "瓜尔佳氏"
     ],
     "attrs": {
       "gender": "女",
@@ -638,16 +749,22 @@
         "嫔"
       ],
       "residences": [
-        "宫中"
+        "储秀宫",
+        "宫外"
       ],
       "major_plots": [
         "huafei_ci_si",
-        "anling_baiju"
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi"
       ],
       "connections": [
         "zh_yixiu",
         "zh_anlingrong",
-        "zh_huan"
+        "zh_huan",
+        "zh_1f41264e10",
+        "zh_7188e88339"
       ]
     }
   },
@@ -655,7 +772,8 @@
     "id": "zh_8307179eca",
     "name": "淳常在",
     "aliases": [
-      "淳贵人"
+      "淳贵人",
+      "淳儿"
     ],
     "attrs": {
       "gender": "女",
@@ -665,13 +783,17 @@
         "贵人"
       ],
       "residences": [
+        "碎玉轩",
         "宫中"
       ],
       "major_plots": [
-        "chuxuan_dianxuan"
+        "chuxuan_dianxuan",
+        "huanyi_xiaochang"
       ],
       "connections": [
-        "zh_huan"
+        "zh_huan",
+        "zh_cailin",
+        "zh_4fe70ef113"
       ]
     }
   },
@@ -680,7 +802,8 @@
     "name": "欣嫔",
     "aliases": [
       "欣贵人",
-      "欣常在"
+      "欣常在",
+      "欣太嫔"
     ],
     "attrs": {
       "gender": "女",
@@ -688,17 +811,25 @@
       "titles": [
         "常在",
         "贵人",
-        "嫔"
+        "嫔",
+        "太嫔"
       ],
       "residences": [
-        "宫中"
+        "储秀宫"
       ],
       "major_plots": [
-        "anling_baiju"
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huafei_ci_si",
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi",
+        "houwei_zhongju"
       ],
       "connections": [
+        "zh_14cf63048e",
         "zh_huan",
-        "zh_emperor"
+        "zh_da60579dc3"
       ]
     }
   },
@@ -715,14 +846,15 @@
         "常在"
       ],
       "residences": [
-        "宫中"
+        "延禧宫"
       ],
       "major_plots": [
         "chuxuan_dianxuan"
       ],
       "connections": [
         "zh_huafei",
-        "zh_anlingrong"
+        "zh_anlingrong",
+        "zh_83d2cb12b2"
       ]
     }
   },
@@ -737,14 +869,20 @@
         "贵人"
       ],
       "residences": [
-        "宫中"
+        "延禧宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
         "huanyi_xiaochang"
       ],
       "connections": [
         "zh_huafei",
-        "zh_huan"
+        "zh_huan",
+        "zh_5429a4fd98",
+        "zh_4304411b6c",
+        "zh_4edb8b2a18",
+        "zh_yixiu"
       ]
     }
   },
@@ -763,28 +901,16 @@
         "冷宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
         "jinghong_wu"
       ],
       "connections": [
-        "zh_huafei"
+        "zh_huafei",
+        "zh_cailin",
+        "zh_huan",
+        "zh_anlingrong",
+        "zh_4edb8b2a18"
       ]
-    }
-  },
-  {
-    "id": "zh_6379950406",
-    "name": "采苹",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
     }
   },
   {
@@ -801,15 +927,19 @@
         "答应"
       ],
       "residences": [
+        "宫中",
         "冷宫"
       ],
       "major_plots": [
-        "jinghong_wu"
+        "jinghong_wu",
+        "anling_baiju"
       ],
       "connections": [
+        "zh_emperor",
         "zh_huafei",
         "zh_anlingrong",
-        "zh_huan"
+        "zh_huan",
+        "zh_d863823605"
       ]
     }
   },
@@ -817,18 +947,23 @@
     "id": "zh_0d76f13422",
     "name": "乔颂芝",
     "aliases": [
-      "颂芝"
+      "颂芝",
+      "芝答应"
     ],
     "attrs": {
       "gender": "女",
-      "role_type": "宫女",
+      "role_type": "后宫嫔妃",
       "titles": [
+        "答应",
         "宫女"
       ],
       "residences": [
         "翊坤宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si"
       ],
       "connections": [
@@ -849,7 +984,9 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "ganlu_yunfeng"
+      ],
       "connections": []
     }
   },
@@ -866,7 +1003,9 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "ganlu_yunfeng"
+      ],
       "connections": []
     }
   },
@@ -881,10 +1020,15 @@
         "贵人"
       ],
       "residences": [
-        "碎玉轩"
+        "碎玉轩",
+        "冷宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_huafei"
+      ]
     }
   },
   {
@@ -900,7 +1044,9 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "houwei_zhongju"
+      ],
       "connections": []
     }
   },
@@ -908,7 +1054,8 @@
     "id": "zh_0a032af47f",
     "name": "舒太妃",
     "aliases": [
-      "冲静元师"
+      "冲静元师",
+      "冲静先师"
     ],
     "attrs": {
       "gender": "女",
@@ -920,11 +1067,15 @@
         "宫外"
       ],
       "major_plots": [
-        "ganlu_yunfeng"
+        "jinghong_wu",
+        "ganlu_yunfeng",
+        "dixue_qinzi",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_8ea40b5a40",
-        "zh_d36193e84e"
+        "zh_d36193e84e",
+        "zh_emperor"
       ]
     }
   },
@@ -932,7 +1083,8 @@
     "id": "zh_5eb0e7cfcf",
     "name": "孟静娴",
     "aliases": [
-      "孟氏"
+      "孟氏",
+      "娴福晋"
     ],
     "attrs": {
       "gender": "女",
@@ -944,7 +1096,8 @@
         "宫外"
       ],
       "major_plots": [
-        "heqin_shitan"
+        "heqin_shitan",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_8ea40b5a40",
@@ -963,30 +1116,19 @@
       "gender": "男",
       "role_type": "皇族",
       "titles": [
-        "皇族"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
-    "id": "zh_7131980818",
-    "name": "敦亲王福晋博尔济吉特氏",
-    "aliases": [],
-    "attrs": {
-      "gender": "男",
-      "role_type": "皇族",
-      "titles": [
         "亲王"
       ],
       "residences": [
-        "宫中"
+        "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "jinghong_wu",
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_a40fecff53"
+      ]
     }
   },
   {
@@ -999,13 +1141,18 @@
       "gender": "男",
       "role_type": "皇族",
       "titles": [
-        "皇族"
+        "亲王"
       ],
       "residences": [
-        "宫中"
+        "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "jinghong_wu"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_ae007510bb"
+      ]
     }
   },
   {
@@ -1026,7 +1173,8 @@
       ],
       "major_plots": [
         "dixue_qinzi",
-        "heqin_shitan"
+        "heqin_shitan",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_3fa1a595fa",
@@ -1052,7 +1200,9 @@
       ],
       "major_plots": [
         "dixue_qinzi",
-        "heqin_shitan"
+        "heqin_shitan",
+        "anling_baiju",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
@@ -1074,14 +1224,19 @@
         "皇族"
       ],
       "residences": [
+        "长春宫",
         "宫中"
       ],
       "major_plots": [
+        "ganlu_yunfeng",
+        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
         "zh_9e5a293f59",
-        "zh_emperor"
+        "zh_emperor",
+        "zh_yixiu",
+        "zh_b050d0f9cc"
       ]
     }
   },
@@ -1101,14 +1256,20 @@
         "皇族"
       ],
       "residences": [
-        "宫中"
+        "宫中",
+        "寿康宫",
+        "永寿宫"
       ],
       "major_plots": [
+        "ganlu_yunfeng",
+        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
+        "zh_huan",
         "zh_emperor",
-        "zh_huan"
+        "zh_taihou",
+        "zh_1904ad0aa6"
       ]
     }
   },
@@ -1132,44 +1293,38 @@
     }
   },
   {
-    "id": "zh_44b2dd7cad",
-    "name": "富察氏",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "皇族",
-      "titles": [
-        "皇族"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
     "id": "zh_142930c729",
     "name": "青樱",
-    "aliases": [],
+    "aliases": [
+      "娴妃"
+    ],
     "attrs": {
       "gender": "女",
-      "role_type": "皇族",
+      "role_type": "后宫嫔妃",
       "titles": [
-        "皇族"
+        "格格",
+        "妃"
       ],
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_yixiu",
+        "zh_f571cd3606",
+        "zh_emperor",
+        "zh_199d80aa8e"
+      ]
     }
   },
   {
     "id": "zh_acb1059c4e",
     "name": "弘曕",
     "aliases": [
-      "六阿哥"
+      "六阿哥",
+      "六贝勒"
     ],
     "attrs": {
       "gender": "男",
@@ -1178,16 +1333,19 @@
         "皇族"
       ],
       "residences": [
-        "永寿宫"
+        "永寿宫",
+        "宫外"
       ],
       "major_plots": [
+        "ganlu_yunfeng",
         "dixue_qinzi",
         "heqin_shitan",
         "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
-        "zh_8ea40b5a40"
+        "zh_8ea40b5a40",
+        "zh_emperor"
       ]
     }
   },
@@ -1230,10 +1388,13 @@
       ],
       "major_plots": [
         "chunyuan_jiufu",
-        "ganlu_yunfeng"
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
+        "zh_87dbac743e",
         "zh_emperor"
       ]
     }
@@ -1254,7 +1415,9 @@
         "永寿宫"
       ],
       "major_plots": [
-        "dixue_qinzi"
+        "ganlu_yunfeng",
+        "dixue_qinzi",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
@@ -1265,7 +1428,9 @@
   {
     "id": "zh_37edf9f73c",
     "name": "静和公主",
-    "aliases": [],
+    "aliases": [
+      "静和"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "皇族",
@@ -1273,10 +1438,17 @@
         "公主"
       ],
       "residences": [
-        "宫中"
+        "咸福宫",
+        "永寿宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "anling_baiju",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_meizhuang",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -1293,13 +1465,13 @@
         "宫外"
       ],
       "major_plots": [
-        "heqin_shitan"
+        "heqin_shitan",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_8ea40b5a40",
         "zh_5eb0e7cfcf",
-        "zh_b3d8ebbab4",
-        "zh_3fa1a595fa"
+        "zh_b0ba6f96e0"
       ]
     }
   },
@@ -1316,8 +1488,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_d056ff3562",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -1333,7 +1510,10 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "ganlu_yunfeng",
+        "dixue_qinzi"
+      ],
       "connections": []
     }
   },
@@ -1368,7 +1548,8 @@
         "延禧宫"
       ],
       "major_plots": [
-        "anling_baiju"
+        "anling_baiju",
+        "dixue_qinzi"
       ],
       "connections": [
         "zh_anlingrong"
@@ -1414,23 +1595,6 @@
     "name": "吉祥",
     "aliases": [],
     "attrs": {
-      "gender": "男",
-      "role_type": "太监",
-      "titles": [
-        "太监"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
-    "id": "zh_440837f40e",
-    "name": "孙竹息",
-    "aliases": [],
-    "attrs": {
       "gender": "女",
       "role_type": "宫女",
       "titles": [
@@ -1439,8 +1603,38 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "anling_baiju"
+      ],
+      "connections": [
+        "zh_71a108b893"
+      ]
+    }
+  },
+  {
+    "id": "zh_440837f40e",
+    "name": "孙竹息",
+    "aliases": [
+      "竹息"
+    ],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "寿康宫"
+      ],
+      "major_plots": [
+        "jinghong_wu",
+        "ganlu_yunfeng",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_taihou",
+        "zh_emperor"
+      ]
     }
   },
   {
@@ -1474,10 +1668,14 @@
         "寿康宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_taihou"
+        "zh_taihou",
+        "zh_huan"
       ]
     }
   },
@@ -1514,10 +1712,17 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "碎玉轩",
+        "储秀宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "ganlu_yunfeng"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_7188e88339"
+      ]
     }
   },
   {
@@ -1533,7 +1738,9 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "chunyuan_jiufu"
+      ],
       "connections": []
     }
   },
@@ -1548,10 +1755,14 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "长春宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
+      "connections": [
+        "zh_9e5a293f59"
+      ]
     }
   },
   {
@@ -1601,8 +1812,12 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
+      "connections": [
+        "zh_8307179eca"
+      ]
     }
   },
   {
@@ -1633,10 +1848,16 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "咸福宫",
+        "寿康宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "ganlu_yunfeng"
+      ],
+      "connections": [
+        "zh_meizhuang"
+      ]
     }
   },
   {
@@ -1735,10 +1956,14 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "储秀宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
+      "connections": [
+        "zh_cailin"
+      ]
     }
   },
   {
@@ -1752,10 +1977,14 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "延禧宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "jinghong_wu"
+      ],
+      "connections": [
+        "zh_83d2cb12b2"
+      ]
     }
   },
   {
@@ -1771,8 +2000,12 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "ganlu_yunfeng"
+      ],
+      "connections": [
+        "zh_lingrong"
+      ]
     }
   },
   {
@@ -1858,14 +2091,21 @@
         "太监"
       ],
       "residences": [
-        "碎玉轩"
+        "碎玉轩",
+        "永寿宫",
+        "寿康宫"
       ],
       "major_plots": [
-        "jinghong_wu"
+        "jinghong_wu",
+        "ganlu_yunfeng",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_huan",
-        "zh_3df91796bf"
+        "zh_3df91796bf",
+        "zh_anlingrong",
+        "zh_83d2cb12b2",
+        "zh_53131e3b5d"
       ]
     }
   },
@@ -1882,8 +2122,12 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_huafei"
+      ]
     }
   },
   {
@@ -1899,7 +2143,9 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "chunyuan_jiufu"
+      ],
       "connections": []
     }
   },
@@ -1933,7 +2179,10 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "ganlu_yunfeng",
+        "anling_baiju"
+      ],
       "connections": []
     }
   },
@@ -1950,7 +2199,12 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi",
+        "houwei_zhongju"
+      ],
       "connections": []
     }
   },
@@ -1967,8 +2221,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_emperor"
+      ]
     }
   },
   {
@@ -2001,8 +2260,12 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
+      "connections": [
+        "zh_huafei"
+      ]
     }
   },
   {
@@ -2018,8 +2281,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "jinghong_wu"
+      ],
+      "connections": [
+        "zh_meizhuang",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -2053,7 +2321,8 @@
         "翊坤宫"
       ],
       "major_plots": [
-        "huafei_ci_si"
+        "huafei_ci_si",
+        "dixue_qinzi"
       ],
       "connections": [
         "zh_huafei"
@@ -2074,7 +2343,9 @@
         "翊坤宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
         "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si"
       ],
       "connections": [
@@ -2093,10 +2364,14 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "翊坤宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_huafei"
+      ]
     }
   },
   {
@@ -2110,10 +2385,15 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "碎玉轩"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_53131e3b5d"
+      ]
     }
   },
   {
@@ -2127,10 +2407,15 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "碎玉轩"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_d863823605"
+      ]
     }
   },
   {
@@ -2178,10 +2463,18 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang",
+        "ganlu_yunfeng",
+        "heqin_shitan",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_8ea40b5a40",
+        "zh_b0ba6f96e0"
+      ]
     }
   },
   {
@@ -2198,7 +2491,9 @@
         "宫中"
       ],
       "major_plots": [
-        "heqin_shitan"
+        "huanyi_xiaochang",
+        "heqin_shitan",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_emperor"
@@ -2211,15 +2506,19 @@
     "aliases": [],
     "attrs": {
       "gender": "男",
-      "role_type": "太监",
+      "role_type": "前朝官员",
       "titles": [
-        "太监"
+        "大臣"
       ],
       "residences": [
-        "宫中"
+        "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "ganlu_yunfeng"
+      ],
+      "connections": [
+        "zh_emperor"
+      ]
     }
   },
   {
@@ -2233,10 +2532,16 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "养心殿"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "ganlu_yunfeng",
+        "heqin_shitan",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_sun"
+      ]
     }
   },
   {
@@ -2252,8 +2557,12 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_emperor"
+      ]
     }
   },
   {
@@ -2270,6 +2579,8 @@
         "宫外"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "huanyi_xiaochang",
         "chunyuan_jiufu",
         "ganlu_yunfeng"
       ],
@@ -2293,8 +2604,12 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
+      "connections": [
+        "zh_emperor"
+      ]
     }
   },
   {
@@ -2310,8 +2625,15 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "anling_baiju",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_14cf63048e"
+      ]
     }
   },
   {
@@ -2328,6 +2650,8 @@
         "宫外"
       ],
       "major_plots": [
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si"
       ],
       "connections": [
@@ -2400,8 +2724,14 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "heqin_shitan",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_199d80aa8e"
+      ]
     }
   },
   {
@@ -2417,8 +2747,13 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_huafei",
+        "zh_6e7d616a56"
+      ]
     }
   },
   {
@@ -2437,7 +2772,9 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
       "connections": [
         "zh_meizhuang"
       ]
@@ -2460,6 +2797,7 @@
         "宫外"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
         "anling_baiju"
       ],
       "connections": [
@@ -2480,7 +2818,10 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "huanyi_xiaochang",
+        "chunyuan_jiufu"
+      ],
       "connections": [
         "zh_9ed81c3cc8",
         "zh_huan",
@@ -2522,8 +2863,13 @@
       "residences": [
         "甘露寺"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "ganlu_yunfeng"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_5da0cd95eb"
+      ]
     }
   },
   {
@@ -2539,7 +2885,9 @@
       "residences": [
         "甘露寺"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "ganlu_yunfeng"
+      ],
       "connections": []
     }
   },
@@ -2557,11 +2905,13 @@
         "宫外"
       ],
       "major_plots": [
-        "heqin_shitan"
+        "heqin_shitan",
+        "houwei_zhongju"
       ],
       "connections": [
         "zh_emperor",
-        "zh_huan"
+        "zh_huan",
+        "zh_8ea40b5a40"
       ]
     }
   },
@@ -2603,45 +2953,69 @@
     "id": "zh_87dbac743e",
     "name": "敬妃",
     "aliases": [
-      "敬贵妃"
+      "敬嫔",
+      "敬贵妃",
+      "敬贵太妃"
     ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
       "titles": [
+        "嫔",
         "妃",
-        "贵妃"
+        "贵妃",
+        "太妃"
       ],
       "residences": [
-        "宫中"
+        "咸福宫"
       ],
       "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
         "huafei_ci_si",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "anling_baiju",
         "dixue_qinzi",
         "houwei_zhongju"
       ],
       "connections": [
         "zh_emperor",
         "zh_71a108b893",
-        "zh_huan"
+        "zh_huan",
+        "zh_meizhuang",
+        "zh_87ded88d14"
       ]
     }
   },
   {
     "id": "zh_b050d0f9cc",
     "name": "瑛贵人",
-    "aliases": [],
+    "aliases": [
+      "采蘋",
+      "采苹",
+      "瑛常在"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
       "titles": [
+        "常在",
         "贵人"
       ],
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "anling_baiju",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_f571cd3606",
+        "zh_huan",
+        "zh_yixiu"
+      ]
     }
   },
   {
@@ -2664,35 +3038,52 @@
   {
     "id": "zh_d2330df4a8",
     "name": "敦亲王福晋",
-    "aliases": [],
+    "aliases": [
+      "十福晋",
+      "敦福晋"
+    ],
     "attrs": {
-      "gender": "男",
+      "gender": "女",
       "role_type": "皇族",
       "titles": [
-        "亲王"
+        "福晋"
       ],
       "residences": [
-        "宫中"
+        "宫外"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "huanyi_xiaochang",
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_ae007510bb",
+        "zh_huan"
+      ]
     }
   },
   {
     "id": "zh_1904ad0aa6",
     "name": "富察氏皇后",
-    "aliases": [],
+    "aliases": [
+      "富察氏"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
       "titles": [
-        "皇后"
+        "皇后",
+        "福晋"
       ],
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_199d80aa8e",
+        "zh_huan"
+      ]
     }
   },
   {

@@ -1,0 +1,205 @@
+{
+  "曹贵人": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si"],
+      "connections": ["年世兰", "爱新觉罗·胤禛", "甄嬛", "富察·温宜", "丽嫔", "乌拉那拉·宜修"]
+    }
+  },
+  "丽嫔": {
+    "attrs": {
+      "residences": ["翊坤宫", "冷宫"],
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu"],
+      "connections": ["年世兰", "曹贵人", "甄嬛", "安陵容", "小允子"]
+    }
+  },
+  "富察贵人": {
+    "attrs": {
+      "residences": ["延禧宫"],
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang"],
+      "connections": ["年世兰", "甄嬛", "夏冬春", "桑儿", "小允子"]
+    }
+  },
+  "沈眉庄": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si",
+        "chunyuan_jiufu", "anling_baiju", "dixue_qinzi"
+      ],
+      "connections": ["甄嬛", "安陵容", "爱新觉罗·胤禛", "沈自山", "温实初", "敬妃", "采月", "刘畚"]
+    }
+  },
+  "安陵容": {
+    "aliases": ["陵容", "安答应", "安常在", "安嫔", "鸝妃"],
+    "attrs": {
+      "residences": ["延禧宫"],
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang",
+        "chunyuan_jiufu", "anling_baiju"
+      ],
+      "connections": [
+        "甄嬛", "乌拉那拉·宜修", "沈眉庄", "爱新觉罗·胤禛", "安比槐", "宝鹃",
+        "夏冬春", "余莺儿", "曹贵人"
+      ]
+    }
+  },
+  "年世兰": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"],
+      "connections": [
+        "爱新觉罗·胤禛", "甄嬛", "曹贵人", "年羹尧", "乔颂芝", "沈眉庄",
+        "丽嫔", "夏冬春", "江福海", "周宁海", "乌雅氏", "富察·温宜"
+      ]
+    }
+  },
+  "乌拉那拉·宜修": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si", "chunyuan_jiufu",
+        "anling_baiju", "dixue_qinzi", "houwei_zhongju"
+      ],
+      "connections": [
+        "爱新觉罗·胤禛", "甄嬛", "安陵容", "乌雅氏", "剪秋", "富察·温宜", "纯元皇后",
+        "福子", "年世兰", "曹贵人"
+      ]
+    }
+  },
+  "乌雅氏": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si", "chunyuan_jiufu", "houwei_zhongju"],
+      "connections": ["爱新觉罗·胤禛", "乌拉那拉·宜修", "甄嬛", "苏培盛", "芳若", "年世兰"]
+    }
+  },
+  "允礼": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "ganlu_yunfeng", "heqin_shitan", "houwei_zhongju"]
+    }
+  },
+  "端妃": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si", "dixue_qinzi", "houwei_zhongju"],
+      "connections": ["爱新觉罗·胤禛", "敬妃", "甄嬛", "吉祥"]
+    }
+  },
+  "敬妃": {
+    "aliases": ["敬嫔", "敬贵妃"],
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si", "dixue_qinzi", "houwei_zhongju"]
+    }
+  },
+  "欣嫔": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "anling_baiju"],
+      "connections": ["甄嬛", "爱新觉罗·胤禛", "余莺儿", "曹贵人"]
+    }
+  },
+  "纯元皇后": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "chunyuan_jiufu", "houwei_zhongju"]
+    }
+  },
+  "小允子": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu"],
+      "connections": ["甄嬛", "崔槿汐", "安陵容", "富察贵人", "丽嫔"]
+    }
+  },
+  "富察·温宜": {
+    "aliases": ["温宜公主", "温宜"],
+    "attrs": {
+      "major_plots": ["jinghong_wu", "huafei_ci_si"],
+      "connections": ["曹贵人", "乌拉那拉·宜修", "爱新觉罗·胤禛", "年世兰"]
+    }
+  },
+  "年羹尧": {
+    "attrs": {
+      "major_plots": ["jinghong_wu", "huafei_ci_si"],
+      "connections": ["年世兰", "爱新觉罗·胤禛"]
+    }
+  },
+  "允祺": {
+    "aliases": ["恒亲王"],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": ["亲王"],
+      "residences": ["宫外"],
+      "major_plots": ["jinghong_wu"],
+      "connections": ["爱新觉罗·胤禛", "允䄉"]
+    }
+  },
+  "允䄉": {
+    "aliases": ["敦亲王"],
+    "attrs": {
+      "gender": "男",
+      "role_type": "皇族",
+      "titles": ["亲王"],
+      "residences": ["宫外"],
+      "major_plots": ["jinghong_wu"],
+      "connections": ["爱新觉罗·胤禛", "允祺"]
+    }
+  },
+  "吉祥": {
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": ["太监"],
+      "residences": ["宫中"],
+      "major_plots": ["jinghong_wu"],
+      "connections": ["端妃"]
+    }
+  },
+  "刘畚": {
+    "attrs": {
+      "gender": "男",
+      "role_type": "太医",
+      "titles": ["太医"],
+      "residences": ["宫中"],
+      "major_plots": ["jinghong_wu"],
+      "connections": ["沈眉庄", "甄嬛"]
+    }
+  },
+  "桑儿": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": ["宫女"],
+      "residences": ["延禧宫"],
+      "major_plots": ["jinghong_wu"],
+      "connections": ["富察贵人"]
+    }
+  },
+  "弘历": {
+    "aliases": ["四阿哥", "乾隆", "宝亲王"],
+    "attrs": {
+      "major_plots": ["jinghong_wu", "houwei_zhongju"],
+      "connections": ["爱新觉罗·胤禛", "甄嬛", "乌拉那拉·宜修"]
+    }
+  },
+  "孙竹息": {
+    "aliases": ["竹息"],
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": ["宫女"],
+      "residences": ["寿康宫"],
+      "major_plots": ["jinghong_wu"],
+      "connections": ["乌雅氏"]
+    }
+  },
+  "舒太妃": {
+    "attrs": {
+      "major_plots": ["jinghong_wu", "ganlu_yunfeng"],
+      "connections": ["允礼", "积云", "爱新觉罗·胤禛"]
+    }
+  },
+  "乔颂芝": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si"]
+    }
+  },
+  "周宁海": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si"]
+    }
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "甄嬛": {
+    "aliases": ["嬛嬛", "莞莞", "莞", "莞嫔", "莫愁", "熹妃", "熹贵妃", "钮祜禄甄嬛", "钮祜禄氏", "圣母皇太后"],
+    "attrs": {
+      "titles": ["常在", "贵人", "嫔", "妃", "贵妃", "皇贵妃", "太后"],
+      "residences": ["碎玉轩", "甘露寺", "永寿宫", "寿康宫"],
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju", "dixue_qinzi",
+        "heqin_shitan", "houwei_zhongju"
+      ]
+    }
+  },
+  "叶澜依": {
+    "aliases": ["澜依", "叶答应", "宁贵人", "宁嫔"],
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": ["答应", "贵人", "嫔"],
+      "residences": ["宫中", "圆明园"],
+      "major_plots": ["ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"]
+    }
+  },
+  "齐妃": {
+    "attrs": {
+      "titles": ["妃"],
+      "residences": ["长春宫"],
+      "major_plots": ["chuxuan_dianxuan", "huanyi_xiaochang", "ganlu_yunfeng"]
+    }
+  },
+  "弘时": {
+    "aliases": ["三阿哥"],
+    "attrs": {
+      "major_plots": ["ganlu_yunfeng", "houwei_zhongju"]
+    }
+  },
+  "弘历": {
+    "aliases": ["四阿哥", "乾隆", "宝亲王"],
+    "attrs": {
+      "residences": ["宫中", "寿康宫", "永寿宫"],
+      "major_plots": ["ganlu_yunfeng", "houwei_zhongju"]
+    }
+  },
+  "弘曕": {
+    "aliases": ["六阿哥"],
+    "attrs": {
+      "residences": ["永寿宫"],
+      "major_plots": ["ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"]
+    }
+  },
+  "灵犀公主": {
+    "aliases": ["灵犀"],
+    "attrs": {
+      "residences": ["永寿宫"],
+      "major_plots": ["ganlu_yunfeng", "dixue_qinzi"]
+    }
+  },
+  "胧月公主": {
+    "aliases": ["绾绾", "胧月"],
+    "attrs": {
+      "major_plots": ["chunyuan_jiufu", "ganlu_yunfeng"]
+    }
+  },
+  "沈眉庄": {
+    "aliases": ["眉庄", "沈贵人", "惠贵人", "惠嫔", "惠妃", "惠贵妃"],
+    "attrs": {
+      "titles": ["贵人", "嫔", "妃", "贵妃"],
+      "residences": ["咸福宫"],
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju", "dixue_qinzi"
+      ]
+    }
+  },
+  "安陵容": {
+    "aliases": ["陵容", "安答应", "安常在", "安贵人", "安嫔", "鸝妃"],
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang",
+        "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju"
+      ]
+    }
+  },
+  "乌拉那拉·宜修": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju", "dixue_qinzi", "houwei_zhongju"
+      ]
+    }
+  },
+  "爱新觉罗·胤禛": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"
+      ]
+    }
+  },
+  "乌雅氏": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "houwei_zhongju"
+      ]
+    }
+  },
+  "允礼": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang",
+        "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"
+      ]
+    }
+  },
+  "崔槿汐": {
+    "aliases": ["槿汐"],
+    "attrs": {
+      "residences": ["碎玉轩", "甘露寺", "永寿宫"],
+      "major_plots": [
+        "chuxuan_dianxuan", "huanyi_xiaochang", "chunyuan_jiufu",
+        "ganlu_yunfeng", "dixue_qinzi", "houwei_zhongju"
+      ]
+    }
+  },
+  "苏培盛": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "houwei_zhongju"
+      ]
+    }
+  },
+  "浣碧": {
+    "attrs": {
+      "residences": ["碎玉轩", "甘露寺", "永寿宫", "宫外"],
+      "major_plots": [
+        "chuxuan_dianxuan", "huanyi_xiaochang", "chunyuan_jiufu",
+        "ganlu_yunfeng", "heqin_shitan"
+      ]
+    }
+  },
+  "温实初": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "huanyi_xiaochang", "chunyuan_jiufu",
+        "ganlu_yunfeng", "dixue_qinzi"
+      ]
+    }
+  },
+  "敬妃": {
+    "aliases": ["敬嫔", "敬贵妃"],
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "houwei_zhongju"
+      ]
+    }
+  },
+  "端妃": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "houwei_zhongju"
+      ]
+    }
+  },
+  "文鸳": {
+    "aliases": ["祺贵人", "祺嫔"],
+    "attrs": {
+      "residences": ["储秀宫"],
+      "major_plots": ["huafei_ci_si", "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju"]
+    }
+  },
+  "欣嫔": {
+    "aliases": ["欣贵人", "欣常在"],
+    "attrs": {
+      "titles": ["常在", "贵人", "嫔"],
+      "residences": ["储秀宫"],
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si", "ganlu_yunfeng", "anling_baiju"]
+    }
+  },
+  "舒太妃": {
+    "aliases": ["冲静元师", "冲静先师"],
+    "attrs": {
+      "major_plots": ["jinghong_wu", "ganlu_yunfeng", "dixue_qinzi"]
+    }
+  },
+  "静岸": {
+    "attrs": {
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "静白": {
+    "attrs": {
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "积云": {
+    "attrs": {
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "阿晋": {
+    "attrs": {
+      "major_plots": ["huanyi_xiaochang", "ganlu_yunfeng"]
+    }
+  },
+  "剪秋": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "huafei_ci_si", "chunyuan_jiufu",
+        "ganlu_yunfeng", "dixue_qinzi", "anling_baiju", "houwei_zhongju"
+      ]
+    }
+  },
+  "芳若": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "chunyuan_jiufu", "ganlu_yunfeng", "houwei_zhongju"]
+    }
+  },
+  "小允子": {
+    "attrs": {
+      "residences": ["碎玉轩", "永寿宫"],
+      "major_plots": ["jinghong_wu", "ganlu_yunfeng"]
+    }
+  },
+  "佩儿": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": ["宫女"],
+      "residences": ["碎玉轩", "储秀宫"],
+      "major_plots": ["chuxuan_dianxuan", "ganlu_yunfeng"]
+    }
+  },
+  "采月": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": ["宫女"],
+      "residences": ["咸福宫", "寿康宫"],
+      "major_plots": ["chuxuan_dianxuan", "ganlu_yunfeng"]
+    }
+  },
+  "阿绿": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "宫女",
+      "titles": ["宫女"],
+      "residences": ["宫中"],
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "季惟生": {
+    "attrs": {
+      "gender": "男",
+      "role_type": "前朝官员",
+      "titles": ["大臣"],
+      "residences": ["宫外"],
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "康常在": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": ["常在"],
+      "residences": ["宫中"],
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "贞嫔": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": ["嫔"],
+      "residences": ["宫中"],
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "小厦子": {
+    "attrs": {
+      "gender": "男",
+      "role_type": "太监",
+      "titles": ["太监"],
+      "residences": ["养心殿"],
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  },
+  "甄远道": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "huanyi_xiaochang", "chunyuan_jiufu", "ganlu_yunfeng"
+      ]
+    }
+  },
+  "卫临": {
+    "attrs": {
+      "major_plots": ["ganlu_yunfeng"]
+    }
+  }
+}

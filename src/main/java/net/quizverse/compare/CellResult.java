@@ -9,20 +9,28 @@ public class CellResult {
     /** green | yellow | gray */
     private String color;
     private String arrow;
+    /** Raw intersection keys (set compare); kept for compatibility */
     private List<String> matched;
+    /** Guess values in order, each marked hit/miss — for set columns in UI */
+    private List<CellItem> items;
 
     public CellResult() {
     }
 
     public CellResult(String kind, String color, String arrow, List<String> matched) {
+        this(kind, color, arrow, matched, null);
+    }
+
+    public CellResult(String kind, String color, String arrow, List<String> matched, List<CellItem> items) {
         this.kind = kind;
         this.color = color;
         this.arrow = arrow;
         this.matched = matched;
+        this.items = items;
     }
 
     public static CellResult of(String kind, String color) {
-        return new CellResult(kind, color, null, null);
+        return new CellResult(kind, color, null, null, null);
     }
 
     public String getKind() {
@@ -55,5 +63,13 @@ public class CellResult {
 
     public void setMatched(List<String> matched) {
         this.matched = matched;
+    }
+
+    public List<CellItem> getItems() {
+        return items;
+    }
+
+    public void setItems(List<CellItem> items) {
+        this.items = items;
     }
 }

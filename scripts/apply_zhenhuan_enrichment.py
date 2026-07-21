@@ -8,6 +8,186 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ENTITIES = ROOT / "src/main/resources/packs/zhenhuan_2011/entities.json"
 SEED = ROOT / "scripts/data/zhenhuan_core_seed.json"
+EP_PATCHES = [
+    ROOT / "scripts/data/zhenhuan_ep01_10_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep11_20_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep21_30_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep31_40_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep41_50_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep51_60_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep61_70_patch.json",
+    ROOT / "scripts/data/zhenhuan_ep71_76_patch.json",
+]
+
+# 关系网只保留核心圈，每人上限
+MAX_CONNECTIONS = 10
+CORE_CONNECTIONS: dict[str, list[str]] = {
+    "甄嬛": [
+        "乌拉那拉·宜修", "年世兰", "安陵容", "沈眉庄", "爱新觉罗·胤禛",
+        "允礼", "浣碧", "温实初", "乌雅氏", "纯元皇后",
+    ],
+    "乌拉那拉·宜修": [
+        "爱新觉罗·胤禛", "甄嬛", "安陵容", "乌雅氏", "剪秋",
+        "纯元皇后", "年世兰", "曹贵人", "富察·温宜", "齐妃",
+    ],
+    "年世兰": [
+        "爱新觉罗·胤禛", "甄嬛", "曹贵人", "年羹尧", "乔颂芝",
+        "丽嫔", "乌拉那拉·宜修", "乌雅氏", "周宁海", "江福海",
+    ],
+    "安陵容": [
+        "甄嬛", "乌拉那拉·宜修", "沈眉庄", "爱新觉罗·胤禛", "安比槐",
+        "宝鹃", "年世兰",
+    ],
+    "沈眉庄": [
+        "甄嬛", "安陵容", "爱新觉罗·胤禛", "沈自山", "温实初", "敬妃", "采月", "静和公主",
+    ],
+    "爱新觉罗·胤禛": [
+        "甄嬛", "乌拉那拉·宜修", "年世兰", "乌雅氏", "允礼",
+        "沈眉庄", "安陵容", "纯元皇后", "苏培盛", "年羹尧",
+    ],
+    "乌雅氏": [
+        "爱新觉罗·胤禛", "乌拉那拉·宜修", "甄嬛", "苏培盛", "芳若", "年世兰",
+    ],
+    "曹贵人": [
+        "年世兰", "爱新觉罗·胤禛", "甄嬛", "富察·温宜", "乌拉那拉·宜修",
+    ],
+    "允礼": [
+        "甄嬛", "浣碧", "舒太妃", "爱新觉罗·胤禛", "孟静娴", "弘曕", "元澈",
+    ],
+    "浣碧": [
+        "甄嬛", "允礼", "流朱", "孟静娴", "元澈",
+    ],
+    "温实初": [
+        "甄嬛", "沈眉庄",
+    ],
+    "崔槿汐": [
+        "甄嬛", "小允子", "苏培盛",
+    ],
+    "苏培盛": [
+        "爱新觉罗·胤禛", "甄嬛", "乌雅氏", "崔槿汐",
+    ],
+    "敬妃": [
+        "爱新觉罗·胤禛", "端妃", "甄嬛", "沈眉庄", "胧月公主",
+    ],
+    "端妃": [
+        "爱新觉罗·胤禛", "敬妃", "甄嬛",
+    ],
+    "齐妃": [
+        "爱新觉罗·胤禛", "弘时", "甄嬛", "乌拉那拉·宜修",
+    ],
+    "叶澜依": [
+        "爱新觉罗·胤禛", "甄嬛", "乌拉那拉·宜修", "阿绿",
+    ],
+    "纯元皇后": [
+        "爱新觉罗·胤禛", "乌拉那拉·宜修", "甄嬛",
+    ],
+    "富察·温宜": [
+        "曹贵人", "乌拉那拉·宜修", "爱新觉罗·胤禛", "年世兰",
+    ],
+    "年羹尧": [
+        "年世兰", "爱新觉罗·胤禛",
+    ],
+    "乔颂芝": [
+        "年世兰",
+    ],
+    "甄远道": [
+        "甄嬛", "甄玉娆", "甄母",
+    ],
+    "甄母": [
+        "甄远道", "甄嬛", "甄玉娆",
+    ],
+    "甄玉娆": [
+        "甄嬛", "允禧", "甄远道",
+    ],
+    "文鸳": [
+        "乌拉那拉·宜修", "安陵容", "甄嬛", "鄂敏", "欣嫔",
+    ],
+    "胧月公主": [
+        "甄嬛", "敬妃", "爱新觉罗·胤禛",
+    ],
+    "静岸": [
+        "甄嬛",
+    ],
+    "静白": [
+        "甄嬛", "静岸",
+    ],
+    "舒太妃": [
+        "允礼", "积云", "爱新觉罗·胤禛",
+    ],
+    "积云": [
+        "舒太妃",
+    ],
+    "鄂敏": [
+        "文鸳",
+    ],
+    "肃喜": [
+        "年世兰",
+    ],
+    "弘历": [
+        "甄嬛", "爱新觉罗·胤禛", "乌雅氏", "富察氏皇后",
+    ],
+    "弘时": [
+        "齐妃", "爱新觉罗·胤禛", "乌拉那拉·宜修", "瑛贵人",
+    ],
+    "弘曕": [
+        "甄嬛", "允礼", "爱新觉罗·胤禛",
+    ],
+    "灵犀公主": [
+        "甄嬛", "允礼",
+    ],
+    "佩儿": [
+        "甄嬛", "欣嫔",
+    ],
+    "采月": [
+        "沈眉庄",
+    ],
+    "阿绿": [
+        "叶澜依",
+    ],
+    "欣嫔": [
+        "文鸳", "甄嬛", "佩儿",
+    ],
+    "季惟生": [
+        "爱新觉罗·胤禛",
+    ],
+    "小厦子": [
+        "苏培盛",
+    ],
+    "孟静娴": [
+        "允礼", "浣碧", "元澈",
+    ],
+    "静和公主": [
+        "沈眉庄", "甄嬛",
+    ],
+    "瑛贵人": [
+        "弘时", "甄嬛", "乌拉那拉·宜修",
+    ],
+    "青樱": [
+        "乌拉那拉·宜修", "弘时", "爱新觉罗·胤禛", "弘历",
+    ],
+    "宝鹃": [
+        "安陵容",
+    ],
+    "摩格": [
+        "爱新觉罗·胤禛", "甄嬛", "允礼",
+    ],
+    "夏刈": [
+        "爱新觉罗·胤禛",
+    ],
+    "孙竹息": [
+        "乌雅氏", "爱新觉罗·胤禛",
+    ],
+    "富察氏皇后": [
+        "弘历", "甄嬛",
+    ],
+    "元澈": [
+        "允礼", "孟静娴", "浣碧",
+    ],
+    "张廷玉": [
+        "爱新觉罗·胤禛", "弘历",
+    ],
+}
+
 
 # 与 schema.yaml enums.major_plots 对齐（全剧约 10 个）
 PLOTS = {
@@ -33,13 +213,16 @@ DROP_NAMES = {
     "祺嫔",  # 文鸳
     "淳贵人",  # 淳常在
     "余答应",  # 余莺儿
+    "敦亲王福晋博尔济吉特氏",  # 保留 敦亲王福晋（十福晋）
+    "采苹",  # 瑛贵人即采蘋
+    "富察氏",  # 保留 富察氏皇后
 }
 
 # 按姓名覆盖的精修（role/titles/residences/aliases/plots/connections）
 # connections 用姓名，写入时解析为 id
 BY_NAME: dict[str, dict] = {
     "甄嬛": {
-        "aliases": ["嬛嬛", "莞莞", "莫愁", "熹妃", "熹贵妃", "圣母皇太后"],
+        "aliases": ["嬛嬛", "莞莞", "莞", "莫愁", "熹妃", "熹贵妃", "圣母皇太后"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
@@ -53,6 +236,7 @@ BY_NAME: dict[str, dict] = {
             "connections": [
                 "乌拉那拉·宜修", "年世兰", "安陵容", "沈眉庄", "爱新觉罗·胤禛",
                 "允礼", "浣碧", "温实初", "叶澜依", "乌雅氏", "崔槿汐", "纯元皇后",
+                "流朱", "淳常在", "小允子",
             ],
         },
     },
@@ -69,57 +253,52 @@ BY_NAME: dict[str, dict] = {
             ],
             "connections": [
                 "爱新觉罗·胤禛", "甄嬛", "安陵容", "乌雅氏", "剪秋", "富察·温宜", "纯元皇后",
+                "福子", "年世兰",
             ],
         },
     },
     "年世兰": {
-        "aliases": ["华妃", "年妃", "华贵妃"],
+        "aliases": ["华妃", "年妃", "华贵妃", "年答应", "年氏"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
-            "titles": ["妃", "贵妃", "答应"],
+            "titles": ["妃", "贵妃", "答应", "皇贵妃"],
             "residences": ["翊坤宫", "冷宫"],
-            "major_plots": ["jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"],
-            "connections": ["爱新觉罗·胤禛", "甄嬛", "曹贵人", "年羹尧", "乔颂芝", "沈眉庄"],
+            "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"],
+            "connections": [
+                "爱新觉罗·胤禛", "甄嬛", "曹贵人", "年羹尧", "乔颂芝", "沈眉庄",
+                "丽嫔", "夏冬春", "江福海", "周宁海",
+            ],
         },
     },
     "安陵容": {
-        "aliases": ["陵容", "安嫔", "鸝妃"],
+        "aliases": ["陵容", "安答应", "安常在", "安贵人", "安嫔", "鹂妃", "鸝妃"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
             "titles": ["答应", "常在", "贵人", "嫔", "妃"],
-            "residences": ["延禧宫", "咸福宫"],
+            "residences": ["延禧宫"],
             "major_plots": [
                 "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang",
-                "chunyuan_jiufu", "anling_baiju",
+                "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju", "dixue_qinzi",
             ],
-            "connections": ["甄嬛", "乌拉那拉·宜修", "沈眉庄", "爱新觉罗·胤禛", "安比槐", "宝鹃"],
+            "connections": [
+                "甄嬛", "乌拉那拉·宜修", "沈眉庄", "爱新觉罗·胤禛", "安比槐", "宝鹃", "年世兰",
+            ],
         },
     },
     "沈眉庄": {
-        "aliases": ["眉庄", "惠妃", "惠贵妃"],
+        "aliases": ["眉庄", "沈贵人", "惠妃", "惠贵妃"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
             "titles": ["贵人", "嫔", "妃", "贵妃"],
-            "residences": ["碎玉轩", "咸福宫"],
+            "residences": ["咸福宫"],
             "major_plots": [
                 "chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si",
                 "chunyuan_jiufu", "anling_baiju", "dixue_qinzi",
             ],
-            "connections": ["甄嬛", "安陵容", "爱新觉罗·胤禛", "沈自山", "温实初"],
-        },
-    },
-    "叶澜依": {
-        "aliases": ["澜依", "宁嫔", "宁贵人"],
-        "attrs": {
-            "gender": "女",
-            "role_type": "后宫嫔妃",
-            "titles": ["答应", "常在", "贵人", "嫔"],
-            "residences": ["宫中"],
-            "major_plots": ["dixue_qinzi", "heqin_shitan", "houwei_zhongju"],
-            "connections": ["爱新觉罗·胤禛", "甄嬛", "乌拉那拉·宜修"],
+            "connections": ["甄嬛", "安陵容", "爱新觉罗·胤禛", "沈自山", "温实初", "敬妃", "采月"],
         },
     },
     "爱新觉罗·胤禛": {
@@ -130,11 +309,12 @@ BY_NAME: dict[str, dict] = {
             "titles": ["皇帝"],
             "residences": ["养心殿", "乾清宫"],
             "major_plots": [
-                "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si", "chunyuan_jiufu",
-                "ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju",
+                "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+                "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju",
             ],
             "connections": [
                 "甄嬛", "乌拉那拉·宜修", "年世兰", "乌雅氏", "允礼", "沈眉庄", "安陵容", "纯元皇后",
+                "苏培盛", "余莺儿",
             ],
         },
     },
@@ -145,8 +325,8 @@ BY_NAME: dict[str, dict] = {
             "role_type": "皇族",
             "titles": ["太后"],
             "residences": ["寿康宫"],
-            "major_plots": ["huafei_ci_si", "chunyuan_jiufu", "houwei_zhongju"],
-            "connections": ["爱新觉罗·胤禛", "乌拉那拉·宜修", "甄嬛", "苏培盛"],
+            "major_plots": ["chuxuan_dianxuan", "huafei_ci_si", "chunyuan_jiufu", "houwei_zhongju"],
+            "connections": ["爱新觉罗·胤禛", "乌拉那拉·宜修", "甄嬛", "苏培盛", "芳若"],
         },
     },
     "曹贵人": {
@@ -156,8 +336,8 @@ BY_NAME: dict[str, dict] = {
             "role_type": "后宫嫔妃",
             "titles": ["贵人", "嫔"],
             "residences": ["储秀宫"],
-            "major_plots": ["huafei_ci_si"],
-            "connections": ["年世兰", "爱新觉罗·胤禛", "甄嬛", "富察·温宜"],
+            "major_plots": ["chuxuan_dianxuan", "huafei_ci_si"],
+            "connections": ["年世兰", "爱新觉罗·胤禛", "甄嬛", "富察·温宜", "丽嫔"],
         },
     },
     "富察·温宜": {
@@ -178,8 +358,8 @@ BY_NAME: dict[str, dict] = {
             "role_type": "太监",
             "titles": ["总管太监"],
             "residences": ["养心殿"],
-            "major_plots": ["huafei_ci_si", "houwei_zhongju"],
-            "connections": ["爱新觉罗·胤禛", "甄嬛", "乌雅氏"],
+            "major_plots": ["huafei_ci_si", "ganlu_yunfeng", "houwei_zhongju"],
+            "connections": ["爱新觉罗·胤禛", "甄嬛", "乌雅氏", "崔槿汐"],
         },
     },
     "剪秋": {
@@ -200,8 +380,8 @@ BY_NAME: dict[str, dict] = {
             "role_type": "皇族",
             "titles": ["亲王"],
             "residences": ["宫外"],
-            "major_plots": ["ganlu_yunfeng", "heqin_shitan", "houwei_zhongju"],
-            "connections": ["甄嬛", "浣碧", "孟静娴", "舒太妃", "爱新觉罗·胤禛", "弘曕", "元澈"],
+            "major_plots": ["ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"],
+            "connections": ["甄嬛", "浣碧", "孟静娴", "舒太妃", "爱新觉罗·胤禛", "弘曕"],
         },
     },
     "温实初": {
@@ -220,9 +400,9 @@ BY_NAME: dict[str, dict] = {
         "attrs": {
             "gender": "女",
             "role_type": "宫女",
-            "titles": ["宫女"],
-            "residences": ["碎玉轩", "宫外"],
-            "major_plots": ["ganlu_yunfeng", "heqin_shitan"],
+            "titles": ["宫女", "福晋"],
+            "residences": ["碎玉轩", "甘露寺", "永寿宫", "宫外"],
+            "major_plots": ["ganlu_yunfeng", "dixue_qinzi", "heqin_shitan"],
             "connections": ["甄嬛", "允礼", "流朱", "孟静娴"],
         },
     },
@@ -234,7 +414,7 @@ BY_NAME: dict[str, dict] = {
             "titles": ["宫女"],
             "residences": ["碎玉轩", "永寿宫"],
             "major_plots": ["chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "houwei_zhongju"],
-            "connections": ["甄嬛"],
+            "connections": ["甄嬛", "小允子", "苏培盛"],
         },
     },
     "流朱": {
@@ -249,35 +429,47 @@ BY_NAME: dict[str, dict] = {
         },
     },
     "纯元皇后": {
-        "aliases": ["菀菀", "纯元"],
+        "aliases": ["菀菀", "纯元", "孝敬皇太后"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
-            "titles": ["皇后"],
+            "titles": ["皇后", "太后"],
             "residences": ["宫外"],
             "major_plots": ["chunyuan_jiufu", "houwei_zhongju"],
             "connections": ["爱新觉罗·胤禛", "乌拉那拉·宜修", "甄嬛"],
         },
     },
     "端妃": {
+        "aliases": ["端皇贵妃"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
             "titles": ["妃", "皇贵妃"],
             "residences": ["宫中"],
-            "major_plots": ["huafei_ci_si", "dixue_qinzi", "houwei_zhongju"],
+            "major_plots": ["huafei_ci_si", "anling_baiju", "dixue_qinzi", "houwei_zhongju"],
             "connections": ["爱新觉罗·胤禛", "敬妃", "甄嬛"],
         },
     },
     "敬妃": {
-        "aliases": ["敬贵妃"],
+        "aliases": ["敬嫔", "敬贵妃"],
         "attrs": {
             "gender": "女",
             "role_type": "后宫嫔妃",
             "titles": ["妃", "贵妃"],
             "residences": ["宫中"],
-            "major_plots": ["huafei_ci_si", "dixue_qinzi", "houwei_zhongju"],
-            "connections": ["爱新觉罗·胤禛", "端妃", "甄嬛"],
+            "major_plots": ["huafei_ci_si", "anling_baiju", "dixue_qinzi", "houwei_zhongju"],
+            "connections": ["爱新觉罗·胤禛", "端妃", "甄嬛", "沈眉庄", "胧月公主"],
+        },
+    },
+    "叶澜依": {
+        "aliases": ["澜依", "叶答应", "宁贵人", "宁嫔"],
+        "attrs": {
+            "gender": "女",
+            "role_type": "后宫嫔妃",
+            "titles": ["答应", "贵人", "嫔"],
+            "residences": ["宫中", "圆明园"],
+            "major_plots": ["ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"],
+            "connections": ["爱新觉罗·胤禛", "甄嬛", "乌拉那拉·宜修", "阿绿"],
         },
     },
     "齐妃": {
@@ -285,8 +477,8 @@ BY_NAME: dict[str, dict] = {
             "gender": "女",
             "role_type": "后宫嫔妃",
             "titles": ["妃"],
-            "residences": ["宫中"],
-            "major_plots": ["anling_baiju"],
+            "residences": ["长春宫"],
+            "major_plots": ["chuxuan_dianxuan", "huanyi_xiaochang", "ganlu_yunfeng"],
             "connections": ["爱新觉罗·胤禛", "弘时"],
         },
     },
@@ -296,9 +488,9 @@ BY_NAME: dict[str, dict] = {
             "gender": "女",
             "role_type": "后宫嫔妃",
             "titles": ["贵人", "嫔"],
-            "residences": ["宫中"],
-            "major_plots": ["huafei_ci_si", "anling_baiju"],
-            "connections": ["乌拉那拉·宜修", "安陵容", "甄嬛"],
+            "residences": ["储秀宫"],
+            "major_plots": ["huafei_ci_si", "chunyuan_jiufu", "ganlu_yunfeng", "anling_baiju"],
+            "connections": ["乌拉那拉·宜修", "安陵容", "甄嬛", "鄂敏"],
         },
     },
     "淳常在": {
@@ -377,25 +569,25 @@ BY_NAME: dict[str, dict] = {
         },
     },
     "舒太妃": {
-        "aliases": ["冲静元师"],
+        "aliases": ["冲静元师", "冲静先师"],
         "attrs": {
             "gender": "女",
             "role_type": "皇族",
             "titles": ["太妃"],
             "residences": ["宫外"],
-            "major_plots": ["ganlu_yunfeng"],
-            "connections": ["允礼", "积云"],
+            "major_plots": ["jinghong_wu", "ganlu_yunfeng"],
+            "connections": ["允礼", "积云", "爱新觉罗·胤禛"],
         },
     },
     "孟静娴": {
-        "aliases": ["孟氏"],
+        "aliases": ["孟氏", "娴福晋"],
         "attrs": {
             "gender": "女",
             "role_type": "皇族",
             "titles": ["福晋"],
             "residences": ["宫外"],
             "major_plots": ["heqin_shitan"],
-            "connections": ["允礼", "浣碧", "元澈"],
+            "connections": ["允礼", "浣碧"],
         },
     },
     "甄玉娆": {
@@ -437,9 +629,9 @@ BY_NAME: dict[str, dict] = {
             "gender": "男",
             "role_type": "皇族",
             "titles": ["皇帝", "皇族"],
-            "residences": ["宫中"],
-            "major_plots": ["houwei_zhongju"],
-            "connections": ["爱新觉罗·胤禛", "甄嬛"],
+            "residences": ["宫中", "寿康宫", "永寿宫"],
+            "major_plots": ["ganlu_yunfeng", "houwei_zhongju"],
+            "connections": ["甄嬛", "爱新觉罗·胤禛", "乌雅氏"],
         },
     },
     "弘曕": {
@@ -449,8 +641,8 @@ BY_NAME: dict[str, dict] = {
             "role_type": "皇族",
             "titles": ["皇族"],
             "residences": ["永寿宫"],
-            "major_plots": ["dixue_qinzi", "heqin_shitan", "houwei_zhongju"],
-            "connections": ["甄嬛", "允礼"],
+            "major_plots": ["ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"],
+            "connections": ["甄嬛", "允礼", "爱新觉罗·胤禛"],
         },
     },
     "胧月公主": {
@@ -461,7 +653,7 @@ BY_NAME: dict[str, dict] = {
             "titles": ["公主"],
             "residences": ["永寿宫"],
             "major_plots": ["chunyuan_jiufu", "ganlu_yunfeng"],
-            "connections": ["甄嬛", "爱新觉罗·胤禛"],
+            "connections": ["甄嬛", "敬妃", "爱新觉罗·胤禛"],
         },
     },
     "灵犀公主": {
@@ -471,7 +663,7 @@ BY_NAME: dict[str, dict] = {
             "role_type": "皇族",
             "titles": ["公主"],
             "residences": ["永寿宫"],
-            "major_plots": ["dixue_qinzi"],
+            "major_plots": ["ganlu_yunfeng", "dixue_qinzi"],
             "connections": ["甄嬛", "允礼"],
         },
     },
@@ -555,16 +747,6 @@ BY_NAME: dict[str, dict] = {
             "connections": ["年世兰"],
         },
     },
-    "夏刈": {
-        "attrs": {
-            "gender": "男",
-            "role_type": "侍卫",
-            "titles": ["侍卫"],
-            "residences": ["宫中"],
-            "major_plots": ["heqin_shitan"],
-            "connections": ["爱新觉罗·胤禛"],
-        },
-    },
     "甄远道": {
         "attrs": {
             "gender": "男",
@@ -627,16 +809,6 @@ BY_NAME: dict[str, dict] = {
             "connections": ["甄嬛"],
         },
     },
-    "摩格": {
-        "attrs": {
-            "gender": "男",
-            "role_type": "皇族",
-            "titles": ["皇族"],
-            "residences": ["宫外"],
-            "major_plots": ["heqin_shitan"],
-            "connections": ["爱新觉罗·胤禛", "甄嬛"],
-        },
-    },
     "朝瑰公主": {
         "attrs": {
             "gender": "女",
@@ -645,6 +817,37 @@ BY_NAME: dict[str, dict] = {
             "residences": ["宫外"],
             "major_plots": ["heqin_shitan"],
             "connections": ["爱新觉罗·胤禛"],
+        },
+    },
+    "摩格": {
+        "attrs": {
+            "gender": "男",
+            "role_type": "皇族",
+            "titles": ["皇族"],
+            "residences": ["宫外"],
+            "major_plots": ["heqin_shitan", "houwei_zhongju"],
+            "connections": ["爱新觉罗·胤禛", "甄嬛", "允礼"],
+        },
+    },
+    "夏刈": {
+        "attrs": {
+            "gender": "男",
+            "role_type": "侍卫",
+            "titles": ["侍卫"],
+            "residences": ["宫中"],
+            "major_plots": ["huanyi_xiaochang", "heqin_shitan", "houwei_zhongju"],
+            "connections": ["爱新觉罗·胤禛"],
+        },
+    },
+    "孙竹息": {
+        "aliases": ["竹息"],
+        "attrs": {
+            "gender": "女",
+            "role_type": "宫女",
+            "titles": ["宫女"],
+            "residences": ["寿康宫"],
+            "major_plots": ["jinghong_wu", "ganlu_yunfeng", "houwei_zhongju"],
+            "connections": ["乌雅氏", "爱新觉罗·胤禛"],
         },
     },
     "五阿哥": {
@@ -657,20 +860,64 @@ BY_NAME: dict[str, dict] = {
             "connections": ["爱新觉罗·胤禛"],
         },
     },
+    "瑛贵人": {
+        "aliases": ["采蘋", "采苹", "瑛常在"],
+        "attrs": {
+            "gender": "女",
+            "role_type": "后宫嫔妃",
+            "titles": ["常在", "贵人"],
+            "residences": ["宫中"],
+            "major_plots": ["anling_baiju", "houwei_zhongju"],
+            "connections": ["弘时", "甄嬛", "乌拉那拉·宜修"],
+        },
+    },
+    "静和公主": {
+        "aliases": ["静和"],
+        "attrs": {
+            "gender": "女",
+            "role_type": "皇族",
+            "titles": ["公主"],
+            "residences": ["咸福宫", "永寿宫"],
+            "major_plots": ["anling_baiju", "dixue_qinzi"],
+            "connections": ["沈眉庄", "甄嬛"],
+        },
+    },
+    "青樱": {
+        "aliases": ["娴妃"],
+        "attrs": {
+            "gender": "女",
+            "role_type": "后宫嫔妃",
+            "titles": ["格格", "妃"],
+            "residences": ["宫中"],
+            "major_plots": ["houwei_zhongju"],
+            "connections": ["乌拉那拉·宜修", "弘时", "爱新觉罗·胤禛", "弘历"],
+        },
+    },
+    "富察氏皇后": {
+        "aliases": ["富察氏"],
+        "attrs": {
+            "gender": "女",
+            "role_type": "后宫嫔妃",
+            "titles": ["皇后", "福晋"],
+            "residences": ["宫中"],
+            "major_plots": ["houwei_zhongju"],
+            "connections": ["弘历", "甄嬛"],
+        },
+    },
 }
 
 # 仅修正明显错误的身份（不改剧情关系）
 ROLE_FIXES = {
-    "采苹": ("女", "宫女", ["宫女"], ["宫中"]),
     "康常在": ("女", "后宫嫔妃", ["常在"], ["宫中"]),
     "贞嫔": ("女", "后宫嫔妃", ["嫔"], ["宫中"]),
-    "芳贵人": ("女", "后宫嫔妃", ["贵人"], ["碎玉轩"]),
+    "芳贵人": ("女", "后宫嫔妃", ["贵人"], ["碎玉轩", "冷宫"]),
     "孙答应": ("女", "后宫嫔妃", ["答应"], ["宫中"]),
     "斐雯": ("女", "宫女", ["宫女"], ["宫中"]),
     "玢儿": ("女", "宫女", ["宫女"], ["宫中"]),
     "宝鹊": ("女", "宫女", ["宫女"], ["延禧宫"]),
     "绘春": ("女", "宫女", ["宫女"], ["宫中"]),
     "阿绿": ("女", "宫女", ["宫女"], ["宫中"]),
+    "季惟生": ("男", "前朝官员", ["大臣"], ["宫外"]),
     "卫临": ("男", "太医", ["太医"], ["宫中"]),
     "章弥": ("男", "太医", ["太医"], ["宫中"]),
     "江诚": ("男", "太医", ["太医"], ["宫中"]),
@@ -680,10 +927,10 @@ ROLE_FIXES = {
     "静白": ("女", "宫女", ["宫女"], ["甘露寺"]),
     "莫言": ("女", "宫女", ["宫女"], ["甘露寺"]),
     "孙妙青": ("女", "宫女", ["宫女"], ["宫中"]),
-    "静和公主": ("女", "皇族", ["公主"], ["宫中"]),
     "祺嫔": None,  # dropped via 文鸳 alias if duplicate entity exists
     "淳贵人": None,
     "余答应": None,
+    "采苹": None,  # dropped; 瑛贵人 aliases
 }
 
 
@@ -694,6 +941,29 @@ def uniq(xs):
             seen.add(x)
             out.append(x)
     return out
+
+
+def merge_person(base: dict, patch: dict) -> dict:
+    """浅合并人物补丁：aliases 整表替换；attrs 内字段整表替换。"""
+    out = dict(base)
+    if "aliases" in patch:
+        out["aliases"] = patch["aliases"]
+    if "attrs" in patch:
+        attrs = dict(out.get("attrs") or {})
+        attrs.update(patch["attrs"])
+        out["attrs"] = attrs
+    return out
+
+
+def load_episode_patches() -> dict:
+    merged: dict = {}
+    for path in EP_PATCHES:
+        if not path.exists():
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for name, patch in data.items():
+            merged[name] = merge_person(merged.get(name, {}), patch)
+    return merged
 
 
 def main():
@@ -707,37 +977,41 @@ def main():
     # drop role-fix Nones that are duplicate titles already covered
     for name, fix in list(ROLE_FIXES.items()):
         if fix is None and name in by_name:
-            # only drop if alias already on another character
             del by_name[name]
     ents = [e for e in ents if e["name"] in by_name]
 
+    curated = dict(BY_NAME)
+    for name, patch in load_episode_patches().items():
+        curated[name] = merge_person(curated.get(name, {}), patch)
+
     # apply curated
-    for name, patch in BY_NAME.items():
+    for name, patch in curated.items():
         e = by_name.get(name)
         if not e:
             print("WARN missing", name)
             continue
         if "aliases" in patch:
             e["aliases"] = patch["aliases"]
-        attrs = patch["attrs"]
+        attrs = patch.get("attrs") or {}
         for k in ("gender", "role_type", "titles", "residences"):
             if k in attrs:
                 e["attrs"][k] = attrs[k]
-        plots = attrs.get("major_plots", e["attrs"].get("major_plots", []))
-        bad = [p for p in plots if p not in PLOTS]
-        if bad:
-            raise SystemExit(f"unknown plots on {name}: {bad}")
-        e["attrs"]["major_plots"] = plots
-        # resolve connection names -> ids
-        conn_names = attrs.get("connections", [])
-        ids = []
-        for cn in conn_names:
-            ce = by_name.get(cn)
-            if not ce:
-                print("WARN conn missing", name, "->", cn)
-                continue
-            ids.append(ce["id"])
-        e["attrs"]["connections"] = uniq(ids)
+        if "major_plots" in attrs:
+            plots = attrs["major_plots"]
+            bad = [p for p in plots if p not in PLOTS]
+            if bad:
+                raise SystemExit(f"unknown plots on {name}: {bad}")
+            e["attrs"]["major_plots"] = plots
+        if "connections" in attrs:
+            conn_names = attrs["connections"]
+            ids = []
+            for cn in conn_names:
+                ce = by_name.get(cn)
+                if not ce:
+                    print("WARN conn missing", name, "->", cn)
+                    continue
+                ids.append(ce["id"])
+            e["attrs"]["connections"] = uniq(ids)
 
     # role fixes
     for name, fix in ROLE_FIXES.items():
@@ -752,11 +1026,29 @@ def main():
         e["attrs"]["titles"] = titles
         e["attrs"]["residences"] = res
 
-    # strip obsolete plot key / dangling ids
+    # 核心圈关系网（覆盖补丁里可能膨胀的 connections）
+    for name, conn_names in CORE_CONNECTIONS.items():
+        e = by_name.get(name)
+        if not e:
+            continue
+        ids = []
+        for cn in conn_names[:MAX_CONNECTIONS]:
+            ce = by_name.get(cn)
+            if not ce:
+                print("WARN core conn missing", name, "->", cn)
+                continue
+            ids.append(ce["id"])
+        e["attrs"]["connections"] = uniq(ids)
+
+    # strip obsolete plot key / dangling ids；其余角色也硬截断到上限
+    ids = {x["id"] for x in ents}
     for e in ents:
         e["attrs"]["major_plots"] = [p for p in e["attrs"].get("major_plots", []) if p in PLOTS]
-        ids = {x["id"] for x in ents}
-        e["attrs"]["connections"] = [c for c in e["attrs"].get("connections", []) if c in ids]
+        conns = [c for c in e["attrs"].get("connections", []) if c in ids]
+        if len(conns) > MAX_CONNECTIONS:
+            print(f"TRIM {e['name']}: {len(conns)} -> {MAX_CONNECTIONS}")
+            conns = conns[:MAX_CONNECTIONS]
+        e["attrs"]["connections"] = conns
 
     ENTITIES.write_text(json.dumps(ents, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 

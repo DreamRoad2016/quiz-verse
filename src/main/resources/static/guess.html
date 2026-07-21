@@ -253,8 +253,23 @@
       color: var(--ink);
       margin-bottom: 5px;
       word-break: break-word;
-      line-height: 1.35;
+      line-height: 1.45;
       font-size: 0.78rem;
+    }
+    .tok {
+      display: inline;
+      font-weight: 500;
+    }
+    .tok + .tok::before {
+      content: "、";
+      color: rgba(232, 240, 245, 0.35);
+      font-weight: 400;
+    }
+    .tok-hit {
+      color: #3dcf8e;
+    }
+    .tok-miss {
+      color: rgba(168, 180, 190, 0.72);
     }
     .inner-hint {
       display: inline-block;
@@ -500,7 +515,15 @@
             >
               <td class="idx">{{ idx + 1 }}</td>
               <td v-for="c in columns" :key="c.key">
-                <div class="inner-val">{{ row.display[c.key] }}</div>
+                <div class="inner-val" v-if="cellItems(row.cells[c.key]).length">
+                  <span
+                    v-for="(it, i) in cellItems(row.cells[c.key])"
+                    :key="i"
+                    class="tok"
+                    :class="it.hit ? 'tok-hit' : 'tok-miss'"
+                  >{{ it.label }}</span>
+                </div>
+                <div class="inner-val" v-else>{{ row.display[c.key] }}</div>
                 <div class="inner-hint" :class="cellClass(row.cells[c.key])">{{ cellText(row.cells[c.key]) }}</div>
               </td>
             </tr>
@@ -603,12 +626,22 @@
           if (!cell) return 'c-gray';
           return 'c-' + (cell.color || 'gray');
         },
+        cellItems(cell) {
+          if (!cell || !Array.isArray(cell.items) || !cell.items.length) return [];
+          return cell.items;
+        },
         cellText(cell) {
           if (!cell) return '';
           const parts = [];
           if (cell.arrow) parts.push(cell.arrow);
           if (cell.kind === 'exact') parts.push('一致');
-          else if (cell.kind === 'partial') parts.push('部分');
+          else if (cell.kind === 'partial') {
+            const n = Array.isArray(cell.items)
+              ? cell.items.filter((it) => it.hit).length
+              : (cell.matched || []).length;
+            const total = Array.isArray(cell.items) ? cell.items.length : 0;
+            parts.push(total ? `部分 ${n}/${total}` : '部分');
+          }
           else if (cell.kind === 'near') parts.push('接近');
           else if (cell.kind === 'none') parts.push('不同');
           else if (cell.kind === 'higher') parts.push('更大');

@@ -1,0 +1,224 @@
+{
+  "苏培盛": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huafei_ci_si", "houwei_zhongju"]
+    }
+  },
+  "剪秋": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "dixue_qinzi", "anling_baiju", "houwei_zhongju"]
+    }
+  },
+  "允礼": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "ganlu_yunfeng", "heqin_shitan", "houwei_zhongju"]
+    }
+  },
+  "温实初": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huanyi_xiaochang", "ganlu_yunfeng", "dixue_qinzi"]
+    }
+  },
+  "浣碧": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "ganlu_yunfeng", "heqin_shitan"]
+    }
+  },
+  "崔槿汐": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "houwei_zhongju"],
+      "connections": ["甄嬛", "小允子"]
+    }
+  },
+  "纯元皇后": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "chunyuan_jiufu", "houwei_zhongju"]
+    }
+  },
+  "端妃": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huafei_ci_si", "dixue_qinzi", "houwei_zhongju"]
+    }
+  },
+  "敬妃": {
+    "aliases": ["敬嫔", "敬贵妃"],
+    "attrs": {
+      "titles": ["嫔", "妃", "贵妃"],
+      "residences": ["咸福宫"],
+      "major_plots": ["chuxuan_dianxuan", "huafei_ci_si", "dixue_qinzi", "houwei_zhongju"],
+      "connections": ["爱新觉罗·胤禛", "端妃", "甄嬛", "沈眉庄"]
+    }
+  },
+  "齐妃": {
+    "attrs": {
+      "residences": ["长春宫"],
+      "major_plots": ["chuxuan_dianxuan", "anling_baiju"],
+      "connections": ["爱新觉罗·胤禛", "弘时", "甄嬛"]
+    }
+  },
+  "淳常在": {
+    "aliases": ["淳贵人", "淳儿"],
+    "attrs": {
+      "residences": ["碎玉轩", "宫中"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["甄嬛"]
+    }
+  },
+  "欣嫔": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "anling_baiju"],
+      "connections": ["甄嬛", "爱新觉罗·胤禛", "余莺儿"]
+    }
+  },
+  "夏冬春": {
+    "attrs": {
+      "residences": ["延禧宫"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["年世兰", "安陵容", "富察贵人"]
+    }
+  },
+  "富察贵人": {
+    "attrs": {
+      "residences": ["延禧宫"],
+      "major_plots": ["chuxuan_dianxuan", "huanyi_xiaochang"],
+      "connections": ["年世兰", "甄嬛", "夏冬春"]
+    }
+  },
+  "丽嫔": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu"],
+      "connections": ["年世兰", "曹贵人", "甄嬛"]
+    }
+  },
+  "余莺儿": {
+    "attrs": {
+      "residences": ["宫中", "冷宫"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["爱新觉罗·胤禛", "年世兰", "安陵容", "甄嬛", "花穗"]
+    }
+  },
+  "乔颂芝": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huafei_ci_si"]
+    }
+  },
+  "芳若": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "houwei_zhongju"],
+      "connections": ["乌雅氏", "甄嬛"]
+    }
+  },
+  "福子": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["年世兰", "乌拉那拉·宜修"]
+    }
+  },
+  "佩儿": {
+    "attrs": {
+      "residences": ["碎玉轩"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["甄嬛"]
+    }
+  },
+  "花穗": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["余莺儿", "甄嬛"]
+    }
+  },
+  "采月": {
+    "attrs": {
+      "residences": ["咸福宫"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["沈眉庄"]
+    }
+  },
+  "小允子": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu"],
+      "connections": ["甄嬛", "崔槿汐"]
+    }
+  },
+  "康禄海": {
+    "attrs": {
+      "residences": ["碎玉轩"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["甄嬛", "丽嫔"]
+    }
+  },
+  "黄规全": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["年世兰"]
+    }
+  },
+  "江福海": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huafei_ci_si"]
+    }
+  },
+  "周宁海": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huafei_ci_si"]
+    }
+  },
+  "徐进良": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["爱新觉罗·胤禛"]
+    }
+  },
+  "甄远道": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "chunyuan_jiufu", "ganlu_yunfeng"]
+    }
+  },
+  "沈自山": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan"]
+    }
+  },
+  "安比槐": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "anling_baiju"]
+    }
+  },
+  "宝鹃": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "anling_baiju"]
+    }
+  },
+  "芳贵人": {
+    "attrs": {
+      "gender": "女",
+      "role_type": "后宫嫔妃",
+      "titles": ["贵人"],
+      "residences": ["碎玉轩", "冷宫"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["年世兰"]
+    }
+  },
+  "小印子": {
+    "attrs": {
+      "residences": ["碎玉轩"],
+      "major_plots": ["chuxuan_dianxuan"],
+      "connections": ["甄嬛", "花穗"]
+    }
+  },
+  "弘时": {
+    "attrs": {
+      "residences": ["长春宫", "宫中"],
+      "connections": ["齐妃", "爱新觉罗·胤禛"]
+    }
+  },
+  "年世兰": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"],
+      "connections": [
+        "爱新觉罗·胤禛", "甄嬛", "曹贵人", "年羹尧", "乔颂芝", "沈眉庄",
+        "丽嫔", "夏冬春", "江福海", "周宁海"
+      ]
+    }
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "安陵容": {
+    "aliases": ["陵容", "安答应", "安常在", "安贵人", "安嫔", "鸝妃"],
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang",
+        "chunyuan_jiufu", "anling_baiju"
+      ]
+    }
+  },
+  "年世兰": {
+    "aliases": ["华妃", "年妃", "华贵妃"],
+    "attrs": {
+      "titles": ["妃", "贵妃", "答应"],
+      "residences": ["翊坤宫", "冷宫"],
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"]
+    }
+  },
+  "曹贵人": {
+    "aliases": ["曹琴默", "襄嫔"],
+    "attrs": {
+      "titles": ["贵人", "嫔"],
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"]
+    }
+  },
+  "富察贵人": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang"]
+    }
+  },
+  "乔颂芝": {
+    "aliases": ["颂芝", "芝答应"],
+    "attrs": {
+      "role_type": "后宫嫔妃",
+      "titles": ["答应", "宫女"],
+      "residences": ["翊坤宫"],
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"]
+    }
+  },
+  "甄远道": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huanyi_xiaochang", "chunyuan_jiufu", "ganlu_yunfeng"]
+    }
+  },
+  "甄母": {
+    "attrs": {
+      "major_plots": ["huanyi_xiaochang", "chunyuan_jiufu"],
+      "connections": ["甄远道", "甄嬛", "甄玉娆"]
+    }
+  },
+  "甄玉娆": {
+    "aliases": ["玉娆"],
+    "attrs": {
+      "major_plots": ["huanyi_xiaochang", "dixue_qinzi", "heqin_shitan"]
+    }
+  },
+  "允礼": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang",
+        "ganlu_yunfeng", "heqin_shitan", "houwei_zhongju"
+      ]
+    }
+  },
+  "允䄉": {
+    "aliases": ["敦亲王"],
+    "attrs": {
+      "major_plots": ["jinghong_wu", "huafei_ci_si"],
+      "residences": ["宫外"]
+    }
+  },
+  "敦亲王福晋": {
+    "aliases": ["十福晋", "敦福晋"],
+    "attrs": {
+      "major_plots": ["huanyi_xiaochang", "huafei_ci_si"]
+    }
+  },
+  "年羹尧": {
+    "attrs": {
+      "major_plots": ["jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"]
+    }
+  },
+  "周宁海": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si"]
+    }
+  },
+  "温实初": {
+    "attrs": {
+      "major_plots": ["chuxuan_dianxuan", "huanyi_xiaochang", "ganlu_yunfeng", "dixue_qinzi"]
+    }
+  },
+  "沈眉庄": {
+    "aliases": ["眉庄", "沈贵人", "惠贵人", "惠妃", "惠贵妃"],
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "anling_baiju", "dixue_qinzi"
+      ]
+    }
+  },
+  "乌雅氏": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "houwei_zhongju"
+      ]
+    }
+  },
+  "爱新觉罗·胤禛": {
+    "attrs": {
+      "major_plots": [
+        "chuxuan_dianxuan", "jinghong_wu", "huanyi_xiaochang", "huafei_ci_si",
+        "chunyuan_jiufu", "ganlu_yunfeng", "dixue_qinzi", "heqin_shitan", "houwei_zhongju"
+      ]
+    }
+  },
+  "赵之垣": {
+    "attrs": {
+      "major_plots": ["huafei_ci_si"],
+      "connections": ["年世兰", "年羹尧"]
+    }
+  }
+}

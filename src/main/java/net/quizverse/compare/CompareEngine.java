@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -54,7 +53,11 @@ public class CompareEngine {
             case "exact":
                 return compareExact(attrValue(guess, col), attrValue(answer, col));
             case "set":
-                return compareSet(toStringSet(attrValue(guess, col)), toStringSet(attrValue(answer, col)));
+                return compareSet(
+                        pack,
+                        col,
+                        toStringList(attrValue(guess, col)),
+                        toStringSet(attrValue(answer, col)));
             case "number":
                 int threshold = col.getNearThreshold() == null ? 0 : col.getNearThreshold();
                 return compareNumber(toNumber(attrValue(guess, col)), toNumber(attrValue(answer, col)), threshold);
@@ -124,21 +127,29 @@ public class CompareEngine {
         return CellResult.of("none", "gray");
     }
 
-    private static CellResult compareSet(Set<String> gs, Set<String> as) {
-        if (gs.isEmpty() || as.isEmpty()) {
+    private CellResult compareSet(LoadedPack pack, PackSchema.ColumnDef col,
+                                  List<String> guessKeys, Set<String> answerKeys) {
+        if (guessKeys.isEmpty() || answerKeys.isEmpty()) {
             return CellResult.of("unknown", "gray");
         }
-        if (gs.equals(as)) {
-            return CellResult.of("exact", "green");
+        Set<String> guessSet = new LinkedHashSet<>(guessKeys);
+        List<CellItem> items = new ArrayList<>(guessKeys.size());
+        List<String> matchedLabels = new ArrayList<>();
+        for (String key : guessKeys) {
+            boolean hit = answerKeys.contains(key);
+            String label = resolveEnumLabel(pack, col, key);
+            items.add(new CellItem(label, hit));
+            if (hit) {
+                matchedLabels.add(label);
+            }
         }
-        Set<String> inter = new HashSet<>(gs);
-        inter.retainAll(as);
-        if (!inter.isEmpty()) {
-            List<String> matched = new ArrayList<>(inter);
-            Collections.sort(matched);
-            return new CellResult("partial", "yellow", null, matched);
+        if (guessSet.equals(answerKeys)) {
+            return new CellResult("exact", "green", null, matchedLabels, items);
         }
-        return CellResult.of("none", "gray");
+        if (!matchedLabels.isEmpty()) {
+            return new CellResult("partial", "yellow", null, matchedLabels, items);
+        }
+        return new CellResult("none", "gray", null, null, items);
     }
 
     private static CellResult compareNumber(Double gv, Double av, int threshold) {

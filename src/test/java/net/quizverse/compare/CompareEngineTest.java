@@ -62,6 +62,12 @@ class CompareEngineTest {
         assertEquals("none", cells.get("region").getKind());
         assertEquals("yellow", cells.get("teams").getColor());
         assertEquals("partial", cells.get("teams").getKind());
+        assertEquals(List.of("B"), cells.get("teams").getMatched());
+        assertEquals(2, cells.get("teams").getItems().size());
+        assertEquals("B", cells.get("teams").getItems().get(0).getLabel());
+        assertEquals(true, cells.get("teams").getItems().get(0).isHit());
+        assertEquals("C", cells.get("teams").getItems().get(1).getLabel());
+        assertEquals(false, cells.get("teams").getItems().get(1).isHit());
         assertEquals("yellow", cells.get("age").getColor());
         assertEquals("near", cells.get("age").getKind());
         assertEquals("↓", cells.get("age").getArrow());
