@@ -2,144 +2,389 @@
   {
     "id": "zh_huan",
     "name": "甄嬛",
-    "aliases": ["嬛嬛", "莞莞", "熹贵妃", "圣母皇太后"],
+    "aliases": [
+      "嬛嬛",
+      "莞莞",
+      "莫愁",
+      "熹妃",
+      "熹贵妃",
+      "圣母皇太后"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["常在", "贵人", "嫔", "妃", "贵妃", "皇贵妃", "太后"],
-      "residences": ["碎玉轩", "永寿宫"],
-      "major_plots": ["chuxuan_dianxuan", "jinghong_wu", "dixue_qinzi", "huafei_ci_si"],
-      "connections": ["zh_yixiu", "zh_huafei", "zh_meizhuang", "zh_lingrong", "zh_emperor"]
+      "titles": [
+        "常在",
+        "贵人",
+        "嫔",
+        "妃",
+        "贵妃",
+        "皇贵妃",
+        "太后"
+      ],
+      "residences": [
+        "碎玉轩",
+        "甘露寺",
+        "永寿宫",
+        "寿康宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi",
+        "heqin_shitan",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_yixiu",
+        "zh_huafei",
+        "zh_anlingrong",
+        "zh_meizhuang",
+        "zh_emperor",
+        "zh_8ea40b5a40",
+        "zh_b0ba6f96e0",
+        "zh_67dc611108",
+        "zh_lingrong",
+        "zh_taihou",
+        "zh_3df91796bf",
+        "zh_512f69fe45"
+      ]
     }
   },
   {
     "id": "zh_yixiu",
     "name": "乌拉那拉·宜修",
-    "aliases": ["皇后", "宜修"],
+    "aliases": [
+      "皇后",
+      "宜修"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["皇后"],
-      "residences": ["景仁宫"],
-      "major_plots": ["taihou_jiangshi", "dixue_qinzi"],
-      "connections": ["zh_emperor", "zh_huan", "zh_anlingrong"]
+      "titles": [
+        "皇后"
+      ],
+      "residences": [
+        "景仁宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "anling_baiju",
+        "dixue_qinzi",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan",
+        "zh_anlingrong",
+        "zh_taihou",
+        "zh_jiang",
+        "zh_wenyi",
+        "zh_512f69fe45"
+      ]
     }
   },
   {
     "id": "zh_huafei",
     "name": "年世兰",
-    "aliases": ["华妃", "年妃"],
+    "aliases": [
+      "华妃",
+      "年妃",
+      "华贵妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["妃", "贵妃"],
-      "residences": ["翊坤宫"],
-      "major_plots": ["huafei_ci_si", "jinghong_wu"],
-      "connections": ["zh_emperor", "zh_huan", "zh_cailin"]
+      "titles": [
+        "妃",
+        "贵妃",
+        "答应"
+      ],
+      "residences": [
+        "翊坤宫",
+        "冷宫"
+      ],
+      "major_plots": [
+        "jinghong_wu",
+        "huanyi_xiaochang",
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan",
+        "zh_cailin",
+        "zh_6e7d616a56",
+        "zh_0d76f13422",
+        "zh_meizhuang"
+      ]
     }
   },
   {
     "id": "zh_anlingrong",
     "name": "安陵容",
-    "aliases": ["陵容", "譙婉嫔"],
+    "aliases": [
+      "陵容",
+      "安嫔",
+      "鸝妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["答应", "常在", "贵人", "嫔"],
-      "residences": ["咸福宫"],
-      "major_plots": ["chuxuan_dianxuan", "jinghong_wu"],
-      "connections": ["zh_huan", "zh_yixiu", "zh_meizhuang"]
+      "titles": [
+        "答应",
+        "常在",
+        "贵人",
+        "嫔",
+        "妃"
+      ],
+      "residences": [
+        "延禧宫",
+        "咸福宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huanyi_xiaochang",
+        "chunyuan_jiufu",
+        "anling_baiju"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_yixiu",
+        "zh_meizhuang",
+        "zh_emperor",
+        "zh_881f62cce2",
+        "zh_129a88f6f4"
+      ]
     }
   },
   {
     "id": "zh_meizhuang",
     "name": "沈眉庄",
-    "aliases": ["眉庄", "惠贵妃"],
+    "aliases": [
+      "眉庄",
+      "惠妃",
+      "惠贵妃"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["贵人", "嫔", "妃", "贵妃"],
-      "residences": ["碎玉轩", "咸福宫"],
-      "major_plots": ["chuxuan_dianxuan", "dixue_qinzi"],
-      "connections": ["zh_huan", "zh_anlingrong", "zh_emperor"]
+      "titles": [
+        "贵人",
+        "嫔",
+        "妃",
+        "贵妃"
+      ],
+      "residences": [
+        "碎玉轩",
+        "咸福宫"
+      ],
+      "major_plots": [
+        "chuxuan_dianxuan",
+        "jinghong_wu",
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "anling_baiju",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_anlingrong",
+        "zh_emperor",
+        "zh_6f75b71a2e",
+        "zh_67dc611108"
+      ]
     }
   },
   {
     "id": "zh_lingrong",
     "name": "叶澜依",
-    "aliases": ["浣碧", "杨妃"],
+    "aliases": [
+      "澜依",
+      "宁嫔",
+      "宁贵人"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["宫女", "答应", "常在", "贵人", "嫔", "妃"],
-      "residences": ["碎玉轩", "延禧宫"],
-      "major_plots": ["dixue_qinzi"],
-      "connections": ["zh_huan", "zh_emperor"]
+      "titles": [
+        "答应",
+        "常在",
+        "贵人",
+        "嫔"
+      ],
+      "residences": [
+        "宫中"
+      ],
+      "major_plots": [
+        "dixue_qinzi",
+        "heqin_shitan",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan",
+        "zh_yixiu"
+      ]
     }
   },
   {
     "id": "zh_emperor",
     "name": "爱新觉罗·胤禛",
-    "aliases": ["皇上", "四爷", "雍正"],
+    "aliases": [
+      "皇上",
+      "四爷",
+      "雍正",
+      "胤禛"
+    ],
     "attrs": {
       "gender": "男",
       "role_type": "皇族",
-      "titles": ["皇帝"],
-      "residences": ["养心殿", "乾清宫"],
-      "major_plots": ["jinghong_wu", "dixue_qinzi", "huafei_ci_si", "taihou_jiangshi"],
-      "connections": ["zh_huan", "zh_yixiu", "zh_huafei", "zh_meizhuang"]
+      "titles": [
+        "皇帝"
+      ],
+      "residences": [
+        "养心殿",
+        "乾清宫"
+      ],
+      "major_plots": [
+        "jinghong_wu",
+        "huanyi_xiaochang",
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "ganlu_yunfeng",
+        "dixue_qinzi",
+        "heqin_shitan",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_yixiu",
+        "zh_huafei",
+        "zh_taihou",
+        "zh_8ea40b5a40",
+        "zh_meizhuang",
+        "zh_anlingrong",
+        "zh_512f69fe45"
+      ]
     }
   },
   {
     "id": "zh_taihou",
     "name": "乌雅氏",
-    "aliases": ["太后", "德妃"],
+    "aliases": [
+      "太后",
+      "德妃",
+      "成璧"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "皇族",
-      "titles": ["太后"],
-      "residences": ["寿康宫"],
-      "major_plots": ["taihou_jiangshi"],
-      "connections": ["zh_emperor", "zh_yixiu", "zh_huan"]
+      "titles": [
+        "太后"
+      ],
+      "residences": [
+        "寿康宫"
+      ],
+      "major_plots": [
+        "huafei_ci_si",
+        "chunyuan_jiufu",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_yixiu",
+        "zh_huan",
+        "zh_sun"
+      ]
     }
   },
   {
     "id": "zh_cailin",
     "name": "曹贵人",
-    "aliases": ["曹琴模", "襄嫔"],
+    "aliases": [
+      "曹琴默",
+      "襄嫔"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "后宫嫔妃",
-      "titles": ["贵人", "嫔"],
-      "residences": ["储秀宫"],
-      "major_plots": ["huafei_ci_si"],
-      "connections": ["zh_huafei", "zh_emperor"]
+      "titles": [
+        "贵人",
+        "嫔"
+      ],
+      "residences": [
+        "储秀宫"
+      ],
+      "major_plots": [
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_huafei",
+        "zh_emperor",
+        "zh_huan",
+        "zh_wenyi"
+      ]
     }
   },
   {
     "id": "zh_wenyi",
     "name": "富察·温宜",
-    "aliases": ["温宜公主"],
+    "aliases": [
+      "温宜公主",
+      "温宜"
+    ],
     "attrs": {
       "gender": "女",
       "role_type": "皇族",
-      "titles": ["公主"],
-      "residences": ["景仁宫"],
-      "major_plots": [],
-      "connections": ["zh_yixiu", "zh_emperor"]
+      "titles": [
+        "公主"
+      ],
+      "residences": [
+        "景仁宫"
+      ],
+      "major_plots": [
+        "huafei_ci_si"
+      ],
+      "connections": [
+        "zh_cailin",
+        "zh_yixiu",
+        "zh_emperor"
+      ]
     }
   },
   {
     "id": "zh_sun",
     "name": "苏培盛",
-    "aliases": ["苏公公"],
+    "aliases": [
+      "苏公公"
+    ],
     "attrs": {
       "gender": "男",
       "role_type": "太监",
-      "titles": ["总管太监"],
-      "residences": ["养心殿"],
-      "major_plots": ["huafei_ci_si"],
-      "connections": ["zh_emperor", "zh_huan"]
+      "titles": [
+        "总管太监"
+      ],
+      "residences": [
+        "养心殿"
+      ],
+      "major_plots": [
+        "huafei_ci_si",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_emperor",
+        "zh_huan",
+        "zh_taihou"
+      ]
     }
   },
   {
@@ -149,10 +394,20 @@
     "attrs": {
       "gender": "女",
       "role_type": "宫女",
-      "titles": ["宫女"],
-      "residences": ["景仁宫"],
-      "major_plots": ["dixue_qinzi"],
-      "connections": ["zh_yixiu"]
+      "titles": [
+        "宫女"
+      ],
+      "residences": [
+        "景仁宫"
+      ],
+      "major_plots": [
+        "dixue_qinzi",
+        "anling_baiju",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_yixiu"
+      ]
     }
   }
 ]

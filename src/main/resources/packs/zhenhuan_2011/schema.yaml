@@ -53,6 +53,8 @@ enums:
     - 皇贵妃
     - 皇后
     - 太后
+    - 太妃
+    - 福晋
     - 皇帝
     - 亲王
     - 公主
@@ -62,6 +64,7 @@ enums:
     - 侍卫
     - 太医
     - 大臣
+    - 皇族
   residences:
     - 碎玉轩
     - 永寿宫
@@ -79,15 +82,25 @@ enums:
     - 宫中
     - 宫外
   major_plots:
+    - key: chuxuan_dianxuan
+      label: 选秀入宫
     - key: jinghong_wu
-      label: 惊鸿舞宴会
-    - key: dixue_qinzi
-      label: 滴血验亲
+      label: 惊鸿舞
+    - key: huanyi_xiaochang
+      label: 欢宜香小产
     - key: huafei_ci_si
       label: 华妃赐死
-    - key: chuxuan_dianxuan
-      label: 初入宫选秀
-    - key: taihou_jiangshi
-      label: 太后降旨
+    - key: chunyuan_jiufu
+      label: 误穿纯元故衣
+    - key: ganlu_yunfeng
+      label: 甘露寺凌云峰
+    - key: anling_baiju
+      label: 安陵容败亡
+    - key: dixue_qinzi
+      label: 滴血验亲
+    - key: heqin_shitan
+      label: 和亲试探
+    - key: houwei_zhongju
+      label: 后位终局
   # filled at runtime display via character names — keys are entity ids
   characters: []
