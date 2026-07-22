@@ -3,7 +3,7 @@
 | 文件 | 说明 |
 |------|------|
 | `build_zhenhuan_roster.py` | 从维基角色表 + 补充名册生成 `packs/zhenhuan_2011/entities.json` |
-| `apply_zhenhuan_enrichment.py` | 按剧本校对后的剧情/关系/身份补丁写回 entities |
+| `apply_zhenhuan_enrichment.py` | 按剧本校对写回 entities；关系网 `CORE_CONNECTIONS`（≤10）；重大剧情 `CORE_MAJOR_PLOTS`（只挂当场相关） |
 | `data/zhenhuan_ep01_10_patch.json` | 第 1–10 集校对补丁 |
 | `data/zhenhuan_ep11_20_patch.json` | 第 11–20 集校对补丁（惊鸿舞、丽嫔失心等） |
 | `data/zhenhuan_ep21_30_patch.json` | 第 21–30 集校对补丁（欢宜香小产、华贵妃等） |

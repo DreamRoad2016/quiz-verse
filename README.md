@@ -44,7 +44,18 @@ mvn spring-boot:run
 - 猜局：`/guess.html?pack={packId}`
 - 健康检查：`/api/health`
 
-对局改用 Redis：`QUIZ_MATCH_STORE=redis`（需本机 Redis 可用）。
+对局改用 Redis：
+
+```bash
+# 临时
+QUIZ_MATCH_STORE=redis ./run.sh
+
+# 或阿里云 / 生产 profile（默认 redis）
+mvn spring-boot:run -Dspring-boot.run.profiles=aliyun
+# 需配置 REDIS_HOST / REDIS_PORT / REDIS_PASSWORD
+```
+
+每次打开猜题页会自动开一局（独立 `matchId`）；结束弹窗可关闭并回看本局猜测记录。
 
 ## API
 

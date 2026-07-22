@@ -172,12 +172,7 @@
       "major_plots": [
         "chuxuan_dianxuan",
         "jinghong_wu",
-        "huanyi_xiaochang",
-        "chunyuan_jiufu",
-        "ganlu_yunfeng",
-        "anling_baiju",
-        "dixue_qinzi",
-        "houwei_zhongju"
+        "anling_baiju"
       ],
       "connections": [
         "zh_huan",
@@ -216,12 +211,8 @@
       "major_plots": [
         "chuxuan_dianxuan",
         "jinghong_wu",
-        "huanyi_xiaochang",
-        "huafei_ci_si",
-        "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "anling_baiju",
-        "dixue_qinzi"
+        "anling_baiju"
       ],
       "connections": [
         "zh_huan",
@@ -258,9 +249,6 @@
       ],
       "major_plots": [
         "ganlu_yunfeng",
-        "anling_baiju",
-        "dixue_qinzi",
-        "heqin_shitan",
         "houwei_zhongju"
       ],
       "connections": [
@@ -341,8 +329,7 @@
         "huafei_ci_si",
         "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "dixue_qinzi",
-        "houwei_zhongju"
+        "dixue_qinzi"
       ],
       "connections": [
         "zh_emperor",
@@ -374,8 +361,7 @@
       "major_plots": [
         "chuxuan_dianxuan",
         "jinghong_wu",
-        "huanyi_xiaochang",
-        "huafei_ci_si"
+        "huanyi_xiaochang"
       ],
       "connections": [
         "zh_huafei",
@@ -402,10 +388,7 @@
       "residences": [
         "景仁宫"
       ],
-      "major_plots": [
-        "jinghong_wu",
-        "huafei_ci_si"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_cailin",
         "zh_yixiu",
@@ -431,6 +414,7 @@
       ],
       "major_plots": [
         "chuxuan_dianxuan",
+        "jinghong_wu",
         "huanyi_xiaochang",
         "huafei_ci_si",
         "chunyuan_jiufu",
@@ -464,10 +448,6 @@
       "major_plots": [
         "chuxuan_dianxuan",
         "huafei_ci_si",
-        "chunyuan_jiufu",
-        "ganlu_yunfeng",
-        "dixue_qinzi",
-        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
@@ -493,12 +473,7 @@
         "宫外"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang",
-        "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "dixue_qinzi",
         "heqin_shitan",
         "houwei_zhongju"
       ],
@@ -530,12 +505,11 @@
       ],
       "major_plots": [
         "chuxuan_dianxuan",
+        "jinghong_wu",
         "huanyi_xiaochang",
-        "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "dixue_qinzi",
         "anling_baiju",
-        "houwei_zhongju"
+        "dixue_qinzi"
       ],
       "connections": [
         "zh_huan",
@@ -601,12 +575,10 @@
         "寿康宫"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
         "huanyi_xiaochang",
         "chunyuan_jiufu",
         "ganlu_yunfeng",
         "dixue_qinzi",
-        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
@@ -630,8 +602,7 @@
         "碎玉轩"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "chunyuan_jiufu"
+        "chuxuan_dianxuan"
       ],
       "connections": [
         "zh_huan",
@@ -658,9 +629,6 @@
         "宫外"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang",
         "chunyuan_jiufu",
         "houwei_zhongju"
       ],
@@ -691,13 +659,7 @@
       ],
       "major_plots": [
         "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang",
-        "huafei_ci_si",
-        "chunyuan_jiufu",
-        "ganlu_yunfeng",
         "anling_baiju",
-        "dixue_qinzi",
         "houwei_zhongju"
       ],
       "connections": [
@@ -721,9 +683,7 @@
         "长春宫"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "huanyi_xiaochang",
-        "ganlu_yunfeng"
+        "chuxuan_dianxuan"
       ],
       "connections": [
         "zh_emperor",
@@ -753,11 +713,7 @@
         "宫外"
       ],
       "major_plots": [
-        "huafei_ci_si",
-        "chunyuan_jiufu",
-        "ganlu_yunfeng",
-        "anling_baiju",
-        "dixue_qinzi"
+        "huafei_ci_si"
       ],
       "connections": [
         "zh_yixiu",
@@ -817,15 +773,7 @@
       "residences": [
         "储秀宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huafei_ci_si",
-        "ganlu_yunfeng",
-        "anling_baiju",
-        "dixue_qinzi",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_14cf63048e",
         "zh_huan",
@@ -848,9 +796,7 @@
       "residences": [
         "延禧宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei",
         "zh_anlingrong",
@@ -871,11 +817,7 @@
       "residences": [
         "延禧宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei",
         "zh_huan",
@@ -901,7 +843,6 @@
         "冷宫"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
         "jinghong_wu"
       ],
       "connections": [
@@ -961,9 +902,6 @@
         "翊坤宫"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang",
         "huafei_ci_si"
       ],
       "connections": [
@@ -984,9 +922,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "ganlu_yunfeng"
-      ],
+      "major_plots": [],
       "connections": []
     }
   },
@@ -1003,9 +939,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "ganlu_yunfeng"
-      ],
+      "major_plots": [],
       "connections": []
     }
   },
@@ -1023,9 +957,7 @@
         "碎玉轩",
         "冷宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei"
       ]
@@ -1044,9 +976,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": []
     }
   },
@@ -1067,10 +997,7 @@
         "宫外"
       ],
       "major_plots": [
-        "jinghong_wu",
-        "ganlu_yunfeng",
-        "dixue_qinzi",
-        "houwei_zhongju"
+        "ganlu_yunfeng"
       ],
       "connections": [
         "zh_8ea40b5a40",
@@ -1096,7 +1023,6 @@
         "宫外"
       ],
       "major_plots": [
-        "heqin_shitan",
         "houwei_zhongju"
       ],
       "connections": [
@@ -1121,10 +1047,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "jinghong_wu",
-        "huafei_ci_si"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_emperor",
         "zh_a40fecff53"
@@ -1146,9 +1069,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "jinghong_wu"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_emperor",
         "zh_ae007510bb"
@@ -1171,11 +1092,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "dixue_qinzi",
-        "heqin_shitan",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_3fa1a595fa",
         "zh_emperor",
@@ -1198,12 +1115,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "dixue_qinzi",
-        "heqin_shitan",
-        "anling_baiju",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_b3d8ebbab4",
@@ -1228,8 +1140,6 @@
         "宫中"
       ],
       "major_plots": [
-        "ganlu_yunfeng",
-        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
@@ -1262,7 +1172,6 @@
       ],
       "major_plots": [
         "ganlu_yunfeng",
-        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
@@ -1337,9 +1246,7 @@
         "宫外"
       ],
       "major_plots": [
-        "ganlu_yunfeng",
         "dixue_qinzi",
-        "heqin_shitan",
         "houwei_zhongju"
       ],
       "connections": [
@@ -1387,9 +1294,7 @@
         "永寿宫"
       ],
       "major_plots": [
-        "chunyuan_jiufu",
         "ganlu_yunfeng",
-        "anling_baiju",
         "houwei_zhongju"
       ],
       "connections": [
@@ -1414,11 +1319,7 @@
       "residences": [
         "永寿宫"
       ],
-      "major_plots": [
-        "ganlu_yunfeng",
-        "dixue_qinzi",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_8ea40b5a40"
@@ -1442,8 +1343,7 @@
         "永寿宫"
       ],
       "major_plots": [
-        "anling_baiju",
-        "dixue_qinzi"
+        "anling_baiju"
       ],
       "connections": [
         "zh_meizhuang",
@@ -1464,10 +1364,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "heqin_shitan",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_8ea40b5a40",
         "zh_5eb0e7cfcf",
@@ -1488,9 +1385,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_d056ff3562",
         "zh_huan"
@@ -1510,10 +1405,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "ganlu_yunfeng",
-        "dixue_qinzi"
-      ],
+      "major_plots": [],
       "connections": []
     }
   },
@@ -1548,8 +1440,7 @@
         "延禧宫"
       ],
       "major_plots": [
-        "anling_baiju",
-        "dixue_qinzi"
+        "anling_baiju"
       ],
       "connections": [
         "zh_anlingrong"
@@ -1627,8 +1518,6 @@
         "寿康宫"
       ],
       "major_plots": [
-        "jinghong_wu",
-        "ganlu_yunfeng",
         "houwei_zhongju"
       ],
       "connections": [
@@ -1667,12 +1556,7 @@
       "residences": [
         "寿康宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan",
-        "chunyuan_jiufu",
-        "ganlu_yunfeng",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_taihou",
         "zh_huan"
@@ -1692,9 +1576,7 @@
       "residences": [
         "翊坤宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei",
         "zh_yixiu"
@@ -1715,10 +1597,7 @@
         "碎玉轩",
         "储秀宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan",
-        "ganlu_yunfeng"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_7188e88339"
@@ -1757,9 +1636,7 @@
       "residences": [
         "长春宫"
       ],
-      "major_plots": [
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_9e5a293f59"
       ]
@@ -1812,9 +1689,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_8307179eca"
       ]
@@ -1851,10 +1726,7 @@
         "咸福宫",
         "寿康宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan",
-        "ganlu_yunfeng"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_meizhuang"
       ]
@@ -1958,9 +1830,7 @@
       "residences": [
         "储秀宫"
       ],
-      "major_plots": [
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_cailin"
       ]
@@ -1979,9 +1849,7 @@
       "residences": [
         "延禧宫"
       ],
-      "major_plots": [
-        "jinghong_wu"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_83d2cb12b2"
       ]
@@ -2000,9 +1868,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "ganlu_yunfeng"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_lingrong"
       ]
@@ -2095,11 +1961,7 @@
         "永寿宫",
         "寿康宫"
       ],
-      "major_plots": [
-        "jinghong_wu",
-        "ganlu_yunfeng",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_3df91796bf",
@@ -2122,9 +1984,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei"
       ]
@@ -2179,10 +2039,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "ganlu_yunfeng",
-        "anling_baiju"
-      ],
+      "major_plots": [],
       "connections": []
     }
   },
@@ -2199,12 +2056,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "ganlu_yunfeng",
-        "anling_baiju",
-        "dixue_qinzi",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": []
     }
   },
@@ -2221,9 +2073,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_emperor"
@@ -2260,9 +2110,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei"
       ]
@@ -2281,9 +2129,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "jinghong_wu"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_meizhuang",
         "zh_huan"
@@ -2320,10 +2166,7 @@
       "residences": [
         "翊坤宫"
       ],
-      "major_plots": [
-        "huafei_ci_si",
-        "dixue_qinzi"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei"
       ]
@@ -2342,12 +2185,7 @@
       "residences": [
         "翊坤宫"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang",
-        "huafei_ci_si"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei"
       ]
@@ -2387,9 +2225,7 @@
       "residences": [
         "碎玉轩"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_53131e3b5d"
@@ -2409,9 +2245,7 @@
       "residences": [
         "碎玉轩"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huan",
         "zh_d863823605"
@@ -2466,10 +2300,7 @@
         "宫外"
       ],
       "major_plots": [
-        "huanyi_xiaochang",
-        "ganlu_yunfeng",
-        "heqin_shitan",
-        "houwei_zhongju"
+        "ganlu_yunfeng"
       ],
       "connections": [
         "zh_8ea40b5a40",
@@ -2491,9 +2322,7 @@
         "宫中"
       ],
       "major_plots": [
-        "huanyi_xiaochang",
-        "heqin_shitan",
-        "houwei_zhongju"
+        "heqin_shitan"
       ],
       "connections": [
         "zh_emperor"
@@ -2513,9 +2342,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "ganlu_yunfeng"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_emperor"
       ]
@@ -2534,11 +2361,7 @@
       "residences": [
         "养心殿"
       ],
-      "major_plots": [
-        "ganlu_yunfeng",
-        "heqin_shitan",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_sun"
       ]
@@ -2557,9 +2380,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "chuxuan_dianxuan"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_emperor"
       ]
@@ -2579,10 +2400,7 @@
         "宫外"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "huanyi_xiaochang",
-        "chunyuan_jiufu",
-        "ganlu_yunfeng"
+        "chuxuan_dianxuan"
       ],
       "connections": [
         "zh_huan",
@@ -2604,9 +2422,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "huanyi_xiaochang"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_emperor"
       ]
@@ -2625,12 +2441,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "huafei_ci_si",
-        "chunyuan_jiufu",
-        "anling_baiju",
-        "dixue_qinzi"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_14cf63048e"
       ]
@@ -2649,11 +2460,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "jinghong_wu",
-        "huanyi_xiaochang",
-        "huafei_ci_si"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei",
         "zh_emperor"
@@ -2747,9 +2554,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "huafei_ci_si"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_huafei",
         "zh_6e7d616a56"
@@ -2797,8 +2602,7 @@
         "宫外"
       ],
       "major_plots": [
-        "chuxuan_dianxuan",
-        "anling_baiju"
+        "chuxuan_dianxuan"
       ],
       "connections": [
         "zh_anlingrong"
@@ -2818,10 +2622,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "huanyi_xiaochang",
-        "chunyuan_jiufu"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_9ed81c3cc8",
         "zh_huan",
@@ -2905,8 +2706,7 @@
         "宫外"
       ],
       "major_plots": [
-        "heqin_shitan",
-        "houwei_zhongju"
+        "heqin_shitan"
       ],
       "connections": [
         "zh_emperor",
@@ -2971,13 +2771,9 @@
       ],
       "major_plots": [
         "chuxuan_dianxuan",
-        "jinghong_wu",
-        "huanyi_xiaochang",
         "huafei_ci_si",
-        "chunyuan_jiufu",
         "ganlu_yunfeng",
         "anling_baiju",
-        "dixue_qinzi",
         "houwei_zhongju"
       ],
       "connections": [
@@ -3007,10 +2803,7 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [
-        "anling_baiju",
-        "houwei_zhongju"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_f571cd3606",
         "zh_huan",
@@ -3051,10 +2844,7 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [
-        "huanyi_xiaochang",
-        "huafei_ci_si"
-      ],
+      "major_plots": [],
       "connections": [
         "zh_ae007510bb",
         "zh_huan"

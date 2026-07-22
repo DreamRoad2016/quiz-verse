@@ -1,0 +1,17 @@
+# Aliyun / production: Redis-backed match store
+# Run: java -jar quiz-verse.jar --spring.profiles.active=aliyun
+# Or set env: SPRING_PROFILES_ACTIVE=aliyun
+
+quiz:
+  match:
+    store: redis
+    ttl-hours: 24
+
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST:127.0.0.1}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}
+      database: ${REDIS_DATABASE:0}
+      timeout: 3s

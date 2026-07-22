@@ -2,19 +2,14 @@ package net.quizverse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 
 /**
- * Redis auto-config is excluded by default so {@code quiz.match.store=memory} runs
- * without a local Redis. Enable Redis store via {@code QUIZ_MATCH_STORE=redis}
- * (see {@link net.quizverse.config.RedisMatchConfig}).
+ * Default match store is in-memory ({@code QUIZ_MATCH_STORE=memory}).
+ * For Redis-backed matches: {@code QUIZ_MATCH_STORE=redis} plus spring.data.redis.*.
  */
-@SpringBootApplication(exclude = {
-        RedisAutoConfiguration.class,
-        RedisRepositoriesAutoConfiguration.class
-})
+@SpringBootApplication(exclude = RedisRepositoriesAutoConfiguration.class)
 @ConfigurationPropertiesScan
 public class QuizVerseApplication {
 

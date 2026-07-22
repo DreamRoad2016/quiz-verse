@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <title>猜人物 · Quiz Verse</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -99,7 +100,7 @@
       flex-wrap: wrap;
       gap: 10px;
       align-items: stretch;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
       animation: rise 0.7s var(--ease) 0.08s both;
     }
     .btn {
@@ -122,7 +123,6 @@
     }
 
     .input-wrap {
-      position: relative;
       flex: 1;
       min-width: 200px;
       max-width: 440px;
@@ -145,14 +145,17 @@
     }
     .input-wrap input:disabled { opacity: 0.5; }
 
+    /* 文档流展开，不盖住 REMAINING / 提示文案 */
     .suggest-panel {
-      position: absolute;
-      left: 0; right: 0; top: calc(100% + 4px);
-      z-index: 30;
+      position: relative;
+      z-index: 1;
+      width: min(440px, 100%);
+      margin: 0 0 14px;
       max-height: 260px;
       overflow-y: auto;
       border: 1px solid var(--line);
       background: #0c1a24;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
     }
     .suggest-item {
       padding: 11px 14px;
@@ -171,9 +174,9 @@
       flex-wrap: wrap;
       gap: 16px;
       align-items: center;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
       min-height: 28px;
-      animation: rise 0.7s var(--ease) 0.14s both;
+      animation: rise 0.7s var(--ease) 0.05s both;
     }
     .lives {
       display: flex;
@@ -313,13 +316,18 @@
       padding: 24px;
       animation: fade-in 0.4s ease both;
     }
-    .end-screen.end-win {
+    .end-backdrop {
+      position: absolute;
+      inset: 0;
+      cursor: pointer;
+    }
+    .end-screen.end-win .end-backdrop {
       background:
         radial-gradient(ellipse 60% 50% at 50% 35%, rgba(61, 207, 142, 0.22), transparent 60%),
         rgba(4, 10, 14, 0.88);
       backdrop-filter: blur(10px);
     }
-    .end-screen.end-lose {
+    .end-screen.end-lose .end-backdrop {
       background:
         radial-gradient(ellipse 55% 45% at 50% 40%, rgba(255, 107, 107, 0.18), transparent 58%),
         rgba(8, 6, 8, 0.9);
@@ -331,12 +339,14 @@
     }
     .end-card {
       position: relative;
+      z-index: 2;
       width: min(420px, 100%);
       padding: 36px 28px 28px;
       text-align: center;
       border: 1px solid var(--line);
       background: linear-gradient(165deg, rgba(12, 28, 40, 0.95), rgba(7, 16, 24, 0.98));
       animation: end-pop 0.55s var(--ease) both;
+      pointer-events: auto;
     }
     .end-win .end-card {
       border-color: rgba(61, 207, 142, 0.35);
@@ -405,10 +415,60 @@
       transition: color 0.2s;
     }
     .end-actions a:hover { color: var(--ink); }
+    .end-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .end-close:hover {
+      color: var(--ink);
+      border-color: rgba(232, 238, 242, 0.35);
+    }
+    .result-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      animation: rise 0.35s var(--ease);
+    }
+    .result-bar.won {
+      border-color: rgba(61, 207, 142, 0.35);
+      background: rgba(61, 207, 142, 0.06);
+    }
+    .result-bar.lost {
+      border-color: rgba(255, 107, 107, 0.3);
+      background: rgba(255, 107, 107, 0.06);
+    }
+    .result-bar .rb-text {
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.45;
+    }
+    .result-bar .rb-text strong { font-weight: 600; }
+    .result-bar .rb-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     .confetti-canvas {
       position: absolute;
       inset: 0;
+      z-index: 1;
       width: 100%;
       height: 100%;
       pointer-events: none;
@@ -443,41 +503,7 @@
         <p>{{ description || '根据属性反馈收敛答案。' }}</p>
       </header>
 
-      <div class="toolbar">
-        <button class="btn btn-primary" @click="start" :disabled="loading">
-          {{ matchId ? '再开一局' : '开始新局' }}
-        </button>
-        <div class="input-wrap" v-if="briefs.length">
-          <input
-            ref="guessInput"
-            type="text"
-            v-model="queryInput"
-            placeholder="姓名 / 别名 / 拼音，如 zhenhuan"
-            :disabled="!matchId || loading || endOverlay"
-            autocomplete="off"
-            @input="onQueryInput"
-            @keydown.down.prevent="navSuggest(1)"
-            @keydown.up.prevent="navSuggest(-1)"
-            @keydown.enter.prevent="onEnter"
-            @keydown.escape="showSuggest = false"
-            @focus="showSuggest = queryInput.trim().length > 0"
-          />
-          <div class="suggest-panel" v-if="showSuggest && filteredBriefs.length">
-            <div
-              v-for="(b, idx) in filteredBriefs"
-              :key="b.id"
-              class="suggest-item"
-              :class="{ active: idx === activeSuggest }"
-              @mousedown.prevent="pickBrief(b)"
-            >
-              <span class="nm">{{ b.name }}</span>
-              <span class="al" v-if="b.aliases && b.aliases.length">{{ b.aliases.slice(0, 3).join(' / ') }}</span>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-ghost" @click="submitGuess" :disabled="!matchId || loading || endOverlay">猜一下</button>
-      </div>
-
+      <!-- REMAINING 放在输入框上方，联想列表在下方展开，互不遮挡 -->
       <div class="status-row" v-if="matchId">
         <div class="lives" aria-label="剩余次数">
           <span
@@ -490,13 +516,66 @@
         <span class="meta">REMAINING {{ remaining }} / {{ maxGuesses }}</span>
       </div>
 
+      <div class="toolbar">
+        <button class="btn btn-primary" @click="start" :disabled="loading">
+          {{ matchId ? '再开一局' : '开始新局' }}
+        </button>
+        <div class="input-wrap" v-if="briefs.length">
+          <input
+            ref="guessInput"
+            type="text"
+            v-model="queryInput"
+            placeholder="姓名 / 别名 / 拼音，如 zhenhuan"
+            :disabled="!matchId || loading || gameOver"
+            autocomplete="off"
+            @input="onQueryInput"
+            @keydown.down.prevent="navSuggest(1)"
+            @keydown.up.prevent="navSuggest(-1)"
+            @keydown.enter.prevent="onEnter"
+            @keydown.escape="showSuggest = false"
+            @focus="showSuggest = queryInput.trim().length > 0"
+          />
+        </div>
+        <button class="btn btn-ghost" @click="submitGuess" :disabled="!matchId || loading || gameOver">猜一下</button>
+      </div>
+
+      <div class="suggest-panel" v-if="showSuggest && filteredBriefs.length && !gameOver">
+        <div
+          v-for="(b, idx) in filteredBriefs"
+          :key="b.id"
+          class="suggest-item"
+          :class="{ active: idx === activeSuggest }"
+          @mousedown.prevent="pickBrief(b)"
+          @click.prevent="pickBrief(b)"
+        >
+          <span class="nm">{{ b.name }}</span>
+          <span class="al" v-if="b.aliases && b.aliases.length">{{ b.aliases.slice(0, 3).join(' / ') }}</span>
+        </div>
+      </div>
+
+      <div
+        v-if="gameOver && !endOverlay"
+        class="result-bar"
+        :class="endKind === 'WON' ? 'won' : 'lost'"
+      >
+        <div class="rb-text">
+          <template v-if="endKind === 'WON'">猜中了 · 答案 <strong>{{ endAnswerName }}</strong></template>
+          <template v-else>本局结束 · 答案 <strong>{{ endAnswerName }}</strong></template>
+          <span style="color: var(--muted)"> · 可下滑查看每次猜测</span>
+        </div>
+        <div class="rb-actions">
+          <button class="btn btn-ghost" type="button" @click="reopenEnd">结果说明</button>
+          <button class="btn btn-primary" type="button" @click="start" :disabled="loading">再开一局</button>
+        </div>
+      </div>
+
       <div v-if="msg" class="toast">{{ msg }}</div>
 
-      <div v-if="!rows.length && matchId" class="empty-hint">
+      <div v-if="!rows.length && matchId && !gameOver" class="empty-hint">
         本局已开始。可输入汉字姓名、别名，或拼音（如 <code>zhenhuan</code> / <code>zh</code>）联想选人。
       </div>
       <div v-if="!matchId && !loading" class="empty-hint">
-        点击「开始新局」进入本场猜谜。
+        正在开局…
       </div>
 
       <div v-if="rows.length" class="table-wrap">
@@ -532,25 +611,31 @@
       </div>
     </div>
 
-    <div
-      v-if="endOverlay"
-      class="end-screen"
-      :class="endKind === 'WON' ? 'end-win' : 'end-lose'"
-      role="dialog"
-      aria-modal="true"
-    >
-      <canvas v-if="endKind === 'WON'" ref="confettiCanvas" class="confetti-canvas"></canvas>
-      <div class="end-card">
-        <p class="end-kicker">{{ endKind === 'WON' ? 'Perfect hit' : 'Out of guesses' }}</p>
-        <h2 class="end-title">{{ endKind === 'WON' ? '猜中了！' : '本局结束' }}</h2>
-        <p class="end-answer">{{ endAnswerName }}</p>
-        <p class="end-sub">{{ endSub }}</p>
-        <div class="end-actions">
-          <button class="btn btn-primary" @click="replayFromEnd">再来一局</button>
-          <a href="/">返回首页</a>
+    <teleport to="body">
+      <div
+        v-if="endOverlay"
+        class="end-screen"
+        :class="endKind === 'WON' ? 'end-win' : 'end-lose'"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="end-title"
+      >
+        <div class="end-backdrop" @click="dismissEnd" aria-hidden="true"></div>
+        <canvas v-if="endKind === 'WON'" ref="confettiCanvas" class="confetti-canvas"></canvas>
+        <div class="end-card">
+          <button class="end-close" type="button" aria-label="关闭并查看本局" @click="dismissEnd">×</button>
+          <p class="end-kicker">{{ endKind === 'WON' ? 'Perfect hit' : 'Out of guesses' }}</p>
+          <h2 id="end-title" class="end-title">{{ endKind === 'WON' ? '猜中了！' : '本局结束' }}</h2>
+          <p class="end-answer">{{ endAnswerName }}</p>
+          <p class="end-sub">{{ endSub }}</p>
+          <div class="end-actions">
+            <button class="btn btn-primary" type="button" @click="dismissEnd">查看本局记录</button>
+            <button class="btn btn-ghost" type="button" @click="replayFromEnd">再来一局</button>
+            <a href="/">返回首页</a>
+          </div>
         </div>
       </div>
-    </div>
+    </teleport>
   </div>
 
   <script>
@@ -577,11 +662,13 @@
           rows: [],
           msg: '',
           endOverlay: false,
+          gameOver: false,
           endKind: '',
           endAnswerName: '',
           endSub: '',
           pulseLife: 0,
           confettiTimer: null,
+          endShowTimer: null,
           rowKeySeq: 0
         };
       },
@@ -605,6 +692,10 @@
         }
       },
       async mounted() {
+        this._onKeydown = (e) => {
+          if (e.key === 'Escape' && this.endOverlay) this.dismissEnd();
+        };
+        window.addEventListener('keydown', this._onKeydown);
         try {
           const packs = await fetch('/api/packs').then((r) => r.json());
           const meta = packs.find((p) => p.id === this.packId);
@@ -614,11 +705,13 @@
             document.title = meta.title + ' · Quiz Verse';
           }
           this.briefs = await fetch('/api/packs/' + encodeURIComponent(this.packId) + '/briefs').then((r) => r.json());
+          await this.start();
         } catch (e) {
           this.msg = '加载失败：' + e;
         }
       },
       beforeUnmount() {
+        window.removeEventListener('keydown', this._onKeydown);
         this.stopConfetti();
       },
       methods: {
@@ -664,6 +757,7 @@
           this.showSuggest = false;
         },
         onEnter() {
+          if (this.gameOver) return;
           if (this.showSuggest && this.filteredBriefs.length) {
             this.pickBrief(this.filteredBriefs[this.activeSuggest] || this.filteredBriefs[0]);
             return;
@@ -689,6 +783,10 @@
           this.msg = '';
           this.rows = [];
           this.endOverlay = false;
+          this.gameOver = false;
+          this.endKind = '';
+          this.endAnswerName = '';
+          this.endSub = '';
           this.stopConfetti();
           try {
             const res = await fetch('/api/matches', {
@@ -705,14 +803,17 @@
             this.columns = res.columns || [];
             this.queryInput = '';
             this.pickedId = '';
+            this.showSuggest = false;
             this.$nextTick(() => this.$refs.guessInput && this.$refs.guessInput.focus());
           } catch (e) {
             this.msg = String(e.message || e);
+            this.matchId = '';
           } finally {
             this.loading = false;
           }
         },
         async submitGuess() {
+          if (this.gameOver) return;
           if (!this.matchId) {
             this.msg = '请先开始新局';
             return;
@@ -755,10 +856,12 @@
               this.endKind = res.gameStatus;
               this.endAnswerName = a ? a.name + al : '未知';
               this.endSub = res.gameStatus === 'WON'
-                ? '用了 ' + res.guessIndex + ' 次猜中 · 属性全部对齐'
-                : '次数用尽 · 正确答案已揭晓';
-              // Let the last row flip finish, then show overlay
-              setTimeout(() => {
+                ? '用了 ' + res.guessIndex + ' 次猜中 · 关闭后可回看本局每一次猜测'
+                : '次数用尽 · 关闭后可回看本局每一次猜测';
+              this.gameOver = true;
+              if (this.endShowTimer) clearTimeout(this.endShowTimer);
+              this.endShowTimer = setTimeout(() => {
+                this.endShowTimer = null;
                 this.endOverlay = true;
                 this.$nextTick(() => {
                   if (res.gameStatus === 'WON') this.startConfetti();
@@ -771,9 +874,24 @@
             this.loading = false;
           }
         },
-        replayFromEnd() {
+        dismissEnd() {
+          if (this.endShowTimer) {
+            clearTimeout(this.endShowTimer);
+            this.endShowTimer = null;
+          }
           this.endOverlay = false;
           this.stopConfetti();
+          document.body.classList.remove('end-lock');
+        },
+        reopenEnd() {
+          this.endOverlay = true;
+          document.body.classList.add('end-lock');
+          this.$nextTick(() => {
+            if (this.endKind === 'WON') this.startConfetti();
+          });
+        },
+        replayFromEnd() {
+          this.dismissEnd();
           this.start();
         },
         startConfetti() {
