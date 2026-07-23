@@ -45,16 +45,16 @@
         "houwei_zhongju"
       ],
       "connections": [
+        "zh_acb1059c4e",
+        "zh_d017fff900",
+        "zh_87ded88d14",
+        "zh_3fa1a595fa",
+        "zh_19ca12b134",
+        "zh_9ed81c3cc8",
         "zh_yixiu",
         "zh_huafei",
         "zh_anlingrong",
-        "zh_meizhuang",
-        "zh_emperor",
-        "zh_8ea40b5a40",
-        "zh_b0ba6f96e0",
-        "zh_67dc611108",
-        "zh_taihou",
-        "zh_512f69fe45"
+        "zh_meizhuang"
       ]
     }
   },
@@ -87,12 +87,12 @@
         "houwei_zhongju"
       ],
       "connections": [
+        "zh_512f69fe45",
         "zh_emperor",
         "zh_huan",
         "zh_anlingrong",
         "zh_taihou",
         "zh_jiang",
-        "zh_512f69fe45",
         "zh_huafei",
         "zh_cailin",
         "zh_wenyi",
@@ -130,16 +130,16 @@
         "huafei_ci_si"
       ],
       "connections": [
+        "zh_9db0338b46",
+        "zh_5cf5a5306e",
+        "zh_8c4c34a952",
+        "zh_6e7d616a56",
         "zh_emperor",
         "zh_huan",
         "zh_cailin",
-        "zh_6e7d616a56",
         "zh_0d76f13422",
         "zh_53131e3b5d",
-        "zh_yixiu",
-        "zh_taihou",
-        "zh_5d29b6b4ad",
-        "zh_b064066518"
+        "zh_yixiu"
       ]
     }
   },
@@ -175,11 +175,11 @@
         "anling_baiju"
       ],
       "connections": [
+        "zh_881f62cce2",
         "zh_huan",
         "zh_yixiu",
         "zh_meizhuang",
         "zh_emperor",
-        "zh_881f62cce2",
         "zh_129a88f6f4",
         "zh_huafei"
       ]
@@ -215,10 +215,10 @@
         "anling_baiju"
       ],
       "connections": [
+        "zh_6f75b71a2e",
         "zh_huan",
         "zh_anlingrong",
         "zh_emperor",
-        "zh_6f75b71a2e",
         "zh_67dc611108",
         "zh_87dbac743e",
         "zh_35ab8f4a21",
@@ -291,16 +291,16 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_huan",
-        "zh_yixiu",
-        "zh_huafei",
-        "zh_taihou",
-        "zh_8ea40b5a40",
-        "zh_meizhuang",
-        "zh_anlingrong",
         "zh_512f69fe45",
-        "zh_sun",
-        "zh_6e7d616a56"
+        "zh_yixiu",
+        "zh_d017fff900",
+        "zh_87ded88d14",
+        "zh_f571cd3606",
+        "zh_199d80aa8e",
+        "zh_taihou",
+        "zh_huan",
+        "zh_huafei",
+        "zh_8ea40b5a40"
       ]
     }
   },
@@ -478,13 +478,13 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_huan",
-        "zh_b0ba6f96e0",
-        "zh_0a032af47f",
-        "zh_emperor",
         "zh_5eb0e7cfcf",
+        "zh_b0ba6f96e0",
+        "zh_c3748bfbca",
         "zh_acb1059c4e",
-        "zh_c3748bfbca"
+        "zh_0a032af47f",
+        "zh_huan",
+        "zh_emperor"
       ]
     }
   },
@@ -512,8 +512,9 @@
         "dixue_qinzi"
       ],
       "connections": [
+        "zh_meizhuang",
         "zh_huan",
-        "zh_meizhuang"
+        "zh_3ff05486fb"
       ]
     }
   },
@@ -548,11 +549,11 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_huan",
         "zh_8ea40b5a40",
+        "zh_c3748bfbca",
+        "zh_huan",
         "zh_86d513da6f",
-        "zh_5eb0e7cfcf",
-        "zh_c3748bfbca"
+        "zh_5eb0e7cfcf"
       ]
     }
   },
@@ -602,7 +603,8 @@
         "碎玉轩"
       ],
       "major_plots": [
-        "chuxuan_dianxuan"
+        "chuxuan_dianxuan",
+        "chunyuan_jiufu"
       ],
       "connections": [
         "zh_huan",
@@ -633,9 +635,8 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_emperor",
         "zh_yixiu",
-        "zh_huan"
+        "zh_emperor"
       ]
     }
   },
@@ -686,8 +687,8 @@
         "chuxuan_dianxuan"
       ],
       "connections": [
-        "zh_emperor",
         "zh_f571cd3606",
+        "zh_emperor",
         "zh_huan",
         "zh_yixiu"
       ]
@@ -713,7 +714,8 @@
         "宫外"
       ],
       "major_plots": [
-        "huafei_ci_si"
+        "huafei_ci_si",
+        "dixue_qinzi"
       ],
       "connections": [
         "zh_yixiu",
@@ -922,8 +924,15 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "anling_baiju",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_2f3292950e",
+        "zh_anlingrong",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -939,8 +948,15 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "anling_baiju",
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_5d7fd18aaa",
+        "zh_anlingrong",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -961,23 +977,6 @@
       "connections": [
         "zh_huafei"
       ]
-    }
-  },
-  {
-    "id": "zh_d1bf747aa4",
-    "name": "孙答应",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "后宫嫔妃",
-      "titles": [
-        "答应"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
     }
   },
   {
@@ -1027,8 +1026,8 @@
       ],
       "connections": [
         "zh_8ea40b5a40",
-        "zh_b0ba6f96e0",
-        "zh_c3748bfbca"
+        "zh_c3748bfbca",
+        "zh_b0ba6f96e0"
       ]
     }
   },
@@ -1117,8 +1116,9 @@
       ],
       "major_plots": [],
       "connections": [
-        "zh_huan",
         "zh_b3d8ebbab4",
+        "zh_huan",
+        "zh_19ca12b134",
         "zh_9ed81c3cc8"
       ]
     }
@@ -1143,8 +1143,8 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_9e5a293f59",
         "zh_emperor",
+        "zh_9e5a293f59",
         "zh_yixiu",
         "zh_b050d0f9cc"
       ]
@@ -1175,10 +1175,10 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_huan",
+        "zh_1904ad0aa6",
         "zh_emperor",
-        "zh_taihou",
-        "zh_1904ad0aa6"
+        "zh_huan",
+        "zh_taihou"
       ]
     }
   },
@@ -1250,8 +1250,8 @@
         "houwei_zhongju"
       ],
       "connections": [
-        "zh_huan",
         "zh_8ea40b5a40",
+        "zh_huan",
         "zh_emperor"
       ]
     }
@@ -1298,9 +1298,9 @@
         "houwei_zhongju"
       ],
       "connections": [
+        "zh_emperor",
         "zh_huan",
-        "zh_87dbac743e",
-        "zh_emperor"
+        "zh_87dbac743e"
       ]
     }
   },
@@ -1321,6 +1321,7 @@
       ],
       "major_plots": [],
       "connections": [
+        "zh_emperor",
         "zh_huan",
         "zh_8ea40b5a40"
       ]
@@ -1366,9 +1367,9 @@
       ],
       "major_plots": [],
       "connections": [
-        "zh_8ea40b5a40",
         "zh_5eb0e7cfcf",
-        "zh_b0ba6f96e0"
+        "zh_b0ba6f96e0",
+        "zh_8ea40b5a40"
       ]
     }
   },
@@ -1387,8 +1388,8 @@
       ],
       "major_plots": [],
       "connections": [
-        "zh_d056ff3562",
-        "zh_huan"
+        "zh_huan",
+        "zh_d056ff3562"
       ]
     }
   },
@@ -1403,10 +1404,16 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "永寿宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_14cf63048e",
+        "zh_67dc611108"
+      ]
     }
   },
   {
@@ -1422,8 +1429,14 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "dixue_qinzi"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_14cf63048e",
+        "zh_b0ba6f96e0"
+      ]
     }
   },
   {
@@ -1443,7 +1456,8 @@
         "anling_baiju"
       ],
       "connections": [
-        "zh_anlingrong"
+        "zh_anlingrong",
+        "zh_d162b039bb"
       ]
     }
   },
@@ -1460,8 +1474,14 @@
       "residences": [
         "延禧宫"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "anling_baiju"
+      ],
+      "connections": [
+        "zh_anlingrong",
+        "zh_129a88f6f4",
+        "zh_yixiu"
+      ]
     }
   },
   {
@@ -1475,10 +1495,14 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "碎玉轩",
+        "延禧宫"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huan",
+        "zh_anlingrong"
+      ]
     }
   },
   {
@@ -1524,23 +1548,6 @@
         "zh_taihou",
         "zh_emperor"
       ]
-    }
-  },
-  {
-    "id": "zh_32cef4348f",
-    "name": "春貌",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
     }
   },
   {
@@ -1620,7 +1627,10 @@
       "major_plots": [
         "chunyuan_jiufu"
       ],
-      "connections": []
+      "connections": [
+        "zh_huan",
+        "zh_dfa08f33dc"
+      ]
     }
   },
   {
@@ -1643,23 +1653,6 @@
     }
   },
   {
-    "id": "zh_771ced7ef8",
-    "name": "刘嬷嬷",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "嬷嬷",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
     "id": "zh_f57c4bdda4",
     "name": "品儿",
     "aliases": [],
@@ -1670,10 +1663,13 @@
         "宫女"
       ],
       "residences": [
-        "宫中"
+        "碎玉轩"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huan",
+        "zh_3df91796bf"
+      ]
     }
   },
   {
@@ -1696,23 +1692,6 @@
     }
   },
   {
-    "id": "zh_4080e93a4e",
-    "name": "灵芝",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
     "id": "zh_35ab8f4a21",
     "name": "采月",
     "aliases": [],
@@ -1730,91 +1709,6 @@
       "connections": [
         "zh_meizhuang"
       ]
-    }
-  },
-  {
-    "id": "zh_0100352321",
-    "name": "采星",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
-    "id": "zh_a55d8c2fae",
-    "name": "茯苓",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
-    "id": "zh_b2a637b8bf",
-    "name": "采蓝",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
-    "id": "zh_13c4c84c25",
-    "name": "如意",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
-    "id": "zh_2c7bb4de70",
-    "name": "含珠",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
     }
   },
   {
@@ -1875,23 +1769,6 @@
     }
   },
   {
-    "id": "zh_dfe8efc696",
-    "name": "张嬷嬷",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "嬷嬷",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
     "id": "zh_d36193e84e",
     "name": "积云",
     "aliases": [],
@@ -1913,23 +1790,6 @@
     }
   },
   {
-    "id": "zh_287bdf902a",
-    "name": "景泰",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
     "id": "zh_10b6b26c98",
     "name": "精奇嬷嬷",
     "aliases": [],
@@ -1943,7 +1803,10 @@
         "宫中"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huafei",
+        "zh_5d29b6b4ad"
+      ]
     }
   },
   {
@@ -2006,7 +1869,9 @@
       "major_plots": [
         "chunyuan_jiufu"
       ],
-      "connections": []
+      "connections": [
+        "zh_huan"
+      ]
     }
   },
   {
@@ -2022,8 +1887,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chunyuan_jiufu"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_86d513da6f"
+      ]
     }
   },
   {
@@ -2039,8 +1909,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_sun"
+      ]
     }
   },
   {
@@ -2056,8 +1931,16 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "ganlu_yunfeng",
+        "anling_baiju",
+        "dixue_qinzi",
+        "houwei_zhongju"
+      ],
+      "connections": [
+        "zh_67dc611108",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -2073,10 +1956,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
       "connections": [
+        "zh_emperor",
         "zh_huan",
-        "zh_emperor"
+        "zh_67dc611108"
       ]
     }
   },
@@ -2094,7 +1980,11 @@
         "宫中"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huafei",
+        "zh_3d87067fba",
+        "zh_67dc611108"
+      ]
     }
   },
   {
@@ -2110,9 +2000,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "huanyi_xiaochang"
+      ],
       "connections": [
-        "zh_huafei"
+        "zh_huafei",
+        "zh_cbd9a6c985",
+        "zh_67dc611108"
       ]
     }
   },
@@ -2129,10 +2023,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "jinghong_wu"
+      ],
       "connections": [
+        "zh_huan",
         "zh_meizhuang",
-        "zh_huan"
+        "zh_67dc611108"
       ]
     }
   },
@@ -2150,7 +2047,10 @@
         "宫中"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_67dc611108",
+        "zh_emperor"
+      ]
     }
   },
   {
@@ -2164,11 +2064,14 @@
         "太监"
       ],
       "residences": [
-        "翊坤宫"
+        "景仁宫"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "houwei_zhongju"
+      ],
       "connections": [
-        "zh_huafei"
+        "zh_yixiu",
+        "zh_jiang"
       ]
     }
   },
@@ -2185,8 +2088,11 @@
       "residences": [
         "翊坤宫"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "huafei_ci_si"
+      ],
       "connections": [
+        "zh_meizhuang",
         "zh_huafei"
       ]
     }
@@ -2208,6 +2114,7 @@
         "huafei_ci_si"
       ],
       "connections": [
+        "zh_huan",
         "zh_huafei"
       ]
     }
@@ -2263,10 +2170,14 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "碎玉轩"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_53131e3b5d",
+        "zh_9d6ffdee60",
+        "zh_huan"
+      ]
     }
   },
   {
@@ -2280,10 +2191,12 @@
         "太监"
       ],
       "residences": [
-        "宫中"
+        "景阳宫"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_cailin"
+      ]
     }
   },
   {
@@ -2342,9 +2255,13 @@
       "residences": [
         "宫外"
       ],
-      "major_plots": [],
+      "major_plots": [
+        "anling_baiju"
+      ],
       "connections": [
-        "zh_emperor"
+        "zh_huan",
+        "zh_meizhuang",
+        "zh_anlingrong"
       ]
     }
   },
@@ -2403,8 +2320,8 @@
         "chuxuan_dianxuan"
       ],
       "connections": [
-        "zh_huan",
         "zh_3fa1a595fa",
+        "zh_huan",
         "zh_19ca12b134"
       ]
     }
@@ -2424,6 +2341,7 @@
       ],
       "major_plots": [],
       "connections": [
+        "zh_taihou",
         "zh_emperor"
       ]
     }
@@ -2462,6 +2380,9 @@
       ],
       "major_plots": [],
       "connections": [
+        "zh_9db0338b46",
+        "zh_5cf5a5306e",
+        "zh_8c4c34a952",
         "zh_huafei",
         "zh_emperor"
       ]
@@ -2481,7 +2402,12 @@
         "宫外"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huafei",
+        "zh_9db0338b46",
+        "zh_5cf5a5306e",
+        "zh_6e7d616a56"
+      ]
     }
   },
   {
@@ -2498,7 +2424,12 @@
         "宫外"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huafei",
+        "zh_9db0338b46",
+        "zh_8c4c34a952",
+        "zh_6e7d616a56"
+      ]
     }
   },
   {
@@ -2515,7 +2446,12 @@
         "宫外"
       ],
       "major_plots": [],
-      "connections": []
+      "connections": [
+        "zh_huafei",
+        "zh_5cf5a5306e",
+        "zh_8c4c34a952",
+        "zh_6e7d616a56"
+      ]
     }
   },
   {
@@ -2624,9 +2560,9 @@
       ],
       "major_plots": [],
       "connections": [
-        "zh_9ed81c3cc8",
+        "zh_3fa1a595fa",
         "zh_huan",
-        "zh_3fa1a595fa"
+        "zh_9ed81c3cc8"
       ]
     }
   },
@@ -2647,6 +2583,7 @@
         "ganlu_yunfeng"
       ],
       "connections": [
+        "zh_85bff913d5",
         "zh_huan"
       ]
     }
@@ -2665,11 +2602,12 @@
         "甘露寺"
       ],
       "major_plots": [
-        "ganlu_yunfeng"
+        "ganlu_yunfeng",
+        "dixue_qinzi"
       ],
       "connections": [
-        "zh_huan",
-        "zh_5da0cd95eb"
+        "zh_5da0cd95eb",
+        "zh_huan"
       ]
     }
   },
@@ -2687,9 +2625,14 @@
         "甘露寺"
       ],
       "major_plots": [
-        "ganlu_yunfeng"
+        "ganlu_yunfeng",
+        "dixue_qinzi"
       ],
-      "connections": []
+      "connections": [
+        "zh_huan",
+        "zh_5da0cd95eb",
+        "zh_85bff913d5"
+      ]
     }
   },
   {
@@ -2716,23 +2659,6 @@
     }
   },
   {
-    "id": "zh_8a079a02e0",
-    "name": "刘莲子",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "宫女",
-      "titles": [
-        "宫女"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
-    }
-  },
-  {
     "id": "zh_847fd235cc",
     "name": "孙妙青",
     "aliases": [],
@@ -2745,8 +2671,13 @@
       "residences": [
         "宫中"
       ],
-      "major_plots": [],
-      "connections": []
+      "major_plots": [
+        "chuxuan_dianxuan"
+      ],
+      "connections": [
+        "zh_huan",
+        "zh_taihou"
+      ]
     }
   },
   {
@@ -2777,11 +2708,11 @@
         "houwei_zhongju"
       ],
       "connections": [
+        "zh_87ded88d14",
         "zh_emperor",
         "zh_71a108b893",
         "zh_huan",
-        "zh_meizhuang",
-        "zh_87ded88d14"
+        "zh_meizhuang"
       ]
     }
   },
@@ -2809,23 +2740,6 @@
         "zh_huan",
         "zh_yixiu"
       ]
-    }
-  },
-  {
-    "id": "zh_556c6e1e08",
-    "name": "芝答应",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "后宫嫔妃",
-      "titles": [
-        "答应"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
     }
   },
   {
@@ -2874,23 +2788,6 @@
         "zh_199d80aa8e",
         "zh_huan"
       ]
-    }
-  },
-  {
-    "id": "zh_ced52bbdd8",
-    "name": "娴妃",
-    "aliases": [],
-    "attrs": {
-      "gender": "女",
-      "role_type": "后宫嫔妃",
-      "titles": [
-        "妃"
-      ],
-      "residences": [
-        "宫中"
-      ],
-      "major_plots": [],
-      "connections": []
     }
   }
 ]
