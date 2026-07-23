@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <title>猜人物 · Quiz Verse</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
@@ -11,168 +11,123 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #071018;
-      --ink: #e8eef2;
-      --muted: #8fa3b0;
-      --accent: #ff6b35;
-      --line: rgba(232, 238, 242, 0.1);
-      --green: #3dcf8e;
-      --yellow: #e8c547;
-      --gray: #5a6b76;
+      --paper: #eef1f4;
+      --paper-2: #e4e9ef;
+      --ink: #16181d;
+      --ink-soft: #3a404c;
+      --muted: #6e7684;
+      --line: rgba(22, 24, 29, 0.1);
+      --accent: #2c4a6e;
+      --accent-hot: #8f3d32;
+      --green: #3d7a62;
+      --yellow: #b0892e;
+      --gray: #8a9099;
+      --danger: #a3483c;
       --ease: cubic-bezier(0.22, 1, 0.36, 1);
-      --danger: #ff6b6b;
+      --safe-b: env(safe-area-inset-bottom, 0px);
+      --safe-t: env(safe-area-inset-top, 0px);
+      --bar-h: 0px;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       min-height: 100vh;
+      min-height: 100dvh;
       color: var(--ink);
       font-family: "Noto Sans SC", sans-serif;
-      background: var(--bg);
+      background: var(--paper);
       overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
     }
     body.end-lock { overflow: hidden; }
     a { color: inherit; text-decoration: none; }
     button { font: inherit; border: none; cursor: pointer; }
+    code {
+      font-family: Syne, ui-monospace, monospace;
+      font-size: 0.9em;
+      color: var(--accent);
+    }
 
     .stage {
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
       background:
-        radial-gradient(ellipse 90% 70% at 70% 10%, rgba(20, 90, 110, 0.28), transparent 55%),
-        radial-gradient(ellipse 60% 45% at 10% 90%, rgba(255, 107, 53, 0.1), transparent 50%),
-        linear-gradient(165deg, #050c12 0%, #0a1822 45%, #07141c 100%);
+        radial-gradient(ellipse 55% 45% at 88% 8%, rgba(44, 74, 110, 0.14), transparent 62%),
+        radial-gradient(ellipse 48% 40% at 6% 88%, rgba(22, 24, 29, 0.06), transparent 60%),
+        radial-gradient(ellipse 70% 45% at 50% 100%, rgba(143, 61, 50, 0.05), transparent 55%),
+        linear-gradient(165deg, #f5f7fa 0%, #eef1f4 48%, #e6ebf1 100%);
     }
     .stage-noise {
-      position: absolute; inset: 0; opacity: 0.035;
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      mix-blend-mode: multiply;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
-    .page { position: relative; z-index: 1; }
+    .page {
+      position: relative;
+      z-index: 1;
+      padding-bottom: calc(24px + var(--bar-h) + var(--safe-b));
+    }
 
     .nav {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 18px clamp(16px, 3vw, 32px) 0;
+      padding: calc(14px + var(--safe-t)) clamp(14px, 3vw, 32px) 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     .nav a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
+      gap: 6px;
+      min-height: 40px;
+      font-size: 0.88rem;
       color: var(--muted);
       transition: color 0.25s;
     }
     .nav a:hover { color: var(--ink); }
     .nav-brand {
       font-family: Syne, sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.2em;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-left: 12px;
     }
 
     .wrap {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 20px clamp(16px, 3vw, 32px) 56px;
+      padding: 16px clamp(14px, 3vw, 32px) 28px;
     }
 
     .head {
-      margin-bottom: 22px;
+      margin-bottom: 18px;
       animation: rise 0.7s var(--ease) both;
     }
     .head h1 {
       font-family: "Noto Serif SC", serif;
       font-weight: 700;
-      font-size: clamp(1.55rem, 3.5vw, 2.15rem);
-      letter-spacing: 0.04em;
+      font-size: clamp(1.45rem, 4.2vw, 2.15rem);
+      letter-spacing: 0.06em;
       margin-bottom: 8px;
+      line-height: 1.2;
     }
     .head p {
       color: var(--muted);
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       line-height: 1.65;
       max-width: 44em;
     }
 
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: stretch;
-      margin-bottom: 8px;
-      animation: rise 0.7s var(--ease) 0.08s both;
-    }
-    .btn {
-      padding: 12px 18px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: transform 0.3s var(--ease), background 0.25s, opacity 0.2s;
-    }
-    .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
-    .btn-primary { background: var(--accent); color: #140a06; }
-    .btn-primary:hover:not(:disabled) { transform: translateY(-1px); background: #ff814f; }
-    .btn-ghost {
-      background: transparent;
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-    .btn-ghost:hover:not(:disabled) {
-      border-color: rgba(232, 238, 242, 0.28);
-      background: rgba(255, 255, 255, 0.03);
-    }
-
-    .input-wrap {
-      flex: 1;
-      min-width: 200px;
-      max-width: 440px;
-    }
-    .input-wrap input {
-      width: 100%;
-      height: 100%;
-      min-height: 44px;
-      padding: 10px 14px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--ink);
-      font-size: 0.95rem;
-      outline: none;
-      transition: border-color 0.25s, background 0.25s;
-    }
-    .input-wrap input:focus {
-      border-color: rgba(255, 107, 53, 0.55);
-      background: rgba(255, 107, 53, 0.04);
-    }
-    .input-wrap input:disabled { opacity: 0.5; }
-
-    /* 文档流展开，不盖住 REMAINING / 提示文案 */
-    .suggest-panel {
-      position: relative;
-      z-index: 1;
-      width: min(440px, 100%);
-      margin: 0 0 14px;
-      max-height: 260px;
-      overflow-y: auto;
-      border: 1px solid var(--line);
-      background: #0c1a24;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-    }
-    .suggest-item {
-      padding: 11px 14px;
-      cursor: pointer;
-      font-size: 0.88rem;
-      border-bottom: 1px solid rgba(232, 238, 242, 0.06);
-      transition: background 0.15s;
-    }
-    .suggest-item:last-child { border-bottom: none; }
-    .suggest-item:hover, .suggest-item.active { background: rgba(255, 107, 53, 0.1); }
-    .suggest-item .nm { font-weight: 600; color: var(--ink); }
-    .suggest-item .al { color: var(--muted); font-size: 0.8rem; margin-left: 8px; }
-
     .status-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px 16px;
       align-items: center;
       margin-bottom: 12px;
       min-height: 28px;
@@ -180,13 +135,14 @@
     }
     .lives {
       display: flex;
-      gap: 6px;
+      flex-wrap: wrap;
+      gap: 5px;
       align-items: center;
     }
     .life {
-      width: 10px;
-      height: 10px;
-      border: 1px solid rgba(255, 107, 53, 0.45);
+      width: 9px;
+      height: 9px;
+      border: 1px solid rgba(44, 74, 110, 0.4);
       background: transparent;
       transition: background 0.35s, border-color 0.35s, transform 0.35s var(--ease);
     }
@@ -201,16 +157,109 @@
       100% { transform: scale(1); }
     }
     .meta {
-      font-size: 0.84rem;
+      font-size: 0.78rem;
       color: var(--muted);
       font-family: Syne, sans-serif;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: stretch;
+      margin-bottom: 8px;
+      animation: rise 0.7s var(--ease) 0.08s both;
+    }
+    .btn {
+      padding: 12px 18px;
+      min-height: 44px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: transform 0.3s var(--ease), background 0.25s, opacity 0.2s, border-color 0.25s;
+    }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none !important; }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-1px);
+      background: #2a303a;
+    }
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.35);
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn-ghost:hover:not(:disabled) {
+      border-color: rgba(22, 24, 29, 0.22);
+      background: rgba(255, 255, 255, 0.65);
+    }
+    .btn-giveup {
+      color: var(--muted);
+      font-weight: 500;
+    }
+    .btn-giveup:hover:not(:disabled) {
+      color: var(--accent-hot);
+      border-color: rgba(143, 61, 50, 0.35);
+      background: rgba(143, 61, 50, 0.06);
+    }
+
+    .input-wrap {
+      flex: 1;
+      min-width: 180px;
+      max-width: 440px;
+    }
+    .input-wrap input {
+      width: 100%;
+      height: 100%;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--ink);
+      font-size: 16px; /* iOS 防自动缩放 */
+      outline: none;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .input-wrap input:focus {
+      border-color: rgba(44, 74, 110, 0.55);
+      background: #fff;
+    }
+    .input-wrap input:disabled { opacity: 0.5; }
+    .input-wrap input::placeholder { color: #9aa3b0; }
+
+    .suggest-panel {
+      position: relative;
+      z-index: 1;
+      width: min(440px, 100%);
+      margin: 0 0 14px;
+      max-height: 240px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 10px 28px rgba(22, 24, 29, 0.08);
+    }
+    .suggest-item {
+      padding: 12px 14px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border-bottom: 1px solid rgba(22, 24, 29, 0.06);
+      transition: background 0.15s;
+    }
+    .suggest-item:last-child { border-bottom: none; }
+    .suggest-item:hover,
+    .suggest-item.active { background: rgba(44, 74, 110, 0.08); }
+    .suggest-item .nm { font-weight: 600; color: var(--ink); }
+    .suggest-item .al { color: var(--muted); font-size: 0.8rem; margin-left: 8px; }
+
     .toast {
       padding: 10px 14px;
-      border: 1px solid rgba(255, 107, 107, 0.35);
-      background: rgba(255, 107, 107, 0.08);
-      color: #ffb4b4;
+      border: 1px solid rgba(163, 72, 60, 0.28);
+      background: rgba(163, 72, 60, 0.06);
+      color: var(--danger);
       font-size: 0.88rem;
       margin-bottom: 14px;
       animation: rise 0.35s var(--ease);
@@ -218,15 +267,17 @@
     .empty-hint {
       color: var(--muted);
       font-size: 0.92rem;
-      padding: 40px 0;
+      padding: 28px 0;
       border-top: 1px solid var(--line);
       line-height: 1.7;
     }
 
+    /* —— Desktop table —— */
     .table-wrap {
       overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
       border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(255, 255, 255, 0.4);
     }
     table {
       width: 100%;
@@ -241,16 +292,23 @@
       vertical-align: middle;
     }
     th {
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(44, 74, 110, 0.05);
       font-weight: 600;
       color: var(--muted);
       letter-spacing: 0.04em;
       white-space: nowrap;
+      position: sticky;
+      top: 0;
+      z-index: 1;
     }
     td.idx {
       color: var(--muted);
       font-family: Syne, sans-serif;
       width: 36px;
+      background: rgba(255, 255, 255, 0.5);
+      position: sticky;
+      left: 0;
+      z-index: 1;
     }
     .inner-val {
       color: var(--ink);
@@ -259,21 +317,14 @@
       line-height: 1.45;
       font-size: 0.78rem;
     }
-    .tok {
-      display: inline;
-      font-weight: 500;
-    }
+    .tok { display: inline; font-weight: 500; }
     .tok + .tok::before {
       content: "、";
-      color: rgba(232, 240, 245, 0.35);
+      color: rgba(22, 24, 29, 0.28);
       font-weight: 400;
     }
-    .tok-hit {
-      color: #3dcf8e;
-    }
-    .tok-miss {
-      color: rgba(168, 180, 190, 0.72);
-    }
+    .tok-hit { color: var(--green); }
+    .tok-miss { color: rgba(110, 118, 132, 0.75); }
     .inner-hint {
       display: inline-block;
       min-width: 2.2em;
@@ -283,9 +334,7 @@
       letter-spacing: 0.02em;
       animation: cell-flip 0.45s var(--ease) both;
     }
-    tr.row-enter td .inner-hint {
-      animation: cell-flip 0.5s var(--ease) both;
-    }
+    tr.row-enter td .inner-hint { animation: cell-flip 0.5s var(--ease) both; }
     tr.row-enter td:nth-child(2) .inner-hint { animation-delay: 0.04s; }
     tr.row-enter td:nth-child(3) .inner-hint { animation-delay: 0.08s; }
     tr.row-enter td:nth-child(4) .inner-hint { animation-delay: 0.12s; }
@@ -301,9 +350,97 @@
       from { opacity: 0; transform: rotateX(-70deg) scale(0.85); }
       to { opacity: 1; transform: rotateX(0) scale(1); }
     }
-    .c-green { background: var(--green); color: #062016; }
+    .c-green { background: var(--green); color: #f4faf7; }
     .c-yellow { background: var(--yellow); color: #1a1505; }
-    .c-gray { background: var(--gray); color: #e8eef2; }
+    .c-gray { background: var(--gray); color: #f5f6f8; }
+
+    /* —— Mobile cards —— */
+    .guess-cards {
+      display: none;
+      gap: 12px;
+      flex-direction: column;
+    }
+    .guess-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
+      padding: 12px 12px 8px;
+      animation: rise 0.45s var(--ease) both;
+    }
+    .guess-card.fresh { animation: rise 0.55s var(--ease) both; }
+    .guess-card-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .guess-card-num {
+      font-family: Syne, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+    }
+    .guess-field {
+      display: grid;
+      grid-template-columns: 5.2em 1fr;
+      gap: 8px 10px;
+      align-items: start;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(22, 24, 29, 0.06);
+    }
+    .guess-field:last-child { border-bottom: none; }
+    .field-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      padding-top: 4px;
+      line-height: 1.35;
+    }
+    .field-body { min-width: 0; }
+    .field-body .inner-val {
+      text-align: left;
+      font-size: 0.86rem;
+      margin-bottom: 6px;
+    }
+    .field-body .inner-hint {
+      font-size: 0.72rem;
+      padding: 5px 8px;
+    }
+
+    .result-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.45);
+      animation: rise 0.35s var(--ease);
+    }
+    .result-bar.won {
+      border-color: rgba(61, 122, 98, 0.35);
+      background: rgba(61, 122, 98, 0.08);
+    }
+    .result-bar.lost {
+      border-color: rgba(163, 72, 60, 0.28);
+      background: rgba(163, 72, 60, 0.06);
+    }
+    .result-bar .rb-text {
+      font-size: 0.9rem;
+      color: var(--ink);
+      line-height: 1.45;
+      flex: 1;
+      min-width: 12em;
+    }
+    .result-bar .rb-text strong { font-weight: 600; }
+    .result-bar .rb-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     /* —— End overlay —— */
     .end-screen {
@@ -311,10 +448,13 @@
       inset: 0;
       z-index: 1000;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      padding: 24px;
+      padding: 16px 16px calc(16px + var(--safe-b));
       animation: fade-in 0.4s ease both;
+    }
+    @media (min-width: 640px) {
+      .end-screen { align-items: center; }
     }
     .end-backdrop {
       position: absolute;
@@ -323,14 +463,14 @@
     }
     .end-screen.end-win .end-backdrop {
       background:
-        radial-gradient(ellipse 60% 50% at 50% 35%, rgba(61, 207, 142, 0.22), transparent 60%),
-        rgba(4, 10, 14, 0.88);
+        radial-gradient(ellipse 60% 50% at 50% 35%, rgba(61, 122, 98, 0.18), transparent 60%),
+        rgba(238, 241, 244, 0.72);
       backdrop-filter: blur(10px);
     }
     .end-screen.end-lose .end-backdrop {
       background:
-        radial-gradient(ellipse 55% 45% at 50% 40%, rgba(255, 107, 107, 0.18), transparent 58%),
-        rgba(8, 6, 8, 0.9);
+        radial-gradient(ellipse 55% 45% at 50% 40%, rgba(163, 72, 60, 0.14), transparent 58%),
+        rgba(238, 241, 244, 0.78);
       backdrop-filter: blur(10px);
     }
     @keyframes fade-in {
@@ -341,39 +481,40 @@
       position: relative;
       z-index: 2;
       width: min(420px, 100%);
-      padding: 36px 28px 28px;
+      padding: 32px 22px 22px;
       text-align: center;
       border: 1px solid var(--line);
-      background: linear-gradient(165deg, rgba(12, 28, 40, 0.95), rgba(7, 16, 24, 0.98));
+      background: linear-gradient(165deg, rgba(255, 255, 255, 0.96), rgba(238, 241, 244, 0.98));
       animation: end-pop 0.55s var(--ease) both;
       pointer-events: auto;
+      box-shadow: 0 18px 48px rgba(22, 24, 29, 0.12);
     }
     .end-win .end-card {
-      border-color: rgba(61, 207, 142, 0.35);
+      border-color: rgba(61, 122, 98, 0.35);
       animation: end-pop 0.55s var(--ease) both, win-glow 2.4s ease-in-out 0.55s infinite;
     }
     .end-lose .end-card {
-      border-color: rgba(255, 107, 107, 0.35);
+      border-color: rgba(163, 72, 60, 0.3);
       animation: end-pop 0.55s var(--ease) both, lose-shake 0.55s ease-in-out 0.1s;
     }
     @keyframes end-pop {
-      from { opacity: 0; transform: translateY(28px) scale(0.92); }
+      from { opacity: 0; transform: translateY(28px) scale(0.96); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
     @keyframes win-glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(61, 207, 142, 0); }
-      50% { box-shadow: 0 0 48px rgba(61, 207, 142, 0.18); }
+      0%, 100% { box-shadow: 0 18px 48px rgba(22, 24, 29, 0.1); }
+      50% { box-shadow: 0 18px 48px rgba(61, 122, 98, 0.22); }
     }
     @keyframes lose-shake {
       0%, 100% { transform: translateX(0); }
-      20% { transform: translateX(-10px); }
-      40% { transform: translateX(10px); }
-      60% { transform: translateX(-6px); }
-      80% { transform: translateX(6px); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
     }
     .end-kicker {
       font-family: Syne, sans-serif;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       margin-bottom: 10px;
@@ -382,13 +523,13 @@
     .end-lose .end-kicker { color: var(--danger); }
     .end-title {
       font-family: "Noto Serif SC", serif;
-      font-size: clamp(1.8rem, 5vw, 2.35rem);
+      font-size: clamp(1.65rem, 5vw, 2.35rem);
       font-weight: 700;
       letter-spacing: 0.06em;
       margin-bottom: 14px;
     }
     .end-win .end-title { color: var(--green); }
-    .end-lose .end-title { color: #ff9a9a; }
+    .end-lose .end-title { color: var(--danger); }
     .end-answer {
       color: var(--ink);
       font-size: 1.05rem;
@@ -399,7 +540,39 @@
     .end-sub {
       color: var(--muted);
       font-size: 0.88rem;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
+      line-height: 1.55;
+    }
+    .answer-sheet {
+      text-align: left;
+      margin: 0 0 22px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
+      max-height: min(42vh, 320px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .answer-sheet-row {
+      display: grid;
+      grid-template-columns: 5.5em 1fr;
+      gap: 8px 12px;
+      padding: 7px 0;
+      border-bottom: 1px dashed rgba(22, 24, 29, 0.07);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+    .answer-sheet-row:last-child { border-bottom: none; }
+    .answer-sheet-label {
+      color: var(--muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      padding-top: 2px;
+    }
+    .answer-sheet-value {
+      color: var(--ink);
+      word-break: break-word;
+      font-weight: 500;
     }
     .end-actions {
       display: flex;
@@ -408,61 +581,34 @@
       justify-content: center;
       align-items: center;
     }
+    .end-actions .btn { flex: 1 1 auto; min-width: 7.5em; }
     .end-actions a {
       color: var(--muted);
       font-size: 0.9rem;
       padding: 10px 12px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
       transition: color 0.2s;
     }
     .end-actions a:hover { color: var(--ink); }
     .end-close {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 36px;
-      height: 36px;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
       border: 1px solid var(--line);
       background: transparent;
       color: var(--muted);
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       line-height: 1;
       cursor: pointer;
       transition: color 0.2s, border-color 0.2s;
     }
     .end-close:hover {
       color: var(--ink);
-      border-color: rgba(232, 238, 242, 0.35);
-    }
-    .result-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-      padding: 12px 14px;
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.03);
-      animation: rise 0.35s var(--ease);
-    }
-    .result-bar.won {
-      border-color: rgba(61, 207, 142, 0.35);
-      background: rgba(61, 207, 142, 0.06);
-    }
-    .result-bar.lost {
-      border-color: rgba(255, 107, 107, 0.3);
-      background: rgba(255, 107, 107, 0.06);
-    }
-    .result-bar .rb-text {
-      font-size: 0.9rem;
-      color: var(--ink);
-      line-height: 1.45;
-    }
-    .result-bar .rb-text strong { font-weight: 600; }
-    .result-bar .rb-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
+      border-color: rgba(22, 24, 29, 0.28);
     }
 
     .confetti-canvas {
@@ -474,9 +620,94 @@
       pointer-events: none;
     }
 
+    /* 手机底部操作条：桌面隐藏 */
+    .mobile-bar {
+      display: none;
+    }
+
     @keyframes rise {
       from { opacity: 0; transform: translateY(16px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* —— Phone layout —— */
+    @media (max-width: 760px) {
+      :root { --bar-h: 128px; }
+
+      .head { margin-bottom: 14px; }
+      .head p { font-size: 0.86rem; }
+
+      /* 顶部工具栏只留「再开一局」；输入挪到底部 */
+      .toolbar .input-wrap,
+      .toolbar .btn-ghost:not(.btn-giveup),
+      .desktop-suggest { display: none !important; }
+      .toolbar {
+        margin-bottom: 4px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .toolbar .btn-primary,
+      .toolbar .btn-giveup {
+        width: 100%;
+      }
+
+      .table-wrap { display: none; }
+      .guess-cards { display: flex; }
+
+      .result-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .result-bar .rb-actions .btn {
+        flex: 1;
+      }
+
+      .mobile-bar {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 40;
+        padding: 10px 12px calc(10px + var(--safe-b));
+        background: rgba(238, 241, 244, 0.92);
+        border-top: 1px solid var(--line);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .mobile-bar-inner {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        align-items: stretch;
+      }
+      .mobile-bar .input-wrap {
+        max-width: none;
+        min-width: 0;
+      }
+      .mobile-bar .btn {
+        white-space: nowrap;
+        padding-inline: 16px;
+      }
+      .mobile-suggest {
+        width: 100%;
+        max-height: min(42vh, 280px);
+        margin: 0 0 8px;
+        box-shadow: 0 -8px 24px rgba(22, 24, 29, 0.08);
+      }
+
+      .status-row {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        margin: 0 -14px 12px;
+        padding: 10px 14px;
+        background: rgba(238, 241, 244, 0.9);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -484,7 +715,7 @@
         animation: none !important;
         transition: none !important;
       }
-      .head, .toolbar, .status-row { opacity: 1; }
+      .head, .toolbar, .status-row, .guess-card { opacity: 1; transform: none; }
     }
   </style>
 </head>
@@ -503,7 +734,6 @@
         <p>{{ description || '根据属性反馈收敛答案。' }}</p>
       </header>
 
-      <!-- REMAINING 放在输入框上方，联想列表在下方展开，互不遮挡 -->
       <div class="status-row" v-if="matchId">
         <div class="lives" aria-label="剩余次数">
           <span
@@ -525,9 +755,10 @@
             ref="guessInput"
             type="text"
             v-model="queryInput"
-            placeholder="姓名 / 别名 / 拼音，如 zhenhuan"
+            placeholder="姓名 / 别名 / 拼音"
             :disabled="!matchId || loading || gameOver"
             autocomplete="off"
+            enterkeyhint="go"
             @input="onQueryInput"
             @keydown.down.prevent="navSuggest(1)"
             @keydown.up.prevent="navSuggest(-1)"
@@ -537,9 +768,15 @@
           />
         </div>
         <button class="btn btn-ghost" @click="submitGuess" :disabled="!matchId || loading || gameOver">猜一下</button>
+        <button
+          class="btn btn-ghost btn-giveup"
+          type="button"
+          @click="giveUp"
+          :disabled="!matchId || loading || gameOver"
+        >我猜不到</button>
       </div>
 
-      <div class="suggest-panel" v-if="showSuggest && filteredBriefs.length && !gameOver">
+      <div class="suggest-panel desktop-suggest" v-if="showSuggest && filteredBriefs.length && !gameOver">
         <div
           v-for="(b, idx) in filteredBriefs"
           :key="b.id"
@@ -560,6 +797,7 @@
       >
         <div class="rb-text">
           <template v-if="endKind === 'WON'">猜中了 · 答案 <strong>{{ endAnswerName }}</strong></template>
+          <template v-else-if="endKind === 'GIVEN_UP'">已揭晓 · 答案 <strong>{{ endAnswerName }}</strong></template>
           <template v-else>本局结束 · 答案 <strong>{{ endAnswerName }}</strong></template>
           <span style="color: var(--muted)"> · 可下滑查看每次猜测</span>
         </div>
@@ -578,6 +816,7 @@
         正在开局…
       </div>
 
+      <!-- Desktop table -->
       <div v-if="rows.length" class="table-wrap">
         <table>
           <thead>
@@ -609,6 +848,75 @@
           </tbody>
         </table>
       </div>
+
+      <!-- Mobile cards -->
+      <div v-if="rows.length" class="guess-cards" aria-label="猜测记录">
+        <article
+          v-for="(row, idx) in rows.slice().reverse()"
+          :key="'m-' + row._key"
+          class="guess-card"
+          :class="{ fresh: idx === 0 && row._fresh }"
+        >
+          <div class="guess-card-head">
+            <span class="guess-card-num">GUESS {{ rows.length - idx }}</span>
+          </div>
+          <div v-for="c in columns" :key="c.key" class="guess-field">
+            <div class="field-label">{{ c.label }}</div>
+            <div class="field-body">
+              <div class="inner-val" v-if="cellItems(row.cells[c.key]).length">
+                <span
+                  v-for="(it, i) in cellItems(row.cells[c.key])"
+                  :key="i"
+                  class="tok"
+                  :class="it.hit ? 'tok-hit' : 'tok-miss'"
+                >{{ it.label }}</span>
+              </div>
+              <div class="inner-val" v-else>{{ row.display[c.key] }}</div>
+              <div class="inner-hint" :class="cellClass(row.cells[c.key])">{{ cellText(row.cells[c.key]) }}</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <!-- 手机底部输入 -->
+    <div class="mobile-bar" v-if="briefs.length && matchId && !gameOver">
+      <div
+        class="suggest-panel mobile-suggest"
+        v-if="showSuggest && filteredBriefs.length"
+      >
+        <div
+          v-for="(b, idx) in filteredBriefs"
+          :key="'ms-' + b.id"
+          class="suggest-item"
+          :class="{ active: idx === activeSuggest }"
+          @mousedown.prevent="pickBrief(b)"
+          @click.prevent="pickBrief(b)"
+        >
+          <span class="nm">{{ b.name }}</span>
+          <span class="al" v-if="b.aliases && b.aliases.length">{{ b.aliases.slice(0, 2).join(' / ') }}</span>
+        </div>
+      </div>
+      <div class="mobile-bar-inner">
+        <div class="input-wrap">
+          <input
+            ref="guessInputMobile"
+            type="text"
+            v-model="queryInput"
+            placeholder="姓名 / 别名 / 拼音"
+            :disabled="loading || gameOver"
+            autocomplete="off"
+            enterkeyhint="go"
+            @input="onQueryInput"
+            @keydown.down.prevent="navSuggest(1)"
+            @keydown.up.prevent="navSuggest(-1)"
+            @keydown.enter.prevent="onEnter"
+            @keydown.escape="showSuggest = false"
+            @focus="showSuggest = queryInput.trim().length > 0"
+          />
+        </div>
+        <button class="btn btn-primary" @click="submitGuess" :disabled="loading || gameOver">猜一下</button>
+      </div>
     </div>
 
     <teleport to="body">
@@ -624,10 +932,16 @@
         <canvas v-if="endKind === 'WON'" ref="confettiCanvas" class="confetti-canvas"></canvas>
         <div class="end-card">
           <button class="end-close" type="button" aria-label="关闭并查看本局" @click="dismissEnd">×</button>
-          <p class="end-kicker">{{ endKind === 'WON' ? 'Perfect hit' : 'Out of guesses' }}</p>
-          <h2 id="end-title" class="end-title">{{ endKind === 'WON' ? '猜中了！' : '本局结束' }}</h2>
+          <p class="end-kicker">{{ endKicker }}</p>
+          <h2 id="end-title" class="end-title">{{ endTitle }}</h2>
           <p class="end-answer">{{ endAnswerName }}</p>
           <p class="end-sub">{{ endSub }}</p>
+          <div class="answer-sheet" v-if="answerFields.length" aria-label="答案档案">
+            <div class="answer-sheet-row" v-for="f in answerFields" :key="f.key">
+              <div class="answer-sheet-label">{{ f.label }}</div>
+              <div class="answer-sheet-value">{{ f.value }}</div>
+            </div>
+          </div>
           <div class="end-actions">
             <button class="btn btn-primary" type="button" @click="dismissEnd">查看本局记录</button>
             <button class="btn btn-ghost" type="button" @click="replayFromEnd">再来一局</button>
@@ -666,6 +980,7 @@
           endKind: '',
           endAnswerName: '',
           endSub: '',
+          answerDisplay: {},
           pulseLife: 0,
           confettiTimer: null,
           endShowTimer: null,
@@ -683,6 +998,26 @@
             return n.includes(q) || al.includes(q) || py.includes(q)
               || (b.pinyinKeys || []).some((k) => String(k).toLowerCase().startsWith(q));
           }).slice(0, 12);
+        },
+        answerFields() {
+          const disp = this.answerDisplay || {};
+          return (this.columns || [])
+            .filter((c) => (c.type || '').toLowerCase() !== 'identity')
+            .map((c) => ({
+              key: c.key,
+              label: c.label,
+              value: disp[c.key] != null && String(disp[c.key]).trim() !== '' ? disp[c.key] : '—'
+            }));
+        },
+        endKicker() {
+          if (this.endKind === 'WON') return 'Perfect hit';
+          if (this.endKind === 'GIVEN_UP') return 'Revealed';
+          return 'Out of guesses';
+        },
+        endTitle() {
+          if (this.endKind === 'WON') return '猜中了！';
+          if (this.endKind === 'GIVEN_UP') return '答案揭晓';
+          return '本局结束';
         }
       },
       watch: {
@@ -715,6 +1050,13 @@
         this.stopConfetti();
       },
       methods: {
+        focusGuessInput() {
+          this.$nextTick(() => {
+            const mobile = window.matchMedia('(max-width: 760px)').matches;
+            const el = mobile ? this.$refs.guessInputMobile : this.$refs.guessInput;
+            if (el) el.focus();
+          });
+        },
         cellClass(cell) {
           if (!cell) return 'c-gray';
           return 'c-' + (cell.color || 'gray');
@@ -787,6 +1129,7 @@
           this.endKind = '';
           this.endAnswerName = '';
           this.endSub = '';
+          this.answerDisplay = {};
           this.stopConfetti();
           try {
             const res = await fetch('/api/matches', {
@@ -804,7 +1147,7 @@
             this.queryInput = '';
             this.pickedId = '';
             this.showSuggest = false;
-            this.$nextTick(() => this.$refs.guessInput && this.$refs.guessInput.focus());
+            this.focusGuessInput();
           } catch (e) {
             this.msg = String(e.message || e);
             this.matchId = '';
@@ -851,23 +1194,54 @@
             this.showSuggest = false;
 
             if (res.gameStatus === 'WON' || res.gameStatus === 'LOST') {
-              const a = res.answerReveal;
-              const al = a && a.aliases && a.aliases.length ? '（' + a.aliases[0] + '）' : '';
-              this.endKind = res.gameStatus;
-              this.endAnswerName = a ? a.name + al : '未知';
-              this.endSub = res.gameStatus === 'WON'
-                ? '用了 ' + res.guessIndex + ' 次猜中 · 关闭后可回看本局每一次猜测'
-                : '次数用尽 · 关闭后可回看本局每一次猜测';
-              this.gameOver = true;
-              if (this.endShowTimer) clearTimeout(this.endShowTimer);
-              this.endShowTimer = setTimeout(() => {
-                this.endShowTimer = null;
-                this.endOverlay = true;
-                this.$nextTick(() => {
-                  if (res.gameStatus === 'WON') this.startConfetti();
-                });
-              }, 520);
+              this.applyEnd(res);
+            } else {
+              this.focusGuessInput();
             }
+          } catch (e) {
+            this.msg = String(e.message || e);
+          } finally {
+            this.loading = false;
+          }
+        },
+        applyEnd(res) {
+          const a = res.answerReveal;
+          const al = a && a.aliases && a.aliases.length ? '（' + a.aliases[0] + '）' : '';
+          this.endKind = res.gameStatus;
+          this.endAnswerName = a ? a.name + al : '未知';
+          this.answerDisplay = res.answerDisplay || {};
+          if (res.gameStatus === 'WON') {
+            this.endSub = '用了 ' + res.guessIndex + ' 次猜中 · 下方是答案档案，关闭后可回看猜测';
+          } else if (res.gameStatus === 'GIVEN_UP') {
+            this.endSub = '已主动揭晓 · 下方是答案档案，关闭后可回看猜测';
+          } else {
+            this.endSub = '次数用尽 · 下方是答案档案，关闭后可回看猜测';
+          }
+          this.gameOver = true;
+          if (this.endShowTimer) clearTimeout(this.endShowTimer);
+          this.endShowTimer = setTimeout(() => {
+            this.endShowTimer = null;
+            this.endOverlay = true;
+            this.$nextTick(() => {
+              if (res.gameStatus === 'WON') this.startConfetti();
+            });
+          }, 520);
+        },
+        async giveUp() {
+          if (this.gameOver || !this.matchId || this.loading) return;
+          if (!window.confirm('确定揭晓答案？本局将结束。')) return;
+          this.loading = true;
+          this.msg = '';
+          this.showSuggest = false;
+          try {
+            const res = await fetch('/api/matches/' + encodeURIComponent(this.matchId) + '/give-up', {
+              method: 'POST'
+            }).then(async (r) => {
+              const body = await r.json().catch(() => ({}));
+              if (!r.ok) throw new Error(body.message || ('揭晓失败 ' + r.status));
+              return body;
+            });
+            this.applyEnd(res);
           } catch (e) {
             this.msg = String(e.message || e);
           } finally {
@@ -904,7 +1278,7 @@
             canvas.height = canvas.clientHeight * dpr;
           };
           resize();
-          const colors = ['#3dcf8e', '#ff6b35', '#e8c547', '#e8eef2', '#5ec8ff'];
+          const colors = ['#3d7a62', '#2c4a6e', '#b0892e', '#8f3d32', '#16181d'];
           const parts = Array.from({ length: 90 }, () => ({
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height * 0.35 - 40,

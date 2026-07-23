@@ -60,4 +60,9 @@ public class GuessApiController {
                                @RequestBody @Valid GuessRequest request) {
         return matches.guess(matchId, request);
     }
+
+    @PostMapping("/matches/{matchId}/give-up")
+    public GuessResponse giveUp(@PathVariable String matchId) {
+        return matches.giveUp(matchId);
+    }
 }

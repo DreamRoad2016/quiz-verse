@@ -93,12 +93,12 @@ public class MatchService {
             session.setState("WON");
             resp.setGameStatus("WON");
             resp.setRemaining(session.getMaxGuesses() - session.getGuessCount());
-            resp.setAnswerReveal(toBrief(answer));
+            attachAnswer(resp, pack, answer);
         } else if (session.getGuessCount() >= session.getMaxGuesses()) {
             session.setState("LOST");
             resp.setGameStatus("LOST");
             resp.setRemaining(0);
-            resp.setAnswerReveal(toBrief(answer));
+            attachAnswer(resp, pack, answer);
         } else {
             resp.setGameStatus("PLAYING");
             resp.setRemaining(session.getMaxGuesses() - session.getGuessCount());
@@ -106,6 +106,38 @@ public class MatchService {
 
         matchStore.save(session);
         return resp;
+    }
+
+    /** 主动揭晓答案；本局记为 GIVEN_UP，不消耗猜次行。 */
+    public GuessResponse giveUp(String matchId) {
+        MatchSession session = matchStore.find(matchId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match not found"));
+        if (!"PLAYING".equals(session.getState())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Match already finished: " + session.getState());
+        }
+
+        LoadedPack pack = packs.require(session.getPackId());
+        PackEntity answer = pack.findEntity(session.getAnswerId());
+        if (answer == null) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Answer entity missing");
+        }
+
+        session.setState("GIVEN_UP");
+        matchStore.save(session);
+
+        GuessResponse resp = new GuessResponse();
+        resp.setMatchId(matchId);
+        resp.setGuessIndex(session.getGuessCount());
+        resp.setHit(false);
+        resp.setGameStatus("GIVEN_UP");
+        resp.setRemaining(session.getMaxGuesses() - session.getGuessCount());
+        attachAnswer(resp, pack, answer);
+        return resp;
+    }
+
+    private void attachAnswer(GuessResponse resp, LoadedPack pack, PackEntity answer) {
+        resp.setAnswerReveal(toBrief(answer));
+        resp.setAnswerDisplay(compareEngine.display(pack, answer));
     }
 
     private static List<StartMatchResponse.ColumnMeta> toColumnMeta(List<PackSchema.ColumnDef> cols) {

@@ -16,6 +16,8 @@ public class GuessResponse {
     private Map<String, String> display = new LinkedHashMap<>();
     private Map<String, CellResult> cells = new LinkedHashMap<>();
     private EntityBrief answerReveal;
+    /** 揭晓答案时的表格列展示值（与 columns 同 key） */
+    private Map<String, String> answerDisplay = new LinkedHashMap<>();
 
     public String getMatchId() {
         return matchId;
@@ -79,5 +81,13 @@ public class GuessResponse {
 
     public void setAnswerReveal(EntityBrief answerReveal) {
         this.answerReveal = answerReveal;
+    }
+
+    public Map<String, String> getAnswerDisplay() {
+        return answerDisplay;
+    }
+
+    public void setAnswerDisplay(Map<String, String> answerDisplay) {
+        this.answerDisplay = answerDisplay;
     }
 }

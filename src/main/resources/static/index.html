@@ -492,7 +492,7 @@
         list.sort((a, b) => (order[a.kind] ?? 9) - (order[b.kind] ?? 9));
         el.innerHTML = list.map((p) => {
           const kind = p.kind === 'demo' ? 'Demo' : 'Official';
-          return `<a class="pack" href="/guess.html?pack=${encodeURIComponent(p.id)}&v=20260724b">
+          return `<a class="pack" href="/guess.html?pack=${encodeURIComponent(p.id)}&v=20260724c">
             <div>
               <h3>${escapeHtml(p.title)}</h3>
               <p>${escapeHtml(p.description || '')}</p>
