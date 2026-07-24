@@ -952,6 +952,7 @@
     </teleport>
   </div>
 
+  <script src="/js/api.js"></script>
   <script>
     const params = new URLSearchParams(location.search);
     const packId = params.get('pack') || 'lol_cn_kr';
@@ -1032,14 +1033,14 @@
         };
         window.addEventListener('keydown', this._onKeydown);
         try {
-          const packs = await fetch('/api/packs').then((r) => r.json());
+          const packs = await QuizApi.apiFetch('/api/packs').then((r) => r.json());
           const meta = packs.find((p) => p.id === this.packId);
           if (meta) {
             this.title = meta.title;
             this.description = meta.description || '';
             document.title = meta.title + ' · Quiz Verse';
           }
-          this.briefs = await fetch('/api/packs/' + encodeURIComponent(this.packId) + '/briefs').then((r) => r.json());
+          this.briefs = await QuizApi.apiFetch('/api/packs/' + encodeURIComponent(this.packId) + '/briefs').then((r) => r.json());
           await this.start();
         } catch (e) {
           this.msg = '加载失败：' + e;
@@ -1132,7 +1133,7 @@
           this.answerDisplay = {};
           this.stopConfetti();
           try {
-            const res = await fetch('/api/matches', {
+            const res = await QuizApi.apiFetch('/api/matches', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ packId: this.packId })
@@ -1169,7 +1170,7 @@
           this.loading = true;
           this.msg = '';
           try {
-            const res = await fetch('/api/matches/' + encodeURIComponent(this.matchId) + '/guess', {
+            const res = await QuizApi.apiFetch('/api/matches/' + encodeURIComponent(this.matchId) + '/guess', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ entityId })
@@ -1234,7 +1235,7 @@
           this.msg = '';
           this.showSuggest = false;
           try {
-            const res = await fetch('/api/matches/' + encodeURIComponent(this.matchId) + '/give-up', {
+            const res = await QuizApi.apiFetch('/api/matches/' + encodeURIComponent(this.matchId) + '/give-up', {
               method: 'POST'
             }).then(async (r) => {
               const body = await r.json().catch(() => ({}));

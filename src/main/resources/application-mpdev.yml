@@ -1,0 +1,11 @@
+# 小程序本地联调：开鉴权 + 内存对局（不依赖 Redis）
+# ./run-mp-dev.sh  或  mvn spring-boot:run -Dspring-boot.run.profiles=mpdev
+
+quiz:
+  match:
+    store: memory
+  security:
+    enabled: true
+  wechat:
+    app-id: ${WECHAT_APP_ID:}
+    app-secret: ${WECHAT_APP_SECRET:}

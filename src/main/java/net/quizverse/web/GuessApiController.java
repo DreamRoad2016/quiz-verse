@@ -5,6 +5,7 @@ import net.quizverse.match.MatchService;
 import net.quizverse.pack.PackRegistry;
 import net.quizverse.pack.model.EntityBrief;
 import net.quizverse.pack.model.PackMeta;
+import net.quizverse.web.dto.EntityDetailResponse;
 import net.quizverse.web.dto.GuessRequest;
 import net.quizverse.web.dto.GuessResponse;
 import net.quizverse.web.dto.StartMatchRequest;
@@ -47,7 +48,13 @@ public class GuessApiController {
 
     @GetMapping("/packs/{packId}/briefs")
     public List<EntityBrief> briefs(@PathVariable String packId) {
-        return packs.briefs(packId);
+        return matches.briefs(packId);
+    }
+
+    @GetMapping("/packs/{packId}/entities/{entityId}")
+    public EntityDetailResponse entityDetail(@PathVariable String packId,
+                                             @PathVariable String entityId) {
+        return matches.entityDetail(packId, entityId);
     }
 
     @PostMapping("/matches")

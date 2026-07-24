@@ -450,6 +450,7 @@
 
   <footer class="foot">Quiz Verse · Server-side packs</footer>
 
+  <script src="/js/api.js"></script>
   <script>
     (function paintHeroGrid() {
       const grid = document.getElementById('heroGrid');
@@ -480,7 +481,7 @@
       }[c]));
     }
 
-    fetch('/api/packs')
+    QuizApi.apiFetch('/api/packs')
       .then((r) => r.json())
       .then((list) => {
         const el = document.getElementById('packs');

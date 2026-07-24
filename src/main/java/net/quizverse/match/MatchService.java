@@ -2,11 +2,15 @@ package net.quizverse.match;
 
 import net.quizverse.compare.CellResult;
 import net.quizverse.compare.CompareEngine;
+import net.quizverse.config.QuizProperties;
 import net.quizverse.pack.PackRegistry;
 import net.quizverse.pack.model.EntityBrief;
 import net.quizverse.pack.model.LoadedPack;
 import net.quizverse.pack.model.PackEntity;
 import net.quizverse.pack.model.PackSchema;
+import net.quizverse.security.AuthContext;
+import net.quizverse.security.RateLimitService;
+import net.quizverse.web.dto.EntityDetailResponse;
 import net.quizverse.web.dto.GuessRequest;
 import net.quizverse.web.dto.GuessResponse;
 import net.quizverse.web.dto.StartMatchRequest;
@@ -15,6 +19,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -27,14 +32,27 @@ public class MatchService {
     private final PackRegistry packs;
     private final CompareEngine compareEngine;
     private final MatchStore matchStore;
+    private final RateLimitService rateLimit;
+    private final QuizProperties properties;
 
-    public MatchService(PackRegistry packs, CompareEngine compareEngine, MatchStore matchStore) {
+    public MatchService(PackRegistry packs,
+                        CompareEngine compareEngine,
+                        MatchStore matchStore,
+                        RateLimitService rateLimit,
+                        QuizProperties properties) {
         this.packs = packs;
         this.compareEngine = compareEngine;
         this.matchStore = matchStore;
+        this.rateLimit = rateLimit;
+        this.properties = properties;
     }
 
     public StartMatchResponse start(StartMatchRequest request) {
+        String ownerId = currentOwnerId();
+        if (properties.getSecurity().isEnabled()) {
+            rateLimit.checkStart(ownerId);
+        }
+
         LoadedPack pack = packs.require(request.getPackId());
         List<PackEntity> entities = pack.getEntities();
         PackEntity answer = entities.get(ThreadLocalRandom.current().nextInt(entities.size()));
@@ -43,6 +61,7 @@ public class MatchService {
         session.setMatchId(UUID.randomUUID().toString());
         session.setPackId(pack.getId());
         session.setAnswerId(answer.getId());
+        session.setOwnerId(ownerId);
         session.setGuessCount(0);
         session.setMaxGuesses(pack.getMeta().getMaxGuesses());
         session.setState("PLAYING");
@@ -58,10 +77,10 @@ public class MatchService {
     }
 
     public GuessResponse guess(String matchId, GuessRequest request) {
-        MatchSession session = matchStore.find(matchId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match not found"));
-        if (!"PLAYING".equals(session.getState())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Match already finished: " + session.getState());
+        MatchSession session = requireOwnedPlaying(matchId);
+        String ownerId = currentOwnerId();
+        if (properties.getSecurity().isEnabled()) {
+            rateLimit.checkGuess(ownerId);
         }
 
         LoadedPack pack = packs.require(session.getPackId());
@@ -110,10 +129,10 @@ public class MatchService {
 
     /** 主动揭晓答案；本局记为 GIVEN_UP，不消耗猜次行。 */
     public GuessResponse giveUp(String matchId) {
-        MatchSession session = matchStore.find(matchId)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match not found"));
-        if (!"PLAYING".equals(session.getState())) {
-            throw new ResponseStatusException(HttpStatus.CONFLICT, "Match already finished: " + session.getState());
+        MatchSession session = requireOwnedPlaying(matchId);
+        String ownerId = currentOwnerId();
+        if (properties.getSecurity().isEnabled()) {
+            rateLimit.checkGuess(ownerId);
         }
 
         LoadedPack pack = packs.require(session.getPackId());
@@ -133,6 +152,71 @@ public class MatchService {
         resp.setRemaining(session.getMaxGuesses() - session.getGuessCount());
         attachAnswer(resp, pack, answer);
         return resp;
+    }
+
+    public EntityDetailResponse entityDetail(String packId, String entityId) {
+        String ownerId = currentOwnerId();
+        if (properties.getSecurity().isEnabled()) {
+            rateLimit.checkBriefs(ownerId);
+        }
+        LoadedPack pack = packs.require(packId);
+        PackEntity entity = pack.findEntity(entityId);
+        if (entity == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity not found");
+        }
+        Map<String, String> display = compareEngine.display(pack, entity);
+        EntityDetailResponse resp = new EntityDetailResponse();
+        resp.setId(entity.getId());
+        resp.setName(entity.getName());
+        resp.setAliases(entity.getAliases() != null ? entity.getAliases() : List.of());
+        resp.setPackId(pack.getId());
+        resp.setDisplay(display);
+        List<EntityDetailResponse.Field> fields = new ArrayList<>();
+        for (PackSchema.ColumnDef col : packs.tableColumns(packId)) {
+            if ("identity".equalsIgnoreCase(col.getType())) {
+                continue;
+            }
+            String value = display.getOrDefault(col.getKey(), "—");
+            fields.add(new EntityDetailResponse.Field(col.getKey(), col.getLabel(), value));
+        }
+        resp.setFields(fields);
+        return resp;
+    }
+
+    public List<EntityBrief> briefs(String packId) {
+        String ownerId = currentOwnerId();
+        if (properties.getSecurity().isEnabled()) {
+            rateLimit.checkBriefs(ownerId);
+        }
+        return packs.briefs(packId);
+    }
+
+    private MatchSession requireOwnedPlaying(String matchId) {
+        MatchSession session = matchStore.find(matchId)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Match not found"));
+        assertOwner(session);
+        if (!"PLAYING".equals(session.getState())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Match already finished: " + session.getState());
+        }
+        return session;
+    }
+
+    private void assertOwner(MatchSession session) {
+        if (!properties.getSecurity().isEnabled()) {
+            return;
+        }
+        String ownerId = currentOwnerId();
+        if (session.getOwnerId() == null || !session.getOwnerId().equals(ownerId)) {
+            throw new ResponseStatusException(HttpStatus.FORBIDDEN, "Match not owned by current session");
+        }
+    }
+
+    private static String currentOwnerId() {
+        var p = AuthContext.get();
+        if (p == null || p.getOwnerId() == null || p.getOwnerId().isBlank()) {
+            return "anon";
+        }
+        return p.getOwnerId();
     }
 
     private void attachAnswer(GuessResponse resp, LoadedPack pack, PackEntity answer) {

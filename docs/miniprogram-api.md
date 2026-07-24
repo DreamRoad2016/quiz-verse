@@ -1,0 +1,109 @@
+# 猜宇宙 · 小程序 API 与鉴权
+
+面向微信小程序「猜宇宙」与网页试用。`aliyun` profile 默认开启鉴权。
+
+## 鉴权流程
+
+```text
+小程序 wx.login(code)
+  → POST /api/auth/wx-login { "code": "..." }
+  → { "sessionToken", "expiresIn", "kind": "wx" }
+
+网页试用
+  → POST /api/auth/guest
+  → { "sessionToken", "expiresIn", "kind": "guest" }
+
+后续请求头
+  Authorization: Bearer <sessionToken>
+```
+
+免鉴权：`GET /api/health`、`/api/auth/**`。
+
+对局绑定 `ownerId`（openid 或 `guest:{ipHash}`）。他人持有 `matchId` 也无法猜/揭晓。
+
+## 环境变量（阿里云）
+
+| 变量 | 说明 |
+| --- | --- |
+| `WECHAT_APP_ID` | 小程序 AppId |
+| `WECHAT_APP_SECRET` | 小程序 AppSecret（勿入库） |
+| `QUIZ_SECURITY_ENABLED` | 默认 aliyun=`true`；本地默认 `false` |
+| `REDIS_HOST` 等 | 会话与对局存 Redis |
+
+启动示例：
+
+```bash
+export WECHAT_APP_ID=wx........
+export WECHAT_APP_SECRET=........
+
+nohup /usr/lib/jvm/java-17-openjdk/bin/java \
+  -Xms256m -Xmx512m \
+  -jar quiz-verse-0.1.0-SNAPSHOT.jar \
+  --spring.profiles.active=aliyun \
+  --spring.data.redis.host=127.0.0.1 \
+  --spring.data.redis.port=6379 \
+  > app.log 2>&1 &
+```
+
+## HTTPS 与微信合法域名
+
+微信正式版 **不能** 使用 `http://IP:8098`。
+
+推荐：
+
+1. 域名解析到 ECS  
+2. Nginx 监听 443，反代 `http://127.0.0.1:8098`  
+3. 微信公众平台 → 开发管理 → 服务器域名 → request 合法域名填 `https://你的域名`  
+4. 小程序 `miniprogram/config.js` 的 `baseUrl` 改为该 HTTPS 地址  
+
+开发者工具可勾选「不校验合法域名」用 IP 联调。
+
+Nginx 示例片段：
+
+```nginx
+server {
+  listen 443 ssl http2;
+  server_name api.example.com;
+  # ssl_certificate ...;
+  # ssl_certificate_key ...;
+
+  location / {
+    proxy_pass http://127.0.0.1:8098;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
+```
+
+## 业务接口摘要
+
+| 方法 | 路径 | 说明 |
+| --- | --- | --- |
+| GET | `/api/packs` | 题包列表 |
+| GET | `/api/packs/{packId}/briefs` | 联想/图鉴列表 |
+| GET | `/api/packs/{packId}/entities/{entityId}` | 人物档案（fields + display） |
+| POST | `/api/matches` | body `{ packId }` 开局 |
+| POST | `/api/matches/{id}/guess` | body `{ entityId }` |
+| POST | `/api/matches/{id}/give-up` | 主动揭晓 |
+
+限流（默认，可配 `quiz.security.*`）：guest 每 IP / 开局 / 猜测 / briefs 均有小时上限。
+
+## 本地关闭鉴权
+
+```bash
+# 默认 application.yml 已是 QUIZ_SECURITY_ENABLED=false
+./run.sh
+```
+
+## 本地开鉴权联调小程序（推荐，无需先发阿里云）
+
+```bash
+./run-mp-dev.sh
+# 等同 spring.profiles.active=mpdev：security=true，match store=memory
+```
+
+小程序 `config.js` 设 `ENV = 'local'`（`http://127.0.0.1:8098`）。未配 WeChat Secret 时会走 guest。
+
+网页可直接玩；开启鉴权后网页会通过 `/js/api.js` 自动 guest 登录。

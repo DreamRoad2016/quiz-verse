@@ -24,6 +24,16 @@ quiz:
     classpath-location: classpath:/packs
     # Optional absolute/relative dir for local pack overrides (empty = skip)
     extra-dir: ${QUIZ_PACKS_DIR:}
+  security:
+    enabled: ${QUIZ_SECURITY_ENABLED:false}
+    session-ttl-hours: 72
+    guest-per-ip-per-hour: 60
+    start-per-session-per-hour: 30
+    guess-per-session-per-hour: 120
+    briefs-per-session-per-hour: 60
+  wechat:
+    app-id: ${WECHAT_APP_ID:}
+    app-secret: ${WECHAT_APP_SECRET:}
 
 logging:
   level:

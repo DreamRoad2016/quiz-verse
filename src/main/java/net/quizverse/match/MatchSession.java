@@ -8,9 +8,11 @@ public class MatchSession {
     private String matchId;
     private String packId;
     private String answerId;
+    /** 绑定登录主体（openid / guest:… / anon） */
+    private String ownerId;
     private int guessCount;
     private int maxGuesses;
-    /** PLAYING | WON | LOST */
+    /** PLAYING | WON | LOST | GIVEN_UP */
     private String state = "PLAYING";
     private List<String> guessedIds = new ArrayList<>();
 
@@ -36,6 +38,14 @@ public class MatchSession {
 
     public void setAnswerId(String answerId) {
         this.answerId = answerId;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 
     public int getGuessCount() {

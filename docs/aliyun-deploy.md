@@ -113,6 +113,18 @@ curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8098/
 
 浏览器打开首页与猜题页，开一局确认能猜、能结束。
 
+开启鉴权后，无 Token 的裸调 `give-up` / `guess` 会返回 **401**（预期）。网页会自动 `POST /api/auth/guest`。
+
+### 微信小程序相关环境变量
+
+```bash
+export WECHAT_APP_ID=你的小程序AppId
+export WECHAT_APP_SECRET=你的AppSecret
+# aliyun 默认 QUIZ_SECURITY_ENABLED=true
+```
+
+合法域名与 HTTPS 说明见 [`miniprogram-api.md`](./miniprogram-api.md)。
+
 ---
 
 ## 常用运维命令

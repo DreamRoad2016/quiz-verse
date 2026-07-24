@@ -1,11 +1,13 @@
-# Aliyun / production: Redis-backed match store
-# Run: java -jar quiz-verse.jar --spring.profiles.active=aliyun
-# Or set env: SPRING_PROFILES_ACTIVE=aliyun
-
 quiz:
   match:
     store: redis
     ttl-hours: 24
+  security:
+    enabled: ${QUIZ_SECURITY_ENABLED:true}
+    session-ttl-hours: 72
+  wechat:
+    app-id: ${WECHAT_APP_ID:}
+    app-secret: ${WECHAT_APP_SECRET:}
 
 spring:
   data:

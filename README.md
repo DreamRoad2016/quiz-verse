@@ -12,7 +12,7 @@
 | 题包文件 | `src/main/resources/packs/` |
 | 对局状态 | 默认内存；可切换 Redis |
 
-产品规划与 ADR 见 [`docs/`](docs/)。阿里云发布与运维见 [`docs/aliyun-deploy.md`](docs/aliyun-deploy.md)。
+产品规划与 ADR 见 [`docs/`](docs/)。阿里云发布与运维见 [`docs/aliyun-deploy.md`](docs/aliyun-deploy.md)。小程序鉴权与 API 见 [`docs/miniprogram-api.md`](docs/miniprogram-api.md)。
 
 ## 题包
 
