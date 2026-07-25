@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /vault/
+Disallow: /guess.html

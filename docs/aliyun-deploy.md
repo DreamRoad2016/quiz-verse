@@ -17,8 +17,11 @@
 
 访问：
 
-- 首页：`http://<服务器公网IP>:8098/`
-- 猜题：`http://<服务器公网IP>:8098/guess.html?pack=zhenhuan_2011`
+- 首页（人物资料站）：`https://www.caicaiyuzhou.cn/` 或 `http://127.0.0.1:8098/`
+- 人物列表：`/collection.html?world=zhenhuan`
+- 猜题深链（首页不展示）：
+  - 题包大厅（旧主页）：`/vault/q/2026/zh-collection/hub.html`
+  - 猜题页：`/vault/q/2026/zh-collection/play.html?pack=zhenhuan_2011`
 - 健康检查：`http://127.0.0.1:8098/api/health`
 
 ---

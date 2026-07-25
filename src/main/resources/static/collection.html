@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>人物资料 · 猜猜宇宙</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f3f8fb; --ink: #1a2a32; --muted: #6b8490; --accent: #2a8f9e;
+      --line: rgba(31, 111, 139, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: "Noto Sans SC", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(860px, 100%); margin: 0 auto; padding: 24px 18px 56px; }
+    .nav { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; }
+    .nav a:hover { color: var(--accent); }
+    h1 {
+      font-family: "Noto Serif SC", serif;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .sub { color: var(--muted); margin-bottom: 20px; line-height: 1.6; }
+    .search {
+      width: 100%;
+      min-height: 46px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fff;
+      font: inherit;
+      margin-bottom: 12px;
+    }
+    .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 10px; }
+    .row {
+      display: block;
+      padding: 14px 6px;
+      border-bottom: 1px solid rgba(31, 111, 139, 0.08);
+    }
+    .row:hover { background: rgba(42, 143, 158, 0.05); }
+    .name { font-weight: 600; font-size: 1.02rem; }
+    .aliases { color: var(--muted); font-size: 0.86rem; margin-top: 4px; }
+    .err { color: #b85a4a; padding: 20px 0; }
+    .empty { color: var(--muted); padding: 28px 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="nav"><a href="/">← 猜猜宇宙</a></p>
+    <h1 id="title">人物资料</h1>
+    <p class="sub" id="sub">查阅人物基础信息与关系资料。</p>
+    <input class="search" id="q" type="search" placeholder="搜索姓名 / 别名 / 拼音" />
+    <p class="meta" id="meta">加载中…</p>
+    <div id="list"></div>
+    <p class="err" id="err" hidden></p>
+  </main>
+  <script src="/js/api.js"></script>
+  <script src="/js/worlds.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const worldId = params.get('world') || 'zhenhuan';
+    const world = window.CCYZ_WORLDS.findWorld(worldId);
+    const packId = (world && world.packId) || window.CCYZ_WORLDS.DEFAULT_PACK_ID;
+
+    if (!world || !world.ready) {
+      document.getElementById('title').textContent = '专题整理中';
+      document.getElementById('sub').textContent = '该专题人物资料尚未开放查阅。';
+      document.getElementById('meta').textContent = '';
+      document.getElementById('q').hidden = true;
+    } else {
+      document.title = world.title + ' · 人物资料 · 猜猜宇宙';
+      document.getElementById('title').textContent = world.title + ' · 人物资料';
+      document.getElementById('sub').textContent = (world.categoryName || '') + ' · ' + (world.subtitle || '人物资料辑录');
+    }
+
+    let briefs = [];
+
+    function render(list) {
+      const el = document.getElementById('list');
+      document.getElementById('meta').textContent = '共 ' + list.length + ' 人';
+      if (!list.length) {
+        el.innerHTML = '<p class="empty">没有匹配人物</p>';
+        return;
+      }
+      el.innerHTML = list.map((b) => {
+        const al = (b.aliases || []).slice(0, 3).join(' / ');
+        return `<a class="row" href="/entity.html?pack=${encodeURIComponent(packId)}&id=${encodeURIComponent(b.id)}">
+          <div class="name">${escapeHtml(b.name)}</div>
+          ${al ? `<div class="aliases">${escapeHtml(al)}</div>` : ''}
+        </a>`;
+      }).join('');
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    document.getElementById('q').addEventListener('input', (e) => {
+      const q = e.target.value.trim().toLowerCase();
+      if (!q) return render(briefs);
+      render(briefs.filter((b) => {
+        const n = (b.name || '').toLowerCase();
+        const al = (b.aliases || []).join(' ').toLowerCase();
+        const py = (b.pinyinKeys || []).join(' ').toLowerCase();
+        return n.includes(q) || al.includes(q) || py.includes(q)
+          || (b.pinyinKeys || []).some((k) => String(k).toLowerCase().startsWith(q));
+      }));
+    });
+
+    if (world && world.ready) {
+      QuizApi.apiFetch('/api/packs/' + encodeURIComponent(packId) + '/briefs')
+        .then((r) => {
+          if (!r.ok) throw new Error('加载失败 ' + r.status);
+          return r.json();
+        })
+        .then((list) => {
+          briefs = list || [];
+          render(briefs);
+        })
+        .catch((e) => {
+          document.getElementById('err').hidden = false;
+          document.getElementById('err').textContent = String(e.message || e);
+          document.getElementById('meta').textContent = '';
+        });
+    }
+  </script>
+</body>
+</html>

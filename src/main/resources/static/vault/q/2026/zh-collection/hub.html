@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>竞猜宇宙 · Quiz Verse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      /* 冷调宣纸 + 浓墨，避开暖奶油/陶土默认组合 */
+      --paper: #eef1f4;
+      --paper-2: #e4e9ef;
+      --ink: #16181d;
+      --ink-soft: #3a404c;
+      --muted: #6e7684;
+      --line: rgba(22, 24, 29, 0.1);
+      --wash: rgba(44, 74, 110, 0.09);
+      --accent: #2c4a6e;
+      --accent-hot: #8f3d32;
+      --hit: #3d7a62;
+      --near: #b0892e;
+      --miss: #8a9099;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Noto Sans SC", sans-serif;
+      background: var(--paper);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: none; cursor: pointer; }
+
+    /* —— 全幅水墨氛围 —— */
+    .hero-plane {
+      position: relative;
+      min-height: 100svh;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: var(--paper);
+    }
+    .hero-plane::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 55% 45% at 82% 28%, rgba(44, 74, 110, 0.16), transparent 62%),
+        radial-gradient(ellipse 48% 42% at 8% 72%, rgba(22, 24, 29, 0.07), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 50% 100%, rgba(143, 61, 50, 0.06), transparent 55%),
+        linear-gradient(165deg, #f5f7fa 0%, #eef1f4 48%, #e6ebf1 100%);
+      animation: wash-drift 18s ease-in-out infinite alternate;
+    }
+    @keyframes wash-drift {
+      from { transform: scale(1) translate(0, 0); }
+      to { transform: scale(1.04) translate(-1.2%, 0.8%); }
+    }
+    .ink-stroke {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.55;
+    }
+    .ink-stroke.a {
+      width: min(48vw, 520px);
+      height: min(48vw, 520px);
+      right: -8%;
+      top: 8%;
+      background: radial-gradient(circle, rgba(44, 74, 110, 0.22), transparent 68%);
+      animation: ink-pulse 10s ease-in-out infinite;
+    }
+    .ink-stroke.b {
+      width: min(36vw, 380px);
+      height: min(28vw, 300px);
+      left: -6%;
+      bottom: 18%;
+      background: radial-gradient(circle, rgba(22, 24, 29, 0.12), transparent 70%);
+      animation: ink-pulse 12s ease-in-out 1s infinite reverse;
+    }
+    @keyframes ink-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.45; }
+      50% { transform: scale(1.08); opacity: 0.7; }
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      gap: clamp(4px, 0.7vw, 9px);
+      padding: clamp(14px, 2vw, 28px);
+      opacity: 0.28;
+      mask-image: linear-gradient(180deg, transparent 0%, #000 20%, #000 55%, transparent 90%);
+      pointer-events: none;
+    }
+    .hero-grid span {
+      border: 1px solid rgba(22, 24, 29, 0.08);
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(0.88);
+      opacity: 0;
+      animation: tile-in 0.65s var(--ease) forwards;
+    }
+    .hero-grid span.on-g { background: rgba(61, 122, 98, 0.45); border-color: transparent; }
+    .hero-grid span.on-y { background: rgba(176, 137, 46, 0.4); border-color: transparent; }
+    .hero-grid span.on-x { background: rgba(138, 144, 153, 0.4); border-color: transparent; }
+    @keyframes tile-in {
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      opacity: 0.04;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .hero-fade {
+      position: absolute;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      background: linear-gradient(180deg, rgba(238, 241, 244, 0.2) 0%, rgba(238, 241, 244, 0.45) 42%, rgba(238, 241, 244, 0.94) 100%);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 5;
+      width: min(920px, 100%);
+      padding: 0 clamp(22px, 5vw, 56px) clamp(48px, 10vh, 96px);
+    }
+    .brand-mark {
+      font-family: Syne, sans-serif;
+      font-weight: 800;
+      font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(16px, 2.8vh, 26px);
+      opacity: 0;
+      animation: rise 1s var(--ease) 0.08s forwards;
+    }
+    .brand-title {
+      font-family: "Noto Serif SC", serif;
+      font-weight: 700;
+      font-size: clamp(3.2rem, 10vw, 6.4rem);
+      line-height: 1;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      margin-bottom: clamp(14px, 2.2vh, 22px);
+      opacity: 0;
+      animation: rise 1.05s var(--ease) 0.16s forwards;
+    }
+    .brand-lead {
+      max-width: 28em;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      line-height: 1.75;
+      margin-bottom: clamp(26px, 4vh, 38px);
+      opacity: 0;
+      animation: rise 1.05s var(--ease) 0.28s forwards;
+    }
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      opacity: 0;
+      animation: rise 1.05s var(--ease) 0.4s forwards;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 24px;
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      transition: transform 0.35s var(--ease), background 0.25s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); background: #2a303a; }
+    .btn-primary svg { transition: transform 0.35s var(--ease); }
+    .btn-primary:hover svg { transform: translateY(3px); }
+    .btn-ghost {
+      padding: 15px 20px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.35);
+      color: var(--ink);
+      font-size: 0.92rem;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .btn-ghost:hover {
+      border-color: rgba(22, 24, 29, 0.22);
+      background: rgba(255, 255, 255, 0.65);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .band {
+      position: relative;
+      z-index: 6;
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+    }
+    .wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: clamp(64px, 11vh, 112px) clamp(22px, 5vw, 56px);
+    }
+    .kicker {
+      font-family: Syne, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .band h2 {
+      font-family: "Noto Serif SC", serif;
+      font-weight: 700;
+      font-size: clamp(1.75rem, 3.8vw, 2.45rem);
+      letter-spacing: 0.06em;
+      line-height: 1.25;
+      margin-bottom: 14px;
+      max-width: 12em;
+    }
+    .band .sub {
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      max-width: 36em;
+      margin-bottom: clamp(32px, 5vh, 52px);
+    }
+
+    .rules {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(24px, 4vw, 44px);
+      border-top: 1px solid var(--line);
+      padding-top: clamp(26px, 4vh, 38px);
+    }
+    .rule-num {
+      font-family: Syne, sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      color: var(--accent-hot);
+      margin-bottom: 12px;
+    }
+    .rule h3 {
+      font-size: 1.08rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .rule p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.65;
+    }
+    .swatches {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .swatch { width: 26px; height: 26px; }
+    .swatch.g { background: var(--hit); }
+    .swatch.y { background: var(--near); }
+    .swatch.x { background: var(--miss); }
+
+    #packs-section { scroll-margin-top: 12px; }
+    .packs { display: grid; gap: 0; }
+    .pack {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      padding: clamp(22px, 3vw, 34px) 0;
+      border-bottom: 1px solid var(--line);
+      transition: padding-left 0.4s var(--ease);
+    }
+    .pack:first-child { border-top: 1px solid var(--line); }
+    .pack:hover { padding-left: 10px; }
+    .pack:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 6px;
+    }
+    .pack h3 {
+      font-family: "Noto Serif SC", serif;
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      transition: color 0.25s;
+    }
+    .pack:hover h3 { color: var(--accent); }
+    .pack p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      max-width: 40em;
+    }
+    .pack-side { text-align: right; padding-bottom: 2px; }
+    .pack-kind {
+      font-family: Syne, sans-serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .pack-go {
+      font-family: Syne, sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      opacity: 0.4;
+      transition: opacity 0.3s, transform 0.35s var(--ease);
+      display: inline-block;
+    }
+    .pack:hover .pack-go {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
+    .loading, .err {
+      color: var(--muted);
+      padding: 20px 0;
+      font-size: 0.95rem;
+    }
+    .err { color: #a3483c; }
+
+    .foot {
+      padding: 0 clamp(22px, 5vw, 56px) 48px;
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      font-family: Syne, sans-serif;
+      text-transform: uppercase;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.85s var(--ease), transform 0.85s var(--ease);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 760px) {
+      .hero-copy { padding-bottom: 52px; }
+      .rules { grid-template-columns: 1fr; gap: 26px; }
+      .pack { grid-template-columns: 1fr; gap: 10px; }
+      .pack-side { text-align: left; }
+      .hero-grid { opacity: 0.18; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .brand-mark, .brand-title, .brand-lead, .cta-row, .reveal { opacity: 1; transform: none; }
+      .hero-plane::before { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero-plane">
+    <div class="ink-stroke a" aria-hidden="true"></div>
+    <div class="ink-stroke b" aria-hidden="true"></div>
+    <div class="hero-grid" id="heroGrid" aria-hidden="true"></div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-fade" aria-hidden="true"></div>
+
+    <div class="hero-copy">
+      <p class="brand-mark">Quiz Verse</p>
+      <h1 class="brand-title">竞猜宇宙</h1>
+      <p class="brand-lead">有限次数内，用绿 / 黄 / 灰的多维反馈锁定隐藏人物。题库在服务端，猜完才揭晓。</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="#packs-section">
+          进入题包
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M8 3v10M8 13l4-4M8 13L4 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a class="btn-ghost" href="#how">玩法</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="band" id="how">
+    <div class="wrap reveal">
+      <p class="kicker">How it plays</p>
+      <h2>像词游，却对着人物档案</h2>
+      <p class="sub">每一局随机藏起一人。你提交猜测，系统只返回属性着色——绿一致，黄部分重合或接近，灰不同。次数用尽前命中即胜。</p>
+      <div class="rules">
+        <article class="rule">
+          <div class="rule-num">01</div>
+          <h3>选题包开局</h3>
+          <p>甄嬛传正式库或 LoL Demo。属性列固定，每页独立一局。</p>
+        </article>
+        <article class="rule">
+          <div class="rule-num">02</div>
+          <h3>姓名 / 别名联想</h3>
+          <p>汉字、别名或拼音均可。提交后立刻看到整行反馈。</p>
+          <div class="swatches" aria-hidden="true">
+            <span class="swatch g"></span>
+            <span class="swatch y"></span>
+            <span class="swatch x"></span>
+          </div>
+        </article>
+        <article class="rule">
+          <div class="rule-num">03</div>
+          <h3>靠关系网收敛</h3>
+          <p>位分、住所、剧情、关系网交叉排除，比盲猜更像破案。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="packs-section">
+    <div class="wrap reveal">
+      <p class="kicker">Worlds</p>
+      <h2>选择题包</h2>
+      <p class="sub">点进即开局。内容以本地题包维护，改完发布即生效。</p>
+      <div id="packs" class="packs" aria-live="polite">
+        <p class="loading">正在载入题包…</p>
+      </div>
+      <p id="err" class="err" hidden></p>
+    </div>
+  </section>
+
+  <footer class="foot">Quiz Verse · Server-side packs</footer>
+
+  <script src="/js/api.js"></script>
+  <script>
+    (function paintHeroGrid() {
+      const grid = document.getElementById('heroGrid');
+      const total = 12 * 8;
+      const hot = new Set([28, 29, 30, 31, 32, 40, 41, 42, 43, 52, 53, 54, 64, 65, 76]);
+      const near = new Set([33, 44, 55, 66, 45, 34]);
+      const miss = new Set([27, 39, 51, 63, 75, 46, 35]);
+      for (let i = 0; i < total; i++) {
+        const cell = document.createElement('span');
+        if (hot.has(i)) cell.classList.add('on-g');
+        else if (near.has(i)) cell.classList.add('on-y');
+        else if (miss.has(i)) cell.classList.add('on-x');
+        cell.style.animationDelay = (0.02 + (i % 12) * 0.02 + Math.floor(i / 12) * 0.04) + 's';
+        grid.appendChild(cell);
+      }
+    })();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add('in');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    QuizApi.apiFetch('/api/packs')
+      .then((r) => r.json())
+      .then((list) => {
+        const el = document.getElementById('packs');
+        if (!list.length) {
+          el.innerHTML = '<p class="loading">暂无题包</p>';
+          return;
+        }
+        const order = { official: 0, demo: 1 };
+        list.sort((a, b) => (order[a.kind] ?? 9) - (order[b.kind] ?? 9));
+        el.innerHTML = list.map((p) => {
+          const kind = p.kind === 'demo' ? 'Demo' : 'Official';
+          return `<a class="pack" href="./play.html?pack=${encodeURIComponent(p.id)}&v=20260725">
+            <div>
+              <h3>${escapeHtml(p.title)}</h3>
+              <p>${escapeHtml(p.description || '')}</p>
+            </div>
+            <div class="pack-side">
+              <div class="pack-kind">${kind} · ${p.maxGuesses} guesses</div>
+              <span class="pack-go">Play →</span>
+            </div>
+          </a>`;
+        }).join('');
+      })
+      .catch((e) => {
+        document.getElementById('err').hidden = false;
+        document.getElementById('err').textContent = '无法加载题包：' + e;
+        document.getElementById('packs').innerHTML = '';
+      });
+  </script>
+</body>
+</html>

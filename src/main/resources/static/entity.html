@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>人物详情 · 猜猜宇宙</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f3f8fb; --ink: #1a2a32; --muted: #6b8490; --accent: #2a8f9e;
+      --line: rgba(31, 111, 139, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: "Noto Sans SC", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(720px, 100%); margin: 0 auto; padding: 24px 18px 56px; }
+    .nav { color: var(--muted); font-size: 0.9rem; margin-bottom: 18px; }
+    .nav a:hover { color: var(--accent); }
+    h1 {
+      font-family: "Noto Serif SC", serif;
+      font-size: clamp(1.8rem, 5vw, 2.4rem);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .aliases { color: var(--muted); margin-bottom: 22px; }
+    .sheet {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.85);
+      border-radius: 14px;
+      padding: 6px 18px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 5.5em 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px dashed rgba(31, 111, 139, 0.1);
+      font-size: 0.95rem;
+    }
+    .row:last-child { border-bottom: none; }
+    .lab { color: var(--muted); font-size: 0.82rem; padding-top: 2px; }
+    .val { word-break: break-word; font-weight: 500; }
+    .err { color: #b85a4a; padding: 20px 0; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <p class="nav"><a id="back" href="/collection.html">← 返回人物列表</a> · <a href="/">首页</a></p>
+    <h1 id="name">加载中…</h1>
+    <p class="aliases" id="aliases"></p>
+    <div class="sheet" id="sheet"></div>
+    <p class="err" id="err" hidden></p>
+  </main>
+  <script src="/js/api.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const packId = params.get('pack') || 'zhenhuan_2011';
+    const id = params.get('id');
+    document.getElementById('back').href = '/collection.html?world=zhenhuan';
+
+    if (!id) {
+      document.getElementById('name').textContent = '缺少人物参数';
+    } else {
+      QuizApi.apiFetch('/api/packs/' + encodeURIComponent(packId) + '/entities/' + encodeURIComponent(id))
+        .then((r) => {
+          if (!r.ok) throw new Error('加载失败 ' + r.status);
+          return r.json();
+        })
+        .then((d) => {
+          document.title = d.name + ' · 猜猜宇宙';
+          document.getElementById('name').textContent = d.name || '未知';
+          document.getElementById('aliases').textContent = (d.aliases || []).join(' / ');
+          const fields = d.fields || [];
+          document.getElementById('sheet').innerHTML = fields.map((f) =>
+            `<div class="row"><div class="lab">${escapeHtml(f.label)}</div><div class="val">${escapeHtml(f.value)}</div></div>`
+          ).join('') || '<div class="row"><div class="val">暂无字段</div></div>';
+        })
+        .catch((e) => {
+          document.getElementById('err').hidden = false;
+          document.getElementById('err').textContent = String(e.message || e);
+          document.getElementById('name').textContent = '无法加载';
+        });
+    }
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+  </script>
+</body>
+</html>
