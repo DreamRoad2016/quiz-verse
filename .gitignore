@@ -35,3 +35,16 @@ build/
 ### VS Code ###
 .vscode/
 .venv/
+.env
+.env.*
+!.env.example
+
+# Novel pipeline: local corpus overrides & heavy caches
+scripts/novel_pipeline/config/*.local.yaml
+!scripts/novel_pipeline/config/*.local.yaml.example
+scripts/data/shuihu/chapter_extract/
+scripts/data/*/chapter_extract/
+scripts/data/**/*.log
+**/entities.json.bak
+**/__pycache__/
+*.pyc

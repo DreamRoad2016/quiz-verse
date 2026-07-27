@@ -10,6 +10,7 @@ public class EntityDetailResponse {
     private String id;
     private String name;
     private List<String> aliases = new ArrayList<>();
+    private String summary;
     private String packId;
     private Map<String, String> display = new LinkedHashMap<>();
     private List<Field> fields = new ArrayList<>();
@@ -36,6 +37,14 @@ public class EntityDetailResponse {
 
     public void setAliases(List<String> aliases) {
         this.aliases = aliases;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public String getPackId() {

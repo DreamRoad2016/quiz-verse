@@ -169,6 +169,7 @@ public class MatchService {
         resp.setId(entity.getId());
         resp.setName(entity.getName());
         resp.setAliases(entity.getAliases() != null ? entity.getAliases() : List.of());
+        resp.setSummary(entity.getSummary());
         resp.setPackId(pack.getId());
         resp.setDisplay(display);
         List<EntityDetailResponse.Field> fields = new ArrayList<>();

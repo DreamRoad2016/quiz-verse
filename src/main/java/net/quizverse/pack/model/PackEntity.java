@@ -13,6 +13,8 @@ public class PackEntity {
     private String id;
     private String name;
     private List<String> aliases = new ArrayList<>();
+    /** Optional one-line bio for encyclopedia; not used in compare. */
+    private String summary;
     private Map<String, Object> attrs = new LinkedHashMap<>();
 
     public String getId() {
@@ -37,6 +39,14 @@ public class PackEntity {
 
     public void setAliases(List<String> aliases) {
         this.aliases = aliases;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public Map<String, Object> getAttrs() {

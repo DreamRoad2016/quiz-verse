@@ -28,7 +28,13 @@
       letter-spacing: 0.06em;
       margin-bottom: 8px;
     }
-    .aliases { color: var(--muted); margin-bottom: 22px; }
+    .aliases { color: var(--muted); margin-bottom: 12px; }
+    .summary {
+      margin-bottom: 22px;
+      line-height: 1.7;
+      font-size: 1.02rem;
+      color: var(--ink);
+    }
     .sheet {
       border: 1px solid var(--line);
       background: rgba(255,255,255,0.85);
@@ -54,15 +60,23 @@
     <p class="nav"><a id="back" href="/collection.html">← 返回人物列表</a> · <a href="/">首页</a></p>
     <h1 id="name">加载中…</h1>
     <p class="aliases" id="aliases"></p>
+    <p class="summary" id="summary" hidden></p>
     <div class="sheet" id="sheet"></div>
     <p class="err" id="err" hidden></p>
   </main>
   <script src="/js/api.js"></script>
+  <script src="/js/worlds.js"></script>
   <script>
     const params = new URLSearchParams(location.search);
-    const packId = params.get('pack') || 'zhenhuan_2011';
+    const packId = params.get('pack') || window.CCYZ_WORLDS.DEFAULT_PACK_ID;
     const id = params.get('id');
-    document.getElementById('back').href = '/collection.html?world=zhenhuan';
+    const worldFromQuery = params.get('world');
+    const world = worldFromQuery
+      ? window.CCYZ_WORLDS.findWorld(worldFromQuery)
+      : window.CCYZ_WORLDS.findWorldByPackId(packId);
+    if (world) {
+      document.getElementById('back').href = '/collection.html?world=' + encodeURIComponent(world.id);
+    }
 
     if (!id) {
       document.getElementById('name').textContent = '缺少人物参数';
@@ -76,6 +90,12 @@
           document.title = d.name + ' · 猜猜宇宙';
           document.getElementById('name').textContent = d.name || '未知';
           document.getElementById('aliases').textContent = (d.aliases || []).join(' / ');
+          const sum = (d.summary || '').trim();
+          const sumEl = document.getElementById('summary');
+          if (sum) {
+            sumEl.hidden = false;
+            sumEl.textContent = sum;
+          }
           const fields = d.fields || [];
           document.getElementById('sheet').innerHTML = fields.map((f) =>
             `<div class="row"><div class="lab">${escapeHtml(f.label)}</div><div class="val">${escapeHtml(f.value)}</div></div>`

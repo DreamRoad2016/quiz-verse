@@ -1,0 +1,10 @@
+# 复制为 shuihu.local.yaml（已 gitignore）后按本机修改
+# cp scripts/novel_pipeline/config/shuihu.local.yaml.example \
+#    scripts/novel_pipeline/config/shuihu.local.yaml
+
+# 直接写绝对路径，不依赖 NOVEL_CORPUS_ROOT：
+corpus_dir: /Users/captain/Downloads/shui_hu_zhuan-master
+
+# 可选覆盖模型
+# deepseek:
+#   model: deepseek-v4-flash

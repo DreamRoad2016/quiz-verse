@@ -1,0 +1,152 @@
+columns:
+  - key: name
+    label: 姓名
+    type: identity
+  - key: gender
+    label: 性别
+    type: exact
+    attr: gender
+  - key: camps
+    label: 阵营
+    type: set
+    attr: camps
+    enumRef: camps
+  - key: star
+    label: 星位
+    type: exact
+    attr: star
+  - key: seat
+    label: 座次
+    type: number
+    attr: seat
+    nearThreshold: 5
+  - key: regions
+    label: 活动区域
+    type: set
+    attr: regions
+    enumRef: regions
+  - key: major_plots
+    label: 重点剧情
+    type: set
+    attr: major_plots
+    enumRef: major_plots
+  - key: connections
+    label: 核心关系
+    type: set
+    attr: connections
+    enumRef: characters
+
+enums:
+  gender:
+    - 男
+    - 女
+  star:
+    - 天罡
+    - 地煞
+    - 非星
+  camps:
+    - key: liangshan
+      label: 梁山
+    - key: song_court
+      label: 宋室
+    - key: fangla
+      label: 方腊
+    - key: wangqing
+      label: 王庆
+    - key: tianhu
+      label: 田虎
+    - key: family
+      label: 梁山亲眷
+    - key: local_force
+      label: 地方势力
+    - key: civilian
+      label: 市井及其他
+    - key: liao
+      label: 辽国
+  regions:
+    - key: liangshanbo
+      label: 梁山泊
+    - key: bianjing
+      label: 汴京
+    - key: yuncheng
+      label: 郓城
+    - key: cangzhou
+      label: 沧州
+    - key: jiangzhou
+      label: 江州
+    - key: qingfengzhai
+      label: 清风寨
+    - key: erlongshan
+      label: 二龙山
+    - key: taohuashan
+      label: 桃花山
+    - key: zhujiazhuang
+      label: 祝家庄
+    - key: zengtoushi
+      label: 曾头市
+    - key: gaotangzhou
+      label: 高唐州
+    - key: damingfu
+      label: 大名府
+    - key: jizhou
+      label: 蓟州
+    - key: dengzhou
+      label: 登州
+    - key: muzhou
+      label: 睦州
+    - key: mengzhou
+      label: 孟州
+    - key: yanggu
+      label: 阳谷
+    - key: chaijinzhuang
+      label: 柴进庄
+    - key: shaozhou
+      label: 少华山
+    - key: wutaishan
+      label: 五台山
+    - key: qinghe
+      label: 清河
+    - key: dongjing_other
+      label: 其他州府
+  major_plots:
+    - key: quanda_zhenguanxi
+      label: 拳打镇关西
+    - key: daoba_chuiyangliu
+      label: 倒拔垂杨柳
+    - key: wuru_baihutang
+      label: 误入白虎堂
+    - key: fengxue_shanshenmiao
+      label: 风雪山神庙
+    - key: huobing_wanglun
+      label: 火并王伦
+    - key: zhiqiu_shengchengang
+      label: 智取生辰纲
+    - key: jingyanggang_tiger
+      label: 景阳冈打虎
+    - key: xuejian_panjinlian
+      label: 斗杀西门庆
+    - key: yuanyanglou
+      label: 血溅鸳鸯楼
+    - key: jiangzhou_jiefachang
+      label: 江州劫法场
+    - key: sandazhujiazhuang
+      label: 三打祝家庄
+    - key: dashidao_gaotangzhou
+      label: 大破高唐州
+    - key: yingxiong_paizuoci
+      label: 英雄排座次
+    - key: zhaoan
+      label: 全伙受招安
+    - key: zheng_liao
+      label: 征辽
+    - key: zheng_tianhu
+      label: 征田虎
+    - key: zheng_wangqing
+      label: 征王庆
+    - key: zheng_fangla
+      label: 征方腊
+    - key: shangliangshan
+      label: 上梁山
+    - key: other_key_plot
+      label: 其他关键剧情
+  characters: []

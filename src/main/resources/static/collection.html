@@ -92,7 +92,7 @@
       }
       el.innerHTML = list.map((b) => {
         const al = (b.aliases || []).slice(0, 3).join(' / ');
-        return `<a class="row" href="/entity.html?pack=${encodeURIComponent(packId)}&id=${encodeURIComponent(b.id)}">
+        return `<a class="row" href="/entity.html?pack=${encodeURIComponent(packId)}&world=${encodeURIComponent(worldId)}&id=${encodeURIComponent(b.id)}">
           <div class="name">${escapeHtml(b.name)}</div>
           ${al ? `<div class="aliases">${escapeHtml(al)}</div>` : ''}
         </a>`;

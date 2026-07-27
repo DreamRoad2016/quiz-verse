@@ -27,7 +27,14 @@ window.CCYZ_WORLDS = (function () {
       worlds: [
         { id: 'honglou', title: '红楼梦', subtitle: '四大名著', badge: '整理中', ready: false },
         { id: 'xiyou', title: '西游记', subtitle: '四大名著', badge: '整理中', ready: false },
-        { id: 'shuihu', title: '水浒传', subtitle: '四大名著', badge: '整理中', ready: false },
+        {
+          id: 'shuihu',
+          packId: 'shuihu_120',
+          title: '水浒传',
+          subtitle: '120 回人物资料辑',
+          badge: '可查阅',
+          ready: true
+        },
         { id: 'sanguo', title: '三国演义', subtitle: '四大名著', badge: '整理中', ready: false },
         { id: 'santi', title: '三体', subtitle: '科幻作品', badge: '整理中', ready: false }
       ]
@@ -55,5 +62,13 @@ window.CCYZ_WORLDS = (function () {
     return null;
   }
 
-  return { DEFAULT_PACK_ID, CATEGORIES, findWorld };
+  function findWorldByPackId(packId) {
+    for (const cat of CATEGORIES) {
+      const hit = cat.worlds.find((w) => w.packId === packId);
+      if (hit) return Object.assign({ categoryName: cat.name }, hit);
+    }
+    return null;
+  }
+
+  return { DEFAULT_PACK_ID, CATEGORIES, findWorld, findWorldByPackId };
 })();

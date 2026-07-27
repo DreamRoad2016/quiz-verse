@@ -1,0 +1,8 @@
+id: shuihu_120
+title: 水浒传
+description: 《水浒传》120 回全传人物题包。阵营可多标签（招安后梁山+宋室）；108 有星位与座次，其余不显示座次。
+maxGuesses: 8
+kind: official
+tags:
+  - novel
+  - shuihu

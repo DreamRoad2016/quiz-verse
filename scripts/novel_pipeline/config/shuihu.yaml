@@ -1,0 +1,49 @@
+# 水浒传流水线配置（可提交）
+book_id: shuihu
+pack_id: shuihu_120
+world_id: shuihu
+
+# 正文目录：优先读环境变量展开；也可用 shuihu.local.yaml 覆盖
+# 例：export NOVEL_CORPUS_ROOT=$HOME/Documents/novels
+#     且存在 $NOVEL_CORPUS_ROOT/shui_hu_zhuan/chapter001.md
+corpus_dir: ${NOVEL_CORPUS_ROOT}/shui_hu_zhuan
+chapter_glob: "chapter{num:03d}.md"
+chapter_min: 1
+chapter_max: 120
+
+deepseek:
+  base_url: https://api.deepseek.com
+  # 2026-07：勿用已下线的 deepseek-chat / deepseek-reasoner
+  model: deepseek-v4-flash
+  model_hard: deepseek-v4-pro
+  thinking: disabled
+  reasoning_effort: high
+  temperature: 0.2
+  max_tokens: 16384
+  request_pause_sec: 0.4
+  json_retries: 3
+  timeout_sec: 180
+
+paths:
+  data_root: scripts/data/shuihu
+  canon_stars: scripts/data/shuihu/canon/stars.json
+  chapter_extract: scripts/data/shuihu/chapter_extract
+  roster_dir: scripts/data/shuihu/roster
+  review_dir: scripts/data/shuihu/review
+  pack_dir: src/main/resources/packs/shuihu_120
+
+confidence:
+  auto_min: 0.9
+  review_min: 0.7
+  # 这些字段即使高置信也不自动改
+  never_auto_fields:
+    - seat
+    - star
+
+inclusion:
+  # major + supporting 全部建实体；须通过个人姓名校验（见 lib/inclusion.py）
+  keep_importance:
+    - major
+    - supporting
+  # 无个人姓名（酒家/知县/猎户等）即使模型标 supporting 也不进库
+  require_personal_name: true
