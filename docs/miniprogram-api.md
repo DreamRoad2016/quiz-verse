@@ -81,12 +81,22 @@ server {
 
 | 方法 | 路径 | 说明 |
 | --- | --- | --- |
-| GET | `/api/packs` | 题包列表 |
+| GET | `/api/catalog` | **首页目录（小程序 + Web 共用）**：hot（含可配 worldIds）、hotWorlds（精选≤4）、categories（含 title/subtitle/description/ready/badge/status） |
+| GET | `/api/packs` | 题包元信息列表（开局选包、调试；目录态优先用 catalog） |
 | GET | `/api/packs/{packId}/briefs` | 联想/图鉴列表 |
 | GET | `/api/packs/{packId}/entities/{entityId}` | 人物档案（fields + display） |
 | POST | `/api/matches` | body `{ packId }` 开局 |
 | POST | `/api/matches/{id}/guess` | body `{ entityId }` |
 | POST | `/api/matches/{id}/give-up` | 主动揭晓 |
+
+### `/api/catalog` 字段要点
+
+- 模板：`classpath:catalog/home.yaml`（损坏时用内置默认）
+- `kind=demo` 题包不进入目录
+- 宇宙有 `packId` 且服务端已加载对应官方包 → `ready=true`，`badge=可查阅`，`description` 来自 `pack.yaml`
+- 否则 → `ready=false`，`badge=整理中`
+- 目录未列出但已加载的官方包：按 `tags` 挂到同名分类，否则进「更多」
+- **热点**：`hot.worldIds` 配置宇宙 id（如 `zhenhuan`），按序解析为 `hotWorlds`，**最多 4 个**且须已 ready；未配置则热点为空（不会自动塞满全部开放包）
 
 限流（默认，可配 `quiz.security.*`）：guest 每 IP / 开局 / 猜测 / briefs 均有小时上限。
 

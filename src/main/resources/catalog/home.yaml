@@ -1,0 +1,92 @@
+# 首页目录模板（小程序 + Web 共用）
+# GET /api/catalog 会与已加载题包合并，写入 ready / badge / description
+# 改此文件并重启服务即可，客户端无需发版
+
+hot:
+  name: 热点
+  hint: 正在开放的人物辑
+  # 精选宇宙 id（对应下方 worlds.id），按序展示，最多 4 个；未 ready 的会跳过
+  worldIds:
+    - zhenhuan
+    - shuihu
+
+categories:
+  - id: drama
+    name: 影视剧
+    hint: 剧集人物辑录
+    tone: ink
+    worlds:
+      - id: zhenhuan
+        packId: zhenhuan_2011
+        title: 甄嬛传
+        subtitle: 清宫人物资料辑
+        tone: ink
+      - id: daming
+        title: 大明王朝1566
+        subtitle: 整理中
+        tone: slate
+      - id: langya
+        title: 琅琊榜
+        subtitle: 整理中
+        tone: slate
+      - id: qingyunian
+        title: 庆余年
+        subtitle: 整理中
+        tone: slate
+
+  - id: novel
+    name: 小说
+    hint: 文学作品人物辑录
+    tone: warm
+    worlds:
+      - id: honglou
+        title: 红楼梦
+        subtitle: 四大名著
+        tone: warm
+      - id: xiyou
+        title: 西游记
+        subtitle: 四大名著
+        tone: warm
+      - id: shuihu
+        packId: shuihu_120
+        title: 水浒传
+        subtitle: 120 回人物资料辑
+        tone: warm
+      - id: sanguo
+        title: 三国演义
+        subtitle: 四大名著
+        tone: warm
+      - id: santi
+        title: 三体
+        subtitle: 科幻作品
+        tone: cool
+
+  - id: history
+    name: 历史人物
+    hint: 按朝代整理
+    tone: earth
+    worlds:
+      - id: xianqin
+        title: 先秦
+        subtitle: 诸子 · 列国
+        tone: earth
+      - id: qinhan
+        title: 秦汉
+        subtitle: 一统与开疆
+        tone: earth
+      - id: weijin
+        title: 魏晋南北朝
+        subtitle: 乱世风流
+        tone: earth
+      - id: suitang
+        title: 隋唐
+        subtitle: 盛世气象
+        tone: earth
+      - id: songyuan
+        title: 宋元
+        subtitle: 文治武功
+        tone: earth
+      - id: mingqing
+        title: 明清
+        subtitle: 帝制时期
+        tone: earth

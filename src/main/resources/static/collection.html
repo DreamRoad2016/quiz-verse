@@ -67,21 +67,14 @@
   <script>
     const params = new URLSearchParams(location.search);
     const worldId = params.get('world') || 'zhenhuan';
-    const world = window.CCYZ_WORLDS.findWorld(worldId);
-    const packId = (world && world.packId) || window.CCYZ_WORLDS.DEFAULT_PACK_ID;
-
-    if (!world || !world.ready) {
-      document.getElementById('title').textContent = '专题整理中';
-      document.getElementById('sub').textContent = '该专题人物资料尚未开放查阅。';
-      document.getElementById('meta').textContent = '';
-      document.getElementById('q').hidden = true;
-    } else {
-      document.title = world.title + ' · 人物资料 · 猜猜宇宙';
-      document.getElementById('title').textContent = world.title + ' · 人物资料';
-      document.getElementById('sub').textContent = (world.categoryName || '') + ' · ' + (world.subtitle || '人物资料辑录');
-    }
-
     let briefs = [];
+    let packId = window.CCYZ_WORLDS.DEFAULT_PACK_ID;
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
 
     function render(list) {
       const el = document.getElementById('list');
@@ -99,12 +92,6 @@
       }).join('');
     }
 
-    function escapeHtml(s) {
-      return String(s).replace(/[&<>"']/g, (c) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      }[c]));
-    }
-
     document.getElementById('q').addEventListener('input', (e) => {
       const q = e.target.value.trim().toLowerCase();
       if (!q) return render(briefs);
@@ -117,8 +104,23 @@
       }));
     });
 
-    if (world && world.ready) {
-      QuizApi.apiFetch('/api/packs/' + encodeURIComponent(packId) + '/briefs')
+    window.CCYZ_WORLDS.ensureLoaded().then(() => {
+      const world = window.CCYZ_WORLDS.findWorld(worldId);
+      packId = (world && world.packId) || window.CCYZ_WORLDS.DEFAULT_PACK_ID;
+
+      if (!world || !world.ready) {
+        document.getElementById('title').textContent = '专题整理中';
+        document.getElementById('sub').textContent = '该专题人物资料尚未开放查阅。';
+        document.getElementById('meta').textContent = '';
+        document.getElementById('q').hidden = true;
+        return;
+      }
+
+      document.title = world.title + ' · 人物资料 · 猜猜宇宙';
+      document.getElementById('title').textContent = world.title + ' · 人物资料';
+      document.getElementById('sub').textContent = (world.categoryName || '') + ' · ' + (world.subtitle || world.description || '人物资料辑录');
+
+      return QuizApi.apiFetch('/api/packs/' + encodeURIComponent(packId) + '/briefs')
         .then((r) => {
           if (!r.ok) throw new Error('加载失败 ' + r.status);
           return r.json();
@@ -126,13 +128,12 @@
         .then((list) => {
           briefs = list || [];
           render(briefs);
-        })
-        .catch((e) => {
-          document.getElementById('err').hidden = false;
-          document.getElementById('err').textContent = String(e.message || e);
-          document.getElementById('meta').textContent = '';
         });
-    }
+    }).catch((e) => {
+      document.getElementById('err').hidden = false;
+      document.getElementById('err').textContent = String(e.message || e);
+      document.getElementById('meta').textContent = '';
+    });
   </script>
 </body>
 </html>

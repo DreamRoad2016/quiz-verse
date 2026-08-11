@@ -68,20 +68,30 @@
   <script src="/js/worlds.js"></script>
   <script>
     const params = new URLSearchParams(location.search);
-    const packId = params.get('pack') || window.CCYZ_WORLDS.DEFAULT_PACK_ID;
     const id = params.get('id');
-    const worldFromQuery = params.get('world');
-    const world = worldFromQuery
-      ? window.CCYZ_WORLDS.findWorld(worldFromQuery)
-      : window.CCYZ_WORLDS.findWorldByPackId(packId);
-    if (world) {
-      document.getElementById('back').href = '/collection.html?world=' + encodeURIComponent(world.id);
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
     }
 
-    if (!id) {
-      document.getElementById('name').textContent = '缺少人物参数';
-    } else {
-      QuizApi.apiFetch('/api/packs/' + encodeURIComponent(packId) + '/entities/' + encodeURIComponent(id))
+    window.CCYZ_WORLDS.ensureLoaded().then(() => {
+      const packId = params.get('pack') || window.CCYZ_WORLDS.DEFAULT_PACK_ID;
+      const worldFromQuery = params.get('world');
+      const world = worldFromQuery
+        ? window.CCYZ_WORLDS.findWorld(worldFromQuery)
+        : window.CCYZ_WORLDS.findWorldByPackId(packId);
+      if (world) {
+        document.getElementById('back').href = '/collection.html?world=' + encodeURIComponent(world.id);
+      }
+
+      if (!id) {
+        document.getElementById('name').textContent = '缺少人物参数';
+        return;
+      }
+
+      return QuizApi.apiFetch('/api/packs/' + encodeURIComponent(packId) + '/entities/' + encodeURIComponent(id))
         .then((r) => {
           if (!r.ok) throw new Error('加载失败 ' + r.status);
           return r.json();
@@ -100,19 +110,12 @@
           document.getElementById('sheet').innerHTML = fields.map((f) =>
             `<div class="row"><div class="lab">${escapeHtml(f.label)}</div><div class="val">${escapeHtml(f.value)}</div></div>`
           ).join('') || '<div class="row"><div class="val">暂无字段</div></div>';
-        })
-        .catch((e) => {
-          document.getElementById('err').hidden = false;
-          document.getElementById('err').textContent = String(e.message || e);
-          document.getElementById('name').textContent = '无法加载';
         });
-    }
-
-    function escapeHtml(s) {
-      return String(s).replace(/[&<>"']/g, (c) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-      }[c]));
-    }
+    }).catch((e) => {
+      document.getElementById('err').hidden = false;
+      document.getElementById('err').textContent = String(e.message || e);
+      document.getElementById('name').textContent = '无法加载';
+    });
   </script>
 </body>
 </html>

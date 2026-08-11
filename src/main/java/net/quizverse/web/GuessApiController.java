@@ -1,6 +1,8 @@
 package net.quizverse.web;
 
 import jakarta.validation.Valid;
+import net.quizverse.catalog.CatalogService;
+import net.quizverse.catalog.model.HomeCatalog;
 import net.quizverse.match.MatchService;
 import net.quizverse.pack.PackRegistry;
 import net.quizverse.pack.model.EntityBrief;
@@ -27,10 +29,12 @@ public class GuessApiController {
 
     private final PackRegistry packs;
     private final MatchService matches;
+    private final CatalogService catalog;
 
-    public GuessApiController(PackRegistry packs, MatchService matches) {
+    public GuessApiController(PackRegistry packs, MatchService matches, CatalogService catalog) {
         this.packs = packs;
         this.matches = matches;
+        this.catalog = catalog;
     }
 
     @GetMapping("/health")
@@ -39,6 +43,14 @@ public class GuessApiController {
         m.put("ok", true);
         m.put("packs", packs.listMeta().size());
         return m;
+    }
+
+    /**
+     * 首页目录（小程序 + Web 共用）：分类、介绍、ready 状态已由服务端与题包合并。
+     */
+    @GetMapping("/catalog")
+    public HomeCatalog catalog() {
+        return catalog.enriched();
     }
 
     @GetMapping("/packs")

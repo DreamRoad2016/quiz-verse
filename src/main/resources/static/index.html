@@ -138,30 +138,40 @@
       猜猜宇宙 · 个人非商业资料整理站点。当前可查阅专题：甄嬛传、水浒传。本站不含新闻资讯、音视频直播、在线交易等内容。
     </footer>
   </main>
+  <script src="/js/api.js"></script>
   <script src="/js/worlds.js"></script>
   <script>
-    const { CATEGORIES } = window.CCYZ_WORLDS;
-    let active = 'drama';
+    let active = 'hot';
 
     function render() {
-      const cat = CATEGORIES.find((c) => c.id === active) || CATEGORIES[0];
-      document.getElementById('cats').innerHTML = CATEGORIES.map((c) =>
+      const W = window.CCYZ_WORLDS;
+      const hot = W.HOT;
+      const tabs = [
+        { id: 'hot', name: hot.name, hint: hot.hint },
+        ...W.CATEGORIES.map((c) => ({ id: c.id, name: c.name, hint: c.hint }))
+      ];
+      const tab = tabs.find((c) => c.id === active) || tabs[0];
+      const worlds = active === 'hot'
+        ? W.HOT_WORLDS
+        : ((W.CATEGORIES.find((c) => c.id === active) || W.CATEGORIES[0]).worlds);
+
+      document.getElementById('cats').innerHTML = tabs.map((c) =>
         `<button type="button" class="cat ${c.id === active ? 'on' : ''}" data-id="${c.id}">${c.name}</button>`
       ).join('');
-      document.getElementById('hint').textContent = cat.hint;
-      document.getElementById('grid').innerHTML = cat.worlds.map((w) => {
+      document.getElementById('hint').textContent = tab.hint || '';
+      document.getElementById('grid').innerHTML = worlds.map((w) => {
         if (w.ready) {
           return `<a class="card ready" href="/collection.html?world=${encodeURIComponent(w.id)}">
-            <span class="badge">${w.badge}</span>
+            <span class="badge">${w.badge || '可查阅'}</span>
             <h3>${w.title}</h3>
-            <p>${w.subtitle}</p>
+            <p>${w.subtitle || ''}</p>
             <span class="go">查看人物资料 →</span>
           </a>`;
         }
         return `<div class="card soon">
-          <span class="badge">${w.badge}</span>
+          <span class="badge">${w.badge || '整理中'}</span>
           <h3>${w.title}</h3>
-          <p>${w.subtitle}</p>
+          <p>${w.subtitle || ''}</p>
           <span class="go" style="color:#9aa3b0">敬请期待</span>
         </div>`;
       }).join('');
@@ -173,7 +183,8 @@
         });
       });
     }
-    render();
+
+    window.CCYZ_WORLDS.ensureLoaded().then(render).catch(render);
   </script>
 </body>
 </html>
