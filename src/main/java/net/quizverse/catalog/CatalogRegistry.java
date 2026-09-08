@@ -78,7 +78,7 @@ public class CatalogRegistry {
     static HomeCatalog defaultCatalog() {
         HomeCatalog c = new HomeCatalog();
         CatalogHot hot = new CatalogHot();
-        hot.setWorldIds(List.of("zhenhuan", "shuihu"));
+        hot.setWorldIds(List.of("zhenhuan", "shuihu", "genshin"));
         c.setHot(hot);
 
         List<CatalogCategory> cats = new ArrayList<>();
@@ -102,6 +102,12 @@ public class CatalogRegistry {
                 world("suitang", null, "隋唐", "盛世气象", "earth"),
                 world("songyuan", null, "宋元", "文治武功", "earth"),
                 world("mingqing", null, "明清", "帝制时期", "earth")
+        )));
+        cats.add(category("games", "游戏", "游戏角色辑录", "cool", List.of(
+                world("genshin", "genshin_impact", "原神", "提瓦特人物资料辑", "cool"),
+                world("hsr", null, "崩坏：星穹铁道", "整理中", "cool"),
+                world("wzry", null, "王者荣耀", "整理中", "cool"),
+                world("lol", null, "英雄联盟", "整理中", "cool")
         )));
         c.setCategories(cats);
         return c;

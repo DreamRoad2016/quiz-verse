@@ -1,0 +1,1418 @@
+[
+  {
+    "id": "gi_3911184311",
+    "name": "奥黛塔",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "至冬"
+    }
+  },
+  {
+    "id": "gi_c141d4c94b",
+    "name": "阿罗夏",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "雷",
+      "gender": "男",
+      "region": "至冬"
+    }
+  },
+  {
+    "id": "gi_e1816eeeb0",
+    "name": "桑多涅",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "至冬"
+    }
+  },
+  {
+    "id": "gi_fe6a0fb34f",
+    "name": "洛恩",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "冰",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_257c215f04",
+    "name": "尼可",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "火",
+      "gender": "女",
+      "region": "其他"
+    }
+  },
+  {
+    "id": "gi_969d7d2690",
+    "name": "布伦妮",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_e3ca344071",
+    "name": "莉奈娅",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "岩",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_1b372b91c2",
+    "name": "法尔伽",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "风",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_70de43fb3f",
+    "name": "兹白",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "岩",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_68bfa879f9",
+    "name": "叶洛亚",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "岩",
+      "gender": "男",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_27725d3764",
+    "name": "哥伦比娅",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "水",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_9496468440",
+    "name": "杜林",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "火",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_0234f83ffa",
+    "name": "雅珂达",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "风",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_06bbed4e60",
+    "name": "奈芙尔",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "草",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_8645e228ea",
+    "name": "菲林斯",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "雷",
+      "gender": "男",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_83d2ef9c2b",
+    "name": "菈乌玛",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "草",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_195c29ba99",
+    "name": "爱诺",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "水",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_4ffaa3b2af",
+    "name": "伊涅芙",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "雷",
+      "gender": "女",
+      "region": "挪德卡莱"
+    }
+  },
+  {
+    "id": "gi_76e9d1b4ff",
+    "name": "丝柯克",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "其他"
+    }
+  },
+  {
+    "id": "gi_6381e0bee1",
+    "name": "塔利雅",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "水",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_c5fc6e683d",
+    "name": "爱可菲",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "冰",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_36fa9aa8f5",
+    "name": "伊法",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "男",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_c38bd9c754",
+    "name": "瓦雷莎",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "雷",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_1d1d827b08",
+    "name": "伊安珊",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "雷",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_1d39546fb1",
+    "name": "梦见月瑞希",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_83fff4e175",
+    "name": "蓝砚",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_20da40b5fe",
+    "name": "玛薇卡",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "火",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_33508c8654",
+    "name": "茜特菈莉",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "冰",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_02b120d8b6",
+    "name": "恰斯卡",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "风",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_bf9fbae783",
+    "name": "欧洛伦",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "雷",
+      "gender": "男",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_676bf96505",
+    "name": "希诺宁",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "岩",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_774db696d2",
+    "name": "基尼奇",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "草",
+      "gender": "男",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_c3a06c013f",
+    "name": "玛拉妮",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "水",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_2d16f7ee30",
+    "name": "卡齐娜",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "岩",
+      "gender": "女",
+      "region": "纳塔"
+    }
+  },
+  {
+    "id": "gi_215af38e5b",
+    "name": "艾梅莉埃",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "草",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_5a6431bba3",
+    "name": "希格雯",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "水",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_c4c810e9a4",
+    "name": "克洛琳德",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "雷",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_398b16f585",
+    "name": "赛索斯",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "雷",
+      "gender": "男",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_7888ee0a5f",
+    "name": "阿蕾奇诺",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "火",
+      "gender": "女",
+      "region": "至冬"
+    }
+  },
+  {
+    "id": "gi_88098f947e",
+    "name": "千织",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "岩",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_e964898f19",
+    "name": "闲云",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_0385291822",
+    "name": "嘉明",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "火",
+      "gender": "男",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_f7fc526bd0",
+    "name": "夏沃蕾",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "火",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_6a97dd177e",
+    "name": "娜维娅",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "岩",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_9a060bdcd1",
+    "name": "芙宁娜",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "水",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_3b9fb798ca",
+    "name": "夏洛蒂",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "冰",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_e3f95488fb",
+    "name": "莱欧斯利",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "冰",
+      "gender": "男",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_86ddf3df24",
+    "name": "那维莱特",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "水",
+      "gender": "男",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_7c7bd4a3cc",
+    "name": "菲米尼",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "冰",
+      "gender": "男",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_da84480ba6",
+    "name": "林尼",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "火",
+      "gender": "男",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_900bf6c627",
+    "name": "琳妮特",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "风",
+      "gender": "女",
+      "region": "枫丹"
+    }
+  },
+  {
+    "id": "gi_4265ec487a",
+    "name": "绮良良",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "草",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_7dd64eb10e",
+    "name": "白术",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "草",
+      "gender": "男",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_e633745bd1",
+    "name": "卡维",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "草",
+      "gender": "男",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_e5d0da4498",
+    "name": "米卡",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "冰",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_df2eead572",
+    "name": "迪希雅",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "火",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_6dee9e32c3",
+    "name": "艾尔海森",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "草",
+      "gender": "男",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_ae6ecf8f82",
+    "name": "瑶瑶",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "草",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_82263e0c59",
+    "name": "流浪者",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "男",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_ac9b5a5133",
+    "name": "珐露珊",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "风",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_56da94a4c2",
+    "name": "莱依拉",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_8279ac6dfd",
+    "name": "纳西妲",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "草",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_6c05480db3",
+    "name": "妮露",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "水",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_4d24dd5cc8",
+    "name": "赛诺",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "雷",
+      "gender": "男",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_0af02981c3",
+    "name": "坎蒂丝",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "水",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_73f682e2e2",
+    "name": "多莉",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "雷",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_cc08998709",
+    "name": "提纳里",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "草",
+      "gender": "男",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_230e9f59ac",
+    "name": "柯莱",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "草",
+      "gender": "女",
+      "region": "须弥"
+    }
+  },
+  {
+    "id": "gi_a32f23fd3f",
+    "name": "鹿野院平藏",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "男",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_6692b6f238",
+    "name": "久岐忍",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "雷",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_f29a736c18",
+    "name": "夜兰",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "水",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_b8b9bfebdf",
+    "name": "神里绫人",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "水",
+      "gender": "男",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_c91110f0f5",
+    "name": "八重神子",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "雷",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_73b4262842",
+    "name": "申鹤",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "冰",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_72d76aed1f",
+    "name": "云堇",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "岩",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_1569df02e2",
+    "name": "荒泷一斗",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "岩",
+      "gender": "男",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_c3cdd0b09d",
+    "name": "五郎",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "岩",
+      "gender": "男",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_2a1c3c7205",
+    "name": "托马",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "火",
+      "gender": "男",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_10ecec9100",
+    "name": "珊瑚宫心海",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "水",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_c893de60a1",
+    "name": "埃洛伊",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "冰",
+      "gender": "女",
+      "region": "其他"
+    }
+  },
+  {
+    "id": "gi_6df33cc49f",
+    "name": "雷电将军",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "雷",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_b44a593cbe",
+    "name": "九条裟罗",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "雷",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_539d5666fe",
+    "name": "宵宫",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "火",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_08072d73f6",
+    "name": "早柚",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "风",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_0e9619f810",
+    "name": "神里绫华",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_4afc93fe02",
+    "name": "枫原万叶",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "风",
+      "gender": "男",
+      "region": "稻妻"
+    }
+  },
+  {
+    "id": "gi_15d045f89e",
+    "name": "优菈",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_da7e31344a",
+    "name": "烟绯",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "火",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_129a28d7d6",
+    "name": "罗莎莉亚",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "冰",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_f7df9d555f",
+    "name": "胡桃",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "火",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_bd424a6153",
+    "name": "魈",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "风",
+      "gender": "男",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_af4d6e9e74",
+    "name": "甘雨",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "冰",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_822003b8be",
+    "name": "阿贝多",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "岩",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_ff31f70f50",
+    "name": "钟离",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "长柄武器",
+      "vision": "岩",
+      "gender": "男",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_16ebbcd590",
+    "name": "辛焱",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "火",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_bb667a9d69",
+    "name": "达达利亚",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "水",
+      "gender": "男",
+      "region": "至冬"
+    }
+  },
+  {
+    "id": "gi_7d6e757dfe",
+    "name": "迪奥娜",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "冰",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_3a02e2fd05",
+    "name": "可莉",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "火",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_502f3c9bc3",
+    "name": "温迪",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "弓",
+      "vision": "风",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_a8b46540f5",
+    "name": "迪卢克",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "双手剑",
+      "vision": "火",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_79fd503173",
+    "name": "七七",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "冰",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_bde383b755",
+    "name": "琴",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "风",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_06bb0121f5",
+    "name": "莫娜",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "法器",
+      "vision": "水",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_68f76f35e2",
+    "name": "刻晴",
+    "aliases": [],
+    "attrs": {
+      "rarity": 5,
+      "weapon": "单手剑",
+      "vision": "雷",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_0e3063a85d",
+    "name": "香菱",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "长柄武器",
+      "vision": "火",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_a02a8a1913",
+    "name": "行秋",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "水",
+      "gender": "男",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_ce6899bf44",
+    "name": "雷泽",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "雷",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_b4369dd994",
+    "name": "安柏",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "火",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_e54dab77b9",
+    "name": "凝光",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "岩",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_356f7d7ee2",
+    "name": "菲谢尔",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "弓",
+      "vision": "雷",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_3ca67210e9",
+    "name": "丽莎",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "雷",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_079f0497bb",
+    "name": "砂糖",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "风",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_a9f87c8fd9",
+    "name": "诺艾尔",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "岩",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_d72a3f16d2",
+    "name": "凯亚",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "冰",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_6aa4bbfa3c",
+    "name": "班尼特",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "单手剑",
+      "vision": "火",
+      "gender": "男",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_8325c61d34",
+    "name": "芭芭拉",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "法器",
+      "vision": "水",
+      "gender": "女",
+      "region": "蒙德"
+    }
+  },
+  {
+    "id": "gi_e1ff99d9c2",
+    "name": "北斗",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "雷",
+      "gender": "女",
+      "region": "璃月"
+    }
+  },
+  {
+    "id": "gi_d8e31c80b2",
+    "name": "重云",
+    "aliases": [],
+    "attrs": {
+      "rarity": 4,
+      "weapon": "双手剑",
+      "vision": "冰",
+      "gender": "男",
+      "region": "璃月"
+    }
+  }
+]

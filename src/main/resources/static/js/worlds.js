@@ -8,7 +8,7 @@ window.CCYZ_WORLDS = (function () {
     id: 'hot',
     name: '热点',
     hint: '正在开放的人物辑',
-    worldIds: ['zhenhuan', 'shuihu']
+    worldIds: ['zhenhuan', 'shuihu', 'genshin']
   };
   const DEFAULT_CATEGORIES = [
     {
@@ -45,6 +45,18 @@ window.CCYZ_WORLDS = (function () {
         { id: 'suitang', title: '隋唐', subtitle: '盛世气象', badge: '整理中', ready: false, status: 'soon' },
         { id: 'songyuan', title: '宋元', subtitle: '文治武功', badge: '整理中', ready: false, status: 'soon' },
         { id: 'mingqing', title: '明清', subtitle: '帝制时期', badge: '整理中', ready: false, status: 'soon' }
+      ]
+    },
+    {
+      id: 'games',
+      name: '游戏',
+      hint: '游戏角色辑录',
+      tone: 'cool',
+      worlds: [
+        { id: 'genshin', packId: 'genshin_impact', title: '原神', subtitle: '提瓦特人物资料辑', badge: '可查阅', ready: true, status: 'ready', tone: 'cool' },
+        { id: 'hsr', title: '崩坏：星穹铁道', subtitle: '整理中', badge: '整理中', ready: false, status: 'soon', tone: 'cool' },
+        { id: 'wzry', title: '王者荣耀', subtitle: '整理中', badge: '整理中', ready: false, status: 'soon', tone: 'cool' },
+        { id: 'lol', title: '英雄联盟', subtitle: '整理中', badge: '整理中', ready: false, status: 'soon', tone: 'cool' }
       ]
     }
   ];

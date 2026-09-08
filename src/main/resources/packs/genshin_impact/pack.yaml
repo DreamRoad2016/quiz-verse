@@ -1,0 +1,8 @@
+id: genshin_impact
+title: 原神
+description: 提瓦特可玩角色资料辑。比对维度：星级、武器、元素、性别、所属国家。非官方、非商用自整理数据。
+maxGuesses: 8
+kind: official
+tags:
+  - games
+  - genshin

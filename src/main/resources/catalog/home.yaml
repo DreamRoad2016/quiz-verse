@@ -9,6 +9,7 @@ hot:
   worldIds:
     - zhenhuan
     - shuihu
+    - genshin
 
 categories:
   - id: drama
@@ -90,3 +91,26 @@ categories:
         title: 明清
         subtitle: 帝制时期
         tone: earth
+
+  - id: games
+    name: 游戏
+    hint: 游戏角色辑录
+    tone: cool
+    worlds:
+      - id: genshin
+        packId: genshin_impact
+        title: 原神
+        subtitle: 提瓦特人物资料辑
+        tone: cool
+      - id: hsr
+        title: 崩坏：星穹铁道
+        subtitle: 整理中
+        tone: cool
+      - id: wzry
+        title: 王者荣耀
+        subtitle: 整理中
+        tone: cool
+      - id: lol
+        title: 英雄联盟
+        subtitle: 整理中
+        tone: cool

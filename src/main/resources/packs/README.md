@@ -25,5 +25,7 @@
 
 - `lol_cn_kr` — Demo
 - `zhenhuan_2011` — 正式（甄嬛传）
+- `shuihu_120` — 正式（水浒传）
+- `genshin_impact` — 正式（原神）
 
 本地覆盖目录可通过环境变量 `QUIZ_PACKS_DIR` 指向外部文件夹（同结构），会覆盖同 id 的 classpath 题包。
