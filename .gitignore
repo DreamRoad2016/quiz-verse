@@ -45,6 +45,7 @@ scripts/novel_pipeline/config/*.local.yaml
 scripts/data/shuihu/chapter_extract/
 scripts/data/*/chapter_extract/
 scripts/data/**/*.log
+scripts/data/history_demo_drafts/
 **/entities.json.bak
 **/__pycache__/
 *.pyc

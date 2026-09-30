@@ -88,6 +88,16 @@ server {
 | POST | `/api/matches` | body `{ packId }` 开局 |
 | POST | `/api/matches/{id}/guess` | body `{ entityId }` |
 | POST | `/api/matches/{id}/give-up` | 主动揭晓 |
+| GET | `/api/history/events?month=&day=&limit=` | **历史上的今天**：按月日列表（`limit` 可选）；数据来自 `content/history/days/MM-DD.json` |
+| GET | `/api/history/events/{eventId}` | 历史事件详情 |
+
+### `/api/history/events` 字段要点
+
+- 每条：`eventId`, `year`, `month`, `day`, `title`, `description`, `tags[]`, `region`, `importance`, `eventType?`
+- `tags` 允许值：`名人` / `事件` / `中国历史` / `世界历史` / `科技` / `文化` / `影视` / `体育`
+- 同日排序：`importance` 降序，再 `year` 升序
+- 无数据的日期返回 `[]`；未知 `eventId` 返回 404
+- 网页检测页：`/vault/q/2026/history-today/hub.html`
 
 ### `/api/catalog` 字段要点
 

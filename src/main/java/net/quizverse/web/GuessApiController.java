@@ -3,6 +3,7 @@ package net.quizverse.web;
 import jakarta.validation.Valid;
 import net.quizverse.catalog.CatalogService;
 import net.quizverse.catalog.model.HomeCatalog;
+import net.quizverse.history.HistoryEventRegistry;
 import net.quizverse.match.MatchService;
 import net.quizverse.pack.PackRegistry;
 import net.quizverse.pack.model.EntityBrief;
@@ -30,11 +31,14 @@ public class GuessApiController {
     private final PackRegistry packs;
     private final MatchService matches;
     private final CatalogService catalog;
+    private final HistoryEventRegistry history;
 
-    public GuessApiController(PackRegistry packs, MatchService matches, CatalogService catalog) {
+    public GuessApiController(PackRegistry packs, MatchService matches, CatalogService catalog,
+                              HistoryEventRegistry history) {
         this.packs = packs;
         this.matches = matches;
         this.catalog = catalog;
+        this.history = history;
     }
 
     @GetMapping("/health")
@@ -42,6 +46,8 @@ public class GuessApiController {
         Map<String, Object> m = new HashMap<>();
         m.put("ok", true);
         m.put("packs", packs.listMeta().size());
+        m.put("historyDays", history.dayCount());
+        m.put("historyEvents", history.eventCount());
         return m;
     }
 

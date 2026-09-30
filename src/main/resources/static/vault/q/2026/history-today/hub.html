@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>历史上的今天 · API 检测</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700&family=Noto+Sans+SC:wght@400;500;600&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #eef1f4;
+      --ink: #16181d;
+      --muted: #6e7684;
+      --line: rgba(22, 24, 29, 0.1);
+      --accent: #2c4a6e;
+      --card: #fff;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Noto Sans SC", sans-serif;
+      background:
+        radial-gradient(ellipse 55% 40% at 80% 0%, rgba(44, 74, 110, 0.12), transparent 60%),
+        linear-gradient(165deg, #f5f7fa, #eef1f4 50%, #e6ebf1);
+    }
+    a { color: var(--accent); }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+    .brand {
+      font-family: Syne, sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-family: "Noto Serif SC", serif;
+      font-size: clamp(28px, 5vw, 40px);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .sub { color: var(--muted); margin-bottom: 28px; line-height: 1.6; }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px 18px 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(22, 24, 29, 0.04);
+    }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: end;
+    }
+    label { display: grid; gap: 6px; font-size: 12px; color: var(--muted); }
+    select, button, input {
+      font: inherit;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      background: #fff;
+      color: var(--ink);
+    }
+    button {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+      cursor: pointer;
+      transition: transform .2s var(--ease), opacity .2s;
+    }
+    button:hover { transform: translateY(-1px); }
+    button.ghost { background: transparent; color: var(--accent); border-color: var(--line); }
+    .meta { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .err {
+      margin-top: 12px;
+      color: #8f3d32;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+    .list { display: grid; gap: 10px; }
+    .item {
+      width: 100%;
+      text-align: left;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+      cursor: pointer;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .item:hover { border-color: rgba(44, 74, 110, 0.35); box-shadow: 0 8px 24px rgba(22,24,29,.06); }
+    .item.active { border-color: var(--accent); }
+    .item h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+    .item .desc {
+      margin: 8px 0 0;
+      font-size: 13px;
+      line-height: 1.6;
+      color: #3a404c;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+    .item .row { display: flex; flex-wrap: wrap; gap: 8px; font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(44, 74, 110, 0.08);
+      color: var(--accent);
+    }
+    .detail {
+      display: none;
+      margin-top: 20px;
+    }
+    .detail.show { display: block; }
+    .detail h2 { font-family: "Noto Serif SC", serif; font-size: 22px; margin-bottom: 10px; }
+    .detail p { line-height: 1.75; white-space: pre-wrap; }
+    .detail .raw {
+      margin-top: 16px;
+      padding: 12px;
+      border-radius: 12px;
+      background: #f3f5f8;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 12px;
+      overflow: auto;
+      max-height: 280px;
+    }
+    .foot { margin-top: 36px; color: var(--muted); font-size: 12px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">Quiz Verse · Vault</div>
+    <h1>历史上的今天</h1>
+    <p class="sub">检测页：调用 <code>/api/history/events</code> 列表与详情。本地默认免鉴权；开鉴权时自动 guest。</p>
+
+    <div class="panel">
+      <div class="controls">
+        <label>月
+          <select id="month"></select>
+        </label>
+        <label>日
+          <select id="day"></select>
+        </label>
+        <label>limit（可选）
+          <input id="limit" type="number" min="1" max="100" placeholder="全部" style="width:96px" />
+        </label>
+        <button id="loadBtn" type="button">加载列表</button>
+        <button id="sep30Btn" class="ghost" type="button">9月30日</button>
+      </div>
+      <div class="meta" id="meta">尚未加载</div>
+      <div class="err" id="err" hidden></div>
+    </div>
+
+    <div class="list" id="list"></div>
+
+    <div class="detail" id="detail">
+      <h2 id="detailTitle"></h2>
+      <div class="row" id="detailMeta" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:13px;color:var(--muted)"></div>
+      <p id="detailDesc"></p>
+      <pre class="raw" id="detailRaw"></pre>
+    </div>
+
+    <p class="foot">路径：/vault/q/2026/history-today/hub.html · 同系列入口可参考 zh-collection/hub.html</p>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script>
+    const monthEl = document.getElementById('month');
+    const dayEl = document.getElementById('day');
+    const limitEl = document.getElementById('limit');
+    const listEl = document.getElementById('list');
+    const metaEl = document.getElementById('meta');
+    const errEl = document.getElementById('err');
+    const detailEl = document.getElementById('detail');
+
+    const DAYS_IN_MONTH = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    function fillMonths() {
+      monthEl.innerHTML = '';
+      for (let m = 1; m <= 12; m++) {
+        const opt = document.createElement('option');
+        opt.value = String(m);
+        opt.textContent = m + '月';
+        monthEl.appendChild(opt);
+      }
+    }
+
+    function fillDays() {
+      const month = Number(monthEl.value);
+      const cap = DAYS_IN_MONTH[month - 1] || 31;
+      const keep = Number(dayEl.value) || 1;
+      dayEl.innerHTML = '';
+      for (let d = 1; d <= cap; d++) {
+        const opt = document.createElement('option');
+        opt.value = String(d);
+        opt.textContent = d + '日';
+        dayEl.appendChild(opt);
+      }
+      dayEl.value = String(Math.min(keep, cap));
+    }
+
+    function showErr(msg) {
+      errEl.hidden = !msg;
+      errEl.textContent = msg || '';
+    }
+
+    async function loadList() {
+      showErr('');
+      detailEl.classList.remove('show');
+      listEl.innerHTML = '<p class="meta">加载中…</p>';
+      const month = Number(monthEl.value);
+      const day = Number(dayEl.value);
+      const limit = limitEl.value ? Number(limitEl.value) : null;
+      let url = '/api/history/events?month=' + month + '&day=' + day;
+      if (limit) url += '&limit=' + limit;
+      try {
+        const r = await QuizApi.apiFetch(url);
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(body.message || ('HTTP ' + r.status));
+        const list = Array.isArray(body) ? body : [];
+        metaEl.textContent = month + '月' + day + '日 · ' + list.length + ' 条'
+          + (limit ? '（limit=' + limit + '）' : '');
+        if (!list.length) {
+          listEl.innerHTML = '<p class="meta">该日暂无数据（可能尚未生成 demo 文件）</p>';
+          return;
+        }
+        listEl.innerHTML = list.map((e) => {
+          const tags = (e.tags || []).map((t) => '<span class="tag">' + escapeHtml(t) + '</span>').join('');
+          const desc = (e.description || '').trim();
+          return '<button type="button" class="item" data-id="' + escapeHtml(e.eventId) + '">'
+            + '<h3>' + escapeHtml(e.year) + ' · ' + escapeHtml(e.title) + '</h3>'
+            + (desc ? '<p class="desc">' + escapeHtml(desc) + '</p>' : '')
+            + '<div class="row"><span>' + escapeHtml(e.region || '') + '</span>'
+            + '<span>重要度 ' + escapeHtml(e.importance) + '</span>'
+            + tags + '</div></button>';
+        }).join('');
+        listEl.querySelectorAll('.item').forEach((btn) => {
+          btn.addEventListener('click', () => loadDetail(btn.dataset.id, btn));
+        });
+      } catch (e) {
+        listEl.innerHTML = '';
+        showErr(String(e.message || e));
+      }
+    }
+
+    async function loadDetail(eventId, btn) {
+      showErr('');
+      listEl.querySelectorAll('.item').forEach((el) => el.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      try {
+        const r = await QuizApi.apiFetch('/api/history/events/' + encodeURIComponent(eventId));
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error(body.message || ('HTTP ' + r.status));
+        document.getElementById('detailTitle').textContent = body.title || '';
+        document.getElementById('detailMeta').innerHTML =
+          '<span>' + escapeHtml(body.year) + '年' + escapeHtml(body.month) + '月' + escapeHtml(body.day) + '日</span>'
+          + '<span>' + escapeHtml(body.region || '') + '</span>'
+          + '<span>' + escapeHtml(body.eventType || '') + '</span>'
+          + '<span>' + escapeHtml(body.eventId) + '</span>';
+        document.getElementById('detailDesc').textContent = body.description || '';
+        document.getElementById('detailRaw').textContent = JSON.stringify(body, null, 2);
+        detailEl.classList.add('show');
+        detailEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } catch (e) {
+        showErr(String(e.message || e));
+      }
+    }
+
+    fillMonths();
+    const now = new Date();
+    monthEl.value = String(now.getMonth() + 1);
+    fillDays();
+    dayEl.value = String(now.getDate());
+    monthEl.addEventListener('change', fillDays);
+    document.getElementById('loadBtn').addEventListener('click', loadList);
+    document.getElementById('sep30Btn').addEventListener('click', () => {
+      monthEl.value = '9';
+      fillDays();
+      dayEl.value = '30';
+      loadList();
+    });
+    loadList();
+  </script>
+</body>
+</html>

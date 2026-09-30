@@ -7,6 +7,7 @@ public class QuizProperties {
 
     private final Match match = new Match();
     private final Packs packs = new Packs();
+    private final History history = new History();
     private final Security security = new Security();
     private final Wechat wechat = new Wechat();
 
@@ -16,6 +17,10 @@ public class QuizProperties {
 
     public Packs getPacks() {
         return packs;
+    }
+
+    public History getHistory() {
+        return history;
     }
 
     public Security getSecurity() {
@@ -59,6 +64,19 @@ public class QuizProperties {
         public void setClasspathLocation(String classpathLocation) {
             this.classpathLocation = classpathLocation;
         }
+
+        public String getExtraDir() {
+            return extraDir;
+        }
+
+        public void setExtraDir(String extraDir) {
+            this.extraDir = extraDir;
+        }
+    }
+
+    public static class History {
+        /** Optional absolute/relative dir overriding classpath day JSON files */
+        private String extraDir = "";
 
         public String getExtraDir() {
             return extraDir;

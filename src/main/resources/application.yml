@@ -24,6 +24,9 @@ quiz:
     classpath-location: classpath:/packs
     # Optional absolute/relative dir for local pack overrides (empty = skip)
     extra-dir: ${QUIZ_PACKS_DIR:}
+  history:
+    # Optional dir of MM-DD.json files (overrides same-name classpath days by load order)
+    extra-dir: ${QUIZ_HISTORY_DIR:}
   security:
     enabled: ${QUIZ_SECURITY_ENABLED:false}
     session-ttl-hours: 72
