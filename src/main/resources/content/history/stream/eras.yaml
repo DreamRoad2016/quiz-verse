@@ -1,0 +1,44 @@
+schemaVersion: 1
+title: 中国史时代分段（历史源流 Tab）
+cutoffYear: 1949
+eras:
+- id: pre_qin
+  label: 先秦
+  fromYear: -2070
+  toYear: -221
+  sort: 1
+- id: qin_han
+  label: 秦汉
+  fromYear: -221
+  toYear: 220
+  sort: 2
+- id: wei_jin_nanbei
+  label: 魏晋南北朝
+  fromYear: 220
+  toYear: 589
+  sort: 3
+- id: sui_tang
+  label: 隋唐
+  fromYear: 581
+  toYear: 907
+  sort: 4
+- id: five_ten
+  label: 五代十国
+  fromYear: 907
+  toYear: 979
+  sort: 5
+- id: song_liao_xia_jin
+  label: 宋辽夏金
+  fromYear: 960
+  toYear: 1279
+  sort: 6
+- id: yuan_ming_qing
+  label: 元明清
+  fromYear: 1271
+  toYear: 1912
+  sort: 7
+- id: republic_to_prc
+  label: 民国至新中国成立
+  fromYear: 1912
+  toYear: 1949
+  sort: 8

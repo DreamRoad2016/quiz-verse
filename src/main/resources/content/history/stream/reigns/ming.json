@@ -1,0 +1,158 @@
+[
+  {
+    "id": "ming-hongwu",
+    "name": "洪武",
+    "fromYear": 1368,
+    "toYear": 1398,
+    "rulerId": "ming_taizu",
+    "polityId": "ming",
+    "sort": 10
+  },
+  {
+    "id": "ming-jianwen",
+    "name": "建文",
+    "fromYear": 1399,
+    "toYear": 1402,
+    "rulerId": "ming_jianwen",
+    "polityId": "ming",
+    "sort": 20,
+    "note": "建文元年为1399。"
+  },
+  {
+    "id": "ming-yongle",
+    "name": "永乐",
+    "fromYear": 1403,
+    "toYear": 1424,
+    "rulerId": "ming_chengzu",
+    "polityId": "ming",
+    "sort": 30
+  },
+  {
+    "id": "ming-hongxi",
+    "name": "洪熙",
+    "fromYear": 1425,
+    "toYear": 1425,
+    "rulerId": "ming_renzong",
+    "polityId": "ming",
+    "sort": 40
+  },
+  {
+    "id": "ming-xuande",
+    "name": "宣德",
+    "fromYear": 1426,
+    "toYear": 1435,
+    "rulerId": "ming_xuanzong",
+    "polityId": "ming",
+    "sort": 50
+  },
+  {
+    "id": "ming-zhengtong",
+    "name": "正统",
+    "fromYear": 1436,
+    "toYear": 1449,
+    "rulerId": "ming_yingzong",
+    "polityId": "ming",
+    "sort": 60
+  },
+  {
+    "id": "ming-jingtai",
+    "name": "景泰",
+    "fromYear": 1450,
+    "toYear": 1457,
+    "rulerId": "ming_jingdi",
+    "polityId": "ming",
+    "sort": 70
+  },
+  {
+    "id": "ming-tianshun",
+    "name": "天顺",
+    "fromYear": 1457,
+    "toYear": 1464,
+    "rulerId": "ming_yingzong_restore",
+    "polityId": "ming",
+    "sort": 80,
+    "note": "英宗复位后改元天顺。"
+  },
+  {
+    "id": "ming-chenghua",
+    "name": "成化",
+    "fromYear": 1465,
+    "toYear": 1487,
+    "rulerId": "ming_xianzong",
+    "polityId": "ming",
+    "sort": 90
+  },
+  {
+    "id": "ming-hongzhi",
+    "name": "弘治",
+    "fromYear": 1488,
+    "toYear": 1505,
+    "rulerId": "ming_xiaozong",
+    "polityId": "ming",
+    "sort": 100
+  },
+  {
+    "id": "ming-zhengde",
+    "name": "正德",
+    "fromYear": 1506,
+    "toYear": 1521,
+    "rulerId": "ming_wuzong",
+    "polityId": "ming",
+    "sort": 110
+  },
+  {
+    "id": "ming-jiajing",
+    "name": "嘉靖",
+    "fromYear": 1522,
+    "toYear": 1566,
+    "rulerId": "ming_shizong",
+    "polityId": "ming",
+    "sort": 120
+  },
+  {
+    "id": "ming-longqing",
+    "name": "隆庆",
+    "fromYear": 1567,
+    "toYear": 1572,
+    "rulerId": "ming_muzong",
+    "polityId": "ming",
+    "sort": 130
+  },
+  {
+    "id": "ming-wanli",
+    "name": "万历",
+    "fromYear": 1573,
+    "toYear": 1620,
+    "rulerId": "ming_shenzong",
+    "polityId": "ming",
+    "sort": 140
+  },
+  {
+    "id": "ming-taichang",
+    "name": "泰昌",
+    "fromYear": 1620,
+    "toYear": 1620,
+    "rulerId": "ming_guangzong",
+    "polityId": "ming",
+    "sort": 150,
+    "note": "仅数月。"
+  },
+  {
+    "id": "ming-tianqi",
+    "name": "天启",
+    "fromYear": 1621,
+    "toYear": 1627,
+    "rulerId": "ming_xizong",
+    "polityId": "ming",
+    "sort": 160
+  },
+  {
+    "id": "ming-chongzhen",
+    "name": "崇祯",
+    "fromYear": 1628,
+    "toYear": 1644,
+    "rulerId": "ming_sizong",
+    "polityId": "ming",
+    "sort": 170
+  }
+]

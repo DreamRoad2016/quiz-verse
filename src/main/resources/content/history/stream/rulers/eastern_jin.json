@@ -1,0 +1,103 @@
+[
+  {
+    "id": "ej-yuandi",
+    "name": "元帝",
+    "personalName": "司马睿",
+    "fromYear": 317,
+    "toYear": 322,
+    "polityId": "eastern_jin",
+    "sort": 1,
+    "note": "317年即晋王，318年称帝；东晋开国。"
+  },
+  {
+    "id": "ej-mingdi",
+    "name": "明帝",
+    "personalName": "司马绍",
+    "fromYear": 322,
+    "toYear": 325,
+    "polityId": "eastern_jin",
+    "sort": 2
+  },
+  {
+    "id": "ej-chengdi",
+    "name": "成帝",
+    "personalName": "司马衍",
+    "fromYear": 325,
+    "toYear": 342,
+    "polityId": "eastern_jin",
+    "sort": 3
+  },
+  {
+    "id": "ej-kangdi",
+    "name": "康帝",
+    "personalName": "司马岳",
+    "fromYear": 342,
+    "toYear": 344,
+    "polityId": "eastern_jin",
+    "sort": 4
+  },
+  {
+    "id": "ej-mudi",
+    "name": "穆帝",
+    "personalName": "司马聃",
+    "fromYear": 344,
+    "toYear": 361,
+    "polityId": "eastern_jin",
+    "sort": 5
+  },
+  {
+    "id": "ej-aidi",
+    "name": "哀帝",
+    "personalName": "司马丕",
+    "fromYear": 361,
+    "toYear": 365,
+    "polityId": "eastern_jin",
+    "sort": 6
+  },
+  {
+    "id": "ej-feidi",
+    "name": "海西公",
+    "personalName": "司马奕",
+    "fromYear": 365,
+    "toYear": 371,
+    "polityId": "eastern_jin",
+    "sort": 7,
+    "note": "废帝；桓温废立。"
+  },
+  {
+    "id": "ej-jianwendi",
+    "name": "简文帝",
+    "personalName": "司马昱",
+    "fromYear": 371,
+    "toYear": 372,
+    "polityId": "eastern_jin",
+    "sort": 8
+  },
+  {
+    "id": "ej-xiaowudi",
+    "name": "孝武帝",
+    "personalName": "司马曜",
+    "fromYear": 372,
+    "toYear": 396,
+    "polityId": "eastern_jin",
+    "sort": 9
+  },
+  {
+    "id": "ej-andi",
+    "name": "安帝",
+    "personalName": "司马德宗",
+    "fromYear": 396,
+    "toYear": 419,
+    "polityId": "eastern_jin",
+    "sort": 10
+  },
+  {
+    "id": "ej-gongdi",
+    "name": "恭帝",
+    "personalName": "司马德文",
+    "fromYear": 419,
+    "toYear": 420,
+    "polityId": "eastern_jin",
+    "sort": 11
+  }
+]

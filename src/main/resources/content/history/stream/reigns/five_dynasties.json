@@ -1,0 +1,22 @@
+[
+  {"id": "ll-taizu-kaiping", "name": "开平", "fromYear": 907, "toYear": 911, "rulerId": "ll-taizu", "polityId": "later_liang", "sort": 10},
+  {"id": "ll-taizu-qianhua", "name": "乾化", "fromYear": 911, "toYear": 912, "rulerId": "ll-taizu", "polityId": "later_liang", "sort": 11},
+  {"id": "ll-modi-qianhua", "name": "乾化", "fromYear": 913, "toYear": 915, "rulerId": "ll-modi", "polityId": "later_liang", "sort": 12, "note": "含友珪凤历，短号从略。"},
+  {"id": "ll-modi-zhenming", "name": "贞明", "fromYear": 915, "toYear": 921, "rulerId": "ll-modi", "polityId": "later_liang", "sort": 13},
+  {"id": "ll-modi-longde", "name": "龙德", "fromYear": 921, "toYear": 923, "rulerId": "ll-modi", "polityId": "later_liang", "sort": 14},
+  {"id": "lt-zhuangzong-tongguang", "name": "同光", "fromYear": 923, "toYear": 926, "rulerId": "lt-zhuangzong", "polityId": "later_tang", "sort": 20},
+  {"id": "lt-mingzong-tiancheng", "name": "天成", "fromYear": 926, "toYear": 930, "rulerId": "lt-mingzong", "polityId": "later_tang", "sort": 21},
+  {"id": "lt-mingzong-changxing", "name": "长兴", "fromYear": 930, "toYear": 933, "rulerId": "lt-mingzong", "polityId": "later_tang", "sort": 22},
+  {"id": "lt-mindi-yingshun", "name": "应顺", "fromYear": 934, "toYear": 934, "rulerId": "lt-mindi", "polityId": "later_tang", "sort": 23},
+  {"id": "lt-modi-qingtai", "name": "清泰", "fromYear": 934, "toYear": 936, "rulerId": "lt-modi", "polityId": "later_tang", "sort": 24},
+  {"id": "lj-gaozu-tianfu", "name": "天福", "fromYear": 936, "toYear": 942, "rulerId": "lj-gaozu", "polityId": "later_jin", "sort": 30},
+  {"id": "lj-chudi-tianfu", "name": "天福", "fromYear": 942, "toYear": 944, "rulerId": "lj-chudi", "polityId": "later_jin", "sort": 31},
+  {"id": "lj-chudi-kaiyun", "name": "开运", "fromYear": 944, "toYear": 947, "rulerId": "lj-chudi", "polityId": "later_jin", "sort": 32},
+  {"id": "lh-gaozu-tianfu", "name": "天福", "fromYear": 947, "toYear": 947, "rulerId": "lh-gaozu", "polityId": "later_han", "sort": 40, "note": "后汉沿用天福十二年。"},
+  {"id": "lh-gaozu-qianyou", "name": "乾祐", "fromYear": 948, "toYear": 948, "rulerId": "lh-gaozu", "polityId": "later_han", "sort": 41},
+  {"id": "lh-yindi-qianyou", "name": "乾祐", "fromYear": 948, "toYear": 951, "rulerId": "lh-yindi", "polityId": "later_han", "sort": 42},
+  {"id": "lz-taizu-guangshun", "name": "广顺", "fromYear": 951, "toYear": 953, "rulerId": "lz-taizu", "polityId": "later_zhou", "sort": 50},
+  {"id": "lz-taizu-xiande", "name": "显德", "fromYear": 954, "toYear": 954, "rulerId": "lz-taizu", "polityId": "later_zhou", "sort": 51},
+  {"id": "lz-shizong-xiande", "name": "显德", "fromYear": 954, "toYear": 959, "rulerId": "lz-shizong", "polityId": "later_zhou", "sort": 52},
+  {"id": "lz-gongdi-xiande", "name": "显德", "fromYear": 959, "toYear": 960, "rulerId": "lz-gongdi", "polityId": "later_zhou", "sort": 53}
+]

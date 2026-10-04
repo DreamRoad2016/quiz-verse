@@ -1,0 +1,31 @@
+[
+  {
+    "id": "qin-shihuang",
+    "name": "始皇",
+    "personalName": "嬴政",
+    "fromYear": -221,
+    "toYear": -210,
+    "polityId": "qin",
+    "sort": 1,
+    "note": "前246年即位秦王；前221年统一后称皇帝。"
+  },
+  {
+    "id": "qin-ershi",
+    "name": "二世",
+    "personalName": "胡亥",
+    "fromYear": -209,
+    "toYear": -207,
+    "polityId": "qin",
+    "sort": 2
+  },
+  {
+    "id": "qin-ziying",
+    "name": "子婴",
+    "personalName": "子婴",
+    "fromYear": -207,
+    "toYear": -207,
+    "polityId": "qin",
+    "sort": 3,
+    "note": "先后为秦王、秦王子婴，同年降汉。"
+  }
+]

@@ -1,0 +1,448 @@
+[
+  {
+    "eventId": "HS-QIN-0213-FENSHU",
+    "year": -213,
+    "title": "焚书令与思想管控",
+    "summary": "秦始皇采纳李斯建议，下令焚毁民间《诗》《书》及百家语，以法家思想统摄意识形态。",
+    "description": "公元前213年前后，秦廷颁焚书之令，仅留医药、卜筮、种树之书。坑儒事或与求仙、诽谤之狱相连，后世合称「焚书坑儒」。",
+    "kind": "culture",
+    "polityIds": [
+      "qin"
+    ],
+    "importance": 4,
+    "tags": [
+      "文化",
+      "思想"
+    ]
+  },
+  {
+    "eventId": "HS-QIN-0210-SHIHUANG",
+    "year": -210,
+    "title": "秦始皇驾崩",
+    "summary": "始皇东巡途中死于沙丘，赵高、李斯等秘不发丧，引发嗣位之争。",
+    "description": "公元前210年，秦始皇崩于沙丘。胡亥在赵高支持下矫诏即位，为二世，加速秦政暴虐与灭亡。",
+    "kind": "politics",
+    "polityIds": [
+      "qin"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "人物"
+    ]
+  },
+  {
+    "eventId": "HS-QIN-0209-QIYI",
+    "year": -209,
+    "title": "陈胜吴广起义",
+    "summary": "戍卒在大泽乡揭竿而起，喊出「王侯将相宁有种乎」，拉开秦末农民战争序幕。",
+    "description": "公元前209年，陈胜、吴广因雨误期发动起义，建张楚。虽迅速失败，却引发六国旧贵族与豪杰蜂起，秦统治迅速瓦解。",
+    "kind": "politics",
+    "polityIds": [
+      "qin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "社会"
+    ]
+  },
+  {
+    "eventId": "HS-QIN-0207-FALL",
+    "year": -207,
+    "title": "秦王子婴投降，秦亡",
+    "summary": "刘邦入关，子婴出降，秦朝灭亡；项羽随后入关焚宫。",
+    "description": "公元前207年，秦二世已死，子婴称秦王后向刘邦投降。秦作为统一王朝结束，天下进入楚汉相争阶段。",
+    "kind": "politics",
+    "polityIds": [
+      "qin"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-QIN-0207-JULU",
+    "year": -207,
+    "title": "巨鹿之战",
+    "summary": "项羽破釜沉舟，大破秦将章邯、王离，秦军主力崩溃。",
+    "description": "前207年项羽引军渡河，沉船破釜，与秦军决战于巨鹿。此战决定了秦朝军事上的败局，成语「破釜沉舟」即出于此。同年稍后子婴降刘邦，秦亡。",
+    "kind": "battle",
+    "polityIds": [
+      "qin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "楚汉"
+    ],
+    "idioms": [
+      "破釜沉舟"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0200-GUANDU",
+    "year": 200,
+    "title": "官渡之战",
+    "summary": "曹操以少胜多击败袁绍，奠定统一北方的基础。",
+    "description": "公元200年，曹袁决战于官渡。袁绍军溃，北方格局改写，曹操逐步成为最强军阀。",
+    "kind": "battle",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0208-CHIBI",
+    "year": 208,
+    "title": "赤壁之战",
+    "summary": "孙刘联军在长江大破曹操，三国鼎立格局由此奠定。",
+    "description": "公元208年，曹操南下遭周瑜、黄盖等率水军火攻，败于赤壁。此后曹操难以速统南方，刘备得荆州立足，孙权稳固江东。",
+    "kind": "battle",
+    "polityIds": [
+      "cao_wei",
+      "eastern_wu",
+      "shu_han",
+      "eastern_han"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0214-YIZHOU",
+    "year": 214,
+    "title": "刘备得益州",
+    "summary": "刘备取成都，刘璋降，蜀汉根据地形成。",
+    "description": "建安十九年围成都，刘璋开城。此后刘备以益州为根本，220年代称帝。与赤壁得荆州相接，不重复208、221条。",
+    "kind": "politics",
+    "polityIds": ["eastern_han"],
+    "importance": 4,
+    "tags": ["政治", "三国"]
+  },
+  {
+    "eventId": "HS-3K-0219-FAN",
+    "year": 219,
+    "title": "樊城之战",
+    "summary": "关羽围樊、水淹七军，旋遭孙曹夹击，荆州易手。",
+    "description": "建安二十四年关羽攻樊城，于禁七军被汉水所淹。孙权偷袭江陵，关羽败走麦城。此战重划魏蜀吴在荆州的格局。",
+    "kind": "battle",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "三国"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0220-WEIDAIHAN",
+    "year": 220,
+    "title": "曹丕代汉，建立曹魏",
+    "summary": "汉献帝禅位于曹丕，魏文帝称帝，东汉正式结束。",
+    "description": "公元220年，曹丕受禅，改国号魏，定都洛阳。三国之一曹魏立国，与蜀汉、孙吴并立。",
+    "kind": "politics",
+    "polityIds": [
+      "cao_wei",
+      "eastern_han"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "改朝"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0221-SHUHAN",
+    "year": 221,
+    "title": "刘备称帝，蜀汉建立",
+    "summary": "刘备于成都称帝，国号汉，史称蜀汉。",
+    "description": "公元221年，刘备在益州称帝，以兴复汉室为号召。诸葛亮辅政，与魏、吴形成长期对峙。",
+    "kind": "politics",
+    "polityIds": [
+      "shu_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "开国"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0221-YILING",
+    "year": 221,
+    "title": "夷陵之战",
+    "summary": "刘备为报关羽之仇东征孙权，兵败猇亭，蜀汉国力大损。",
+    "description": "公元221年刘备称帝后次年东征，222年陆逊火烧连营，蜀军大败。吴蜀对峙格局固定，三国均势进一步巩固。",
+    "kind": "battle",
+    "polityIds": [
+      "shu_han",
+      "eastern_wu"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0222-WU",
+    "year": 222,
+    "title": "孙权称帝，孙吴立国",
+    "summary": "孙权于武昌称帝，国号吴，三国鼎立格局完全形成。",
+    "description": "公元222年孙权称皇帝，后迁都建业。江东政权与魏、蜀长期抗衡，直至280年被晋所灭。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_wu"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "开国"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0228-JIETING",
+    "year": 228,
+    "title": "街亭之战",
+    "summary": "诸葛亮第一次北伐，马谡失街亭，蜀军退还汉中。",
+    "description": "建兴六年诸葛亮出祁山，马谡违节度失街亭，张郃进据要地。诸葛亮斩马谡，收兵。北伐由是转入长期对峙。",
+    "kind": "battle",
+    "polityIds": [
+      "shu_han",
+      "cao_wei"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "三国"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0234-WUZHANG",
+    "year": 234,
+    "title": "五丈原对峙",
+    "summary": "诸葛亮最后一次北伐，与司马懿相持于五丈原，病逝军中。",
+    "description": "建兴十二年蜀军出斜谷，屯五丈原。与魏相持百余日，诸葛亮卒于军。与「病逝五丈原」为同一年的战局节点。",
+    "kind": "battle",
+    "polityIds": [
+      "shu_han",
+      "cao_wei"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "三国"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0234-ZHUGE",
+    "year": 234,
+    "title": "诸葛亮病逝五丈原",
+    "summary": "蜀汉丞相诸葛亮北伐未竟，病卒于五丈原，蜀汉由盛转衰。",
+    "description": "公元234年，诸葛亮最后一次北伐时病逝，军还成都。此后姜维屡北伐而国力难支，直至263年亡于魏。",
+    "kind": "politics",
+    "polityIds": [
+      "shu_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "人物",
+      "战争"
+    ],
+    "idioms": [
+      "鞠躬尽瘁"
+    ]
+  },
+  {
+    "eventId": "HS-WEI-0249-GAOPING",
+    "year": 249,
+    "title": "高平陵之变",
+    "summary": "司马懿乘曹爽陪曹芳祭陵，闭城夺权，魏政归司马氏。",
+    "description": "正始十年司马懿发动高平陵之变，诛曹爽。此后曹魏军政逐步转入司马氏之手，为代魏立晋铺路。",
+    "kind": "politics",
+    "polityIds": ["cao_wei"],
+    "importance": 5,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-3K-0263-SHUFALL",
+    "year": 263,
+    "title": "魏灭蜀汉",
+    "summary": "邓艾、钟会伐蜀，刘禅降魏，蜀汉灭亡。",
+    "description": "公元263年，魏军多路攻蜀，姜维防线被突破，刘禅出降。三国之一退出历史舞台，天下重归两强对峙。",
+    "kind": "politics",
+    "polityIds": [
+      "shu_han",
+      "cao_wei"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0265-SIMA",
+    "year": 265,
+    "title": "司马炎代魏，西晋建立",
+    "summary": "魏元帝曹奂禅位于司马炎，国号晋，定都洛阳。",
+    "description": "公元265年，司马炎受禅称帝，是为晋武帝。西晋承接曹魏统治基础，随后发动灭吴战争。",
+    "kind": "politics",
+    "polityIds": [
+      "western_jin",
+      "cao_wei"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "改朝"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0280-WUFALL",
+    "year": 280,
+    "title": "晋灭东吴，三国时代结束",
+    "summary": "王濬率水军顺江而下，孙皓出降，吴亡，天下重归统一。",
+    "description": "公元280年，晋军水陆并进，建业陷落，孙皓面缚舆榇。自220年三国分立至是，历时六十余年。",
+    "kind": "politics",
+    "polityIds": [
+      "western_jin",
+      "eastern_wu"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0290-HUIDI",
+    "year": 290,
+    "title": "晋惠帝即位",
+    "summary": "武帝卒，惠帝即位，贾后与宗室争权，八王之乱将起。",
+    "description": "太熙元年司马衷即位。杨骏辅政旋被贾后所杀，诸王兵权介入宫廷，291年后内战表面化。",
+    "kind": "politics",
+    "polityIds": ["western_jin"],
+    "importance": 4,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-JIN-0301-BAWANG",
+    "year": 301,
+    "title": "八王之乱激化",
+    "summary": "西晋宗室诸王争权，内战连绵，国力空虚，为五胡内迁后的乱局埋下伏笔。",
+    "description": "约公元291年起宗室诸王相互攻伐，301年前后斗争尤为激烈。中央权威崩坏，户口流失，胡汉武装力量坐大。",
+    "kind": "politics",
+    "polityIds": [
+      "western_jin"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0311-YONGJIA",
+    "year": 311,
+    "title": "永嘉之乱",
+    "summary": "匈奴刘聪军攻破洛阳，俘晋怀帝，中原秩序崩溃。",
+    "description": "公元311年，洛阳陷落，史称永嘉之乱。西晋统治集团遭受重创，北方士族南迁，南北分治局面加速形成。",
+    "kind": "politics",
+    "polityIds": [
+      "western_jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "社会"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0313-ZUTI",
+    "year": 313,
+    "title": "祖逖北伐",
+    "summary": "祖逖中流击楫，经营河南，东晋北伐的先声。",
+    "description": "建兴元年前后祖逖请缨，渡江誓清中原。收复谯、梁一带，石勒不敢窥河南。卒后进地复失。此条在永嘉与建东晋之间。",
+    "kind": "battle",
+    "polityIds": ["western_jin"],
+    "importance": 4,
+    "tags": ["战争"],
+    "idioms": ["中流击楫"]
+  },
+  {
+    "eventId": "HS-JIN-0317-EJIN",
+    "year": 317,
+    "title": "司马睿建东晋",
+    "summary": "琅琊王司马睿在建康称晋王，后称帝，东晋开始。",
+    "description": "公元317年，司马睿在江南即晋王位，依靠王导等士族支持，延续晋统。318年称帝，定都建康，与北方十六国对峙。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "开国"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0353-LANTING",
+    "year": 353,
+    "title": "兰亭雅集",
+    "summary": "王羲之等会稽山阴修禊，书《兰亭集序》。",
+    "description": "永和九年三月三日。士族文艺的教材节点，行书典范。与北伐、桓温专兵同一东晋前中期。",
+    "kind": "culture",
+    "polityIds": ["eastern_jin"],
+    "importance": 3,
+    "tags": ["文化", "文献"]
+  },
+  {
+    "eventId": "HS-JIN-0369-FANGTOU",
+    "year": 369,
+    "title": "枋头之战",
+    "summary": "桓温北伐前燕，至枋头粮尽退军，大败。",
+    "description": "太和四年桓温自兖州进至枋头，燕军切断粮道，晋军奔还。北伐受挫，桓温威望受损，转而谋废立。",
+    "kind": "battle",
+    "polityIds": ["eastern_jin"],
+    "importance": 3,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-JIN-0399-SUNEN",
+    "year": 399,
+    "title": "孙恩起事",
+    "summary": "五斗米道孙恩在会稽起兵，冲击东晋江东。",
+    "description": "隆安三年孙恩破会稽，号征东将军。北府兵刘牢之、刘裕等镇压，乱事延至403年前后。江东残破，为刘裕崛起提供舞台。",
+    "kind": "politics",
+    "polityIds": ["eastern_jin"],
+    "importance": 3,
+    "tags": ["社会", "战争"]
+  },
+  {
+    "eventId": "HS-JIN-0383-FEISHUI",
+    "year": 383,
+    "title": "淝水之战",
+    "summary": "东晋军于淝水大败前秦苻坚，南北对峙格局得以延续。",
+    "description": "公元383年，前秦大举南征，在淝水遭东晋北府兵击溃。前秦迅速瓦解，东晋国祚再延，南北分界大致固定。",
+    "kind": "battle",
+    "polityIds": [
+      "eastern_jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争"
+    ],
+    "idioms": [
+      "风声鹤唳",
+      "草木皆兵"
+    ]
+  }
+]

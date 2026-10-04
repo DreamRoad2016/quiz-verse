@@ -90,6 +90,18 @@ server {
 | POST | `/api/matches/{id}/give-up` | 主动揭晓 |
 | GET | `/api/history/events?month=&day=&limit=` | **历史上的今天**：按月日列表（`limit` 可选）；数据来自 `content/history/days/MM-DD.json` |
 | GET | `/api/history/events/{eventId}` | 历史事件详情 |
+| GET | `/api/history/stream/meta` | **历史源流**：年范围、数量、默认时代 |
+| GET | `/api/history/stream/eras` | 时代 Tab 列表 |
+| GET | `/api/history/stream/groups` | 乱世分组元数据 |
+| GET | `/api/history/stream/polities?from=&to=&tiers=` | 与年段相交的政权条；`tiers` 逗号分隔（`spine,parallel,fragment`） |
+| GET | `/api/history/stream/markers?from=&to=` | 区间内单点标记（如 1949 建国） |
+| GET | `/api/history/stream/events?from=&to=&limit=&offset=` | 区间事件；可空，`{ items, count, empty }` |
+| GET | `/api/history/stream/events/{eventId}` | 源流事件详情 |
+| GET | `/api/history/stream/rulers?from=&to=&polityId=` | 帝/王人物条（仅 `onTimeline`；含西周约年） |
+| GET | `/api/history/stream/figures?from=&to=&polityId=` | 非帝人物（卿相/武将/学人/文人；不上轴） |
+| GET | `/api/history/stream/reigns?from=&to=&polityId=&rulerId=` | 年号段（先秦无年号） |
+| GET | `/api/history/stream/lineages?polityId=` | 谱系（夏商等有名无可靠绝对年，不上轴） |
+| GET | `/api/history/stream/year?y=` | **选中年信息包**：时局 / 大事 / 人物 / 出典挂件 / 在位 / 年号 / 邻近钩子 |
 
 ### `/api/history/events` 字段要点
 
@@ -98,6 +110,20 @@ server {
 - 同日排序：`importance` 降序，再 `year` 升序
 - 无数据的日期返回 `[]`；未知 `eventId` 返回 404
 - 网页检测页：`/vault/q/2026/history-today/hub.html`
+
+### `/api/history/stream/*` 字段要点
+
+- **与历史上的今天完全分离**：数据在 `content/history/stream/`，不读 `days/`
+- 年份：公元整数，公元前为负；`from`/`to` 闭区间
+- 政权：`id,name,shortName,fromYear,toYear,tier,axis,groupId,lane,capital,sort,uncertain,note`
+- 事件：`eventId,year,endYear?,title,summary?,description?,kind`（`battle`/`politics`/`culture`）,`polityIds[],importance,tags[],idioms[]`
+- 人物：`id,name,personalName?,fromYear,toYear,polityId,sort,note?,uncertain?,yearPrecision?,onTimeline?`（`rulers/`）
+- 非帝人物：`id,name,role,fromYear,toYear,polityId?,note?`（`figures/`；活跃窗，不上轴）
+- 年号：`id,name,fromYear,toYear,rulerId,polityId,sort,note?`（`reigns/`；先秦不适用）
+- 谱系：`id,name,personalName?,polityId,sort,note?`（`lineages/`；夏商世系）
+- 浏览页（深层入口）：`/vault/q/2026/history-stream/hub.html`（`/history/stream.html` 会跳转至此）
+- UI：时间轴 + 选中年 Year Pack（`?year=`）；主次为时局/大事 → 本年人物/出典 → 在位/年号 → 谱系
+- 设计见 `docs/09_历史功能模块.md`、`docs/10_历史源流_中国朝代设计.md`
 
 ### `/api/catalog` 字段要点
 

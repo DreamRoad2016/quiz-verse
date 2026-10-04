@@ -1,0 +1,592 @@
+[
+  {
+    "eventId": "HS-5D-0907-LIANG",
+    "year": 907,
+    "title": "朱温代唐，后梁建立",
+    "summary": "朱温废唐哀帝，自立为帝，五代开端。",
+    "description": "公元907年，朱温受禅称帝，国号梁，史称后梁。唐朝正式结束，北方进入五代更迭，南方十国割据并立。",
+    "kind": "politics",
+    "polityIds": [
+      "later_liang"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "改朝"
+    ]
+  },
+  {
+    "eventId": "HS-LIAO-0916-FOUND",
+    "year": 916,
+    "title": "耶律阿保机建国，辽立",
+    "summary": "契丹可汗阿保机称帝，建立契丹国，后改国号辽。",
+    "description": "公元916年，耶律阿保机即皇帝位，国号契丹。此后与五代、北宋长期并立，成为北方强权。",
+    "kind": "politics",
+    "polityIds": [
+      "liao"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-5D-0923-LTANG",
+    "year": 923,
+    "title": "李存勖灭后梁，建后唐",
+    "summary": "庄宗入汴梁，后梁亡，后唐统一北方。",
+    "description": "公元923年，李存勖称帝，国号唐，史称后唐，同年攻灭后梁。五代政权再次更迭。",
+    "kind": "politics",
+    "polityIds": [
+      "later_tang",
+      "later_liang"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-5D-0936-LJIN",
+    "year": 936,
+    "title": "石敬瑭引契丹建后晋",
+    "summary": "石敬瑭以燕云十六州换取契丹援立，后晋立国。",
+    "description": "公元936年，石敬瑭在契丹支持下灭后唐称帝，国号晋。割让燕云十六州对后世宋辽对峙影响深远。",
+    "kind": "politics",
+    "polityIds": [
+      "later_jin",
+      "later_tang",
+      "liao"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-5D-0951-ZHOU",
+    "year": 951,
+    "title": "郭威建后周",
+    "summary": "郭威代汉，后周建立，为宋统一北方奠基。",
+    "description": "公元951年，郭威受禅称帝，国号周，史称后周。世宗柴荣改革整军，为北宋统一创造条件。",
+    "kind": "politics",
+    "polityIds": [
+      "later_zhou",
+      "later_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-NS-0960-CHENQIAO",
+    "year": 960,
+    "title": "陈桥兵变，北宋建立",
+    "summary": "赵匡胤黄袍加身，代周建宋，结束五代。",
+    "description": "公元960年，赵匡胤在陈桥驿发动兵变，受禅称帝，国号宋。此后逐步削平割据，重建中央集权。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song",
+      "later_zhou"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "改朝"
+    ],
+    "idioms": [
+      "黄袍加身"
+    ]
+  },
+  {
+    "eventId": "HS-NS-0961-BEIJIU",
+    "year": 961,
+    "title": "杯酒释兵权",
+    "summary": "太祖收宿将兵权，以文驭武的北宋立国术成型。",
+    "description": "建隆二年赵匡胤宴请石守信等，劝解兵权、多买田宅。此后以文臣知州、强干弱枝，五代骄兵局面被压住。",
+    "kind": "politics",
+    "polityIds": ["northern_song"],
+    "importance": 5,
+    "tags": ["政治"],
+    "idioms": ["杯酒释兵权"]
+  },
+  {
+    "eventId": "HS-NS-1004-CHANYUAN",
+    "year": 1004,
+    "title": "澶渊之役",
+    "summary": "辽军南下至澶州，寇准力促真宗亲征，宋辽对峙于黄河。",
+    "description": "景德元年萧太后、辽圣宗攻至澶州。真宗渡河，宋军士气稍振。次年和议，见1005澶渊之盟。此条记战事本身。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "liao"],
+    "importance": 4,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-NS-1005-CHANYUAN",
+    "year": 1005,
+    "title": "澶渊之盟",
+    "summary": "宋真宗与辽圣宗订盟，宋辽罢兵互市。",
+    "description": "公元1005年，宋辽在澶州议和，宋岁赐辽银绢，双方约为兄弟之国。此后百余年宋辽大体和平，亦引争议。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song",
+      "liao"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "外交"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1022-RENZONG",
+    "year": 1022,
+    "title": "宋仁宗即位",
+    "summary": "真宗卒，仁宗即位，刘太后听政，后开启庆历、嘉祐局面。",
+    "description": "乾兴元年真宗崩，赵祯即位。明道二年亲政。在位最久，庆历新政与宋夏和战均在此朝。",
+    "kind": "politics",
+    "polityIds": ["northern_song"],
+    "importance": 3,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-WX-1038-EMP",
+    "year": 1038,
+    "title": "李元昊称帝，西夏立国",
+    "summary": "党项首领李元昊称帝，国号大夏，与宋辽形成三足鼎立。",
+    "description": "公元1038年，李元昊称帝，定都兴庆。西夏与北宋、辽长期战争与和议并存，直至1227年亡于蒙古。",
+    "kind": "politics",
+    "polityIds": [
+      "western_xia"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1041-HAOSHUI",
+    "year": 1041,
+    "title": "好水川之战",
+    "summary": "西夏伏击宋军于好水川，任福等战死，宋陕西大挫。",
+    "description": "庆历元年元昊诱宋军入好水川。任福轻进中伏。与三川口、定川寨同为宋夏大战，促成日后和议。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "western_xia"],
+    "importance": 4,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-NS-1043-QINGLI",
+    "year": 1043,
+    "title": "庆历新政",
+    "summary": "范仲淹等推行改革，整顿吏治与边防。",
+    "description": "宋仁宗庆历年间，范仲淹等上《十事疏》，推行新政，因阻力过大而中止，但影响北宋政治思潮。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "改革"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1044-HEYI",
+    "year": 1044,
+    "title": "庆历和议",
+    "summary": "宋夏议和，元昊称臣，宋赐岁币，陕西战事暂缓。",
+    "description": "庆历四年宋夏达成和议：元昊对宋称臣，宋岁赐银绢茶。三川口、好水川等战后双方均难再大打，鼎立格局稳定一段时间。",
+    "kind": "politics",
+    "polityIds": ["northern_song", "western_xia"],
+    "importance": 3,
+    "tags": ["政治", "外交"]
+  },
+  {
+    "eventId": "HS-NS-1069-REFORM",
+    "year": 1069,
+    "title": "王安石变法",
+    "summary": "神宗用王安石，颁行青苗、免役、市易等新法。",
+    "description": "公元1069年起，王安石主持变法，意图富国强兵。新法引发党争，元祐更张后部分废罢，影响深远。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "改革"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1100-HUIZONG",
+    "year": 1100,
+    "title": "宋徽宗即位",
+    "summary": "哲宗卒，端王赵佶即位，蔡京等随后柄政。",
+    "description": "元符三年徽宗即位。崇宁以后「丰亨豫大」，花石纲与党争并行，至宣和、靖康而北宋崩。",
+    "kind": "politics",
+    "polityIds": ["northern_song"],
+    "importance": 3,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-NS-1084-ZIZHI",
+    "year": 1084,
+    "title": "《资治通鉴》成书",
+    "summary": "司马光进呈《资治通鉴》，编年通史自战国至五代。",
+    "description": "元丰七年书成。神宗赐名「资治通鉴」。与王安石变法同代而立场不同，是宋代史学的高峰。",
+    "kind": "culture",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 4,
+    "tags": [
+      "文献",
+      "文化"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1086-YUANYOU",
+    "year": 1086,
+    "title": "元祐更化",
+    "summary": "哲宗即位，高太后听政，司马光废新法。",
+    "description": "元祐元年神宗已卒，太皇太后用司马光、吕公著，罢青苗、免役等。新党旧党之争转入党锢化，至绍圣再翻盘。",
+    "kind": "politics",
+    "polityIds": ["northern_song"],
+    "importance": 3,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-JIN-1115-FOUND",
+    "year": 1115,
+    "title": "完颜阿骨打建金",
+    "summary": "女真完颜阿骨打称帝，国号金，后灭辽、侵宋。",
+    "description": "公元1115年，完颜阿骨打建立金朝。1125灭辽，1127陷汴京，深刻改写宋金关系与南北格局。",
+    "kind": "politics",
+    "polityIds": [
+      "jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-LIAO-1125-FALL",
+    "year": 1125,
+    "title": "金灭辽",
+    "summary": "金军俘天祚帝，辽亡。",
+    "description": "公元1125年，金朝攻灭辽国。北方格局由辽金更替，金成为南宋主要对手。",
+    "kind": "politics",
+    "polityIds": [
+      "liao",
+      "jin"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1126-KAIFENG",
+    "year": 1126,
+    "title": "东京保卫战",
+    "summary": "金军围开封，李纲等组织城守，宋钦宗求和，汴京暂得保全。",
+    "description": "靖康元年金军两度围汴。李纲主战，城防一度稳住。和议后李纲罢，次年金军再至，遂有靖康之变。",
+    "kind": "battle",
+    "polityIds": [
+      "northern_song",
+      "jin"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "宋金"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1127-JINGKANG",
+    "year": 1127,
+    "title": "靖康之变",
+    "summary": "金军破汴京，虏徽钦二帝，北宋灭亡。",
+    "description": "公元1127年，金军攻破开封，俘虏宋徽宗、宋钦宗及宗室大臣北去。赵构南渡，南宋开始。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song",
+      "jin",
+      "southern_song"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1130-HUANGTIANDANG",
+    "year": 1130,
+    "title": "黄天荡之战",
+    "summary": "韩世忠截金兀术于江上，金军北归受阻。",
+    "description": "建炎四年韩世忠以八千人困金军于黄天荡四十余日。未能全歼，但稳定江淮，为后来岳飞北伐保存东南。与郾城条不重复。",
+    "kind": "battle",
+    "polityIds": ["southern_song", "jin"],
+    "importance": 4,
+    "tags": ["战争", "宋金"]
+  },
+  {
+    "eventId": "HS-SS-1140-YANCHENG",
+    "year": 1140,
+    "title": "郾城之战",
+    "summary": "岳飞破金兀术于郾城，乘胜朱仙镇，上表有直捣黄龙之志。",
+    "description": "绍兴十年岳家军在郾城以步制骑，破拐子马。岳飞有「直捣黄龙」之语。旋以十二道金牌班师。次年绍兴和议，再明年遇害。",
+    "kind": "battle",
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "宋金"
+    ],
+    "idioms": [
+      "直捣黄龙"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1141-SHAOXING",
+    "year": 1141,
+    "title": "绍兴和议",
+    "summary": "宋金议和，划淮为界，称臣纳贡。",
+    "description": "公元1141年，宋金达成绍兴和议，南宋向金称臣，割让淮河以北，每年纳银绢。宋金对峙格局长期化。",
+    "kind": "politics",
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "外交"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1142-YUE",
+    "year": 1142,
+    "title": "岳飞遇害",
+    "summary": "抗金名将岳飞以「莫须有」罪名被害。",
+    "description": "公元1142年，岳飞在临安遇害。其与岳家军抗金事迹成为后世忠勇象征，与绍兴和议背景紧密相连。",
+    "kind": "politics",
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "人物"
+    ],
+    "idioms": [
+      "莫须有"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-1153-YANJING",
+    "year": 1153,
+    "title": "海陵迁都燕京",
+    "summary": "完颜亮迁都中都（燕京），金朝重心转入汉地。",
+    "description": "贞元元年金以燕京为中都。海陵想灭宋统一，至1161采石败死。迁都标志女真政权进一步中原化。",
+    "kind": "politics",
+    "polityIds": ["jin"],
+    "importance": 3,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-SS-1161-CAISHI",
+    "year": 1161,
+    "title": "采石之战",
+    "summary": "虞允文指挥宋军在采石矶击退金海陵王渡江，金内乱北还。",
+    "description": "完颜亮大举南侵，宋军采石江防危急。虞允文以文臣督战，金军渡江失败，亮旋被部下所杀。南宋转危为安。",
+    "kind": "battle",
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "宋金"
+    ]
+  },
+  {
+    "eventId": "HS-MON-1211-YEHU",
+    "year": 1211,
+    "title": "蒙古伐金",
+    "summary": "成吉思汗攻金，野狐岭大破金军，河北震动。",
+    "description": "太祖六年蒙古南下，会河堡、野狐岭等役金军主力受损。金被迫迁都汴京（1214），中原进入蒙金长期战争。",
+    "kind": "battle",
+    "polityIds": ["jin", "mongol_empire"],
+    "importance": 4,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-SS-1189-CHANWEI",
+    "year": 1189,
+    "title": "孝宗内禅",
+    "summary": "孝宗禅位于光宗，南宋中期权力交接。",
+    "description": "淳熙十六年孝宗禅位。光宗后与太上皇失和，至绍熙内禅于宁宗。此条记孝宗退位。",
+    "kind": "politics",
+    "polityIds": ["southern_song"],
+    "importance": 3,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-SS-1206-KAIXI",
+    "year": 1206,
+    "title": "开禧北伐",
+    "summary": "韩侂胄主持北伐金朝，师出无功，次年被杀，宋金再和。",
+    "description": "开禧二年宋军北进，金军反击。吴曦在蜀叛宋。北伐失败导致嘉定和议。此条记开战之年。",
+    "kind": "politics",
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治",
+      "宋金"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-1234-FALL",
+    "year": 1234,
+    "title": "蒙古灭金",
+    "summary": "蔡州陷落，金哀宗自缢，金亡。",
+    "description": "公元1234年，蒙古与南宋联军攻陷蔡州，金朝灭亡。此后蒙古南侵压力主要指向南宋。",
+    "kind": "politics",
+    "polityIds": [
+      "jin",
+      "mongol_empire",
+      "southern_song"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1273-XIANGYANG",
+    "year": 1273,
+    "title": "襄阳陷落",
+    "summary": "元军经长期围攻破襄阳，南宋防线崩溃。",
+    "description": "公元1273年，元军攻破襄阳、樊城。此战被视为南宋抗蒙关键节点，随后元军顺江而下。",
+    "kind": "battle",
+    "polityIds": [
+      "southern_song",
+      "yuan"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-NS-0986-YONGXI",
+    "year": 986,
+    "title": "雍熙北伐",
+    "summary": "宋三路攻辽，东路军岐沟关大败，此后对辽转守。",
+    "description": "公元986年（雍熙三年），太宗再攻幽燕。曹彬等在岐沟关失利，杨业被俘殉国。北宋收复燕云的大规模进攻基本结束。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "liao"],
+    "importance": 4,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-NS-1120-FANGA",
+    "year": 1120,
+    "title": "方腊起义",
+    "summary": "睦州方腊起事，震动东南，旋被镇压。",
+    "description": "宣和二年方腊在睦州起兵，一度攻占多州。童贯率军镇压。起义暴露北宋东南赋役与花石纲之弊，距靖康之变仅数年。",
+    "kind": "politics",
+    "polityIds": ["northern_song"],
+    "importance": 3,
+    "tags": ["社会", "战争"]
+  },
+  {
+    "eventId": "HS-SS-1164-LONGXING",
+    "year": 1164,
+    "title": "隆兴和议",
+    "summary": "宋金再定和约，改君臣为叔侄，岁币略减。",
+    "description": "隆兴二年宋金议和：金宋为叔侄之国，岁币减十万，疆界大体仍绍兴之旧。此后数十年相对稳定，至开禧北伐再破。",
+    "kind": "politics",
+    "polityIds": ["southern_song", "jin"],
+    "importance": 4,
+    "tags": ["政治", "外交"]
+  },
+  {
+    "eventId": "HS-SS-1179-BAILU",
+    "year": 1179,
+    "title": "朱熹兴复白鹿洞书院",
+    "summary": "朱熹知南康军，重建白鹿洞，理学讲学制度化。",
+    "description": "淳熙六年。揭示学规，后来书院取法。人物窗见朱熹条。此条只记书院，不写庆元党禁。",
+    "kind": "culture",
+    "polityIds": ["southern_song"],
+    "importance": 3,
+    "tags": ["文化"]
+  },
+  {
+    "eventId": "HS-XIA-1227-FALL",
+    "year": 1227,
+    "title": "蒙古灭西夏",
+    "summary": "成吉思汗病卒前后，西夏国亡。",
+    "description": "公元1227年蒙古攻破中兴府，西夏亡。西夏立国约190年，与辽、金、宋并立的格局结束，蒙古转而全力经略金与宋。",
+    "kind": "politics",
+    "polityIds": ["western_xia", "mongol_empire"],
+    "importance": 4,
+    "tags": ["战争", "亡国"]
+  },
+  {
+    "eventId": "HS-MON-1253-DALI",
+    "year": 1253,
+    "title": "蒙古灭大理",
+    "summary": "忽必烈率军入云南，大理国亡。",
+    "description": "蒙哥命忽必烈、兀良合台绕道吐蕃攻大理。段氏降，云南纳入蒙古经略，形成对南宋的大包围。",
+    "kind": "battle",
+    "polityIds": ["mongol_empire"],
+    "importance": 4,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-SS-1259-DIAOYU",
+    "year": 1259,
+    "title": "钓鱼城之战",
+    "summary": "宋军坚守合州钓鱼城，蒙哥汗卒于军前。",
+    "description": "开庆元年蒙哥攻四川，顿兵钓鱼城。蒙哥死，蒙古西路军撤退，忽必烈与阿里不哥争位，南宋获得喘息。",
+    "kind": "battle",
+    "polityIds": ["southern_song", "mongol_empire"],
+    "importance": 4,
+    "tags": ["战争"]
+  },
+  {
+    "eventId": "HS-SS-1279-YASHAN",
+    "year": 1279,
+    "title": "崖山海战，南宋亡",
+    "summary": "元军于崖山击败宋军，陆秀夫负幼主投海。",
+    "description": "公元1279年，崖山海战后南宋覆灭。中国再次由北方政权统一，元成为下一个大一统王朝。",
+    "kind": "battle",
+    "polityIds": [
+      "southern_song",
+      "yuan"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "亡国"
+    ]
+  }
+]

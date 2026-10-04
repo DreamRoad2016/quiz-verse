@@ -1,0 +1,107 @@
+[
+  {
+    "id": "yuan-shizu",
+    "name": "世祖",
+    "personalName": "忽必烈",
+    "fromYear": 1271,
+    "toYear": 1294,
+    "polityId": "yuan",
+    "sort": 1,
+    "note": "1260即大汗位；1271改国号大元。"
+  },
+  {
+    "id": "yuan-chengzong",
+    "name": "成宗",
+    "personalName": "铁穆耳",
+    "fromYear": 1294,
+    "toYear": 1307,
+    "polityId": "yuan",
+    "sort": 2
+  },
+  {
+    "id": "yuan-wuzong",
+    "name": "武宗",
+    "personalName": "海山",
+    "fromYear": 1307,
+    "toYear": 1311,
+    "polityId": "yuan",
+    "sort": 3
+  },
+  {
+    "id": "yuan-renzong",
+    "name": "仁宗",
+    "personalName": "爱育黎拔力八达",
+    "fromYear": 1311,
+    "toYear": 1320,
+    "polityId": "yuan",
+    "sort": 4
+  },
+  {
+    "id": "yuan-yingzong",
+    "name": "英宗",
+    "personalName": "硕德八剌",
+    "fromYear": 1320,
+    "toYear": 1323,
+    "polityId": "yuan",
+    "sort": 5
+  },
+  {
+    "id": "yuan-taiding",
+    "name": "泰定帝",
+    "personalName": "也孙铁木儿",
+    "fromYear": 1323,
+    "toYear": 1328,
+    "polityId": "yuan",
+    "sort": 6
+  },
+  {
+    "id": "yuan-tianshun",
+    "name": "天顺帝",
+    "personalName": "阿速吉八",
+    "fromYear": 1328,
+    "toYear": 1328,
+    "polityId": "yuan",
+    "sort": 7,
+    "note": "1328年在位极短；两都之战前后皇位更迭从略。"
+  },
+  {
+    "id": "yuan-wenzong",
+    "name": "文宗",
+    "personalName": "图帖睦尔",
+    "fromYear": 1328,
+    "toYear": 1332,
+    "polityId": "yuan",
+    "sort": 8,
+    "note": "1328–1332间与明宗、宁宗交替，年表合并呈现。"
+  },
+  {
+    "id": "yuan-mingzong",
+    "name": "明宗",
+    "personalName": "和世㻋",
+    "fromYear": 1329,
+    "toYear": 1329,
+    "polityId": "yuan",
+    "sort": 9,
+    "note": "1329年短暂即位。"
+  },
+  {
+    "id": "yuan-ningzong",
+    "name": "宁宗",
+    "personalName": "懿璘质班",
+    "fromYear": 1332,
+    "toYear": 1332,
+    "polityId": "yuan",
+    "sort": 10,
+    "note": "1332年在位不足一年。"
+  },
+  {
+    "id": "yuan-shundi",
+    "name": "顺帝",
+    "personalName": "妥懽帖睦尔",
+    "fromYear": 1333,
+    "toYear": 1368,
+    "polityId": "yuan",
+    "sort": 11,
+    "note": "1368北遁，元亡于中原。"
+  }
+]

@@ -1,0 +1,250 @@
+[
+  {
+    "id": "liao-taizu",
+    "name": "太祖",
+    "personalName": "耶律阿保机",
+    "fromYear": 916,
+    "toYear": 926,
+    "polityId": "liao",
+    "sort": 1
+  },
+  {
+    "id": "liao-taizong",
+    "name": "太宗",
+    "personalName": "耶律德光",
+    "fromYear": 926,
+    "toYear": 947,
+    "polityId": "liao",
+    "sort": 2
+  },
+  {
+    "id": "liao-shizong",
+    "name": "世宗",
+    "personalName": "耶律阮",
+    "fromYear": 947,
+    "toYear": 951,
+    "polityId": "liao",
+    "sort": 3
+  },
+  {
+    "id": "liao-muzong",
+    "name": "穆宗",
+    "personalName": "耶律璟",
+    "fromYear": 951,
+    "toYear": 969,
+    "polityId": "liao",
+    "sort": 4
+  },
+  {
+    "id": "liao-jingzong",
+    "name": "景宗",
+    "personalName": "耶律贤",
+    "fromYear": 969,
+    "toYear": 982,
+    "polityId": "liao",
+    "sort": 5
+  },
+  {
+    "id": "liao-shengzong",
+    "name": "圣宗",
+    "personalName": "耶律隆绪",
+    "fromYear": 982,
+    "toYear": 1031,
+    "polityId": "liao",
+    "sort": 6
+  },
+  {
+    "id": "liao-xingzong",
+    "name": "兴宗",
+    "personalName": "耶律宗真",
+    "fromYear": 1031,
+    "toYear": 1055,
+    "polityId": "liao",
+    "sort": 7
+  },
+  {
+    "id": "liao-daozong",
+    "name": "道宗",
+    "personalName": "耶律洪基",
+    "fromYear": 1055,
+    "toYear": 1101,
+    "polityId": "liao",
+    "sort": 8
+  },
+  {
+    "id": "liao-tianzuodi",
+    "name": "天祚帝",
+    "personalName": "耶律延禧",
+    "fromYear": 1101,
+    "toYear": 1125,
+    "polityId": "liao",
+    "sort": 9,
+    "note": "1125为金所灭。"
+  },
+  {
+    "id": "wx-jingzong",
+    "name": "景宗",
+    "personalName": "李元昊",
+    "fromYear": 1038,
+    "toYear": 1048,
+    "polityId": "western_xia",
+    "sort": 20,
+    "note": "1038称帝，国号大夏。"
+  },
+  {
+    "id": "wx-yizong",
+    "name": "毅宗",
+    "personalName": "李谅祚",
+    "fromYear": 1048,
+    "toYear": 1067,
+    "polityId": "western_xia",
+    "sort": 21
+  },
+  {
+    "id": "wx-huizong",
+    "name": "惠宗",
+    "personalName": "李秉常",
+    "fromYear": 1067,
+    "toYear": 1086,
+    "polityId": "western_xia",
+    "sort": 22
+  },
+  {
+    "id": "wx-chongzong",
+    "name": "崇宗",
+    "personalName": "李乾顺",
+    "fromYear": 1086,
+    "toYear": 1139,
+    "polityId": "western_xia",
+    "sort": 23
+  },
+  {
+    "id": "wx-renzong",
+    "name": "仁宗",
+    "personalName": "李仁孝",
+    "fromYear": 1139,
+    "toYear": 1193,
+    "polityId": "western_xia",
+    "sort": 24
+  },
+  {
+    "id": "wx-huanzong",
+    "name": "桓宗",
+    "personalName": "李纯佑",
+    "fromYear": 1193,
+    "toYear": 1206,
+    "polityId": "western_xia",
+    "sort": 25,
+    "note": "1193后诸帝年表从略，此处列末四帝。"
+  },
+  {
+    "id": "wx-xiangzong",
+    "name": "襄宗",
+    "personalName": "李安全",
+    "fromYear": 1206,
+    "toYear": 1211,
+    "polityId": "western_xia",
+    "sort": 26
+  },
+  {
+    "id": "wx-shenzong",
+    "name": "神宗",
+    "personalName": "李遵顼",
+    "fromYear": 1211,
+    "toYear": 1223,
+    "polityId": "western_xia",
+    "sort": 27
+  },
+  {
+    "id": "wx-modi",
+    "name": "末帝",
+    "personalName": "李睍",
+    "fromYear": 1223,
+    "toYear": 1227,
+    "polityId": "western_xia",
+    "sort": 28,
+    "note": "1227为蒙古所灭。"
+  },
+  {
+    "id": "jin-taizu",
+    "name": "太祖",
+    "personalName": "完颜阿骨打",
+    "fromYear": 1115,
+    "toYear": 1123,
+    "polityId": "jin",
+    "sort": 30
+  },
+  {
+    "id": "jin-taizong",
+    "name": "太宗",
+    "personalName": "完颜晟",
+    "fromYear": 1123,
+    "toYear": 1135,
+    "polityId": "jin",
+    "sort": 31
+  },
+  {
+    "id": "jin-xizong",
+    "name": "熙宗",
+    "personalName": "完颜亶",
+    "fromYear": 1135,
+    "toYear": 1149,
+    "polityId": "jin",
+    "sort": 32
+  },
+  {
+    "id": "jin-hailing",
+    "name": "海陵王",
+    "personalName": "完颜亮",
+    "fromYear": 1149,
+    "toYear": 1161,
+    "polityId": "jin",
+    "sort": 33
+  },
+  {
+    "id": "jin-shizong",
+    "name": "世宗",
+    "personalName": "完颜雍",
+    "fromYear": 1161,
+    "toYear": 1189,
+    "polityId": "jin",
+    "sort": 34
+  },
+  {
+    "id": "jin-zhangzong",
+    "name": "章宗",
+    "personalName": "完颜璟",
+    "fromYear": 1189,
+    "toYear": 1208,
+    "polityId": "jin",
+    "sort": 35
+  },
+  {
+    "id": "jin-weishaowang",
+    "name": "卫绍王",
+    "personalName": "完颜永济",
+    "fromYear": 1208,
+    "toYear": 1213,
+    "polityId": "jin",
+    "sort": 36
+  },
+  {
+    "id": "jin-xuanzong",
+    "name": "宣宗",
+    "personalName": "完颜珣",
+    "fromYear": 1213,
+    "toYear": 1223,
+    "polityId": "jin",
+    "sort": 37
+  },
+  {
+    "id": "jin-aizong",
+    "name": "哀宗",
+    "personalName": "完颜守绪",
+    "fromYear": 1223,
+    "toYear": 1234,
+    "polityId": "jin",
+    "sort": 38,
+    "note": "1234蔡州陷落，金亡。"
+  }
+]

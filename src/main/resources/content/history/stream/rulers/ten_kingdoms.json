@@ -1,0 +1,379 @@
+[
+  {
+    "id": "wu-yangxingmi",
+    "name": "太祖",
+    "personalName": "杨行密",
+    "fromYear": 902,
+    "toYear": 905,
+    "polityId": "wu_ten",
+    "sort": 1,
+    "note": "902封吴王。"
+  },
+  {
+    "id": "wu-yangwo",
+    "name": "烈宗",
+    "personalName": "杨渥",
+    "fromYear": 905,
+    "toYear": 908,
+    "polityId": "wu_ten",
+    "sort": 2
+  },
+  {
+    "id": "wu-yanglongyan",
+    "name": "高祖",
+    "personalName": "杨隆演",
+    "fromYear": 908,
+    "toYear": 920,
+    "polityId": "wu_ten",
+    "sort": 3
+  },
+  {
+    "id": "wu-yangpu",
+    "name": "睿帝",
+    "personalName": "杨溥",
+    "fromYear": 920,
+    "toYear": 937,
+    "polityId": "wu_ten",
+    "sort": 4
+  },
+  {
+    "id": "wy-qianliu",
+    "name": "武肃王",
+    "personalName": "钱镠",
+    "fromYear": 907,
+    "toYear": 932,
+    "polityId": "wuyue",
+    "sort": 10
+  },
+  {
+    "id": "wy-qianyuanguan",
+    "name": "文穆王",
+    "personalName": "钱元瓘",
+    "fromYear": 932,
+    "toYear": 941,
+    "polityId": "wuyue",
+    "sort": 11
+  },
+  {
+    "id": "wy-qianhongzuo",
+    "name": "忠献王",
+    "personalName": "钱弘佐",
+    "fromYear": 941,
+    "toYear": 947,
+    "polityId": "wuyue",
+    "sort": 12
+  },
+  {
+    "id": "wy-qianhongzong",
+    "name": "忠逊王",
+    "personalName": "钱弘倧",
+    "fromYear": 947,
+    "toYear": 947,
+    "polityId": "wuyue",
+    "sort": 13
+  },
+  {
+    "id": "wy-qianhongchu",
+    "name": "忠懿王",
+    "personalName": "钱俶",
+    "fromYear": 947,
+    "toYear": 978,
+    "polityId": "wuyue",
+    "sort": 14,
+    "note": "钱弘俶。"
+  },
+  {
+    "id": "fs-wangjian",
+    "name": "高祖",
+    "personalName": "王建",
+    "fromYear": 907,
+    "toYear": 918,
+    "polityId": "former_shu",
+    "sort": 20
+  },
+  {
+    "id": "fs-wangyan",
+    "name": "后主",
+    "personalName": "王衍",
+    "fromYear": 918,
+    "toYear": 925,
+    "polityId": "former_shu",
+    "sort": 21
+  },
+  {
+    "id": "chu-mayin",
+    "name": "武穆王",
+    "personalName": "马殷",
+    "fromYear": 907,
+    "toYear": 930,
+    "polityId": "chu_ten",
+    "sort": 30
+  },
+  {
+    "id": "chu-maxisheng",
+    "name": "衡阳王",
+    "personalName": "马希声",
+    "fromYear": 930,
+    "toYear": 932,
+    "polityId": "chu_ten",
+    "sort": 31
+  },
+  {
+    "id": "chu-maxifan",
+    "name": "文昭王",
+    "personalName": "马希范",
+    "fromYear": 932,
+    "toYear": 947,
+    "polityId": "chu_ten",
+    "sort": 32
+  },
+  {
+    "id": "chu-maxiguang",
+    "name": "废王",
+    "personalName": "马希广",
+    "fromYear": 947,
+    "toYear": 950,
+    "polityId": "chu_ten",
+    "sort": 33
+  },
+  {
+    "id": "chu-maxie",
+    "name": "恭孝王",
+    "personalName": "马希萼",
+    "fromYear": 950,
+    "toYear": 951,
+    "polityId": "chu_ten",
+    "sort": 34
+  },
+  {
+    "id": "chu-maxichong",
+    "name": "马希崇",
+    "personalName": "马希崇",
+    "fromYear": 951,
+    "toYear": 951,
+    "polityId": "chu_ten",
+    "sort": 35
+  },
+  {
+    "id": "min-wangshenzhi",
+    "name": "忠懿王",
+    "personalName": "王审知",
+    "fromYear": 909,
+    "toYear": 925,
+    "polityId": "min",
+    "sort": 40,
+    "note": "审知奉梁唐正朔。"
+  },
+  {
+    "id": "min-wangyanhan",
+    "name": "嗣王",
+    "personalName": "王延翰",
+    "fromYear": 925,
+    "toYear": 926,
+    "polityId": "min",
+    "sort": 41
+  },
+  {
+    "id": "min-wangyanjun",
+    "name": "惠宗",
+    "personalName": "王延钧",
+    "fromYear": 926,
+    "toYear": 935,
+    "polityId": "min",
+    "sort": 42,
+    "note": "后名鏻。"
+  },
+  {
+    "id": "min-wangjipeng",
+    "name": "康宗",
+    "personalName": "王继鹏",
+    "fromYear": 935,
+    "toYear": 939,
+    "polityId": "min",
+    "sort": 43
+  },
+  {
+    "id": "min-wangyanxi",
+    "name": "景宗",
+    "personalName": "王延羲",
+    "fromYear": 939,
+    "toYear": 944,
+    "polityId": "min",
+    "sort": 44
+  },
+  {
+    "id": "min-wangyanzheng",
+    "name": "天德帝",
+    "personalName": "王延政",
+    "fromYear": 943,
+    "toYear": 945,
+    "polityId": "min",
+    "sort": 45,
+    "note": "称殷，945降南唐。"
+  },
+  {
+    "id": "sh-liuyan",
+    "name": "高祖",
+    "personalName": "刘龑",
+    "fromYear": 917,
+    "toYear": 942,
+    "polityId": "southern_han",
+    "sort": 50
+  },
+  {
+    "id": "sh-liubin",
+    "name": "殇帝",
+    "personalName": "刘玢",
+    "fromYear": 942,
+    "toYear": 943,
+    "polityId": "southern_han",
+    "sort": 51
+  },
+  {
+    "id": "sh-liusheng",
+    "name": "中宗",
+    "personalName": "刘晟",
+    "fromYear": 943,
+    "toYear": 958,
+    "polityId": "southern_han",
+    "sort": 52
+  },
+  {
+    "id": "sh-liuchang",
+    "name": "后主",
+    "personalName": "刘鋹",
+    "fromYear": 958,
+    "toYear": 971,
+    "polityId": "southern_han",
+    "sort": 53
+  },
+  {
+    "id": "jn-gaojixing",
+    "name": "武信王",
+    "personalName": "高季兴",
+    "fromYear": 924,
+    "toYear": 929,
+    "polityId": "jingnan",
+    "sort": 60
+  },
+  {
+    "id": "jn-gaoconghui",
+    "name": "文献王",
+    "personalName": "高从诲",
+    "fromYear": 929,
+    "toYear": 948,
+    "polityId": "jingnan",
+    "sort": 61
+  },
+  {
+    "id": "jn-gaobaorong",
+    "name": "贞懿王",
+    "personalName": "高保融",
+    "fromYear": 948,
+    "toYear": 960,
+    "polityId": "jingnan",
+    "sort": 62
+  },
+  {
+    "id": "jn-gaobaoxu",
+    "name": "贞安王",
+    "personalName": "高保勗",
+    "fromYear": 960,
+    "toYear": 962,
+    "polityId": "jingnan",
+    "sort": 63
+  },
+  {
+    "id": "jn-gaojichong",
+    "name": "高继冲",
+    "personalName": "高继冲",
+    "fromYear": 962,
+    "toYear": 963,
+    "polityId": "jingnan",
+    "sort": 64
+  },
+  {
+    "id": "ls-mengzhixiang",
+    "name": "高祖",
+    "personalName": "孟知祥",
+    "fromYear": 934,
+    "toYear": 934,
+    "polityId": "later_shu",
+    "sort": 70
+  },
+  {
+    "id": "ls-mengchang",
+    "name": "后主",
+    "personalName": "孟昶",
+    "fromYear": 934,
+    "toYear": 965,
+    "polityId": "later_shu",
+    "sort": 71
+  },
+  {
+    "id": "st-liezu",
+    "name": "烈祖",
+    "personalName": "李昪",
+    "fromYear": 937,
+    "toYear": 943,
+    "polityId": "southern_tang",
+    "sort": 80,
+    "note": "徐知诰，改姓名李昪。"
+  },
+  {
+    "id": "st-zhongzhu",
+    "name": "元宗",
+    "personalName": "李璟",
+    "fromYear": 943,
+    "toYear": 961,
+    "polityId": "southern_tang",
+    "sort": 81,
+    "note": "中主；教材常称李璟。"
+  },
+  {
+    "id": "st-houzhu",
+    "name": "后主",
+    "personalName": "李煜",
+    "fromYear": 961,
+    "toYear": 975,
+    "polityId": "southern_tang",
+    "sort": 82
+  },
+  {
+    "id": "nh-liuchong",
+    "name": "世祖",
+    "personalName": "刘崇",
+    "fromYear": 951,
+    "toYear": 954,
+    "polityId": "northern_han",
+    "sort": 90,
+    "note": "亦作刘旻。"
+  },
+  {
+    "id": "nh-liuchengjun",
+    "name": "睿宗",
+    "personalName": "刘承钧",
+    "fromYear": 954,
+    "toYear": 968,
+    "polityId": "northern_han",
+    "sort": 91
+  },
+  {
+    "id": "nh-liujien",
+    "name": "少主",
+    "personalName": "刘继恩",
+    "fromYear": 968,
+    "toYear": 968,
+    "polityId": "northern_han",
+    "sort": 92
+  },
+  {
+    "id": "nh-liujiyuan",
+    "name": "英武帝",
+    "personalName": "刘继元",
+    "fromYear": 968,
+    "toYear": 979,
+    "polityId": "northern_han",
+    "sort": 93
+  }
+]

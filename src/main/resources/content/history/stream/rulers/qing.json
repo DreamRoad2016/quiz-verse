@@ -1,0 +1,124 @@
+[
+  {
+    "id": "hj_taizu",
+    "name": "太祖",
+    "personalName": "努尔哈赤",
+    "fromYear": 1616,
+    "toYear": 1626,
+    "polityId": "hou_jin",
+    "sort": 1,
+    "note": "1616建后金。"
+  },
+  {
+    "id": "hj_taizong",
+    "name": "太宗",
+    "personalName": "皇太极",
+    "fromYear": 1626,
+    "toYear": 1636,
+    "polityId": "hou_jin",
+    "sort": 2,
+    "note": "1636改国号清，见 qing_taizong。"
+  },
+  {
+    "id": "qing_taizong",
+    "name": "太宗",
+    "personalName": "皇太极",
+    "fromYear": 1636,
+    "toYear": 1643,
+    "polityId": "qing",
+    "sort": 10,
+    "note": "1636起国号大清；1643崩。"
+  },
+  {
+    "id": "qing_shizu",
+    "name": "世祖",
+    "personalName": "福临",
+    "fromYear": 1643,
+    "toYear": 1661,
+    "polityId": "qing",
+    "sort": 11
+  },
+  {
+    "id": "qing_shengzu",
+    "name": "圣祖",
+    "personalName": "玄烨",
+    "fromYear": 1661,
+    "toYear": 1722,
+    "polityId": "qing",
+    "sort": 12
+  },
+  {
+    "id": "qing_shizong",
+    "name": "世宗",
+    "personalName": "胤禛",
+    "fromYear": 1722,
+    "toYear": 1735,
+    "polityId": "qing",
+    "sort": 13
+  },
+  {
+    "id": "qing_gaozong",
+    "name": "高宗",
+    "personalName": "弘历",
+    "fromYear": 1735,
+    "toYear": 1796,
+    "polityId": "qing",
+    "sort": 14,
+    "note": "1796禅位后仍为太上皇至1799。"
+  },
+  {
+    "id": "qing_renzong",
+    "name": "仁宗",
+    "personalName": "颙琰",
+    "fromYear": 1796,
+    "toYear": 1820,
+    "polityId": "qing",
+    "sort": 15
+  },
+  {
+    "id": "qing_xuanzong",
+    "name": "宣宗",
+    "personalName": "旻宁",
+    "fromYear": 1820,
+    "toYear": 1850,
+    "polityId": "qing",
+    "sort": 16
+  },
+  {
+    "id": "qing_wenzong",
+    "name": "文宗",
+    "personalName": "奕詝",
+    "fromYear": 1850,
+    "toYear": 1861,
+    "polityId": "qing",
+    "sort": 17
+  },
+  {
+    "id": "qing_muzong",
+    "name": "穆宗",
+    "personalName": "载淳",
+    "fromYear": 1861,
+    "toYear": 1875,
+    "polityId": "qing",
+    "sort": 18
+  },
+  {
+    "id": "qing_dezong",
+    "name": "德宗",
+    "personalName": "载湉",
+    "fromYear": 1875,
+    "toYear": 1908,
+    "polityId": "qing",
+    "sort": 19
+  },
+  {
+    "id": "qing_xuantong",
+    "name": "宣统帝",
+    "personalName": "溥仪",
+    "fromYear": 1908,
+    "toYear": 1912,
+    "polityId": "qing",
+    "sort": 20,
+    "note": "1912退位，清亡。"
+  }
+]

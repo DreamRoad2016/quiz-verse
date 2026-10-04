@@ -1,0 +1,276 @@
+{
+  "ming": [
+    {
+      "id": "ming-hongwu",
+      "name": "洪武",
+      "fromYear": 1368,
+      "toYear": 1398,
+      "rulerId": "ming_taizu",
+      "polityId": "ming",
+      "sort": 10
+    },
+    {
+      "id": "ming-jianwen",
+      "name": "建文",
+      "fromYear": 1399,
+      "toYear": 1402,
+      "rulerId": "ming_jianwen",
+      "polityId": "ming",
+      "sort": 20
+    },
+    {
+      "id": "ming-yongle",
+      "name": "永乐",
+      "fromYear": 1403,
+      "toYear": 1424,
+      "rulerId": "ming_chengzu",
+      "polityId": "ming",
+      "sort": 30
+    },
+    {
+      "id": "ming-hongxi",
+      "name": "洪熙",
+      "fromYear": 1425,
+      "toYear": 1425,
+      "rulerId": "ming_renzong",
+      "polityId": "ming",
+      "sort": 40
+    },
+    {
+      "id": "ming-xuande",
+      "name": "宣德",
+      "fromYear": 1426,
+      "toYear": 1435,
+      "rulerId": "ming_xuanzong",
+      "polityId": "ming",
+      "sort": 50
+    },
+    {
+      "id": "ming-zhengtong",
+      "name": "正统",
+      "fromYear": 1436,
+      "toYear": 1449,
+      "rulerId": "ming_yingzong",
+      "polityId": "ming",
+      "sort": 60
+    },
+    {
+      "id": "ming-jingtai",
+      "name": "景泰",
+      "fromYear": 1450,
+      "toYear": 1457,
+      "rulerId": "ming_jingdi",
+      "polityId": "ming",
+      "sort": 70
+    },
+    {
+      "id": "ming-tianshun",
+      "name": "天顺",
+      "fromYear": 1457,
+      "toYear": 1464,
+      "rulerId": "ming_yingzong_restore",
+      "polityId": "ming",
+      "sort": 80
+    },
+    {
+      "id": "ming-chenghua",
+      "name": "成化",
+      "fromYear": 1465,
+      "toYear": 1487,
+      "rulerId": "ming_xianzong",
+      "polityId": "ming",
+      "sort": 90
+    },
+    {
+      "id": "ming-hongzhi",
+      "name": "弘治",
+      "fromYear": 1488,
+      "toYear": 1505,
+      "rulerId": "ming_xiaozong",
+      "polityId": "ming",
+      "sort": 100
+    },
+    {
+      "id": "ming-zhengde",
+      "name": "正德",
+      "fromYear": 1506,
+      "toYear": 1521,
+      "rulerId": "ming_wuzong",
+      "polityId": "ming",
+      "sort": 110
+    },
+    {
+      "id": "ming-jiajing",
+      "name": "嘉靖",
+      "fromYear": 1522,
+      "toYear": 1566,
+      "rulerId": "ming_shizong",
+      "polityId": "ming",
+      "sort": 120
+    },
+    {
+      "id": "ming-longqing",
+      "name": "隆庆",
+      "fromYear": 1567,
+      "toYear": 1572,
+      "rulerId": "ming_muzong",
+      "polityId": "ming",
+      "sort": 130
+    },
+    {
+      "id": "ming-wanli",
+      "name": "万历",
+      "fromYear": 1573,
+      "toYear": 1620,
+      "rulerId": "ming_shenzong",
+      "polityId": "ming",
+      "sort": 140
+    },
+    {
+      "id": "ming-taichang",
+      "name": "泰昌",
+      "fromYear": 1620,
+      "toYear": 1620,
+      "rulerId": "ming_guangzong",
+      "polityId": "ming",
+      "sort": 150
+    },
+    {
+      "id": "ming-tianqi",
+      "name": "天启",
+      "fromYear": 1621,
+      "toYear": 1627,
+      "rulerId": "ming_xizong",
+      "polityId": "ming",
+      "sort": 160
+    },
+    {
+      "id": "ming-chongzhen",
+      "name": "崇祯",
+      "fromYear": 1628,
+      "toYear": 1644,
+      "rulerId": "ming_sizong",
+      "polityId": "ming",
+      "sort": 170
+    }
+  ],
+  "qing": [
+    {
+      "id": "hj-tianming",
+      "name": "天命",
+      "fromYear": 1616,
+      "toYear": 1626,
+      "rulerId": "hj_taizu",
+      "polityId": "hou_jin",
+      "sort": 10
+    },
+    {
+      "id": "hj-tiancong",
+      "name": "天聪",
+      "fromYear": 1627,
+      "toYear": 1635,
+      "rulerId": "hj_taizong",
+      "polityId": "hou_jin",
+      "sort": 20
+    },
+    {
+      "id": "qing-chongde",
+      "name": "崇德",
+      "fromYear": 1636,
+      "toYear": 1643,
+      "rulerId": "qing_taizong",
+      "polityId": "qing",
+      "sort": 30
+    },
+    {
+      "id": "qing-shunzhi",
+      "name": "顺治",
+      "fromYear": 1644,
+      "toYear": 1661,
+      "rulerId": "qing_shizu",
+      "polityId": "qing",
+      "sort": 40
+    },
+    {
+      "id": "qing-kangxi",
+      "name": "康熙",
+      "fromYear": 1662,
+      "toYear": 1722,
+      "rulerId": "qing_shengzu",
+      "polityId": "qing",
+      "sort": 50
+    },
+    {
+      "id": "qing-yongzheng",
+      "name": "雍正",
+      "fromYear": 1723,
+      "toYear": 1735,
+      "rulerId": "qing_shizong",
+      "polityId": "qing",
+      "sort": 60
+    },
+    {
+      "id": "qing-qianlong",
+      "name": "乾隆",
+      "fromYear": 1736,
+      "toYear": 1795,
+      "rulerId": "qing_gaozong",
+      "polityId": "qing",
+      "sort": 70
+    },
+    {
+      "id": "qing-jiaqing",
+      "name": "嘉庆",
+      "fromYear": 1796,
+      "toYear": 1820,
+      "rulerId": "qing_renzong",
+      "polityId": "qing",
+      "sort": 80
+    },
+    {
+      "id": "qing-daoguang",
+      "name": "道光",
+      "fromYear": 1821,
+      "toYear": 1850,
+      "rulerId": "qing_xuanzong",
+      "polityId": "qing",
+      "sort": 90
+    },
+    {
+      "id": "qing-xianfeng",
+      "name": "咸丰",
+      "fromYear": 1851,
+      "toYear": 1861,
+      "rulerId": "qing_wenzong",
+      "polityId": "qing",
+      "sort": 100
+    },
+    {
+      "id": "qing-tongzhi",
+      "name": "同治",
+      "fromYear": 1862,
+      "toYear": 1874,
+      "rulerId": "qing_muzong",
+      "polityId": "qing",
+      "sort": 110
+    },
+    {
+      "id": "qing-guangxu",
+      "name": "光绪",
+      "fromYear": 1875,
+      "toYear": 1908,
+      "rulerId": "qing_dezong",
+      "polityId": "qing",
+      "sort": 120
+    },
+    {
+      "id": "qing-xuantong",
+      "name": "宣统",
+      "fromYear": 1909,
+      "toYear": 1912,
+      "rulerId": "qing_xuantong",
+      "polityId": "qing",
+      "sort": 130
+    }
+  ]
+}

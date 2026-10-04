@@ -1,0 +1,17 @@
+[
+  {"id": "yuan-shizu-zhiyuan", "name": "至元", "fromYear": 1271, "toYear": 1294, "rulerId": "yuan-shizu", "polityId": "yuan", "sort": 10, "note": "世祖至元；1264已改元，产品自改国号年起挂 yuan。"},
+  {"id": "yuan-chengzong-yuanzhen", "name": "元贞", "fromYear": 1295, "toYear": 1297, "rulerId": "yuan-chengzong", "polityId": "yuan", "sort": 20},
+  {"id": "yuan-chengzong-dade", "name": "大德", "fromYear": 1297, "toYear": 1307, "rulerId": "yuan-chengzong", "polityId": "yuan", "sort": 21},
+  {"id": "yuan-wuzong-zhida", "name": "至大", "fromYear": 1308, "toYear": 1311, "rulerId": "yuan-wuzong", "polityId": "yuan", "sort": 30},
+  {"id": "yuan-renzong-huangqing", "name": "皇庆", "fromYear": 1312, "toYear": 1313, "rulerId": "yuan-renzong", "polityId": "yuan", "sort": 40},
+  {"id": "yuan-renzong-yanyou", "name": "延祐", "fromYear": 1314, "toYear": 1320, "rulerId": "yuan-renzong", "polityId": "yuan", "sort": 41},
+  {"id": "yuan-yingzong-zhizhi", "name": "至治", "fromYear": 1321, "toYear": 1323, "rulerId": "yuan-yingzong", "polityId": "yuan", "sort": 50},
+  {"id": "yuan-taiding-taiding", "name": "泰定", "fromYear": 1324, "toYear": 1328, "rulerId": "yuan-taiding", "polityId": "yuan", "sort": 60},
+  {"id": "yuan-taiding-zhihe", "name": "致和", "fromYear": 1328, "toYear": 1328, "rulerId": "yuan-taiding", "polityId": "yuan", "sort": 61},
+  {"id": "yuan-tianshun-tianshun", "name": "天顺", "fromYear": 1328, "toYear": 1328, "rulerId": "yuan-tianshun", "polityId": "yuan", "sort": 70},
+  {"id": "yuan-wenzong-tianli", "name": "天历", "fromYear": 1328, "toYear": 1330, "rulerId": "yuan-wenzong", "polityId": "yuan", "sort": 80},
+  {"id": "yuan-wenzong-zhishun", "name": "至顺", "fromYear": 1330, "toYear": 1333, "rulerId": "yuan-wenzong", "polityId": "yuan", "sort": 81},
+  {"id": "yuan-shundi-yuantong", "name": "元统", "fromYear": 1333, "toYear": 1335, "rulerId": "yuan-shundi", "polityId": "yuan", "sort": 90},
+  {"id": "yuan-shundi-zhiyuan", "name": "至元", "fromYear": 1335, "toYear": 1340, "rulerId": "yuan-shundi", "polityId": "yuan", "sort": 91, "note": "后至元，别于世祖至元。"},
+  {"id": "yuan-shundi-zhizheng", "name": "至正", "fromYear": 1341, "toYear": 1368, "rulerId": "yuan-shundi", "polityId": "yuan", "sort": 92}
+]

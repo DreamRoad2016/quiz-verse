@@ -1,0 +1,23 @@
+[
+  {"id": "jin-taizu-shouguo", "name": "收国", "fromYear": 1115, "toYear": 1116, "rulerId": "jin-taizu", "polityId": "jin", "sort": 10},
+  {"id": "jin-taizu-tianfu", "name": "天辅", "fromYear": 1117, "toYear": 1123, "rulerId": "jin-taizu", "polityId": "jin", "sort": 11},
+  {"id": "jin-taizong-tianhui", "name": "天会", "fromYear": 1123, "toYear": 1135, "rulerId": "jin-taizong", "polityId": "jin", "sort": 20},
+  {"id": "jin-xizong-tianhui", "name": "天会", "fromYear": 1135, "toYear": 1137, "rulerId": "jin-xizong", "polityId": "jin", "sort": 30},
+  {"id": "jin-xizong-tianjuan", "name": "天眷", "fromYear": 1138, "toYear": 1140, "rulerId": "jin-xizong", "polityId": "jin", "sort": 31},
+  {"id": "jin-xizong-huangtong", "name": "皇统", "fromYear": 1141, "toYear": 1149, "rulerId": "jin-xizong", "polityId": "jin", "sort": 32},
+  {"id": "jin-hailing-tiande", "name": "天德", "fromYear": 1149, "toYear": 1153, "rulerId": "jin-hailing", "polityId": "jin", "sort": 40},
+  {"id": "jin-hailing-zhenyuan", "name": "贞元", "fromYear": 1153, "toYear": 1156, "rulerId": "jin-hailing", "polityId": "jin", "sort": 41},
+  {"id": "jin-hailing-zhenglong", "name": "正隆", "fromYear": 1156, "toYear": 1161, "rulerId": "jin-hailing", "polityId": "jin", "sort": 42},
+  {"id": "jin-shizong-dading", "name": "大定", "fromYear": 1161, "toYear": 1189, "rulerId": "jin-shizong", "polityId": "jin", "sort": 50},
+  {"id": "jin-zhangzong-mingchang", "name": "明昌", "fromYear": 1190, "toYear": 1196, "rulerId": "jin-zhangzong", "polityId": "jin", "sort": 60},
+  {"id": "jin-zhangzong-chengan", "name": "承安", "fromYear": 1196, "toYear": 1200, "rulerId": "jin-zhangzong", "polityId": "jin", "sort": 61},
+  {"id": "jin-zhangzong-taihe", "name": "泰和", "fromYear": 1201, "toYear": 1208, "rulerId": "jin-zhangzong", "polityId": "jin", "sort": 62},
+  {"id": "jin-weishaowang-daan", "name": "大安", "fromYear": 1209, "toYear": 1211, "rulerId": "jin-weishaowang", "polityId": "jin", "sort": 70},
+  {"id": "jin-weishaowang-chongqing", "name": "崇庆", "fromYear": 1212, "toYear": 1213, "rulerId": "jin-weishaowang", "polityId": "jin", "sort": 71},
+  {"id": "jin-weishaowang-zhining", "name": "至宁", "fromYear": 1213, "toYear": 1213, "rulerId": "jin-weishaowang", "polityId": "jin", "sort": 72},
+  {"id": "jin-xuanzong-zhenyou", "name": "贞祐", "fromYear": 1213, "toYear": 1217, "rulerId": "jin-xuanzong", "polityId": "jin", "sort": 80},
+  {"id": "jin-xuanzong-xingding", "name": "兴定", "fromYear": 1217, "toYear": 1222, "rulerId": "jin-xuanzong", "polityId": "jin", "sort": 81},
+  {"id": "jin-xuanzong-yuanguang", "name": "元光", "fromYear": 1222, "toYear": 1223, "rulerId": "jin-xuanzong", "polityId": "jin", "sort": 82},
+  {"id": "jin-aizong-zhengda", "name": "正大", "fromYear": 1224, "toYear": 1232, "rulerId": "jin-aizong", "polityId": "jin", "sort": 90},
+  {"id": "jin-aizong-tianxing", "name": "天兴", "fromYear": 1232, "toYear": 1234, "rulerId": "jin-aizong", "polityId": "jin", "sort": 91}
+]

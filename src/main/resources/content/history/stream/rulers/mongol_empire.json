@@ -1,0 +1,31 @@
+[
+  {
+    "id": "me-chinggis",
+    "name": "成吉思汗",
+    "personalName": "铁木真",
+    "fromYear": 1206,
+    "toYear": 1227,
+    "polityId": "mongol_empire",
+    "sort": 1,
+    "note": "1206即大蒙古国汗位。"
+  },
+  {
+    "id": "me-ogodei",
+    "name": "窝阔台汗",
+    "personalName": "窝阔台",
+    "fromYear": 1229,
+    "toYear": 1241,
+    "polityId": "mongol_empire",
+    "sort": 2
+  },
+  {
+    "id": "me-mongke",
+    "name": "蒙哥汗",
+    "personalName": "蒙哥",
+    "fromYear": 1251,
+    "toYear": 1259,
+    "polityId": "mongol_empire",
+    "sort": 3,
+    "note": "1259攻宋途中崩；1260忽必烈与阿里不哥争位，1271改元后见 yuan 政权。"
+  }
+]

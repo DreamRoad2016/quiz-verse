@@ -1,0 +1,123 @@
+[
+  {
+    "id": "ll-taizu",
+    "name": "太祖",
+    "personalName": "朱温",
+    "fromYear": 907,
+    "toYear": 912,
+    "polityId": "later_liang",
+    "sort": 1,
+    "note": "907废唐建梁；912遇弑。"
+  },
+  {
+    "id": "ll-modi",
+    "name": "末帝",
+    "personalName": "朱友贞",
+    "fromYear": 913,
+    "toYear": 923,
+    "polityId": "later_liang",
+    "sort": 2,
+    "note": "略朱友珪等短期篡立；913起算末帝。"
+  },
+  {
+    "id": "lt-zhuangzong",
+    "name": "庄宗",
+    "personalName": "李存勖",
+    "fromYear": 923,
+    "toYear": 926,
+    "polityId": "later_tang",
+    "sort": 10
+  },
+  {
+    "id": "lt-mingzong",
+    "name": "明宗",
+    "personalName": "李嗣源",
+    "fromYear": 926,
+    "toYear": 933,
+    "polityId": "later_tang",
+    "sort": 11
+  },
+  {
+    "id": "lt-mindi",
+    "name": "闵帝",
+    "personalName": "李从厚",
+    "fromYear": 933,
+    "toYear": 934,
+    "polityId": "later_tang",
+    "sort": 12
+  },
+  {
+    "id": "lt-modi",
+    "name": "末帝",
+    "personalName": "李从珂",
+    "fromYear": 934,
+    "toYear": 936,
+    "polityId": "later_tang",
+    "sort": 13
+  },
+  {
+    "id": "lj-gaozu",
+    "name": "高祖",
+    "personalName": "石敬瑭",
+    "fromYear": 936,
+    "toYear": 942,
+    "polityId": "later_jin",
+    "sort": 20,
+    "note": "936以燕云十六州换契丹援立。"
+  },
+  {
+    "id": "lj-chudi",
+    "name": "出帝",
+    "personalName": "石重贵",
+    "fromYear": 942,
+    "toYear": 947,
+    "polityId": "later_jin",
+    "sort": 21
+  },
+  {
+    "id": "lh-gaozu",
+    "name": "高祖",
+    "personalName": "刘知远",
+    "fromYear": 947,
+    "toYear": 948,
+    "polityId": "later_han",
+    "sort": 30
+  },
+  {
+    "id": "lh-yindi",
+    "name": "隐帝",
+    "personalName": "刘承祐",
+    "fromYear": 948,
+    "toYear": 951,
+    "polityId": "later_han",
+    "sort": 31
+  },
+  {
+    "id": "lz-taizu",
+    "name": "太祖",
+    "personalName": "郭威",
+    "fromYear": 951,
+    "toYear": 954,
+    "polityId": "later_zhou",
+    "sort": 40
+  },
+  {
+    "id": "lz-shizong",
+    "name": "世宗",
+    "personalName": "柴荣",
+    "fromYear": 954,
+    "toYear": 959,
+    "polityId": "later_zhou",
+    "sort": 41
+  },
+  {
+    "id": "lz-gongdi",
+    "name": "恭帝",
+    "personalName": "柴宗训",
+    "fromYear": 959,
+    "toYear": 960,
+    "polityId": "later_zhou",
+    "sort": 42,
+    "note": "960禅位于赵匡胤，后周亡。"
+  }
+]

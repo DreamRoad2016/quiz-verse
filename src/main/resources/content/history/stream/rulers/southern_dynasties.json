@@ -1,0 +1,223 @@
+[
+  {
+    "id": "ls_wudi",
+    "name": "武帝",
+    "personalName": "刘裕",
+    "fromYear": 420,
+    "toYear": 422,
+    "polityId": "liu_song",
+    "sort": 1
+  },
+  {
+    "id": "ls_shaodi",
+    "name": "少帝",
+    "personalName": "刘义符",
+    "fromYear": 422,
+    "toYear": 424,
+    "polityId": "liu_song",
+    "sort": 2
+  },
+  {
+    "id": "ls_wendi",
+    "name": "文帝",
+    "personalName": "刘义隆",
+    "fromYear": 424,
+    "toYear": 453,
+    "polityId": "liu_song",
+    "sort": 3,
+    "note": "元嘉之治主要在此朝。"
+  },
+  {
+    "id": "ls_xiaowu",
+    "name": "孝武帝",
+    "personalName": "刘骏",
+    "fromYear": 453,
+    "toYear": 464,
+    "polityId": "liu_song",
+    "sort": 4
+  },
+  {
+    "id": "ls_qianfei",
+    "name": "前废帝",
+    "personalName": "刘子业",
+    "fromYear": 464,
+    "toYear": 465,
+    "polityId": "liu_song",
+    "sort": 5
+  },
+  {
+    "id": "ls_ming",
+    "name": "明帝",
+    "personalName": "刘彧",
+    "fromYear": 465,
+    "toYear": 472,
+    "polityId": "liu_song",
+    "sort": 6
+  },
+  {
+    "id": "ls_houfei",
+    "name": "后废帝",
+    "personalName": "刘昱",
+    "fromYear": 472,
+    "toYear": 477,
+    "polityId": "liu_song",
+    "sort": 7
+  },
+  {
+    "id": "ls_shun",
+    "name": "顺帝",
+    "personalName": "刘准",
+    "fromYear": 477,
+    "toYear": 479,
+    "polityId": "liu_song",
+    "sort": 8,
+    "note": "479年禅位于萧道成，刘宋亡。"
+  },
+  {
+    "id": "sq_gaodi",
+    "name": "高帝",
+    "personalName": "萧道成",
+    "fromYear": 479,
+    "toYear": 482,
+    "polityId": "southern_qi",
+    "sort": 10
+  },
+  {
+    "id": "sq_wudi",
+    "name": "武帝",
+    "personalName": "萧赜",
+    "fromYear": 482,
+    "toYear": 493,
+    "polityId": "southern_qi",
+    "sort": 11
+  },
+  {
+    "id": "sq_yulin",
+    "name": "郁林王",
+    "personalName": "萧昭业",
+    "fromYear": 493,
+    "toYear": 494,
+    "polityId": "southern_qi",
+    "sort": 12
+  },
+  {
+    "id": "sq_hailing",
+    "name": "海陵王",
+    "personalName": "萧昭文",
+    "fromYear": 494,
+    "toYear": 494,
+    "polityId": "southern_qi",
+    "sort": 13,
+    "note": "在位仅数月。"
+  },
+  {
+    "id": "sq_ming",
+    "name": "明帝",
+    "personalName": "萧鸾",
+    "fromYear": 494,
+    "toYear": 498,
+    "polityId": "southern_qi",
+    "sort": 14
+  },
+  {
+    "id": "sq_donghun",
+    "name": "东昏侯",
+    "personalName": "萧宝卷",
+    "fromYear": 498,
+    "toYear": 501,
+    "polityId": "southern_qi",
+    "sort": 15
+  },
+  {
+    "id": "sq_he",
+    "name": "和帝",
+    "personalName": "萧宝融",
+    "fromYear": 501,
+    "toYear": 502,
+    "polityId": "southern_qi",
+    "sort": 16
+  },
+  {
+    "id": "liang_wudi",
+    "name": "武帝",
+    "personalName": "萧衍",
+    "fromYear": 502,
+    "toYear": 549,
+    "polityId": "liang",
+    "sort": 20
+  },
+  {
+    "id": "liang_jianwen",
+    "name": "简文帝",
+    "personalName": "萧纲",
+    "fromYear": 549,
+    "toYear": 551,
+    "polityId": "liang",
+    "sort": 21
+  },
+  {
+    "id": "liang_yuandi",
+    "name": "元帝",
+    "personalName": "萧绎",
+    "fromYear": 552,
+    "toYear": 555,
+    "polityId": "liang",
+    "sort": 22,
+    "note": "551–552间江陵政局混乱，取即位年。"
+  },
+  {
+    "id": "liang_jing",
+    "name": "敬帝",
+    "personalName": "萧方智",
+    "fromYear": 555,
+    "toYear": 557,
+    "polityId": "liang",
+    "sort": 23
+  },
+  {
+    "id": "chen_wudi",
+    "name": "武帝",
+    "personalName": "陈霸先",
+    "fromYear": 557,
+    "toYear": 559,
+    "polityId": "chen",
+    "sort": 30
+  },
+  {
+    "id": "chen_wendi",
+    "name": "文帝",
+    "personalName": "陈蒨",
+    "fromYear": 559,
+    "toYear": 566,
+    "polityId": "chen",
+    "sort": 31
+  },
+  {
+    "id": "chen_feidi",
+    "name": "废帝",
+    "personalName": "陈伯宗",
+    "fromYear": 566,
+    "toYear": 568,
+    "polityId": "chen",
+    "sort": 32
+  },
+  {
+    "id": "chen_xuan",
+    "name": "宣帝",
+    "personalName": "陈顼",
+    "fromYear": 568,
+    "toYear": 582,
+    "polityId": "chen",
+    "sort": 33
+  },
+  {
+    "id": "chen_houzhu",
+    "name": "后主",
+    "personalName": "陈叔宝",
+    "fromYear": 582,
+    "toYear": 589,
+    "polityId": "chen",
+    "sort": 34,
+    "note": "589年隋灭陈，南朝终结。"
+  }
+]

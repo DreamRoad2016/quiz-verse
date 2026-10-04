@@ -1,0 +1,160 @@
+[
+  {
+    "id": "ming_taizu",
+    "name": "太祖",
+    "personalName": "朱元璋",
+    "fromYear": 1368,
+    "toYear": 1398,
+    "polityId": "ming",
+    "sort": 1
+  },
+  {
+    "id": "ming_jianwen",
+    "name": "建文帝",
+    "personalName": "朱允炆",
+    "fromYear": 1398,
+    "toYear": 1402,
+    "polityId": "ming",
+    "sort": 2,
+    "note": "1402靖难下落不明。"
+  },
+  {
+    "id": "ming_chengzu",
+    "name": "成祖",
+    "personalName": "朱棣",
+    "fromYear": 1402,
+    "toYear": 1424,
+    "polityId": "ming",
+    "sort": 3
+  },
+  {
+    "id": "ming_renzong",
+    "name": "仁宗",
+    "personalName": "朱高炽",
+    "fromYear": 1424,
+    "toYear": 1425,
+    "polityId": "ming",
+    "sort": 4
+  },
+  {
+    "id": "ming_xuanzong",
+    "name": "宣宗",
+    "personalName": "朱瞻基",
+    "fromYear": 1425,
+    "toYear": 1435,
+    "polityId": "ming",
+    "sort": 5
+  },
+  {
+    "id": "ming_yingzong",
+    "name": "英宗",
+    "personalName": "朱祁镇",
+    "fromYear": 1435,
+    "toYear": 1449,
+    "polityId": "ming",
+    "sort": 6,
+    "note": "1449土木之变被俘；1457复位见 ming_yingzong_restore。"
+  },
+  {
+    "id": "ming_jingdi",
+    "name": "景帝",
+    "personalName": "朱祁钰",
+    "fromYear": 1449,
+    "toYear": 1457,
+    "polityId": "ming",
+    "sort": 7
+  },
+  {
+    "id": "ming_yingzong_restore",
+    "name": "英宗",
+    "personalName": "朱祁镇",
+    "fromYear": 1457,
+    "toYear": 1464,
+    "polityId": "ming",
+    "sort": 8,
+    "note": "夺门之变后复位。"
+  },
+  {
+    "id": "ming_xianzong",
+    "name": "宪宗",
+    "personalName": "朱见深",
+    "fromYear": 1464,
+    "toYear": 1487,
+    "polityId": "ming",
+    "sort": 9
+  },
+  {
+    "id": "ming_xiaozong",
+    "name": "孝宗",
+    "personalName": "朱祐樘",
+    "fromYear": 1487,
+    "toYear": 1505,
+    "polityId": "ming",
+    "sort": 10
+  },
+  {
+    "id": "ming_wuzong",
+    "name": "武宗",
+    "personalName": "朱厚照",
+    "fromYear": 1505,
+    "toYear": 1521,
+    "polityId": "ming",
+    "sort": 11
+  },
+  {
+    "id": "ming_shizong",
+    "name": "世宗",
+    "personalName": "朱厚熜",
+    "fromYear": 1521,
+    "toYear": 1566,
+    "polityId": "ming",
+    "sort": 12
+  },
+  {
+    "id": "ming_muzong",
+    "name": "穆宗",
+    "personalName": "朱载坖",
+    "fromYear": 1566,
+    "toYear": 1572,
+    "polityId": "ming",
+    "sort": 13
+  },
+  {
+    "id": "ming_shenzong",
+    "name": "神宗",
+    "personalName": "朱翊钧",
+    "fromYear": 1572,
+    "toYear": 1620,
+    "polityId": "ming",
+    "sort": 14
+  },
+  {
+    "id": "ming_guangzong",
+    "name": "光宗",
+    "personalName": "朱常洛",
+    "fromYear": 1620,
+    "toYear": 1620,
+    "polityId": "ming",
+    "sort": 15,
+    "note": "1620年在位仅月余。"
+  },
+  {
+    "id": "ming_xizong",
+    "name": "熹宗",
+    "personalName": "朱由校",
+    "fromYear": 1620,
+    "toYear": 1627,
+    "polityId": "ming",
+    "sort": 16
+  },
+  {
+    "id": "ming_sizong",
+    "name": "思宗",
+    "personalName": "朱由检",
+    "fromYear": 1627,
+    "toYear": 1644,
+    "polityId": "ming",
+    "sort": 17,
+    "note": "1644李自成入京，明亡。"
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "id": "sui_wendi",
+    "name": "文帝",
+    "personalName": "杨坚",
+    "fromYear": 581,
+    "toYear": 604,
+    "polityId": "sui",
+    "sort": 1,
+    "note": "开皇之治；589灭陈统一。"
+  },
+  {
+    "id": "sui_yangdi",
+    "name": "炀帝",
+    "personalName": "杨广",
+    "fromYear": 604,
+    "toYear": 618,
+    "polityId": "sui",
+    "sort": 2
+  },
+  {
+    "id": "sui_gong",
+    "name": "恭帝",
+    "personalName": "杨侑",
+    "fromYear": 617,
+    "toYear": 618,
+    "polityId": "sui",
+    "sort": 3,
+    "note": "李渊拥立之傀儡；与炀帝末年并行，618隋亡。"
+  }
+]

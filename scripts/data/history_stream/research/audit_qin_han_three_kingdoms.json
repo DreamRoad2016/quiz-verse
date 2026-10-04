@@ -1,0 +1,76 @@
+{
+  "items": [
+    {
+      "id": "qin",
+      "name": "秦（统一后）",
+      "fromYear": -221,
+      "toYear": -207,
+      "note": "秦亡于公元前207年，子婴降刘邦；亦有前206年说，本表取前207年。",
+      "recommended": true
+    },
+    {
+      "id": "western_han",
+      "name": "西汉",
+      "fromYear": -202,
+      "toYear": 9,
+      "note": "刘邦前202年称帝；王莽9年代汉。",
+      "recommended": true
+    },
+    {
+      "id": "xin",
+      "name": "新",
+      "fromYear": 9,
+      "toYear": 23,
+      "note": "王莽9年建新；23年亡。",
+      "recommended": true
+    },
+    {
+      "id": "eastern_han",
+      "name": "东汉",
+      "fromYear": 25,
+      "toYear": 220,
+      "note": "刘秀25年称帝；曹丕220年代汉。",
+      "recommended": true
+    },
+    {
+      "id": "cao_wei",
+      "name": "曹魏",
+      "fromYear": 220,
+      "toYear": 265,
+      "note": "曹丕220年代汉；司马炎265年代魏，曹魏亡。或作266年，本表取265。",
+      "recommended": true
+    },
+    {
+      "id": "shu_han",
+      "name": "蜀汉",
+      "fromYear": 221,
+      "toYear": 263,
+      "note": "刘备221年称帝；263年魏灭蜀。",
+      "recommended": true
+    },
+    {
+      "id": "eastern_wu",
+      "name": "孙吴",
+      "fromYear": 222,
+      "toYear": 280,
+      "note": "孙权222年称吴王，建元黄武；229年称帝。纪年表多取222年起，亦有229年说。",
+      "recommended": true
+    },
+    {
+      "id": "western_jin",
+      "name": "西晋",
+      "fromYear": 265,
+      "toYear": 316,
+      "note": "司马炎265年代魏建晋；316年愍帝出降。或作266年建晋，本表取265。",
+      "recommended": true
+    },
+    {
+      "id": "eastern_jin",
+      "name": "东晋",
+      "fromYear": 317,
+      "toYear": 420,
+      "note": "司马睿317年重建晋；420年刘裕代晋。",
+      "recommended": true
+    }
+  ]
+}

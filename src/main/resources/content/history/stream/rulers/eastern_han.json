@@ -1,0 +1,125 @@
+[
+  {
+    "id": "eh-guangwu",
+    "name": "光武帝",
+    "personalName": "刘秀",
+    "fromYear": 25,
+    "toYear": 57,
+    "polityId": "eastern_han",
+    "sort": 1,
+    "note": "东汉开国；庙号世祖。"
+  },
+  {
+    "id": "eh-ming",
+    "name": "明帝",
+    "personalName": "刘庄",
+    "fromYear": 57,
+    "toYear": 75,
+    "polityId": "eastern_han",
+    "sort": 2
+  },
+  {
+    "id": "eh-zhang",
+    "name": "章帝",
+    "personalName": "刘炟",
+    "fromYear": 75,
+    "toYear": 88,
+    "polityId": "eastern_han",
+    "sort": 3
+  },
+  {
+    "id": "eh-he",
+    "name": "和帝",
+    "personalName": "刘肇",
+    "fromYear": 88,
+    "toYear": 106,
+    "polityId": "eastern_han",
+    "sort": 4
+  },
+  {
+    "id": "eh-shang",
+    "name": "殇帝",
+    "personalName": "刘隆",
+    "fromYear": 106,
+    "toYear": 106,
+    "polityId": "eastern_han",
+    "sort": 5,
+    "note": "在位仅数月。"
+  },
+  {
+    "id": "eh-an",
+    "name": "安帝",
+    "personalName": "刘祜",
+    "fromYear": 106,
+    "toYear": 125,
+    "polityId": "eastern_han",
+    "sort": 6
+  },
+  {
+    "id": "eh-shun",
+    "name": "顺帝",
+    "personalName": "刘保",
+    "fromYear": 125,
+    "toYear": 144,
+    "polityId": "eastern_han",
+    "sort": 7
+  },
+  {
+    "id": "eh-chong",
+    "name": "冲帝",
+    "personalName": "刘炳",
+    "fromYear": 144,
+    "toYear": 145,
+    "polityId": "eastern_han",
+    "sort": 8,
+    "note": "幼主，在位短暂。"
+  },
+  {
+    "id": "eh-zhi",
+    "name": "质帝",
+    "personalName": "刘缵",
+    "fromYear": 145,
+    "toYear": 146,
+    "polityId": "eastern_han",
+    "sort": 9,
+    "note": "幼主，旋被毒杀。"
+  },
+  {
+    "id": "eh-huan",
+    "name": "桓帝",
+    "personalName": "刘志",
+    "fromYear": 146,
+    "toYear": 167,
+    "polityId": "eastern_han",
+    "sort": 10
+  },
+  {
+    "id": "eh-ling",
+    "name": "灵帝",
+    "personalName": "刘宏",
+    "fromYear": 168,
+    "toYear": 189,
+    "polityId": "eastern_han",
+    "sort": 11
+  },
+  {
+    "id": "eh-shaodi",
+    "name": "少帝",
+    "personalName": "刘辩",
+    "fromYear": 189,
+    "toYear": 189,
+    "polityId": "eastern_han",
+    "sort": 12,
+    "note": "在位百余日，废为弘农王。"
+  },
+  {
+    "id": "eh-xian",
+    "name": "献帝",
+    "personalName": "刘协",
+    "fromYear": 189,
+    "toYear": 220,
+    "polityId": "eastern_han",
+    "sort": 13,
+    "note": "东汉末代皇帝；220年禅位于曹丕。"
+  }
+]

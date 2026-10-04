@@ -1,0 +1,40 @@
+[
+  {
+    "id": "wj-wudi",
+    "name": "武帝",
+    "personalName": "司马炎",
+    "fromYear": 265,
+    "toYear": 290,
+    "polityId": "western_jin",
+    "sort": 1,
+    "note": "265年代魏；280年灭吴，完成统一。"
+  },
+  {
+    "id": "wj-huidi",
+    "name": "惠帝",
+    "personalName": "司马衷",
+    "fromYear": 290,
+    "toYear": 306,
+    "polityId": "western_jin",
+    "sort": 2
+  },
+  {
+    "id": "wj-huaidi",
+    "name": "怀帝",
+    "personalName": "司马炽",
+    "fromYear": 306,
+    "toYear": 311,
+    "polityId": "western_jin",
+    "sort": 3
+  },
+  {
+    "id": "wj-mindi",
+    "name": "愍帝",
+    "personalName": "司马邺",
+    "fromYear": 313,
+    "toYear": 316,
+    "polityId": "western_jin",
+    "sort": 4,
+    "note": "311–313年长安陷落后流亡，313年即位；316年降前赵，西晋亡。"
+  }
+]

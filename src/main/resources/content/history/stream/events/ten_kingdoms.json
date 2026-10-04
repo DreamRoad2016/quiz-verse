@@ -1,0 +1,179 @@
+[
+  {
+    "eventId": "HS-TK-0902-WU",
+    "year": 902,
+    "title": "杨行密封吴王",
+    "summary": "唐封杨行密为吴王，淮南自立，十国中吴的通行起点。",
+    "description": "天复二年。杨吴后为南唐所代。十国局面在唐亡前已经成形。",
+    "kind": "politics",
+    "polityIds": ["wu_ten", "tang"],
+    "importance": 3,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0907-SHU",
+    "year": 907,
+    "title": "王建称帝，前蜀立",
+    "summary": "朱温代唐同年，王建在成都称帝，国号蜀。",
+    "description": "天复、天祐以后王建已据两川。907年称帝，与后梁并立。925年灭于后唐。",
+    "kind": "politics",
+    "polityIds": ["former_shu"],
+    "importance": 4,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0909-MIN",
+    "year": 909,
+    "title": "王审知为闽王",
+    "summary": "后梁封王审知为闽王，闽政权取得正式名号。",
+    "description": "王审知治闽较稳。945年南唐灭闽，余部仍扰。",
+    "kind": "politics",
+    "polityIds": ["min", "later_liang"],
+    "importance": 3,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0917-NHAN",
+    "year": 917,
+    "title": "刘龑称帝，南汉立",
+    "summary": "刘龑在番禺称帝，国号汉，史称南汉。",
+    "description": "据岭南。971年灭于北宋。",
+    "kind": "politics",
+    "polityIds": ["southern_han"],
+    "importance": 3,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0925-SHUFALL",
+    "year": 925,
+    "title": "后唐灭前蜀",
+    "summary": "后唐军入成都，前蜀亡。",
+    "description": "同光三年。孟知祥后留蜀，934年建后蜀。",
+    "kind": "battle",
+    "polityIds": ["later_tang", "former_shu"],
+    "importance": 4,
+    "tags": ["战争", "十国"]
+  },
+  {
+    "eventId": "HS-5D-0947-BIAN",
+    "year": 947,
+    "title": "契丹入汴，后汉立",
+    "summary": "辽军入开封，后晋亡；刘知远在太原称帝，后汉建立。",
+    "description": "大同、天福十二年。耶律德光旋北还。刘知远入汴，五代第四朝。",
+    "kind": "politics",
+    "polityIds": ["later_jin", "later_han", "liao"],
+    "importance": 5,
+    "tags": ["政治", "五代"]
+  },
+  {
+    "eventId": "HS-TK-0937-NTANG",
+    "year": 937,
+    "title": "徐知诰建南唐",
+    "summary": "徐知诰代杨吴称帝，改姓名李昪，国号唐，史称南唐。",
+    "description": "升元元年。都金陵。后为十国中文学最盛者，975年亡于宋。",
+    "kind": "politics",
+    "polityIds": ["southern_tang", "wu_ten"],
+    "importance": 4,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0945-MINFALL",
+    "year": 945,
+    "title": "南唐灭闽",
+    "summary": "南唐军入福州一带，闽亡，但未能尽有其地。",
+    "description": "开运前后。闽内乱，南唐、吴越分取其地。",
+    "kind": "battle",
+    "polityIds": ["southern_tang", "min"],
+    "importance": 3,
+    "tags": ["战争", "十国"]
+  },
+  {
+    "eventId": "HS-5D-0954-GAOPING",
+    "year": 954,
+    "title": "高平之战",
+    "summary": "周世宗柴荣在高平大破北汉、契丹，整顿禁军由此开始。",
+    "description": "显德元年。世宗亲征。此战是后周转强、北宋统一的军事起点。",
+    "kind": "battle",
+    "polityIds": ["later_zhou", "northern_han", "liao"],
+    "importance": 4,
+    "tags": ["战争", "五代"]
+  },
+  {
+    "eventId": "HS-TK-0951-NHAN",
+    "year": 951,
+    "title": "刘崇建北汉",
+    "summary": "郭威代汉后，刘崇在太原称帝，北汉立，依附契丹。",
+    "description": "与后周同年并立。979年灭于宋，是十国中最后亡者。",
+    "kind": "politics",
+    "polityIds": ["northern_han", "later_han"],
+    "importance": 3,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0963-JINGNAN",
+    "year": 963,
+    "title": "宋灭荆南",
+    "summary": "宋军假道荆南，高氏纳地，十国削平由此开始。",
+    "description": "乾德元年。太祖先取荆湖，再图后蜀、南汉、南唐。",
+    "kind": "politics",
+    "polityIds": ["northern_song", "jingnan"],
+    "importance": 3,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0965-SHUFALL",
+    "year": 965,
+    "title": "宋灭后蜀",
+    "summary": "宋军入成都，孟昶降，后蜀亡。",
+    "description": "乾德三年。蜀中富庶入宋。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "later_shu"],
+    "importance": 4,
+    "tags": ["战争", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0971-NHANFALL",
+    "year": 971,
+    "title": "宋灭南汉",
+    "summary": "宋军入广州，南汉亡，岭南入宋。",
+    "description": "开宝四年。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "southern_han"],
+    "importance": 3,
+    "tags": ["战争", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0975-NTANGFALL",
+    "year": 975,
+    "title": "宋灭南唐",
+    "summary": "曹彬入金陵，李煜降，南唐亡。",
+    "description": "开宝八年。后主入汴。词「故国不堪回首月明中」所系即亡国之后。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "southern_tang"],
+    "importance": 5,
+    "tags": ["战争", "十国"],
+    "idioms": ["故国不堪回首"]
+  },
+  {
+    "eventId": "HS-TK-0978-WUYUE",
+    "year": 978,
+    "title": "吴越纳土",
+    "summary": "钱俶献地，吴越和平入宋。",
+    "description": "太平兴国三年。十国中少有的善终。",
+    "kind": "politics",
+    "polityIds": ["northern_song", "wuyue"],
+    "importance": 4,
+    "tags": ["政治", "十国"]
+  },
+  {
+    "eventId": "HS-TK-0979-NHANFALL",
+    "year": 979,
+    "title": "宋灭北汉",
+    "summary": "太宗亲征太原，北汉亡，十国结束，宋辽对峙成为主线。",
+    "description": "太平兴国四年。同年有高梁河之败，燕云未复。",
+    "kind": "battle",
+    "polityIds": ["northern_song", "northern_han", "liao"],
+    "importance": 5,
+    "tags": ["战争", "十国"]
+  }
+]

@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>历史源流 · 中国史时间轴</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f2f4f1;
+      --ink: #1c2420;
+      --muted: #5f6d66;
+      --line: rgba(28, 36, 32, 0.12);
+      --accent: #2f6b57;
+      --accent-soft: rgba(47, 107, 87, 0.12);
+      --south: #2f6b57;
+      --north: #3d5a80;
+      --other: #8a6a3d;
+      --event: #b4533c;
+      --ruler: #4a6fa5;
+      --reign: #7a5c9e;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      font-family: "Noto Sans SC", sans-serif;
+      background:
+        radial-gradient(ellipse 60% 40% at 100% 0%, rgba(47, 107, 87, 0.12), transparent 55%),
+        radial-gradient(ellipse 45% 35% at 0% 80%, rgba(61, 90, 128, 0.08), transparent 50%),
+        linear-gradient(180deg, #f7f8f5, var(--paper));
+    }
+    a { color: inherit; text-decoration: none; }
+    html, body { height: 100%; }
+    body { overflow: hidden; }
+    .wrap {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      margin: 0;
+      padding: 8px 12px 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .chrome {
+      flex: 0 0 auto;
+      padding-bottom: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .eras {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .era {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.65);
+      color: var(--muted);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s var(--ease);
+    }
+    .era.on {
+      color: #fff;
+      background: linear-gradient(135deg, #245848, var(--accent));
+      border-color: transparent;
+    }
+    .timebar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 12px;
+      min-height: 32px;
+    }
+    .timebar .year-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .timebar input[type="number"] {
+      width: 5.5rem;
+      font: inherit;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 5px 8px;
+      background: rgba(255,255,255,0.85);
+      color: var(--ink);
+    }
+    .timebar input[type="range"] {
+      flex: 1 1 140px;
+      min-width: 120px;
+      max-width: 360px;
+      accent-color: var(--accent);
+    }
+    .radius-row {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      align-items: center;
+    }
+    .radius {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.55);
+      color: var(--muted);
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+    .radius.on {
+      color: #fff;
+      background: linear-gradient(135deg, #245848, var(--accent));
+      border-color: transparent;
+    }
+    .extras {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-left: auto;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .extras label {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .extras input { accent-color: var(--accent); }
+    .range-meta {
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.3;
+    }
+    .stage {
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      padding-bottom: 8px;
+    }
+    .year-pack {
+      flex: 0 0 340px;
+      min-width: 280px;
+      max-width: 400px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.86);
+      border-radius: 14px;
+      overflow: auto;
+      padding: 10px 12px 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+    .yp-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .yp-nav button {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 4px 9px;
+      font: inherit;
+      cursor: pointer;
+    }
+    .yp-nav button:disabled { opacity: 0.4; cursor: default; }
+    .yp-year {
+      flex: 1;
+      font-family: "Noto Serif SC", serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+    .yp-headline {
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.45;
+      margin-bottom: 10px;
+    }
+    .yp-sec { margin-bottom: 12px; }
+    .yp-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 0;
+      background: none;
+      color: var(--accent);
+      font: inherit;
+      font-size: 0.82rem;
+      cursor: pointer;
+      padding: 0 0 8px;
+    }
+    .yp-detail h2 {
+      font-family: "Noto Serif SC", serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .yp-detail .meta { color: var(--muted); font-size: 0.82rem; margin-bottom: 8px; line-height: 1.5; }
+    .yp-detail .note { font-size: 0.88rem; line-height: 1.7; margin-bottom: 10px; }
+    .yp-sec details summary {
+      cursor: pointer;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .yp-item {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+      padding: 7px 9px;
+      margin-bottom: 6px;
+      cursor: pointer;
+    }
+    .yp-item:last-child { margin-bottom: 0; }
+    .yp-item strong { display: block; font-size: 0.88rem; font-weight: 600; }
+    .yp-item .sub { color: var(--muted); font-size: 0.75rem; margin-top: 2px; line-height: 1.4; }
+    .yp-item .tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-right: 4px;
+    }
+    .yp-item .tag.end { background: rgba(180,83,60,0.12); color: #8f3d32; }
+    .yp-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .yp-cta button {
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+      color: var(--ink);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font: inherit;
+      font-size: 0.82rem;
+      text-align: left;
+      cursor: pointer;
+    }
+    .yp-cta button small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+    .heat {
+      position: absolute;
+      top: 0;
+      width: 4px;
+      height: 4px;
+      margin-left: -2px;
+      border-radius: 50%;
+      background: var(--event);
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    @media (max-width: 900px) {
+      .stage { flex-direction: column; }
+      .year-pack {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        max-height: 38vh;
+      }
+    }
+    .board-shell {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 0;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.62);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .board {
+      height: 100%;
+      padding: 12px 14px 28px;
+      overflow: auto;
+    }
+    .board-inner { position: relative; min-height: 100%; }
+    .ticks {
+      position: relative;
+      height: 28px;
+      margin-top: 8px;
+      border-top: 1px solid var(--line);
+    }
+    .tick {
+      position: absolute;
+      top: 0;
+      transform: translateX(-50%);
+      width: 1px;
+      background: rgba(28, 36, 32, 0.18);
+    }
+    .tick.major { height: 12px; background: rgba(28, 36, 32, 0.35); }
+    .tick.minor { height: 7px; }
+    .tick span {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .cursor-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      border-left: 1px dashed rgba(180, 83, 60, 0.85);
+      pointer-events: none;
+      z-index: 20;
+      display: none;
+    }
+    .cursor-line.on { display: block; }
+    .cursor-badge {
+      position: absolute;
+      top: 4px;
+      left: 6px;
+      transform: none;
+      background: rgba(180, 83, 60, 0.92);
+      color: #fff;
+      font-size: 11px;
+      padding: 2px 7px;
+      border-radius: 6px;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(28,36,32,0.12);
+    }
+    .cursor-line.near-right .cursor-badge {
+      left: auto;
+      right: 6px;
+    }
+    .year-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      border-left: 2px solid rgba(47, 107, 87, 0.75);
+      pointer-events: none;
+      z-index: 12;
+    }
+    .axis-block { margin-bottom: 14px; }
+    .axis-block:last-child { margin-bottom: 0; }
+    .axis-title {
+      font-size: 12px; letter-spacing: 0.06em; color: var(--muted);
+      margin: 0 0 8px 4px;
+    }
+    .lanes { position: relative; min-height: 28px; }
+    .lane {
+      position: relative; height: 28px; margin-bottom: 6px;
+      background: linear-gradient(90deg, rgba(28,36,32,0.03), transparent 40%, rgba(28,36,32,0.03));
+      border-radius: 8px;
+    }
+    .lane.reign-lane { height: 22px; }
+    .bar {
+      position: absolute; top: 3px; bottom: 3px;
+      border-radius: 7px; color: #fff;
+      font-size: 11px; line-height: 22px;
+      padding: 0 8px; overflow: hidden; white-space: nowrap;
+      text-overflow: ellipsis; cursor: pointer;
+      box-shadow: 0 4px 12px rgba(28,36,32,0.08);
+      transition: transform .2s var(--ease), filter .2s;
+    }
+    .bar:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    .bar.dim { opacity: 0.28; filter: grayscale(0.2); }
+    .bar.on { outline: 2px solid rgba(47, 107, 87, 0.85); outline-offset: 1px; }
+    .bar.spine { background: linear-gradient(90deg, #245848, #3a8f72); }
+    .bar.south { background: linear-gradient(90deg, #1f5c4a, var(--south)); }
+    .bar.north { background: linear-gradient(90deg, #2f4a6b, var(--north)); }
+    .bar.parallel, .bar.fragment { background: linear-gradient(90deg, #6d5430, var(--other)); }
+    .bar.ruler { background: linear-gradient(90deg, #35557f, var(--ruler)); }
+    .bar.uncertain {
+      opacity: 0.72;
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,0.18) 3px,
+        rgba(255,255,255,0.18) 6px
+      ), linear-gradient(90deg, #5a6d62, #7a8f84);
+    }
+    .bar.ruler.uncertain {
+      background-image: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,0.18) 3px,
+        rgba(255,255,255,0.18) 6px
+      ), linear-gradient(90deg, #35557f, var(--ruler));
+    }
+    .bar.reign {
+      background: linear-gradient(90deg, #5c4578, var(--reign));
+      opacity: 0.92; top: 2px; bottom: 2px; line-height: 18px; font-size: 10px;
+    }
+    .lineage-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      margin: 4px 0 10px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .lineage-list li {
+      color: var(--ink);
+      background: rgba(28,36,32,0.05);
+      border-radius: 6px;
+      padding: 3px 8px;
+    }
+    .lineage-list li small { color: var(--muted); }
+    .track {
+      position: relative;
+      margin-top: 8px;
+      border-top: 1px dashed var(--line);
+      padding: 22px 0 8px;
+      min-height: 48px;
+    }
+    .track.thin { min-height: 28px; padding-top: 10px; }
+    .dot {
+      position: absolute; top: 18px; transform: translateX(-50%);
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--event);
+      border: 2px solid #fff;
+      box-shadow: 0 2px 8px rgba(180, 83, 60, 0.35);
+      cursor: pointer;
+      z-index: 2;
+    }
+    .dot.politics { background: #35557f; box-shadow: 0 2px 8px rgba(53, 85, 127, 0.35); }
+    .dot.culture { background: #5c4578; box-shadow: 0 2px 8px rgba(92, 69, 120, 0.35); }
+    .dot.battle { background: var(--event); }
+    .dot.dim { opacity: 0.28; }
+    .dot:hover, .dot.on { transform: translateX(-50%) scale(1.25); z-index: 3; }
+    .dot span {
+      position: absolute; left: 50%; transform: translateX(-50%);
+      white-space: nowrap; font-size: 10px; color: var(--muted);
+      pointer-events: none; max-width: 6.5em; overflow: hidden; text-overflow: ellipsis;
+      background: rgba(242, 244, 241, 0.92);
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+    .dot.no-label span { display: none; }
+    .marker {
+      position: absolute; top: 8px; transform: translateX(-50%);
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--ink);
+    }
+    .scale {
+      display: flex; justify-content: space-between;
+      font-size: 11px; color: var(--muted); margin-top: 10px; padding: 0 2px;
+    }
+    .err { color: #8f3d32; margin: 6px 0; white-space: pre-wrap; flex: 0 0 auto; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 5px 10px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .chip.reign { background: rgba(122, 92, 158, 0.12); }
+    .empty-inline { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="chrome">
+      <div class="eras" id="eras"></div>
+      <div class="timebar">
+        <div class="year-box">
+          <span>年份</span>
+          <input id="centerYear" type="number" />
+        </div>
+        <input id="centerRange" type="range" />
+        <div class="radius-row" id="radiusRow">
+          <button type="button" class="radius" data-radius="10">±10</button>
+          <button type="button" class="radius" data-radius="50">±50</button>
+          <button type="button" class="radius" data-radius="100">±100</button>
+          <button type="button" class="radius" data-radius="200">±200</button>
+          <button type="button" class="radius" data-radius="500">±500</button>
+        </div>
+        <div class="extras">
+          <label><input id="layerReign" type="checkbox" /> 年号</label>
+          <label><input id="showFragment" type="checkbox" /> 割据</label>
+          <label><input id="kindBattle" type="checkbox" checked /> 战</label>
+          <label><input id="kindPolitics" type="checkbox" checked /> 时局</label>
+          <label><input id="kindCulture" type="checkbox" checked /> 文</label>
+        </div>
+      </div>
+      <div class="range-meta" id="rangeMeta">加载中…</div>
+      <div class="err" id="err" hidden></div>
+    </div>
+
+    <div class="stage">
+      <div class="board-shell" id="boardShell">
+        <div class="board" id="board"></div>
+        <div class="year-line" id="yearLine"></div>
+        <div class="cursor-line" id="cursorLine"><div class="cursor-badge"></div></div>
+      </div>
+      <aside class="year-pack" id="yearPack" aria-label="本年信息">
+        <div class="yp-nav">
+          <button type="button" id="ypPrev" title="上一年（←）">←</button>
+          <div class="yp-year" id="ypYear">…</div>
+          <button type="button" id="ypNext" title="下一年（→）">→</button>
+        </div>
+        <p class="yp-headline" id="ypHeadline">点轴上任意处查看该年</p>
+        <div id="ypBody"><div class="empty-inline">加载中…</div></div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script>
+    const FRAGMENT_AUTO_YEARS = 120;
+    const REIGN_AUTO_YEARS = 80;
+    const EVENT_LABEL_YEARS = 140;
+    const RADIUS_PRESETS = [10, 50, 100, 200, 500];
+
+    const state = {
+      meta: null,
+      eras: [],
+      year: -221,
+      center: -221,
+      radius: 100,
+      showFragment: false,
+      activeEraId: null,
+      layers: { polity: true, event: true, ruler: true, reign: false },
+      reignManual: false,
+      cache: { polities: [], events: [], rulers: [], reigns: [], markers: [] },
+      pack: null,
+      detail: null,
+      pendingDetail: null,
+      hoverYear: null,
+      kinds: { battle: true, politics: true, culture: true },
+    };
+
+    const el = (id) => document.getElementById(id);
+
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[c]));
+    }
+
+    function yearLabel(y) {
+      const n = Math.round(y);
+      if (n < 0) return '前' + (-n);
+      if (n === 0) return '公元元年';
+      return String(n) + '年';
+    }
+
+    function clamp(n, min, max) {
+      return Math.max(min, Math.min(max, n));
+    }
+
+    function rangeFromCenter() {
+      const min = state.meta ? state.meta.minYear : -2070;
+      const max = state.meta ? state.meta.maxYear : 1949;
+      let from = state.center - state.radius;
+      let to = state.center + state.radius;
+      if (from < min) { to += (min - from); from = min; }
+      if (to > max) { from -= (to - max); to = max; }
+      from = clamp(from, min, max);
+      to = clamp(to, min, max);
+      if (from > to) { const t = from; from = to; to = t; }
+      return { from, to };
+    }
+
+    function stateFrom() { return rangeFromCenter().from; }
+    function stateTo() { return rangeFromCenter().to; }
+
+    function setError(msg) {
+      const box = el('err');
+      if (!msg) { box.hidden = true; box.textContent = ''; return; }
+      box.hidden = false;
+      box.textContent = msg;
+    }
+
+    function windowWidth() {
+      return stateTo() - stateFrom();
+    }
+
+    function wantFragment() {
+      // 先秦默认展开吴越等 fragment 诸侯，否则宽窗下看不见
+      return state.showFragment
+        || windowWidth() <= FRAGMENT_AUTO_YEARS
+        || state.activeEraId === 'pre_qin';
+    }
+
+    function syncReignLayer() {
+      if (state.reignManual) return;
+      const auto = windowWidth() <= REIGN_AUTO_YEARS;
+      state.layers.reign = auto;
+      el('layerReign').checked = auto;
+    }
+
+    function syncInputs() {
+      const { from, to } = rangeFromCenter();
+      el('centerYear').value = state.center;
+      el('centerRange').value = state.center;
+      document.querySelectorAll('.radius').forEach((btn) => {
+        btn.classList.toggle('on', Number(btn.dataset.radius) === state.radius);
+      });
+      const frag = wantFragment();
+      const w = windowWidth();
+      el('rangeMeta').textContent =
+        yearLabel(from) + ' — ' + yearLabel(to)
+        + '  ·  选中 ' + yearLabel(state.year)
+        + '  ·  ±' + state.radius
+        + (frag ? '  ·  割据' : '')
+        + (state.layers.reign ? '  ·  年号' : '')
+        + '  ·  ←/→ 翻年';
+    }
+
+    function bindRangeLimits() {
+      const min = state.meta.minYear;
+      const max = state.meta.maxYear;
+      el('centerYear').min = min;
+      el('centerYear').max = max;
+      el('centerRange').min = min;
+      el('centerRange').max = max;
+    }
+
+    function renderEras() {
+      const root = el('eras');
+      root.innerHTML = '';
+      state.eras.forEach((era) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'era' + (era.id === state.activeEraId ? ' on' : '');
+        btn.textContent = era.label;
+        btn.title = '跳到「' + era.label + '」起始年 ' + yearLabel(era.fromYear);
+        btn.addEventListener('click', () => {
+          state.activeEraId = era.id;
+          if (state.radius > 100) state.radius = 100;
+          setYear(era.fromYear, { pan: true, keepEra: true });
+        });
+        root.appendChild(btn);
+      });
+    }
+
+    function pct(year, from, to) {
+      if (to === from) return 0;
+      return ((year - from) / (to - from)) * 100;
+    }
+
+    function barStyle(item, from, to) {
+      const left = Math.max(0, pct(Math.max(item.fromYear, from), from, to));
+      const right = Math.min(100, pct(Math.min(item.toYear, to) + (to > from ? 0.35 : 0), from, to));
+      return { left: left + '%', width: Math.max(1.2, right - left) + '%' };
+    }
+
+    /** Pack overlapping intervals into lanes (greedy). */
+    function packLanes(items) {
+      const sorted = items.slice().sort((a, b) => a.fromYear - b.fromYear || a.toYear - b.toYear);
+      const laneEnds = [];
+      const placed = [];
+      sorted.forEach((item) => {
+        let lane = laneEnds.findIndex((end) => item.fromYear > end);
+        if (lane < 0) {
+          lane = laneEnds.length;
+          laneEnds.push(item.toYear);
+        } else {
+          laneEnds[lane] = item.toYear;
+        }
+        placed.push({ item, lane });
+      });
+      return placed;
+    }
+
+    function appendPackedBars(lanesRoot, items, className, labelFn, onClick) {
+      const from = stateFrom();
+      const to = stateTo();
+      const packed = packLanes(items);
+      const maxLane = packed.reduce((m, x) => Math.max(m, x.lane), 0);
+      for (let i = 0; i <= maxLane; i++) {
+        const lane = document.createElement('div');
+        lane.className = 'lane' + (className === 'reign' ? ' reign-lane' : '');
+        packed.filter((x) => x.lane === i).forEach(({ item }) => {
+          const style = barStyle(item, from, to);
+          const bar = document.createElement('div');
+          bar.className = 'bar ' + className + (item.uncertain ? ' uncertain' : '');
+          bar.dataset.eid = className + ':' + (item.id || '');
+          bar.style.left = style.left;
+          bar.style.width = style.width;
+          const w = parseFloat(style.width);
+          const approx = item.uncertain ? '约' : '';
+          bar.textContent = labelFn(item, w);
+          bar.title = (item.uncertain ? '【约年】' : '') + labelFn(item, 100)
+            + '  ' + approx + yearLabel(item.fromYear) + '–' + approx + yearLabel(item.toYear)
+            + (item.note ? '\n' + item.note : '');
+          if (onClick) bar.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            pickYearFromPointer();
+            onClick(item);
+          });
+          lane.appendChild(bar);
+        });
+        lanesRoot.appendChild(lane);
+      }
+    }
+
+    function appendPolityBars(lanesRoot, items, onClick) {
+      const from = stateFrom();
+      const to = stateTo();
+      const laneMap = new Map();
+      items.forEach((p) => {
+        const key = String(p.lane ?? 0);
+        if (!laneMap.has(key)) laneMap.set(key, []);
+        laneMap.get(key).push(p);
+      });
+      Array.from(laneMap.keys()).sort((a, b) => Number(a) - Number(b)).forEach((key) => {
+        const lane = document.createElement('div');
+        lane.className = 'lane';
+        laneMap.get(key).forEach((p) => {
+          const style = barStyle(p, from, to);
+          const bar = document.createElement('div');
+          const axisClass = p.axis === 'south' || p.axis === 'north' ? p.axis : (p.tier || 'spine');
+          bar.className = 'bar ' + axisClass + ' ' + (p.tier || '') + (p.uncertain ? ' uncertain' : '');
+          bar.dataset.eid = 'polity:' + p.id;
+          bar.style.left = style.left;
+          bar.style.width = style.width;
+          const w = parseFloat(style.width);
+          bar.textContent = (p.uncertain && w >= 8 ? '约·' : '') + (w < 6 ? (p.shortName || p.name) : p.name);
+          bar.title = (p.uncertain ? '【年代约估】' : '') + p.name + '  '
+            + yearLabel(p.fromYear) + '–' + yearLabel(p.toYear)
+            + (p.note ? '\n' + p.note : '');
+          bar.addEventListener('click', (ev) => {
+            ev.stopPropagation();
+            pickYearFromPointer();
+            onClick(p);
+          });
+          lane.appendChild(bar);
+        });
+        lanesRoot.appendChild(lane);
+      });
+    }
+
+    function renderEventTrack(board) {
+      const track = document.createElement('div');
+      track.className = 'track';
+      const title = document.createElement('div');
+      title.className = 'axis-title';
+      title.textContent = '事件点轨';
+      track.appendChild(title);
+
+      const events = state.cache.events.slice()
+        .filter((e) => state.kinds[e.kind] !== false)
+        .sort((a, b) => a.year - b.year || (b.importance || 0) - (a.importance || 0));
+      if (!events.length) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-inline';
+        empty.style.padding = '4px';
+        empty.textContent = '此区间暂无事件点';
+        track.appendChild(empty);
+        board.appendChild(track);
+        return;
+      }
+
+      const from = stateFrom();
+      const to = stateTo();
+      const showLabels = windowWidth() <= EVENT_LABEL_YEARS;
+      const rowEnds = [];
+      events.forEach((e) => {
+        const x = pct(e.year, from, to);
+        let row = 0;
+        if (showLabels) {
+          row = rowEnds.findIndex((endX) => x - endX > 7);
+          if (row < 0) {
+            row = rowEnds.length;
+            rowEnds.push(x + 7);
+          } else {
+            rowEnds[row] = x + 7;
+          }
+        } else {
+          row = events.indexOf(e) % 2;
+        }
+        const node = document.createElement('div');
+        const k = e.kind === 'politics' || e.kind === 'culture' || e.kind === 'battle' ? e.kind : 'politics';
+        node.className = 'dot ' + k + (showLabels ? '' : ' no-label');
+        node.dataset.eid = 'event:' + e.eventId;
+        node.style.left = x + '%';
+        node.style.top = (14 + row * 16) + 'px';
+        node.title = yearLabel(e.year) + ' · ' + e.title;
+        const tip = document.createElement('span');
+        tip.style.top = '16px';
+        tip.textContent = e.title;
+        node.appendChild(tip);
+        node.addEventListener('click', (ev) => {
+          ev.stopPropagation();
+          state.pendingDetail = { kind: 'event', eventId: e.eventId, data: e };
+          setYear(e.year, { pan: true });
+          document.querySelectorAll('.dot.on').forEach((d) => d.classList.remove('on'));
+          node.classList.add('on');
+        });
+        track.appendChild(node);
+      });
+      track.style.minHeight = (36 + Math.max(1, showLabels ? rowEnds.length : 2) * 16) + 'px';
+      board.appendChild(track);
+    }
+
+    function niceStep(span) {
+      const raw = span / 8;
+      const pow = Math.pow(10, Math.floor(Math.log10(Math.max(raw, 1))));
+      const n = raw / pow;
+      let step;
+      if (n <= 1) step = 1;
+      else if (n <= 2) step = 2;
+      else if (n <= 5) step = 5;
+      else step = 10;
+      return step * pow;
+    }
+
+    function renderTicks(container, from, to) {
+      const ticks = document.createElement('div');
+      ticks.className = 'ticks';
+      const span = Math.max(1, to - from);
+      const major = niceStep(span);
+      const minor = major / 5;
+      const start = Math.ceil(from / minor) * minor;
+      for (let y = start; y <= to + 1e-9; y += minor) {
+        const year = Math.round(y);
+        const majorOk = Math.round(year / major) * major === year;
+        const node = document.createElement('div');
+        node.className = 'tick ' + (majorOk ? 'major' : 'minor');
+        node.style.left = pct(year, from, to) + '%';
+        if (majorOk) {
+          const lab = document.createElement('span');
+          lab.textContent = yearLabel(year).replace(/年$/, '');
+          node.appendChild(lab);
+        }
+        ticks.appendChild(node);
+      }
+      // selected-year marker on the tick row
+      const sel = document.createElement('div');
+      sel.className = 'tick major';
+      sel.style.left = pct(state.year, from, to) + '%';
+      sel.style.background = 'var(--accent)';
+      sel.style.height = '16px';
+      const selLab = document.createElement('span');
+      selLab.textContent = '本年';
+      selLab.style.color = 'var(--accent)';
+      sel.appendChild(selLab);
+      ticks.appendChild(sel);
+      const years = new Set((state.cache.events || []).map((e) => e.year));
+      years.forEach((y) => {
+        if (y < from || y > to || y === state.year) return;
+        const heat = document.createElement('div');
+        heat.className = 'heat';
+        heat.style.left = pct(y, from, to) + '%';
+        ticks.appendChild(heat);
+      });
+      container.appendChild(ticks);
+    }
+
+    function bindCursor() {
+      const shell = el('boardShell');
+      const board = el('board');
+      const line = el('cursorLine');
+      const badge = line.querySelector('.cursor-badge');
+      const onMove = (ev) => {
+        const rect = shell.getBoundingClientRect();
+        const x = ev.clientX - rect.left;
+        if (x < 0 || x > rect.width) {
+          line.classList.remove('on');
+          return;
+        }
+        const from = stateFrom();
+        const to = stateTo();
+        const ratio = rect.width ? x / rect.width : 0;
+        const year = from + ratio * (to - from);
+        state.hoverYear = year;
+        line.style.left = x + 'px';
+        line.classList.add('on');
+        line.classList.toggle('near-right', ratio > 0.82);
+        badge.textContent = yearLabel(year);
+      };
+      shell.onmousemove = onMove;
+      shell.onmouseleave = () => {
+        line.classList.remove('on');
+        state.hoverYear = null;
+      };
+      board.addEventListener('click', (ev) => {
+        const t = ev.target;
+        const blank = t === board || t.classList.contains('board-inner')
+          || t.classList.contains('ticks') || t.classList.contains('tick')
+          || t.classList.contains('scale') || (t.tagName === 'SPAN' && t.parentElement
+            && t.parentElement.classList.contains('tick'));
+        if (!blank) return;
+        pickYearFromPointer({ pan: true });
+      });
+    }
+
+    function renderBoard() {
+      const board = el('board');
+      board.innerHTML = '';
+      const inner = document.createElement('div');
+      inner.className = 'board-inner';
+      board.appendChild(inner);
+      const from = stateFrom();
+      const to = stateTo();
+      let any = false;
+
+      if (state.layers.polity) {
+        const byBucket = { spine: [], south: [], north: [], parallel: [], fragment: [] };
+        state.cache.polities.forEach((p) => {
+          if (p.tier === 'fragment') byBucket.fragment.push(p);
+          else if (p.axis === 'south') byBucket.south.push(p);
+          else if (p.axis === 'north') byBucket.north.push(p);
+          else if (p.tier === 'parallel') byBucket.parallel.push(p);
+          else byBucket.spine.push(p);
+        });
+        [
+          ['spine', '① 主线政权'],
+          ['south', '② 南方'],
+          ['north', '③ 北方'],
+          ['parallel', '④ 重要并立'],
+          ['fragment', '⑤ 割据'],
+        ].forEach(([key, title]) => {
+          const list = byBucket[key];
+          if (!list.length) return;
+          any = true;
+          const block = document.createElement('div');
+          block.className = 'axis-block';
+          block.innerHTML = '<div class="axis-title">' + title + '</div>';
+          const lanesRoot = document.createElement('div');
+          lanesRoot.className = 'lanes';
+          appendPolityBars(lanesRoot, list, (p) => openPolityDetail(p));
+          block.appendChild(lanesRoot);
+          inner.appendChild(block);
+        });
+      }
+
+      if (state.layers.ruler && state.cache.rulers.length) {
+        const visiblePolity = new Set((state.cache.polities || []).map((p) => p.id));
+        const visibleRulers = state.cache.rulers.filter((r) => !r.polityId || visiblePolity.has(r.polityId));
+        if (visibleRulers.length) {
+        any = true;
+        const block = document.createElement('div');
+        block.className = 'axis-block';
+        block.innerHTML = '<div class="axis-title">人物轨（帝 / 王）</div>';
+        const lanesRoot = document.createElement('div');
+        lanesRoot.className = 'lanes';
+        appendPackedBars(lanesRoot, visibleRulers, 'ruler',
+          (r, w) => (w < 5 ? r.name : (r.name + (r.personalName ? '·' + r.personalName : ''))),
+          (r) => openRulerDetail(r));
+        block.appendChild(lanesRoot);
+        inner.appendChild(block);
+        }
+      }
+
+      if (state.layers.reign && state.cache.reigns.length) {
+        any = true;
+        const block = document.createElement('div');
+        block.className = 'axis-block';
+        block.innerHTML = '<div class="axis-title">年号轨</div>';
+        const lanesRoot = document.createElement('div');
+        lanesRoot.className = 'lanes';
+        appendPackedBars(lanesRoot, state.cache.reigns, 'reign', (r) => r.name, (r) => openReignDetail(r));
+        block.appendChild(lanesRoot);
+        inner.appendChild(block);
+      }
+
+      if (state.layers.event) {
+        renderEventTrack(inner);
+        any = true;
+      }
+
+      if (state.cache.markers.length) {
+        const row = document.createElement('div');
+        row.className = 'track thin';
+        state.cache.markers.forEach((m) => {
+          const node = document.createElement('div');
+          node.className = 'marker';
+          node.style.left = pct(m.year, from, to) + '%';
+          node.title = m.name + ' · ' + yearLabel(m.year);
+          row.appendChild(node);
+        });
+        inner.appendChild(row);
+      }
+
+      renderTicks(inner, from, to);
+      placeYearLine();
+      const scale = document.createElement('div');
+      scale.className = 'scale';
+      scale.innerHTML = '<span>' + yearLabel(from) + '</span><span>选中 ' + yearLabel(state.year)
+        + '</span><span>' + yearLabel(to) + '</span>';
+      inner.appendChild(scale);
+
+      if (!any) {
+        const empty = document.createElement('div');
+        empty.className = 'empty-inline';
+        empty.style.padding = '24px';
+        empty.style.textAlign = 'center';
+        empty.textContent = '打开上方图层，或切换时代查看';
+        inner.appendChild(empty);
+      }
+
+      bindCursor();
+      applySelectionDim();
+    }
+
+    function selectionKey() {
+      const d = state.detail;
+      if (!d || !d.data) return null;
+      if (d.kind === 'event') return d.data.eventId ? 'event:' + d.data.eventId : null;
+      if (d.kind === 'polity') return d.data.id ? 'polity:' + d.data.id : null;
+      if (d.kind === 'ruler') return d.data.id ? 'ruler:' + d.data.id : null;
+      if (d.kind === 'reign') return d.data.id ? 'reign:' + d.data.id : null;
+      return null;
+    }
+
+    function applySelectionDim() {
+      const sel = selectionKey();
+      document.querySelectorAll('.bar[data-eid], .dot[data-eid]').forEach((n) => {
+        const on = !!sel && n.getAttribute('data-eid') === sel;
+        n.classList.toggle('dim', !!sel && !on);
+        n.classList.toggle('on', on);
+      });
+    }
+
+    function closeDetail() {
+      state.detail = null;
+      applySelectionDim();
+      renderYearPack();
+    }
+
+    function phaseLabel(phase) {
+      if (phase === 'founding') return '始';
+      if (phase === 'ending') return '终';
+      return '';
+    }
+
+    function pickYearFromPointer(opts) {
+      if (state.hoverYear == null) return;
+      setYear(Math.round(state.hoverYear), opts || {});
+    }
+
+    function placeYearLine() {
+      const line = el('yearLine');
+      const shell = el('boardShell');
+      if (!line || !shell) return;
+      const from = stateFrom();
+      const to = stateTo();
+      const ratio = (to === from) ? 0.5 : (state.year - from) / (to - from);
+      const x = Math.max(0, Math.min(1, ratio)) * shell.getBoundingClientRect().width;
+      line.style.left = x + 'px';
+      line.style.display = (state.year < from || state.year > to) ? 'none' : 'block';
+    }
+
+    function writeUrl() {
+      const u = new URL(location.href);
+      u.searchParams.set('year', String(state.year));
+      u.searchParams.set('radius', String(state.radius));
+      history.replaceState({ year: state.year, radius: state.radius }, '', u);
+    }
+
+    function readUrl() {
+      const u = new URL(location.href);
+      const y = Number(u.searchParams.get('year'));
+      const r = Number(u.searchParams.get('radius'));
+      return {
+        year: Number.isFinite(y) ? y : null,
+        radius: Number.isFinite(r) && RADIUS_PRESETS.includes(r) ? r : null,
+      };
+    }
+
+    function ensureYearVisible(year) {
+      const { from, to } = rangeFromCenter();
+      if (year < from || year > to) {
+        state.center = year;
+        return true;
+      }
+      return false;
+    }
+
+    function kindLabel(kind) {
+      if (kind === 'battle') return '战役';
+      if (kind === 'culture') return '文化';
+      return '时局';
+    }
+
+    function renderYearPack() {
+      const pack = state.pack;
+      el('ypYear').textContent = pack ? pack.yearLabel : yearLabel(state.year);
+      el('ypHeadline').textContent = pack ? pack.headline : '';
+      el('ypPrev').disabled = !state.meta || state.year <= state.meta.minYear;
+      el('ypNext').disabled = !state.meta || state.year >= state.meta.maxYear;
+      const body = el('ypBody');
+      if (state.detail) {
+        renderPackDetail(body);
+        return;
+      }
+      if (!pack) {
+        body.innerHTML = '<div class="empty-inline">加载中…</div>';
+        return;
+      }
+
+      let html = '';
+      html += '<div class="yp-sec"><h3>谁在台上</h3>';
+      const pols = pack.polities || [];
+      if (!pols.length) {
+        html += '<div class="empty-inline">本年无政权条</div>';
+      } else {
+        pols.forEach((p) => {
+          const tag = phaseLabel(p.phase);
+          html += '<div class="yp-item" data-kind="polity" data-id="' + esc(p.id) + '"><strong>'
+            + (tag ? '<span class="tag' + (p.phase === 'ending' ? ' end' : '') + '">' + tag + '</span>' : '')
+            + esc(p.name) + '</strong><div class="sub">'
+            + (p.uncertain ? '约 ' : '') + yearLabel(p.fromYear) + '–' + yearLabel(p.toYear)
+            + (p.capital ? ' · ' + esc(p.capital) : '')
+            + (p.tier ? ' · ' + esc(p.tier) : '')
+            + '</div></div>';
+        });
+      }
+      html += '</div>';
+
+      html += '<div class="yp-sec"><h3>本年大事</h3>';
+      const events = pack.events || [];
+      if (!events.length) {
+        html += '<div class="yp-cta">';
+        if (pack.prevRecorded) {
+          html += '<button type="button" data-jump="' + pack.prevRecorded.year + '">跳到最近有事的一年（前）'
+            + '<small>' + yearLabel(pack.prevRecorded.year) + ' · ' + esc(pack.prevRecorded.title) + '</small></button>';
+        }
+        if (pack.nextRecorded) {
+          html += '<button type="button" data-jump="' + pack.nextRecorded.year + '">跳到最近有事的一年（后）'
+            + '<small>' + yearLabel(pack.nextRecorded.year) + ' · ' + esc(pack.nextRecorded.title) + '</small></button>';
+        }
+        html += '</div>';
+      } else {
+        events.forEach((e) => {
+          html += '<div class="yp-item" data-kind="event" data-id="' + esc(e.eventId) + '"><strong>'
+            + '<span class="tag">' + kindLabel(e.kind) + '</span>'
+            + esc(e.title) + '</strong><div class="sub">'
+            + esc(e.summary || '')
+            + ((e.idioms && e.idioms.length) ? ' · ' + e.idioms.map(esc).join('、') : '')
+            + '</div></div>';
+        });
+      }
+      html += '</div>';
+
+      const figures = pack.figures || [];
+      if (figures.length) {
+        html += '<div class="yp-sec"><h3>本年人物</h3>';
+        figures.forEach((f) => {
+          html += '<div class="yp-item" data-kind="figure" data-id="' + esc(f.id) + '"><strong>'
+            + '<span class="tag">' + esc(f.roleLabel || '') + '</span>'
+            + esc(f.name)
+            + (f.personalName ? ' · ' + esc(f.personalName) : '')
+            + '</strong><div class="sub">'
+            + (f.uncertain ? '约 ' : '') + yearLabel(f.fromYear) + '–' + yearLabel(f.toYear)
+            + '</div></div>';
+        });
+        html += '</div>';
+      }
+
+      const allusions = [];
+      events.forEach((e) => {
+        (e.idioms || []).forEach((t) => {
+          allusions.push({ text: t, eventId: e.eventId, title: e.title });
+        });
+      });
+      if (allusions.length) {
+        html += '<div class="yp-sec"><h3>出典</h3>';
+        allusions.forEach((a) => {
+          html += '<div class="yp-item" data-kind="event" data-id="' + esc(a.eventId) + '"><strong>'
+            + esc(a.text) + '</strong><div class="sub">出于「' + esc(a.title) + '」</div></div>';
+        });
+        html += '</div>';
+      }
+
+      html += renderHookSec('此前不久', pack.beforeHooks);
+      html += renderHookSec('此后不久', pack.afterHooks);
+
+      html += '<div class="yp-sec"><h3>在位者</h3>';
+      const rulers = pack.rulers || [];
+      if (!rulers.length) {
+        html += '<div class="empty-inline">本年无轴上人物</div>';
+      } else {
+        rulers.forEach((r) => {
+          html += '<div class="yp-item" data-kind="ruler" data-id="' + esc(r.id) + '"><strong>'
+            + esc(r.name) + (r.personalName ? ' · ' + esc(r.personalName) : '') + '</strong>'
+            + '<div class="sub">在位第' + r.yearOfReign + '年'
+            + (r.uncertain ? ' · 约年' : '')
+            + '</div></div>';
+        });
+      }
+      html += '</div>';
+
+      if (pack.reigns && pack.reigns.length) {
+        html += '<div class="yp-sec"><h3>年号</h3>';
+        pack.reigns.forEach((r) => {
+          html += '<div class="yp-item" data-kind="reign" data-id="' + esc(r.id) + '"><strong>' + esc(r.name)
+            + (r.yearOfEra === 1 ? '元年' : (r.yearOfEra + '年')) + '</strong><div class="sub">'
+            + yearLabel(r.fromYear) + '–' + yearLabel(r.toYear) + '</div></div>';
+        });
+        html += '</div>';
+      }
+
+      (pack.lineages || []).forEach((block) => {
+        html += '<details class="yp-sec"><summary>谱系 · ' + esc(block.polityName)
+          + '（传统世系）</summary><ul class="lineage-list">';
+        (block.persons || []).forEach((x) => {
+          html += '<li>' + esc(x.name)
+            + (x.personalName ? '<small> · ' + esc(x.personalName) + '</small>' : '')
+            + '</li>';
+        });
+        html += '</ul></details>';
+      });
+
+      if (pack.markers && pack.markers.length) {
+        html += '<div class="yp-sec"><h3>标记</h3>';
+        pack.markers.forEach((m) => {
+          html += '<div class="yp-item"><strong>' + esc(m.name) + '</strong></div>';
+        });
+        html += '</div>';
+      }
+
+      body.innerHTML = html;
+      body.querySelectorAll('[data-jump]').forEach((btn) => {
+        btn.addEventListener('click', () => setYear(Number(btn.getAttribute('data-jump')), { pan: true }));
+      });
+      body.querySelectorAll('[data-kind="event"]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const e = (pack.events || []).find((x) => x.eventId === node.getAttribute('data-id'));
+          if (e) openEventDetail(e);
+        });
+      });
+      body.querySelectorAll('[data-kind="figure"]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const f = (pack.figures || []).find((x) => x.id === node.getAttribute('data-id'));
+          if (f) openFigureDetail(f);
+        });
+      });
+      body.querySelectorAll('[data-kind="ruler"]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const r = (pack.rulers || []).find((x) => x.id === node.getAttribute('data-id'));
+          if (r) openRulerDetail(r);
+        });
+      });
+      body.querySelectorAll('[data-kind="polity"]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const p = state.cache.polities.find((x) => x.id === node.getAttribute('data-id'))
+            || (pack.polities || []).find((x) => x.id === node.getAttribute('data-id'));
+          if (p) openPolityDetail(p);
+        });
+      });
+      body.querySelectorAll('[data-kind="reign"]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const r = (pack.reigns || []).find((x) => x.id === node.getAttribute('data-id'));
+          if (r) openReignDetail(r);
+        });
+      });
+      body.querySelectorAll('[data-kind="hook"]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const y = Number(node.getAttribute('data-year'));
+          if (Number.isFinite(y)) setYear(y, { pan: true });
+        });
+      });
+    }
+
+    function renderHookSec(title, hooks) {
+      if (!hooks || !hooks.length) return '';
+      let html = '<div class="yp-sec"><h3>' + title + '</h3>';
+      hooks.forEach((h) => {
+        const ago = h.delta < 0 ? ((-h.delta) + '年前') : (h.delta + '年后');
+        html += '<div class="yp-item" data-kind="hook" data-year="' + h.year + '"><strong>'
+          + esc(h.title) + '</strong><div class="sub">' + yearLabel(h.year) + ' · ' + ago + '</div></div>';
+      });
+      html += '</div>';
+      return html;
+    }
+
+    async function loadYearPack() {
+      try {
+        const res = await QuizApi.apiFetch('/api/history/stream/year?y=' + state.year);
+        if (!res.ok) throw new Error('本年信息加载失败');
+        state.pack = await res.json();
+        if (state.pendingDetail) {
+          await applyPendingDetail(state.pendingDetail);
+          state.pendingDetail = null;
+        }
+        renderYearPack();
+      } catch (e) {
+        el('ypBody').innerHTML = '<div class="empty-inline">' + esc(e.message || e) + '</div>';
+      }
+    }
+
+    async function applyPendingDetail(pending) {
+      if (pending.kind === 'event') {
+        const e = pending.data
+          || (state.pack.events || []).find((x) => x.eventId === pending.eventId)
+          || (state.cache.events || []).find((x) => x.eventId === pending.eventId);
+        if (e) {
+          if (!e.description) {
+            try {
+              const r = await QuizApi.apiFetch('/api/history/stream/events/' + encodeURIComponent(e.eventId));
+              if (r.ok) state.detail = { kind: 'event', data: await r.json() };
+              else state.detail = { kind: 'event', data: e };
+            } catch (_) {
+              state.detail = { kind: 'event', data: e };
+            }
+          } else {
+            state.detail = { kind: 'event', data: e };
+          }
+        }
+      }
+    }
+
+    function renderPackDetail(body) {
+      const d = state.detail;
+      const back = '<button type="button" class="yp-back" id="ypBack">← 回到 '
+        + yearLabel(state.year) + '</button>';
+      body.innerHTML = back + '<div class="yp-detail" id="ypDetailInner"><div class="empty-inline">加载中…</div></div>';
+      el('ypBack').addEventListener('click', closeDetail);
+      const inner = el('ypDetailInner');
+      if (d.kind === 'event') inner.innerHTML = eventDetailHtml(d.data);
+      else if (d.kind === 'figure') inner.innerHTML = figureDetailHtml(d.data);
+      else if (d.kind === 'ruler') fillRulerDetail(inner, d.data);
+      else if (d.kind === 'polity') fillPolityDetail(inner, d.data);
+      else if (d.kind === 'reign') inner.innerHTML = reignDetailHtml(d.data);
+    }
+
+    function eventDetailHtml(e) {
+      let html = '<h2>' + esc(e.title) + '</h2>'
+        + '<div class="meta">' + yearLabel(e.year)
+        + (e.endYear ? '–' + yearLabel(e.endYear) : '')
+        + ' · ' + kindLabel(e.kind) + '</div>'
+        + '<div class="note">' + esc(e.description || e.summary || '') + '</div>';
+      if (e.idioms && e.idioms.length) {
+        html += '<div class="meta">出典</div><div class="chip-row">';
+        e.idioms.forEach((t) => {
+          html += '<span class="chip">' + esc(t) + '</span>';
+        });
+        html += '</div>';
+      }
+      return html;
+    }
+
+    function figureDetailHtml(f) {
+      return '<h2>' + esc(f.name)
+        + (f.personalName ? '（' + esc(f.personalName) + '）' : '') + '</h2>'
+        + '<div class="meta">' + esc(f.roleLabel || '')
+        + ' · ' + (f.uncertain ? '约 ' : '') + yearLabel(f.fromYear)
+        + '–' + (f.uncertain ? '约 ' : '') + yearLabel(f.toYear)
+        + '</div>'
+        + (f.note ? '<div class="note">' + esc(f.note) + '</div>' : '');
+    }
+
+    function reignDetailHtml(r) {
+      return '<h2>年号 · ' + esc(r.name) + '</h2>'
+        + '<div class="meta">' + yearLabel(r.fromYear) + '–' + yearLabel(r.toYear) + '</div>'
+        + (r.note ? '<div class="note">' + esc(r.note) + '</div>' : '');
+    }
+
+    function openEventDetail(e) {
+      state.detail = { kind: 'event', data: e };
+      renderYearPack();
+      applySelectionDim();
+      if (!e.description && e.eventId) {
+        QuizApi.apiFetch('/api/history/stream/events/' + encodeURIComponent(e.eventId))
+          .then((r) => r.ok ? r.json() : e)
+          .then((full) => {
+            if (state.detail && state.detail.kind === 'event' && state.detail.data.eventId === e.eventId) {
+              state.detail.data = full;
+              renderYearPack();
+            }
+          })
+          .catch(() => {});
+      }
+    }
+
+    function openFigureDetail(f) {
+      state.detail = { kind: 'figure', data: f };
+      renderYearPack();
+    }
+
+    function openRulerDetail(r) {
+      state.detail = { kind: 'ruler', data: r };
+      renderYearPack();
+      applySelectionDim();
+    }
+
+    function openReignDetail(r) {
+      state.detail = { kind: 'reign', data: r };
+      renderYearPack();
+      applySelectionDim();
+    }
+
+    function openPolityDetail(p) {
+      state.detail = { kind: 'polity', data: p };
+      renderYearPack();
+      applySelectionDim();
+    }
+
+    async function fillRulerDetail(inner, r) {
+      let reigns = [];
+      try {
+        const nr = await QuizApi.apiFetch(
+          '/api/history/stream/reigns?from=' + r.fromYear + '&to=' + r.toYear
+          + '&rulerId=' + encodeURIComponent(r.id));
+        if (nr.ok) reigns = await nr.json();
+      } catch (_) { /* ignore */ }
+      let html = '<h2>' + esc(r.name) + (r.personalName ? '（' + esc(r.personalName) + '）' : '') + '</h2>'
+        + '<div class="meta">' + (r.uncertain ? '约 ' : '') + yearLabel(r.fromYear)
+        + '–' + (r.uncertain ? '约 ' : '') + yearLabel(r.toYear)
+        + (r.uncertain ? ' · 年代约估' : '')
+        + (r.yearOfReign ? ' · 本年为在位第' + r.yearOfReign + '年' : '')
+        + '</div>'
+        + (r.note ? '<div class="note">' + esc(r.note) + '</div>' : '');
+      if (reigns.length) {
+        html += '<div class="meta">在位年号</div><div class="chip-row">';
+        reigns.forEach((x) => {
+          html += '<span class="chip reign">' + esc(x.name) + ' · '
+            + yearLabel(x.fromYear) + '–' + yearLabel(x.toYear) + '</span>';
+        });
+        html += '</div>';
+      } else {
+        html += '<div class="empty-inline">无年号细分，或尚未录入。</div>';
+      }
+      inner.innerHTML = html;
+    }
+
+    async function fillPolityDetail(inner, p) {
+      const q = 'from=' + p.fromYear + '&to=' + p.toYear + '&polityId=' + encodeURIComponent(p.id);
+      let rulers = [];
+      let reigns = [];
+      let lineages = [];
+      try {
+        const [rr, nr, lr] = await Promise.all([
+          QuizApi.apiFetch('/api/history/stream/rulers?' + q),
+          QuizApi.apiFetch('/api/history/stream/reigns?' + q),
+          QuizApi.apiFetch('/api/history/stream/lineages?polityId=' + encodeURIComponent(p.id)),
+        ]);
+        if (rr.ok) rulers = await rr.json();
+        if (nr.ok) reigns = await nr.json();
+        if (lr.ok) lineages = await lr.json();
+      } catch (_) { /* ignore */ }
+
+      let html = '<h2>' + esc(p.name) + '</h2>'
+        + '<div class="meta">' + (p.uncertain ? '约 ' : '') + yearLabel(p.fromYear)
+        + '–' + (p.uncertain ? '约 ' : '') + yearLabel(p.toYear)
+        + (p.capital ? ' · 都城 ' + esc(p.capital) : '')
+        + (p.uncertain ? ' · 年代约估' : '') + '</div>'
+        + (p.note ? '<div class="note">' + esc(p.note) + '</div>' : '');
+      if (lineages.length) {
+        html += '<div class="meta">传统世系</div><ul class="lineage-list">';
+        lineages.forEach((x) => {
+          html += '<li>' + esc(x.name)
+            + (x.personalName ? '<small> · ' + esc(x.personalName) + '</small>' : '') + '</li>';
+        });
+        html += '</ul>';
+      }
+      if (rulers.length) {
+        html += '<div class="meta">王 / 执政</div><div class="chip-row">';
+        rulers.forEach((r) => {
+          html += '<span class="chip" data-ruler="' + esc(r.id) + '">' + esc(r.name)
+            + (r.personalName ? '·' + esc(r.personalName) : '') + '</span>';
+        });
+        html += '</div>';
+      }
+      if (reigns.length) {
+        html += '<div class="meta">年号</div><div class="chip-row">';
+        reigns.slice(0, 24).forEach((r) => {
+          html += '<span class="chip reign">' + esc(r.name) + '</span>';
+        });
+        html += '</div>';
+      }
+      inner.innerHTML = html;
+      inner.querySelectorAll('[data-ruler]').forEach((node) => {
+        node.addEventListener('click', () => {
+          const r = rulers.find((x) => x.id === node.getAttribute('data-ruler'));
+          if (r) openRulerDetail(r);
+        });
+      });
+    }
+
+    async function refresh() {
+      setError('');
+      syncReignLayer();
+      const tiers = wantFragment() ? 'spine,parallel,fragment' : 'spine,parallel';
+      const { from, to } = rangeFromCenter();
+      const q = 'from=' + from + '&to=' + to;
+      try {
+        const [pr, mr, er, rr, nr] = await Promise.all([
+          QuizApi.apiFetch('/api/history/stream/polities?' + q + '&tiers=' + encodeURIComponent(tiers)),
+          QuizApi.apiFetch('/api/history/stream/markers?' + q),
+          QuizApi.apiFetch('/api/history/stream/events?' + q + '&limit=200'),
+          QuizApi.apiFetch('/api/history/stream/rulers?' + q),
+          QuizApi.apiFetch('/api/history/stream/reigns?' + q),
+        ]);
+        if (!pr.ok || !mr.ok || !er.ok || !rr.ok || !nr.ok) throw new Error('加载失败');
+        state.cache.polities = await pr.json();
+        state.cache.markers = await mr.json();
+        const ev = await er.json();
+        state.cache.events = ev.items || [];
+        state.cache.rulers = await rr.json();
+        state.cache.reigns = await nr.json();
+        syncInputs();
+        renderBoard();
+        await loadYearPack();
+        writeUrl();
+      } catch (e) {
+        setError(String(e.message || e));
+      }
+    }
+
+    function setYear(year, opts) {
+      const o = opts || {};
+      const next = clamp(Math.round(Number(year)), state.meta.minYear, state.meta.maxYear);
+      const yearChanged = next !== state.year;
+      state.year = next;
+      if (yearChanged) state.detail = null;
+      if (!o.keepEra) state.activeEraId = null;
+      let windowMoved = false;
+      if (o.pan) {
+        state.center = next;
+        windowMoved = true;
+      } else {
+        windowMoved = ensureYearVisible(next);
+      }
+      syncReignLayer();
+      syncInputs();
+      renderEras();
+      if (windowMoved || o.refreshBoard) {
+        refresh();
+        return;
+      }
+      placeYearLine();
+      if (yearChanged) applySelectionDim();
+      if (yearChanged || state.pendingDetail) loadYearPack();
+      writeUrl();
+    }
+
+    function stepYear(delta) {
+      setYear(state.year + delta);
+    }
+
+    function jumpRecorded(dir) {
+      const pack = state.pack;
+      const target = dir < 0 ? pack && pack.prevRecordedYear : pack && pack.nextRecordedYear;
+      if (target != null) setYear(target, { pan: true });
+      else stepYear(dir);
+    }
+
+    function onCenterChange(val) {
+      setYear(val, { pan: true, refreshBoard: true });
+    }
+
+    async function boot() {
+      try {
+        const [metaR, erasR] = await Promise.all([
+          QuizApi.apiFetch('/api/history/stream/meta'),
+          QuizApi.apiFetch('/api/history/stream/eras'),
+        ]);
+        if (!metaR.ok || !erasR.ok) throw new Error('初始化失败');
+        state.meta = await metaR.json();
+        state.eras = await erasR.json();
+        bindRangeLimits();
+        const url = readUrl();
+        const def = state.eras.find((e) => e.id === state.meta.defaultEraId) || state.eras[0];
+        if (url.radius) state.radius = url.radius;
+        if (url.year != null) {
+          state.year = clamp(url.year, state.meta.minYear, state.meta.maxYear);
+          state.center = state.year;
+        } else if (def) {
+          state.activeEraId = def.id;
+          state.year = def.fromYear;
+          state.center = def.fromYear;
+          if (!url.radius) state.radius = 100;
+        }
+        syncReignLayer();
+        syncInputs();
+        renderEras();
+
+        el('centerYear').addEventListener('change', (e) => onCenterChange(e.target.value));
+        el('centerRange').addEventListener('change', (e) => onCenterChange(e.target.value));
+        document.querySelectorAll('.radius').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            state.radius = Number(btn.dataset.radius);
+            state.center = state.year;
+            state.reignManual = false;
+            syncReignLayer();
+            refresh();
+          });
+        });
+        el('showFragment').addEventListener('change', (e) => {
+          state.showFragment = e.target.checked;
+          syncInputs();
+          refresh();
+        });
+        el('layerReign').addEventListener('change', (e) => {
+          state.reignManual = true;
+          state.layers.reign = e.target.checked;
+          renderBoard();
+          syncInputs();
+        });
+        [['kindBattle', 'battle'], ['kindPolitics', 'politics'], ['kindCulture', 'culture']].forEach(([id, kind]) => {
+          el(id).addEventListener('change', (e) => {
+            state.kinds[kind] = e.target.checked;
+            renderBoard();
+          });
+        });
+        el('ypPrev').addEventListener('click', () => stepYear(-1));
+        el('ypNext').addEventListener('click', () => stepYear(1));
+        window.addEventListener('resize', placeYearLine);
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            if (state.detail) { closeDetail(); e.preventDefault(); }
+            return;
+          }
+          const typing = e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA');
+          if (typing) return;
+          if (e.key === 'ArrowLeft') { e.preventDefault(); e.shiftKey ? jumpRecorded(-1) : stepYear(-1); }
+          if (e.key === 'ArrowRight') { e.preventDefault(); e.shiftKey ? jumpRecorded(1) : stepYear(1); }
+        });
+
+        await refresh();
+      } catch (e) {
+        setError(String(e.message || e));
+      }
+    }
+
+    boot();
+  </script>
+</body>
+</html>

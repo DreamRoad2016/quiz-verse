@@ -1,0 +1,231 @@
+[
+  {
+    "id": "nw_daowu",
+    "name": "道武帝",
+    "personalName": "拓跋珪",
+    "fromYear": 386,
+    "toYear": 409,
+    "polityId": "northern_wei",
+    "sort": 1
+  },
+  {
+    "id": "nw_mingyuan",
+    "name": "明元帝",
+    "personalName": "拓跋嗣",
+    "fromYear": 409,
+    "toYear": 423,
+    "polityId": "northern_wei",
+    "sort": 2
+  },
+  {
+    "id": "nw_taiwu",
+    "name": "太武帝",
+    "personalName": "拓跋焘",
+    "fromYear": 423,
+    "toYear": 452,
+    "polityId": "northern_wei",
+    "sort": 3
+  },
+  {
+    "id": "nw_wencheng",
+    "name": "文成帝",
+    "personalName": "拓跋濬",
+    "fromYear": 452,
+    "toYear": 465,
+    "polityId": "northern_wei",
+    "sort": 4
+  },
+  {
+    "id": "nw_xianwen",
+    "name": "献文帝",
+    "personalName": "拓跋弘",
+    "fromYear": 465,
+    "toYear": 471,
+    "polityId": "northern_wei",
+    "sort": 5
+  },
+  {
+    "id": "nw_xiaowen",
+    "name": "孝文帝",
+    "personalName": "元宏",
+    "fromYear": 471,
+    "toYear": 499,
+    "polityId": "northern_wei",
+    "sort": 6,
+    "note": "改姓元；迁洛与汉化改革。"
+  },
+  {
+    "id": "nw_xuanwu",
+    "name": "宣武帝",
+    "personalName": "元恪",
+    "fromYear": 499,
+    "toYear": 515,
+    "polityId": "northern_wei",
+    "sort": 7
+  },
+  {
+    "id": "nw_xiaoming",
+    "name": "孝明帝",
+    "personalName": "元诩",
+    "fromYear": 515,
+    "toYear": 528,
+    "polityId": "northern_wei",
+    "sort": 8
+  },
+  {
+    "id": "nw_xiaozhuang",
+    "name": "孝庄帝",
+    "personalName": "元子攸",
+    "fromYear": 528,
+    "toYear": 530,
+    "polityId": "northern_wei",
+    "sort": 9
+  },
+  {
+    "id": "nw_jiemin",
+    "name": "节闵帝",
+    "personalName": "元恭",
+    "fromYear": 531,
+    "toYear": 532,
+    "polityId": "northern_wei",
+    "sort": 10
+  },
+  {
+    "id": "nw_xiaowu_emperor",
+    "name": "孝武帝",
+    "personalName": "元修",
+    "fromYear": 532,
+    "toYear": 535,
+    "polityId": "northern_wei",
+    "sort": 11,
+    "note": "534分裂后西迁，535年北魏名义终结；此处取统一北魏末帝。"
+  },
+  {
+    "id": "ew_xiaojing",
+    "name": "孝静帝",
+    "personalName": "元善见",
+    "fromYear": 534,
+    "toYear": 550,
+    "polityId": "eastern_wei",
+    "sort": 20
+  },
+  {
+    "id": "ww_wen",
+    "name": "文帝",
+    "personalName": "元宝炬",
+    "fromYear": 535,
+    "toYear": 551,
+    "polityId": "western_wei",
+    "sort": 30
+  },
+  {
+    "id": "ww_feidi",
+    "name": "废帝",
+    "personalName": "元钦",
+    "fromYear": 551,
+    "toYear": 554,
+    "polityId": "western_wei",
+    "sort": 31
+  },
+  {
+    "id": "ww_gong",
+    "name": "恭帝",
+    "personalName": "元廓",
+    "fromYear": 554,
+    "toYear": 556,
+    "polityId": "western_wei",
+    "sort": 32
+  },
+  {
+    "id": "nq_wenxuan",
+    "name": "文宣帝",
+    "personalName": "高洋",
+    "fromYear": 550,
+    "toYear": 559,
+    "polityId": "northern_qi",
+    "sort": 40
+  },
+  {
+    "id": "nq_feidi",
+    "name": "废帝",
+    "personalName": "高殷",
+    "fromYear": 559,
+    "toYear": 560,
+    "polityId": "northern_qi",
+    "sort": 41
+  },
+  {
+    "id": "nq_xiaozhao",
+    "name": "孝昭帝",
+    "personalName": "高演",
+    "fromYear": 560,
+    "toYear": 561,
+    "polityId": "northern_qi",
+    "sort": 42
+  },
+  {
+    "id": "nq_wucheng",
+    "name": "武成帝",
+    "personalName": "高湛",
+    "fromYear": 561,
+    "toYear": 565,
+    "polityId": "northern_qi",
+    "sort": 43
+  },
+  {
+    "id": "nq_houzhu",
+    "name": "后主",
+    "personalName": "高纬",
+    "fromYear": 565,
+    "toYear": 577,
+    "polityId": "northern_qi",
+    "sort": 44
+  },
+  {
+    "id": "nz_xiaomin",
+    "name": "孝闵帝",
+    "personalName": "宇文觉",
+    "fromYear": 557,
+    "toYear": 557,
+    "polityId": "northern_zhou",
+    "sort": 50,
+    "note": "在位极短，旋被废。"
+  },
+  {
+    "id": "nz_ming",
+    "name": "明帝",
+    "personalName": "宇文毓",
+    "fromYear": 557,
+    "toYear": 560,
+    "polityId": "northern_zhou",
+    "sort": 51
+  },
+  {
+    "id": "nz_wu",
+    "name": "武帝",
+    "personalName": "宇文邕",
+    "fromYear": 560,
+    "toYear": 578,
+    "polityId": "northern_zhou",
+    "sort": 52
+  },
+  {
+    "id": "nz_xuan",
+    "name": "宣帝",
+    "personalName": "宇文赟",
+    "fromYear": 578,
+    "toYear": 579,
+    "polityId": "northern_zhou",
+    "sort": 53
+  },
+  {
+    "id": "nz_jing",
+    "name": "静帝",
+    "personalName": "宇文阐",
+    "fromYear": 579,
+    "toYear": 581,
+    "polityId": "northern_zhou",
+    "sort": 54,
+    "note": "581年禅位于杨坚，北周亡。"
+  }
+]

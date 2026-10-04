@@ -1,0 +1,124 @@
+[
+  {
+    "id": "wh-gaozu",
+    "name": "高祖",
+    "personalName": "刘邦",
+    "fromYear": -206,
+    "toYear": -195,
+    "polityId": "western_han",
+    "sort": 1,
+    "note": "前206为汉王，前202称帝；与政权条起年（前202）略有口径差。"
+  },
+  {
+    "id": "wh-hui",
+    "name": "惠帝",
+    "personalName": "刘盈",
+    "fromYear": -195,
+    "toYear": -188,
+    "polityId": "western_han",
+    "sort": 2
+  },
+  {
+    "id": "wh-gaohou",
+    "name": "高后",
+    "personalName": "吕雉",
+    "fromYear": -188,
+    "toYear": -180,
+    "polityId": "western_han",
+    "sort": 3,
+    "note": "临朝称制。"
+  },
+  {
+    "id": "wh-wen",
+    "name": "文帝",
+    "personalName": "刘恒",
+    "fromYear": -180,
+    "toYear": -157,
+    "polityId": "western_han",
+    "sort": 4
+  },
+  {
+    "id": "wh-jing",
+    "name": "景帝",
+    "personalName": "刘启",
+    "fromYear": -157,
+    "toYear": -141,
+    "polityId": "western_han",
+    "sort": 5
+  },
+  {
+    "id": "wh-wu",
+    "name": "武帝",
+    "personalName": "刘彻",
+    "fromYear": -141,
+    "toYear": -87,
+    "polityId": "western_han",
+    "sort": 6,
+    "note": "年号制度自此密集；见 reigns 样例。"
+  },
+  {
+    "id": "wh-zhao",
+    "name": "昭帝",
+    "personalName": "刘弗陵",
+    "fromYear": -87,
+    "toYear": -74,
+    "polityId": "western_han",
+    "sort": 7
+  },
+  {
+    "id": "wh-xuan",
+    "name": "宣帝",
+    "personalName": "刘询",
+    "fromYear": -74,
+    "toYear": -49,
+    "polityId": "western_han",
+    "sort": 8
+  },
+  {
+    "id": "wh-yuan",
+    "name": "元帝",
+    "personalName": "刘奭",
+    "fromYear": -49,
+    "toYear": -33,
+    "polityId": "western_han",
+    "sort": 9
+  },
+  {
+    "id": "wh-cheng",
+    "name": "成帝",
+    "personalName": "刘骜",
+    "fromYear": -33,
+    "toYear": -7,
+    "polityId": "western_han",
+    "sort": 10
+  },
+  {
+    "id": "wh-ai",
+    "name": "哀帝",
+    "personalName": "刘欣",
+    "fromYear": -7,
+    "toYear": -1,
+    "polityId": "western_han",
+    "sort": 11
+  },
+  {
+    "id": "wh-ping",
+    "name": "平帝",
+    "personalName": "刘衎",
+    "fromYear": -1,
+    "toYear": 5,
+    "polityId": "western_han",
+    "sort": 12,
+    "note": "终年取公元5年前后通行说法。"
+  },
+  {
+    "id": "wh-ruzi",
+    "name": "孺子婴",
+    "personalName": "刘婴",
+    "fromYear": 6,
+    "toYear": 9,
+    "polityId": "western_han",
+    "sort": 13,
+    "note": "王莽居摄；公元9年新朝建立，西汉结束。"
+  }
+]

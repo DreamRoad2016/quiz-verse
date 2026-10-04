@@ -1,0 +1,153 @@
+{
+  "items": [
+    {
+      "id": "five_dynasties",
+      "name": "五代",
+      "fromYear": 907,
+      "toYear": 960,
+      "tier": 1,
+      "note": "后梁、后唐、后晋、后汉、后周"
+    },
+    {
+      "id": "ten_kingdoms",
+      "name": "十国",
+      "fromYear": 902,
+      "toYear": 979,
+      "tier": 1,
+      "note": "前蜀、后蜀、吴、南唐、吴越、闽、楚、南汉、南平、北汉"
+    },
+    {
+      "id": "liao",
+      "name": "辽",
+      "fromYear": 916,
+      "toYear": 1125,
+      "tier": 1,
+      "note": "契丹，916年建国，947年改国号为辽，983年复称契丹，1066年再称辽"
+    },
+    {
+      "id": "western_xia",
+      "name": "西夏",
+      "fromYear": 1038,
+      "toYear": 1227,
+      "tier": 1,
+      "note": "党项族政权"
+    },
+    {
+      "id": "jin",
+      "name": "金",
+      "fromYear": 1115,
+      "toYear": 1234,
+      "tier": 1,
+      "note": "女真族政权"
+    },
+    {
+      "id": "northern_song",
+      "name": "北宋",
+      "fromYear": 960,
+      "toYear": 1127,
+      "tier": 1,
+      "note": "960年赵匡胤建立，1127年靖康之变灭亡"
+    },
+    {
+      "id": "southern_song",
+      "name": "南宋",
+      "fromYear": 1127,
+      "toYear": 1279,
+      "tier": 1,
+      "note": "1127年赵构建立，1279年崖山海战灭亡"
+    },
+    {
+      "id": "yuan",
+      "name": "元",
+      "fromYear": 1271,
+      "toYear": 1368,
+      "tier": 1,
+      "note": "1271年忽必烈定国号为元，1368年明军攻占大都"
+    },
+    {
+      "id": "ming",
+      "name": "明",
+      "fromYear": 1368,
+      "toYear": 1644,
+      "tier": 1,
+      "note": "1368年朱元璋建立，1644年李自成攻破北京，崇祯帝自缢"
+    },
+    {
+      "id": "later_jin",
+      "name": "后金",
+      "fromYear": 1616,
+      "toYear": 1636,
+      "tier": 1,
+      "note": "1616年努尔哈赤建立，1636年皇太极改国号为清"
+    },
+    {
+      "id": "qing",
+      "name": "清",
+      "fromYear": 1636,
+      "toYear": 1912,
+      "tier": 1,
+      "note": "1636年皇太极改国号为清，1912年宣统帝退位"
+    },
+    {
+      "id": "republic_of_china",
+      "name": "中华民国",
+      "fromYear": 1912,
+      "toYear": 1949,
+      "tier": 1,
+      "note": "1912年成立，1949年中华人民共和国成立，国民党退守台湾"
+    }
+  ],
+  "metaMarkers": [
+    {
+      "id": "song_establishment",
+      "name": "北宋建立",
+      "year": 960,
+      "note": "赵匡胤陈桥兵变，建立北宋"
+    },
+    {
+      "id": "jingkang_incident",
+      "name": "靖康之变",
+      "year": 1127,
+      "note": "金灭北宋，南宋开始"
+    },
+    {
+      "id": "yuan_establishment",
+      "name": "元朝建立",
+      "year": 1271,
+      "note": "忽必烈定国号为元"
+    },
+    {
+      "id": "ming_establishment",
+      "name": "明朝建立",
+      "year": 1368,
+      "note": "朱元璋称帝，建立明朝"
+    },
+    {
+      "id": "qing_establishment",
+      "name": "清朝建立",
+      "year": 1636,
+      "note": "皇太极改国号为清"
+    },
+    {
+      "id": "roc_establishment",
+      "name": "中华民国成立",
+      "year": 1912,
+      "note": "辛亥革命后建立中华民国"
+    },
+    {
+      "id": "prc_establishment",
+      "name": "中华人民共和国成立",
+      "year": 1949,
+      "note": "中华民国时期结束"
+    }
+  ],
+  "warnings": [
+    "五代十国时期存在多个政权并立，十国并非全部同时存在，此处按常见起止年份列出。",
+    "辽的国号多次变更，此处以916年建国至1125年灭亡为整体。",
+    "西夏、金、辽等政权与宋朝并立，时间上有重叠。",
+    "元朝起始年份按忽必烈定国号为1271年，但蒙古帝国建立于1206年。",
+    "明朝灭亡后，南明政权延续至1662年，此处未列入。",
+    "清朝起始年份按1636年皇太极改国号，但后金建立于1616年，已单列。",
+    "中华民国纪年截断至1949年，此后台湾地区沿用该纪年，但大陆已改用公元纪年。"
+  ]
+}

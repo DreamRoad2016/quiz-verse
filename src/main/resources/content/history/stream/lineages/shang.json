@@ -1,0 +1,188 @@
+[
+  {
+    "id": "shang-tang",
+    "name": "汤",
+    "personalName": "天乙",
+    "polityId": "shang",
+    "sort": 1,
+    "note": "成汤，商朝开国。"
+  },
+  {
+    "id": "shang-waibing",
+    "name": "外丙",
+    "polityId": "shang",
+    "sort": 2
+  },
+  {
+    "id": "shang-zhongren",
+    "name": "仲壬",
+    "polityId": "shang",
+    "sort": 3
+  },
+  {
+    "id": "shang-taijia",
+    "name": "太甲",
+    "polityId": "shang",
+    "sort": 4
+  },
+  {
+    "id": "shang-woding",
+    "name": "沃丁",
+    "polityId": "shang",
+    "sort": 5
+  },
+  {
+    "id": "shang-taigeng",
+    "name": "太庚",
+    "polityId": "shang",
+    "sort": 6
+  },
+  {
+    "id": "shang-xiaojia",
+    "name": "小甲",
+    "polityId": "shang",
+    "sort": 7
+  },
+  {
+    "id": "shang-yongji",
+    "name": "雍己",
+    "polityId": "shang",
+    "sort": 8
+  },
+  {
+    "id": "shang-taiwu",
+    "name": "太戊",
+    "polityId": "shang",
+    "sort": 9
+  },
+  {
+    "id": "shang-zhongding",
+    "name": "仲丁",
+    "polityId": "shang",
+    "sort": 10
+  },
+  {
+    "id": "shang-wairen",
+    "name": "外壬",
+    "polityId": "shang",
+    "sort": 11
+  },
+  {
+    "id": "shang-hedanjia",
+    "name": "河亶甲",
+    "polityId": "shang",
+    "sort": 12
+  },
+  {
+    "id": "shang-zuyi",
+    "name": "祖乙",
+    "polityId": "shang",
+    "sort": 13
+  },
+  {
+    "id": "shang-zuxin",
+    "name": "祖辛",
+    "polityId": "shang",
+    "sort": 14
+  },
+  {
+    "id": "shang-wojia",
+    "name": "沃甲",
+    "polityId": "shang",
+    "sort": 15
+  },
+  {
+    "id": "shang-zuding",
+    "name": "祖丁",
+    "polityId": "shang",
+    "sort": 16
+  },
+  {
+    "id": "shang-nangeng",
+    "name": "南庚",
+    "polityId": "shang",
+    "sort": 17
+  },
+  {
+    "id": "shang-yangjia",
+    "name": "阳甲",
+    "polityId": "shang",
+    "sort": 18
+  },
+  {
+    "id": "shang-pangeng",
+    "name": "盘庚",
+    "polityId": "shang",
+    "sort": 19,
+    "note": "迁殷，此后商又称殷；殷墟甲骨文主要对应后期。"
+  },
+  {
+    "id": "shang-xiaoxin",
+    "name": "小辛",
+    "polityId": "shang",
+    "sort": 20
+  },
+  {
+    "id": "shang-xiaoyi",
+    "name": "小乙",
+    "polityId": "shang",
+    "sort": 21
+  },
+  {
+    "id": "shang-wuding",
+    "name": "武丁",
+    "polityId": "shang",
+    "sort": 22,
+    "note": "殷墟甲骨文所记最详之一。"
+  },
+  {
+    "id": "shang-zugeng",
+    "name": "祖庚",
+    "polityId": "shang",
+    "sort": 23
+  },
+  {
+    "id": "shang-zujia",
+    "name": "祖甲",
+    "polityId": "shang",
+    "sort": 24
+  },
+  {
+    "id": "shang-linxin",
+    "name": "廪辛",
+    "polityId": "shang",
+    "sort": 25
+  },
+  {
+    "id": "shang-kangding",
+    "name": "康丁",
+    "polityId": "shang",
+    "sort": 26
+  },
+  {
+    "id": "shang-wuyi",
+    "name": "武乙",
+    "polityId": "shang",
+    "sort": 27
+  },
+  {
+    "id": "shang-taiding",
+    "name": "太丁",
+    "polityId": "shang",
+    "sort": 28
+  },
+  {
+    "id": "shang-diyi",
+    "name": "帝乙",
+    "polityId": "shang",
+    "sort": 29
+  },
+  {
+    "id": "shang-dixin",
+    "name": "帝辛",
+    "personalName": "纣",
+    "polityId": "shang",
+    "sort": 30,
+    "note": "商末君主，武王伐纣对象；习称纣王。"
+  }
+]

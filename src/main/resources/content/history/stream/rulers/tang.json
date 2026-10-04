@@ -1,0 +1,216 @@
+[
+  {
+    "id": "tang_gaozu",
+    "name": "高祖",
+    "personalName": "李渊",
+    "fromYear": 618,
+    "toYear": 626,
+    "polityId": "tang",
+    "sort": 1
+  },
+  {
+    "id": "tang_taizong",
+    "name": "太宗",
+    "personalName": "李世民",
+    "fromYear": 626,
+    "toYear": 649,
+    "polityId": "tang",
+    "sort": 2
+  },
+  {
+    "id": "tang_gaozong",
+    "name": "高宗",
+    "personalName": "李治",
+    "fromYear": 649,
+    "toYear": 683,
+    "polityId": "tang",
+    "sort": 3
+  },
+  {
+    "id": "tang_zhongzong",
+    "name": "中宗",
+    "personalName": "李显",
+    "fromYear": 684,
+    "toYear": 684,
+    "polityId": "tang",
+    "sort": 4,
+    "note": "684年即位旋废；705年复位，见 tang_zhongzong_restore。"
+  },
+  {
+    "id": "tang_zhongzong_restore",
+    "name": "中宗",
+    "personalName": "李显",
+    "fromYear": 705,
+    "toYear": 710,
+    "polityId": "tang",
+    "sort": 5,
+    "note": "神龙政变后复位。"
+  },
+  {
+    "id": "tang_ruizong",
+    "name": "睿宗",
+    "personalName": "李旦",
+    "fromYear": 684,
+    "toYear": 690,
+    "polityId": "tang",
+    "sort": 6,
+    "note": "684–690临朝，690让位于武周。"
+  },
+  {
+    "id": "tang_ruizong_restore",
+    "name": "睿宗",
+    "personalName": "李旦",
+    "fromYear": 710,
+    "toYear": 712,
+    "polityId": "tang",
+    "sort": 7,
+    "note": "710年复位，712禅位于玄宗。"
+  },
+  {
+    "id": "tang_wuzetian",
+    "name": "武周皇帝",
+    "personalName": "武则天",
+    "fromYear": 690,
+    "toYear": 705,
+    "polityId": "tang",
+    "sort": 8,
+    "note": "称帝改周，年号周；产品时间轴仍挂 tang。"
+  },
+  {
+    "id": "tang_xuanzong",
+    "name": "玄宗",
+    "personalName": "李隆基",
+    "fromYear": 712,
+    "toYear": 756,
+    "polityId": "tang",
+    "sort": 9
+  },
+  {
+    "id": "tang_suzong",
+    "name": "肃宗",
+    "personalName": "李亨",
+    "fromYear": 756,
+    "toYear": 762,
+    "polityId": "tang",
+    "sort": 10
+  },
+  {
+    "id": "tang_daizong",
+    "name": "代宗",
+    "personalName": "李豫",
+    "fromYear": 762,
+    "toYear": 779,
+    "polityId": "tang",
+    "sort": 11
+  },
+  {
+    "id": "tang_dezong",
+    "name": "德宗",
+    "personalName": "李适",
+    "fromYear": 779,
+    "toYear": 805,
+    "polityId": "tang",
+    "sort": 12
+  },
+  {
+    "id": "tang_shunzong",
+    "name": "顺宗",
+    "personalName": "李诵",
+    "fromYear": 805,
+    "toYear": 805,
+    "polityId": "tang",
+    "sort": 13,
+    "note": "在位不足一年。"
+  },
+  {
+    "id": "tang_xianzong",
+    "name": "宪宗",
+    "personalName": "李纯",
+    "fromYear": 805,
+    "toYear": 820,
+    "polityId": "tang",
+    "sort": 14
+  },
+  {
+    "id": "tang_muzong",
+    "name": "穆宗",
+    "personalName": "李恒",
+    "fromYear": 820,
+    "toYear": 824,
+    "polityId": "tang",
+    "sort": 15
+  },
+  {
+    "id": "tang_jingzong",
+    "name": "敬宗",
+    "personalName": "李湛",
+    "fromYear": 824,
+    "toYear": 826,
+    "polityId": "tang",
+    "sort": 16
+  },
+  {
+    "id": "tang_wenzong",
+    "name": "文宗",
+    "personalName": "李昂",
+    "fromYear": 826,
+    "toYear": 840,
+    "polityId": "tang",
+    "sort": 17
+  },
+  {
+    "id": "tang_wuzong",
+    "name": "武宗",
+    "personalName": "李炎",
+    "fromYear": 840,
+    "toYear": 846,
+    "polityId": "tang",
+    "sort": 18
+  },
+  {
+    "id": "tang_xuanzong_li",
+    "name": "宣宗",
+    "personalName": "李忱",
+    "fromYear": 846,
+    "toYear": 859,
+    "polityId": "tang",
+    "sort": 19
+  },
+  {
+    "id": "tang_yizong",
+    "name": "懿宗",
+    "personalName": "李漼",
+    "fromYear": 859,
+    "toYear": 873,
+    "polityId": "tang",
+    "sort": 20
+  },
+  {
+    "id": "tang_xizong",
+    "name": "僖宗",
+    "personalName": "李儇",
+    "fromYear": 873,
+    "toYear": 888,
+    "polityId": "tang",
+    "sort": 21
+  },
+  {
+    "id": "tang_zhaozong",
+    "name": "昭宗",
+    "personalName": "李晔",
+    "fromYear": 888,
+    "toYear": 904,
+    "polityId": "tang",
+    "sort": 22
+  },
+  {
+    "id": "tang_ai",
+    "name": "哀帝",
+    "personalName": "李柷",
+    "fromYear": 904,
+    "toYear": 907,
+    "polityId": "tang",
+    "sort": 23,
+    "note": "907年朱温废帝，唐亡。"
+  }
+]

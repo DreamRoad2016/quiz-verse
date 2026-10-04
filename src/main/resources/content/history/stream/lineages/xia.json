@@ -1,0 +1,108 @@
+[
+  {
+    "id": "xia-yu",
+    "name": "禹",
+    "personalName": "姒文命",
+    "polityId": "xia",
+    "sort": 1,
+    "note": "传统夏朝开国，治水传说。"
+  },
+  {
+    "id": "xia-qi",
+    "name": "启",
+    "polityId": "xia",
+    "sort": 2
+  },
+  {
+    "id": "xia-taikang",
+    "name": "太康",
+    "polityId": "xia",
+    "sort": 3
+  },
+  {
+    "id": "xia-zhongkang",
+    "name": "仲康",
+    "polityId": "xia",
+    "sort": 4
+  },
+  {
+    "id": "xia-xiang",
+    "name": "相",
+    "polityId": "xia",
+    "sort": 5
+  },
+  {
+    "id": "xia-shaokang",
+    "name": "少康",
+    "polityId": "xia",
+    "sort": 6,
+    "note": "「少康中兴」。"
+  },
+  {
+    "id": "xia-zhu",
+    "name": "杼",
+    "polityId": "xia",
+    "sort": 7
+  },
+  {
+    "id": "xia-huai",
+    "name": "槐",
+    "polityId": "xia",
+    "sort": 8
+  },
+  {
+    "id": "xia-mang",
+    "name": "芒",
+    "polityId": "xia",
+    "sort": 9
+  },
+  {
+    "id": "xia-xie",
+    "name": "泄",
+    "polityId": "xia",
+    "sort": 10
+  },
+  {
+    "id": "xia-bujiang",
+    "name": "不降",
+    "polityId": "xia",
+    "sort": 11
+  },
+  {
+    "id": "xia-jiong",
+    "name": "扃",
+    "polityId": "xia",
+    "sort": 12
+  },
+  {
+    "id": "xia-jin",
+    "name": "廑",
+    "polityId": "xia",
+    "sort": 13
+  },
+  {
+    "id": "xia-kongjia",
+    "name": "孔甲",
+    "polityId": "xia",
+    "sort": 14
+  },
+  {
+    "id": "xia-gao",
+    "name": "皋",
+    "polityId": "xia",
+    "sort": 15
+  },
+  {
+    "id": "xia-fa",
+    "name": "发",
+    "polityId": "xia",
+    "sort": 16
+  },
+  {
+    "id": "xia-jie",
+    "name": "桀",
+    "polityId": "xia",
+    "sort": 17,
+    "note": "传统夏末君主，为汤所伐。"
+  }
+]

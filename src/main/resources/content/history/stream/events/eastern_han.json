@@ -1,0 +1,130 @@
+[
+  {
+    "eventId": "HS-EH-0036-UNIFY",
+    "year": 36,
+    "title": "光武帝削平公孙述，大体统一",
+    "summary": "东汉完成主要统一战争，进入光武中兴局面。",
+    "description": "公元36年，汉军灭公孙述于蜀，东方与西南主要割据势力先后平定。此后光武着力整顿制度与民生，史称光武中兴。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0067-BAIMA",
+    "year": 67,
+    "title": "白马寺约建，佛教东传节点",
+    "summary": "明帝时期洛阳建白马寺，常被视为佛教传入中国的重要象征。",
+    "description": "通行说法将白马寺创建系于明帝永平年间（约公元67年前后）。具体细节史籍有异说，此处取常见教材节点。",
+    "kind": "culture",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "文化",
+      "宗教"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0089-DOUXIAN",
+    "year": 89,
+    "title": "窦宪破北匈奴",
+    "summary": "和帝初，窦宪率军大破北匈奴，刻石燕然。",
+    "description": "公元89年，车骑将军窦宪出塞击北匈奴，北单于远遁。此役常被视为东汉边疆军事的高峰之一。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0132-DIDONG",
+    "year": 132,
+    "title": "张衡作候风地动仪",
+    "summary": "张衡制成地动仪，为古代测震仪器的代表。",
+    "description": "阳嘉元年张衡为太史令，作候风地动仪。具体形制后世复原有异说，教材常以此年记东汉科技高峰。",
+    "kind": "culture",
+    "polityIds": ["eastern_han"],
+    "importance": 4,
+    "tags": ["科技", "文化"]
+  },
+  {
+    "eventId": "HS-EH-0159-LIANGJI",
+    "year": 159,
+    "title": "桓帝诛梁冀",
+    "summary": "桓帝联合宦官铲除外戚梁冀，外戚势力受挫，宦官权势转盛。",
+    "description": "公元159年，桓帝借助宦官之力诛灭梁冀及其党羽。东汉政治从外戚专权进一步滑向宦官与士大夫冲突。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0166-DANGGU1",
+    "year": 166,
+    "title": "第一次党锢之祸",
+    "summary": "宦官指李膺等为党人，收捕禁锢，士大夫与宦官冲突公开化。",
+    "description": "延熹九年第一次党锢。桓帝纳宦官言，禁锢党人。不久赦归，但矛盾未解，至建宁二年再兴大狱。",
+    "kind": "politics",
+    "polityIds": ["eastern_han"],
+    "importance": 4,
+    "tags": ["政治", "社会"]
+  },
+  {
+    "eventId": "HS-EH-0169-DANGGU",
+    "year": 169,
+    "title": "第二次党锢之祸",
+    "summary": "宦官集团大规模禁锢党人，士大夫与宦官矛盾激化。",
+    "description": "公元169年（建宁二年），第二次党锢兴起，李膺等党人遇害或禁锢。党锢严重消耗东汉统治基础。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "社会"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0189-DONGZHUO",
+    "year": 189,
+    "title": "董卓入洛阳废立",
+    "summary": "董卓率军入京，废少帝立献帝，关东州郡起兵讨董。",
+    "description": "公元189年，何进谋诛宦官失败后，董卓进京专权，废刘辩立刘协。自此中央权威崩解，进入军阀混战。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0196-XUDU",
+    "year": 196,
+    "title": "曹操迎献帝都许",
+    "summary": "献帝迁许，曹操挟天子以令诸侯，北方争霸格局改写。",
+    "description": "建安元年曹操迎汉献帝都许。此后征伐皆用汉廷诏令，官渡前已占政治先机。",
+    "kind": "politics",
+    "polityIds": ["eastern_han"],
+    "importance": 5,
+    "tags": ["政治"],
+    "idioms": ["挟天子以令诸侯"]
+  }
+]

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "hj-tianming",
+    "name": "天命",
+    "fromYear": 1616,
+    "toYear": 1626,
+    "rulerId": "hj_taizu",
+    "polityId": "hou_jin",
+    "sort": 10
+  },
+  {
+    "id": "hj-tiancong",
+    "name": "天聪",
+    "fromYear": 1627,
+    "toYear": 1635,
+    "rulerId": "hj_taizong",
+    "polityId": "hou_jin",
+    "sort": 20,
+    "note": "1636改元崇德、改国号清。"
+  },
+  {
+    "id": "qing-chongde",
+    "name": "崇德",
+    "fromYear": 1636,
+    "toYear": 1643,
+    "rulerId": "qing_taizong",
+    "polityId": "qing",
+    "sort": 30
+  },
+  {
+    "id": "qing-shunzhi",
+    "name": "顺治",
+    "fromYear": 1644,
+    "toYear": 1661,
+    "rulerId": "qing_shizu",
+    "polityId": "qing",
+    "sort": 40
+  },
+  {
+    "id": "qing-kangxi",
+    "name": "康熙",
+    "fromYear": 1662,
+    "toYear": 1722,
+    "rulerId": "qing_shengzu",
+    "polityId": "qing",
+    "sort": 50
+  },
+  {
+    "id": "qing-yongzheng",
+    "name": "雍正",
+    "fromYear": 1723,
+    "toYear": 1735,
+    "rulerId": "qing_shizong",
+    "polityId": "qing",
+    "sort": 60
+  },
+  {
+    "id": "qing-qianlong",
+    "name": "乾隆",
+    "fromYear": 1736,
+    "toYear": 1795,
+    "rulerId": "qing_gaozong",
+    "polityId": "qing",
+    "sort": 70,
+    "note": "1796禅位改元嘉庆；太上皇至1799。"
+  },
+  {
+    "id": "qing-jiaqing",
+    "name": "嘉庆",
+    "fromYear": 1796,
+    "toYear": 1820,
+    "rulerId": "qing_renzong",
+    "polityId": "qing",
+    "sort": 80
+  },
+  {
+    "id": "qing-daoguang",
+    "name": "道光",
+    "fromYear": 1821,
+    "toYear": 1850,
+    "rulerId": "qing_xuanzong",
+    "polityId": "qing",
+    "sort": 90
+  },
+  {
+    "id": "qing-xianfeng",
+    "name": "咸丰",
+    "fromYear": 1851,
+    "toYear": 1861,
+    "rulerId": "qing_wenzong",
+    "polityId": "qing",
+    "sort": 100
+  },
+  {
+    "id": "qing-tongzhi",
+    "name": "同治",
+    "fromYear": 1862,
+    "toYear": 1874,
+    "rulerId": "qing_muzong",
+    "polityId": "qing",
+    "sort": 110
+  },
+  {
+    "id": "qing-guangxu",
+    "name": "光绪",
+    "fromYear": 1875,
+    "toYear": 1908,
+    "rulerId": "qing_dezong",
+    "polityId": "qing",
+    "sort": 120
+  },
+  {
+    "id": "qing-xuantong",
+    "name": "宣统",
+    "fromYear": 1909,
+    "toYear": 1912,
+    "rulerId": "qing_xuantong",
+    "polityId": "qing",
+    "sort": 130,
+    "note": "1909改元；1912退位。"
+  }
+]

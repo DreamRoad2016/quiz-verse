@@ -1,0 +1,728 @@
+[
+  {
+    "eventId": "HS-PQ-1600-TANGXIA",
+    "year": -1600,
+    "title": "成汤灭夏（传说节点）",
+    "summary": "商汤推翻夏桀，建立商朝，传统史学叙事中的改朝换代起点。",
+    "description": "年代为后世归纳之约年，夏商之际绝对年代学界仍有争议。教材与《史记·殷本纪》叙事常以此类节点串联早期国家形成。",
+    "kind": "culture",
+    "polityIds": [
+      "xia",
+      "shang"
+    ],
+    "importance": 3,
+    "tags": [
+      "传说",
+      "改朝"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-1300-PANGGEN",
+    "year": -1300,
+    "title": "盘庚迁殷（约）",
+    "summary": "商王盘庚将都城迁至殷，此后商又称殷商，考古殷墟与此相应。",
+    "description": "迁殷年代通行约年，具体公历年份不确定。殷墟甲骨文为商后期信史奠定基础。",
+    "kind": "culture",
+    "polityIds": [
+      "shang"
+    ],
+    "importance": 3,
+    "tags": [
+      "考古",
+      "都城"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-1250-WUDING",
+    "year": -1250,
+    "title": "武丁中兴（约）",
+    "summary": "商王武丁用傅说等，殷墟甲骨所见商后期国力高峰。",
+    "description": "年代为约年。妇好墓等考古与武丁朝相应。盘庚迁殷之后，商才进入可与考古对读的「殷」阶段。",
+    "kind": "politics",
+    "polityIds": ["shang"],
+    "importance": 3,
+    "tags": ["政治", "考古"],
+    "uncertain": true
+  },
+  {
+    "eventId": "HS-PQ-1046-MUYE",
+    "year": -1046,
+    "title": "牧野之战，武王伐纣",
+    "summary": "周武王联军于牧野击败商纣，商亡周兴，开创西周。",
+    "description": "夏商周断代工程将武王克商定在约前1046年。此战是周人「以德配天」政治合法性的军事转折点。",
+    "kind": "battle",
+    "polityIds": [
+      "western_zhou",
+      "shang"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "改朝"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-1042-ZHOUGONG",
+    "year": -1042,
+    "title": "周公东征（约）",
+    "summary": "成王初，周公旦平武庚、三监，封建齐鲁等，西周制度成型。",
+    "description": "牧野之后商遗与管蔡叛周。周公东征、制礼作乐是教材常用节点。绝对年取成王初约年，标约。",
+    "kind": "politics",
+    "polityIds": ["western_zhou"],
+    "importance": 4,
+    "tags": ["政治", "西周"]
+  },
+  {
+    "eventId": "HS-PQ-0841-GONGHE",
+    "year": -841,
+    "title": "共和元年",
+    "summary": "厉王出奔，周、召二公行政，史称「共和」；司马迁《史记》纪年自此较连贯。",
+    "description": "共和元年是中国古代有确切纪年的重要起点之一。行政者非正式天子，庙号「共和」为后世概括。",
+    "kind": "politics",
+    "polityIds": [
+      "western_zhou"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "纪年"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0827-XUANWANG",
+    "year": -827,
+    "title": "宣王即位与中兴",
+    "summary": "共和结束，宣王即位，史称宣王中兴，西周暂时稳住。",
+    "description": "宣王命尹吉甫等征猃狁、整军。幽王以前最后一次「中兴」叙事。具体战役年多约估。",
+    "kind": "politics",
+    "polityIds": ["western_zhou"],
+    "importance": 3,
+    "tags": ["政治", "西周"]
+  },
+  {
+    "eventId": "HS-PQ-0771-HAOSHU",
+    "year": -771,
+    "title": "犬戎破镐，幽王之死",
+    "summary": "申侯联合犬戎攻镐京，周幽王被杀，西周灭亡。",
+    "description": "烽火戏诸侯、废申后等叙事与此相关。镐京陷落后，周王室权威重挫，诸侯势力上升。",
+    "kind": "politics",
+    "polityIds": [
+      "western_zhou"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0770-DONGQIAN",
+    "year": -770,
+    "title": "平王东迁洛邑",
+    "summary": "周平王在诸侯护卫下迁都洛邑，东周开始，进入春秋阶段。",
+    "description": "东迁后周天子名义共主、实权衰落，「礼乐征伐自天子出」逐步变为自诸侯出，春秋争霸格局形成。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_zhou"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "都城"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0722-CHUNQIU",
+    "year": -722,
+    "title": "《春秋》纪年之始",
+    "summary": "鲁隐公元年，孔子所修《春秋》起于此年。",
+    "description": "传统以隐公元年为《春秋》开篇。东周王室衰微，诸侯纪事成为后来编年史的坐标。确切作者问题从略，取教材通行节点。",
+    "kind": "culture",
+    "polityIds": ["eastern_zhou"],
+    "importance": 4,
+    "tags": ["文献", "文化"]
+  },
+  {
+    "eventId": "HS-PQ-0685-GUANZHONG",
+    "year": -685,
+    "title": "齐桓公任管仲，始霸",
+    "summary": "齐桓公即位后用管仲改革，尊王攘夷，首开春秋霸主事业。",
+    "description": "管仲「九合诸侯」的政治经济改革，使齐国成为春秋首霸。与葵丘会盟（前651）同为齐桓称霸关键节点。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qi"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "改革"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0684-CHANGSHAO",
+    "year": -684,
+    "title": "长勺之战",
+    "summary": "齐鲁战于长勺，曹刿后发击齐，鲁胜。",
+    "description": "齐桓公二年伐鲁。曹刿问战、一鼓作气的叙事出《左传》。与管仲始霸几乎同时，说明齐霸并非一蹴而就。",
+    "kind": "battle",
+    "polityIds": ["state_qi", "eastern_zhou"],
+    "importance": 3,
+    "tags": ["战争", "春秋"],
+    "idioms": ["一鼓作气"]
+  },
+  {
+    "eventId": "HS-PQ-0651-KUIQIU",
+    "year": -651,
+    "title": "葵丘会盟",
+    "summary": "齐桓公召集诸侯于葵丘会盟，周天子派代表参加，齐霸达到顶峰。",
+    "description": "会盟规定诸侯间不得壅水、不得背盟等，是春秋「尊王攘夷」霸业的标志性外交场景，与齐桓公、管仲并称。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qi",
+      "eastern_zhou"
+    ],
+    "importance": 4,
+    "tags": [
+      "外交",
+      "霸权"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0632-CHENGPU",
+    "year": -632,
+    "title": "城濮之战",
+    "summary": "晋文公率晋、齐等国败楚，践土会盟，晋国确立中原霸权。",
+    "description": "城濮是春秋晋楚第一次战略决战。退避三舍、诱敌深入等典故出于此役，标志晋国称霸。",
+    "kind": "battle",
+    "polityIds": [
+      "state_jin",
+      "state_chu"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争"
+    ],
+    "idioms": [
+      "退避三舍"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0627-XIAO",
+    "year": -627,
+    "title": "崤之战",
+    "summary": "晋在崤山伏击秦军，秦东出受挫。",
+    "description": "晋文公卒后，秦袭郑未成，归途于崤为晋所败。此后秦晋由盟友转为世仇，秦转而经营西戎。",
+    "kind": "battle",
+    "polityIds": ["state_jin", "state_qin"],
+    "importance": 4,
+    "tags": ["战争", "春秋"]
+  },
+  {
+    "eventId": "HS-PQ-0597-BI",
+    "year": -597,
+    "title": "邲之战",
+    "summary": "楚庄王大败晋军于邲，楚霸达到顶点。",
+    "description": "晋楚争霸的第二次战略决战。庄王问鼎周室的叙事亦在此前后。城濮之后中原均势再向楚倾斜。",
+    "kind": "battle",
+    "polityIds": ["state_jin", "state_chu"],
+    "importance": 4,
+    "tags": ["战争", "春秋"]
+  },
+  {
+    "eventId": "HS-PQ-0594-CHUSHUIMU",
+    "year": -594,
+    "title": "鲁初税亩",
+    "summary": "鲁宣公十五年开始按亩收税，井田制动摇的标志。",
+    "description": "《春秋》书「初税亩」。无论细节如何复原，教材以此为土地赋税从公田助耕转向履亩而税的节点。",
+    "kind": "politics",
+    "polityIds": ["eastern_zhou"],
+    "importance": 3,
+    "tags": ["经济", "政治"]
+  },
+  {
+    "eventId": "HS-PQ-0536-XINGSHU",
+    "year": -536,
+    "title": "郑人铸刑书",
+    "summary": "子产铸刑书于鼎，公布成文法，叔向曾致书反对。",
+    "description": "郑简公三十年子产作刑书。成文法公布削弱贵族对法律的垄断，是春秋政治变动的教材节点。",
+    "kind": "politics",
+    "polityIds": ["eastern_zhou"],
+    "importance": 3,
+    "tags": ["法制", "政治"]
+  },
+  {
+    "eventId": "HS-PQ-0551-KONGZI",
+    "year": -551,
+    "title": "孔子诞生",
+    "summary": "鲁国邹邑（今山东曲阜一带）孔子出生，后世尊为至圣先师。",
+    "description": "孔子创立儒家学说，强调仁、礼，整理古籍，对中国思想与文化影响两千余年。生年据《史记》等传统文献。",
+    "kind": "culture",
+    "polityIds": [
+      "eastern_zhou"
+    ],
+    "importance": 5,
+    "tags": [
+      "思想",
+      "人物"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0546-MIBING",
+    "year": -546,
+    "title": "弭兵之会",
+    "summary": "宋向戌约晋楚，诸侯承认晋楚共霸，中原大战暂时停顿。",
+    "description": "鲁襄公二十七年会于宋。此后争霸重心逐渐移到吴越。铸刑书、孔子活动与此同一代。",
+    "kind": "politics",
+    "polityIds": ["state_jin", "state_chu", "eastern_zhou"],
+    "importance": 3,
+    "tags": ["外交", "春秋"]
+  },
+  {
+    "eventId": "HS-PQ-0506-BAIJU",
+    "year": -506,
+    "title": "柏举之战",
+    "summary": "吴王阖闾与孙武率吴军入楚，破楚都郢，楚国几乎亡国。",
+    "description": "此役为春秋末期吴楚战略决战，体现吴国军事崛起与孙子兵法实践，楚后借秦复国。",
+    "kind": "battle",
+    "polityIds": [
+      "state_wu",
+      "state_chu"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0479-TIANQI",
+    "year": -479,
+    "title": "田氏代齐",
+    "summary": "田和受封为齐侯，姜齐公室让位，齐国政权易姓，战国格局再变。",
+    "description": "田氏长期专齐政，终代姜姓。周安王正式册封常与公元前386年并提，教材亦以战国初年节点叙述。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qi"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "改朝"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0479-KONGZI",
+    "year": -479,
+    "title": "孔子卒",
+    "summary": "孔子卒于鲁，儒家由私人讲学转入弟子传经。",
+    "description": "鲁哀公十六年。生年见前551条。与田氏代齐同岁而事实不同：一记思想史收束，一记齐政易姓。",
+    "kind": "culture",
+    "polityIds": ["eastern_zhou"],
+    "importance": 4,
+    "tags": ["思想", "人物"]
+  },
+  {
+    "eventId": "HS-PQ-0473-YUMIEWU",
+    "year": -473,
+    "title": "越灭吴",
+    "summary": "越王勾践灭吴，吴王夫差自杀，吴越争霸以越胜告终。",
+    "description": "卧薪尝胆叙事与此相关。越虽胜吴，后亦衰弱，战国前期为楚所并。",
+    "kind": "politics",
+    "polityIds": [
+      "state_yue",
+      "state_wu"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "亡国"
+    ],
+    "idioms": [
+      "卧薪尝胆"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0453-JINYANG",
+    "year": -453,
+    "title": "三家灭智",
+    "summary": "韩赵魏共灭智伯于晋阳，三分其地，三家分晋铺垫完成。",
+    "description": "智伯瑶索地，赵襄子坚守晋阳。韩魏反戈，智氏亡。此后三家强于晋君，至前403年周命为诸侯。",
+    "kind": "battle",
+    "polityIds": ["state_zhao", "state_wei", "state_han"],
+    "importance": 4,
+    "tags": ["战争", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0422-LIKUI",
+    "year": -422,
+    "title": "李悝变法于魏",
+    "summary": "魏文侯用李悝尽地力、著《法经》，魏成为战国初年最强。",
+    "description": "约魏文侯后期。李悝、吴起、西门豹同一代。三家分晋正式册命在前403年，魏的变法更早铺垫霸业。",
+    "kind": "politics",
+    "polityIds": ["state_wei"],
+    "importance": 4,
+    "tags": ["改革", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0403-SANJIA",
+    "year": -403,
+    "title": "三家分晋",
+    "summary": "周威烈王正式册命韩、赵、魏为诸侯，晋国名存实亡，战国开始。",
+    "description": "韩赵魏瓜分晋室，与田氏代齐等事件一道，标志春秋结束、七雄并立格局确立。司马光《资治通鉴》始于此年。",
+    "kind": "politics",
+    "polityIds": [
+      "state_jin",
+      "state_han",
+      "state_zhao",
+      "state_wei"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "分界"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0381-WUQI",
+    "year": -381,
+    "title": "吴起变法于楚",
+    "summary": "楚悼王用吴起裁贵族、强军队，王死吴起被杀，法令多废。",
+    "description": "吴起自魏入楚，损不急之官、废公族疏远者。悼王卒，宗室射死吴起。楚未能如秦那样把变法固定下来。",
+    "kind": "politics",
+    "polityIds": ["state_chu"],
+    "importance": 3,
+    "tags": ["改革", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0356-SHANGRANG",
+    "year": -356,
+    "title": "商鞅变法",
+    "summary": "秦孝公用商鞅在秦国推行变法，废井田、奖军功、行县制，国势日强。",
+    "description": "商鞅变法奠定秦统一六国的制度基础。虽商鞅本人后来被杀，法令多沿袭至秦统一。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin"
+    ],
+    "importance": 5,
+    "tags": [
+      "改革",
+      "法制"
+    ],
+    "idioms": [
+      "徙木立信"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0354-GUILING",
+    "year": -354,
+    "title": "桂陵之战",
+    "summary": "齐军围魏救赵，大败魏军于桂陵，孙膑围魏救赵之计由此得名。",
+    "description": "魏攻赵，赵求救于齐。田忌、孙膑直趋大梁，迫魏回救，于桂陵设伏破魏。后世以「围魏救赵」概括此种攻其所必救的战法。",
+    "kind": "battle",
+    "polityIds": [
+      "state_qi",
+      "state_wei",
+      "state_zhao"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "战国"
+    ],
+    "idioms": [
+      "围魏救赵"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0341-MALING",
+    "year": -341,
+    "title": "马陵之战",
+    "summary": "孙膑减灶诱庞涓，齐军大破魏于马陵。",
+    "description": "齐再救韩，孙膑示弱退兵，庞涓追至马陵中伏自杀。魏从此失去中原霸权。",
+    "kind": "battle",
+    "polityIds": ["state_qi", "state_wei"],
+    "importance": 4,
+    "tags": ["战争", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0318-HEZONG",
+    "year": -318,
+    "title": "五国伐秦",
+    "summary": "魏赵韩燕齐合纵攻秦，至函谷而退，合纵首次大规模亮相。",
+    "description": "周慎靓王三年。公孙衍等主纵。秦守关中，联军无功。说明山东诸国可以暂时联合，但难以持久。",
+    "kind": "battle",
+    "polityIds": ["state_qin", "state_wei", "state_zhao", "state_han"],
+    "importance": 3,
+    "tags": ["战争", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0307-HUFU",
+    "year": -307,
+    "title": "胡服骑射",
+    "summary": "赵武灵王改胡服、习骑射，增强边防与军力。",
+    "description": "武灵王十九年前后推行胡服骑射，改车战传统为骑兵。赵由此成为北方强邻，亦引起宗室争议。",
+    "kind": "politics",
+    "polityIds": ["state_zhao"],
+    "importance": 4,
+    "tags": ["改革", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0293-YIQUE",
+    "year": -293,
+    "title": "伊阙之战",
+    "summary": "白起大破韩魏联军于伊阙，斩首二十四万，秦对山东各国取得压倒优势。",
+    "description": "秦将白起在伊阙（今洛阳龙门一带）歼灭韩魏主力。此战后秦向东扩张显著加速，为后来长平、灭周铺路。",
+    "kind": "battle",
+    "polityIds": [
+      "state_qin",
+      "state_han",
+      "state_wei"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "战国"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0284-LEYI",
+    "year": -284,
+    "title": "乐毅破齐",
+    "summary": "燕将乐毅率五国伐齐，破临淄，齐几亡。",
+    "description": "燕昭王二十八年乐毅下齐七十余城，仅莒、即墨未下。齐湣王走死。后田单复齐，但齐已失东方霸势。",
+    "kind": "battle",
+    "polityIds": ["state_yan", "state_qi"],
+    "importance": 4,
+    "tags": ["战争", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0279-TIANDAN",
+    "year": -279,
+    "title": "田单复齐",
+    "summary": "田单以火牛阵破燕于即墨，迎齐襄王，齐七十余城复。",
+    "description": "乐毅破齐见前284条。燕惠王以骑劫代乐毅，田单反攻。齐虽复国，已非东方霸主。",
+    "kind": "battle",
+    "polityIds": ["state_qi", "state_yan"],
+    "importance": 4,
+    "tags": ["战争", "战国"],
+    "idioms": ["火牛阵"]
+  },
+  {
+    "eventId": "HS-PQ-0278-YING",
+    "year": -278,
+    "title": "白起拔郢",
+    "summary": "秦将白起攻克楚都郢，楚迁陈，楚国元气大伤。",
+    "description": "前278年秦军入郢，烧夷陵，楚顷襄王东迁。屈原沉江的传说多系于此后不久。楚虽未亡，已难再与秦争锋。",
+    "kind": "battle",
+    "polityIds": [
+      "state_qin",
+      "state_chu"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "战国"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0260-CHANGPING",
+    "year": -260,
+    "title": "长平之战",
+    "summary": "秦将白起于长平大败赵军，坑杀赵降卒，赵国元气大伤。",
+    "description": "长平之战是战国后期决定性战役，赵失上党、主力尽丧，秦统一步伐加速。",
+    "kind": "battle",
+    "polityIds": [
+      "state_qin",
+      "state_zhao"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争"
+    ],
+    "idioms": [
+      "纸上谈兵"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0256-MIEZHOU",
+    "year": -256,
+    "title": "秦灭东周",
+    "summary": "秦军攻灭东周国，周赧王出降，名义上的周天子传统终结。",
+    "description": "东周已仅余小邦，秦昭襄王灭之。五年后秦灭韩，进入最后灭六国阶段。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "eastern_zhou"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "亡国"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0256-DUJIANGYAN",
+    "year": -256,
+    "title": "李冰修都江堰（约）",
+    "summary": "秦蜀守李冰凿离堆、分内外江，成都平原成天府。",
+    "description": "约秦昭襄王晚年。与灭东周同岁而事实不同：一记周祚终结，一记水利。都江堰使秦得巴蜀粮赋，统一战争有了后方。",
+    "kind": "culture",
+    "polityIds": ["state_qin"],
+    "importance": 4,
+    "tags": ["工程", "经济"]
+  },
+  {
+    "eventId": "HS-PQ-0247-YINGZHENG",
+    "year": -247,
+    "title": "秦王政即位",
+    "summary": "秦庄襄王卒，嬴政十三岁即位，吕不韦为相。",
+    "description": "前247年。亲政见前238条，称帝见前221条。此条只记即位。",
+    "kind": "politics",
+    "polityIds": ["state_qin"],
+    "importance": 4,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-PQ-0238-QINZHENG",
+    "year": -238,
+    "title": "秦王政亲政",
+    "summary": "平嫪毐之乱，免吕不韦，嬴政开始亲掌国政。",
+    "description": "秦王政九年。王冠、诛嫪毐。此后用李斯、尉缭，转入灭六国。",
+    "kind": "politics",
+    "polityIds": ["state_qin"],
+    "importance": 4,
+    "tags": ["政治"]
+  },
+  {
+    "eventId": "HS-PQ-0233-HANFEI",
+    "year": -233,
+    "title": "韩非入秦",
+    "summary": "韩非使秦，不久死于云阳；法家学说却被秦采用。",
+    "description": "韩王安遣韩非。李斯、姚贾害之。韩非之死与三年后灭韩相接，不重复灭韩条。",
+    "kind": "culture",
+    "polityIds": ["state_qin", "state_han"],
+    "importance": 3,
+    "tags": ["思想", "战国"]
+  },
+  {
+    "eventId": "HS-PQ-0230-MIEHAN",
+    "year": -230,
+    "title": "秦灭韩",
+    "summary": "秦王政派内史腾攻韩，俘韩王安，设颍川郡，韩首先灭亡。",
+    "description": "灭韩是秦王政统一战争的开端，韩国地狭势弱，最先被秦兼并。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "state_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0228-MIEZHAO",
+    "year": -228,
+    "title": "秦灭赵",
+    "summary": "秦将王翦、王贲破赵，俘赵王迁，赵亡（赵嘉后建代，不久亦灭）。",
+    "description": "长平之后赵已疲弱，秦趁势东进。代地残余势力未能长久支撑。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "state_zhao"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0227-JINGKE",
+    "year": -227,
+    "title": "荆轲刺秦",
+    "summary": "燕太子丹遣荆轲献图刺秦王政，事败被杀，成语「图穷匕见」出于此。",
+    "description": "荆轲至咸阳，图穷而匕首见，刺秦不中。秦随即大举伐燕。此事是灭燕前的著名政治事件，非会战。",
+    "kind": "politics",
+    "polityIds": [
+      "state_yan",
+      "state_qin"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "战国"
+    ],
+    "idioms": [
+      "图穷匕见"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0225-MIEWEI",
+    "year": -225,
+    "title": "秦灭魏",
+    "summary": "秦将王贲水灌大梁，魏王假投降，魏国灭亡。",
+    "description": "魏都大梁地处中原，灭魏后秦控关东枢纽，进一步孤立楚、燕、齐。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "state_wei"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0223-MIECHU",
+    "year": -223,
+    "title": "秦灭楚",
+    "summary": "王翦率六十万大军破楚，俘楚王负刍，楚亡。",
+    "description": "楚地广大，秦初战失利后增兵，最终平定楚境，为灭燕、齐扫清侧翼。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "state_chu"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0222-MIEYAN",
+    "year": -222,
+    "title": "秦灭燕",
+    "summary": "王贲攻燕，俘燕王喜，燕国灭亡。",
+    "description": "荆轲刺秦失败后，燕退守辽东，终为秦所灭。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "state_yan"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  },
+  {
+    "eventId": "HS-PQ-0221-MIEQI",
+    "year": -221,
+    "title": "秦灭齐，统一六国",
+    "summary": "王贲从燕南下攻齐，齐王建不战而降，六国悉灭，天下归秦。",
+    "description": "齐为东方最后大国，降后秦王政称皇帝，建立秦朝。统一战争历时约十年完成。",
+    "kind": "politics",
+    "polityIds": [
+      "state_qin",
+      "state_qi"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "统一"
+    ]
+  }
+]

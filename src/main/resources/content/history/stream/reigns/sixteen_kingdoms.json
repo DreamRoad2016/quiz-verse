@@ -1,0 +1,911 @@
+[
+  {
+    "id": "hz-liuyuan-yuanxi",
+    "name": "元熙",
+    "fromYear": 304,
+    "toYear": 308,
+    "rulerId": "hz-liuyuan",
+    "polityId": "han_zhao",
+    "sort": 10
+  },
+  {
+    "id": "hz-liuyuan-yongfeng",
+    "name": "永凤",
+    "fromYear": 308,
+    "toYear": 309,
+    "rulerId": "hz-liuyuan",
+    "polityId": "han_zhao",
+    "sort": 11
+  },
+  {
+    "id": "hz-liuyuan-herui",
+    "name": "河瑞",
+    "fromYear": 309,
+    "toYear": 310,
+    "rulerId": "hz-liuyuan",
+    "polityId": "han_zhao",
+    "sort": 12
+  },
+  {
+    "id": "hz-liuhe-guangxing",
+    "name": "光兴",
+    "fromYear": 310,
+    "toYear": 310,
+    "rulerId": "hz-liuhe",
+    "polityId": "han_zhao",
+    "sort": 13
+  },
+  {
+    "id": "hz-liucong-japing",
+    "name": "嘉平",
+    "fromYear": 310,
+    "toYear": 315,
+    "rulerId": "hz-liucong",
+    "polityId": "han_zhao",
+    "sort": 14,
+    "note": "含光兴、建元短号。"
+  },
+  {
+    "id": "hz-liucong-linjia",
+    "name": "麟嘉",
+    "fromYear": 316,
+    "toYear": 318,
+    "rulerId": "hz-liucong",
+    "polityId": "han_zhao",
+    "sort": 15
+  },
+  {
+    "id": "hz-liucan-hanchang",
+    "name": "汉昌",
+    "fromYear": 318,
+    "toYear": 318,
+    "rulerId": "hz-liucan",
+    "polityId": "han_zhao",
+    "sort": 16
+  },
+  {
+    "id": "hz-liuyao-guangchu",
+    "name": "光初",
+    "fromYear": 318,
+    "toYear": 329,
+    "rulerId": "hz-liuyao",
+    "polityId": "han_zhao",
+    "sort": 20
+  },
+  {
+    "id": "ch-lixiong-jianxing",
+    "name": "建兴",
+    "fromYear": 304,
+    "toYear": 306,
+    "rulerId": "ch-lixiong",
+    "polityId": "cheng_han",
+    "sort": 30,
+    "note": "称王阶段。"
+  },
+  {
+    "id": "ch-lixiong-yanping",
+    "name": "晏平",
+    "fromYear": 306,
+    "toYear": 310,
+    "rulerId": "ch-lixiong",
+    "polityId": "cheng_han",
+    "sort": 31
+  },
+  {
+    "id": "ch-lixiong-yuheng",
+    "name": "玉衡",
+    "fromYear": 311,
+    "toYear": 334,
+    "rulerId": "ch-lixiong",
+    "polityId": "cheng_han",
+    "sort": 32
+  },
+  {
+    "id": "ch-liban-yuheng",
+    "name": "玉衡",
+    "fromYear": 334,
+    "toYear": 334,
+    "rulerId": "ch-liban",
+    "polityId": "cheng_han",
+    "sort": 33
+  },
+  {
+    "id": "ch-liqi-yuheng",
+    "name": "玉恒",
+    "fromYear": 334,
+    "toYear": 338,
+    "rulerId": "ch-liqi",
+    "polityId": "cheng_han",
+    "sort": 34
+  },
+  {
+    "id": "ch-lishou-hanxing",
+    "name": "汉兴",
+    "fromYear": 338,
+    "toYear": 343,
+    "rulerId": "ch-lishou",
+    "polityId": "cheng_han",
+    "sort": 35
+  },
+  {
+    "id": "ch-lishi-taihe",
+    "name": "太和",
+    "fromYear": 343,
+    "toYear": 346,
+    "rulerId": "ch-lishi",
+    "polityId": "cheng_han",
+    "sort": 36
+  },
+  {
+    "id": "ch-lishi-jiaoning",
+    "name": "嘉宁",
+    "fromYear": 346,
+    "toYear": 347,
+    "rulerId": "ch-lishi",
+    "polityId": "cheng_han",
+    "sort": 37
+  },
+  {
+    "id": "ql-zhangshi-jianxing",
+    "name": "建兴",
+    "fromYear": 317,
+    "toYear": 320,
+    "rulerId": "ql-zhangshi",
+    "polityId": "qian_liang",
+    "sort": 40,
+    "note": "前凉多用晋愍帝建兴纪年。"
+  },
+  {
+    "id": "ql-zhangmao-jianxing",
+    "name": "建兴",
+    "fromYear": 320,
+    "toYear": 324,
+    "rulerId": "ql-zhangmao",
+    "polityId": "qian_liang",
+    "sort": 41
+  },
+  {
+    "id": "ql-zhangjun-jianxing",
+    "name": "建兴",
+    "fromYear": 324,
+    "toYear": 346,
+    "rulerId": "ql-zhangjun",
+    "polityId": "qian_liang",
+    "sort": 42
+  },
+  {
+    "id": "ql-zhangchonghua-yongle",
+    "name": "永乐",
+    "fromYear": 346,
+    "toYear": 353,
+    "rulerId": "ql-zhangchonghua",
+    "polityId": "qian_liang",
+    "sort": 43
+  },
+  {
+    "id": "ql-zhangyaoling-taishi",
+    "name": "和平",
+    "fromYear": 353,
+    "toYear": 353,
+    "rulerId": "ql-zhangyaoling",
+    "polityId": "qian_liang",
+    "sort": 44
+  },
+  {
+    "id": "ql-zhangzuo-heping",
+    "name": "和平",
+    "fromYear": 353,
+    "toYear": 355,
+    "rulerId": "ql-zhangzuo",
+    "polityId": "qian_liang",
+    "sort": 45
+  },
+  {
+    "id": "ql-zhangxuanjing-taishi",
+    "name": "太始",
+    "fromYear": 355,
+    "toYear": 363,
+    "rulerId": "ql-zhangxuanjing",
+    "polityId": "qian_liang",
+    "sort": 46
+  },
+  {
+    "id": "ql-zhangtianxi-taiqing",
+    "name": "太清",
+    "fromYear": 363,
+    "toYear": 376,
+    "rulerId": "ql-zhangtianxi",
+    "polityId": "qian_liang",
+    "sort": 47
+  },
+  {
+    "id": "hzh-shile-zhaowang",
+    "name": "赵王",
+    "fromYear": 319,
+    "toYear": 329,
+    "rulerId": "hzh-shile",
+    "polityId": "hou_zhao",
+    "sort": 50,
+    "note": "称帝前年号未建，以王号记年。"
+  },
+  {
+    "id": "hzh-shile-jianping",
+    "name": "建平",
+    "fromYear": 330,
+    "toYear": 333,
+    "rulerId": "hzh-shile",
+    "polityId": "hou_zhao",
+    "sort": 51
+  },
+  {
+    "id": "hzh-shihong-yanxi",
+    "name": "延熙",
+    "fromYear": 333,
+    "toYear": 334,
+    "rulerId": "hzh-shihong",
+    "polityId": "hou_zhao",
+    "sort": 52
+  },
+  {
+    "id": "hzh-shihu-jianwu",
+    "name": "建武",
+    "fromYear": 334,
+    "toYear": 348,
+    "rulerId": "hzh-shihu",
+    "polityId": "hou_zhao",
+    "sort": 53
+  },
+  {
+    "id": "hzh-shihu-taining",
+    "name": "太宁",
+    "fromYear": 349,
+    "toYear": 349,
+    "rulerId": "hzh-shihu",
+    "polityId": "hou_zhao",
+    "sort": 54
+  },
+  {
+    "id": "hzh-shishi-taining",
+    "name": "太宁",
+    "fromYear": 349,
+    "toYear": 349,
+    "rulerId": "hzh-shishi",
+    "polityId": "hou_zhao",
+    "sort": 55
+  },
+  {
+    "id": "hzh-shizun-qinglong",
+    "name": "青龙",
+    "fromYear": 349,
+    "toYear": 349,
+    "rulerId": "hzh-shizun",
+    "polityId": "hou_zhao",
+    "sort": 56
+  },
+  {
+    "id": "hzh-shijian-yongning",
+    "name": "永宁",
+    "fromYear": 349,
+    "toYear": 349,
+    "rulerId": "hzh-shijian",
+    "polityId": "hou_zhao",
+    "sort": 57
+  },
+  {
+    "id": "hzh-shizhi-yongning",
+    "name": "永宁",
+    "fromYear": 350,
+    "toYear": 351,
+    "rulerId": "hzh-shizhi",
+    "polityId": "hou_zhao",
+    "sort": 58
+  },
+  {
+    "id": "qy-muronghuang-yanwang",
+    "name": "燕王",
+    "fromYear": 337,
+    "toYear": 348,
+    "rulerId": "qy-muronghuang",
+    "polityId": "qian_yan",
+    "sort": 60,
+    "note": "慕容皝称燕王，未建年号。"
+  },
+  {
+    "id": "qy-murongjun-yuanxi",
+    "name": "元玺",
+    "fromYear": 348,
+    "toYear": 356,
+    "rulerId": "qy-murongjun",
+    "polityId": "qian_yan",
+    "sort": 61
+  },
+  {
+    "id": "qy-murongjun-guangshou",
+    "name": "光寿",
+    "fromYear": 357,
+    "toYear": 360,
+    "rulerId": "qy-murongjun",
+    "polityId": "qian_yan",
+    "sort": 62
+  },
+  {
+    "id": "qy-murongwei-jianxi",
+    "name": "建熙",
+    "fromYear": 360,
+    "toYear": 370,
+    "rulerId": "qy-murongwei",
+    "polityId": "qian_yan",
+    "sort": 64
+  },
+  {
+    "id": "qq-fujian-huangshi",
+    "name": "皇始",
+    "fromYear": 351,
+    "toYear": 355,
+    "rulerId": "qq-fujian",
+    "polityId": "qian_qin",
+    "sort": 70
+  },
+  {
+    "id": "qq-fusheng-shouguang",
+    "name": "寿光",
+    "fromYear": 355,
+    "toYear": 357,
+    "rulerId": "qq-fusheng",
+    "polityId": "qian_qin",
+    "sort": 71
+  },
+  {
+    "id": "qq-fujianjian-yongxing",
+    "name": "永兴",
+    "fromYear": 357,
+    "toYear": 359,
+    "rulerId": "qq-fujianjian",
+    "polityId": "qian_qin",
+    "sort": 80
+  },
+  {
+    "id": "qq-fujianjian-ganlu",
+    "name": "甘露",
+    "fromYear": 359,
+    "toYear": 364,
+    "rulerId": "qq-fujianjian",
+    "polityId": "qian_qin",
+    "sort": 81
+  },
+  {
+    "id": "qq-fujianjian-jianyuan",
+    "name": "建元",
+    "fromYear": 365,
+    "toYear": 385,
+    "rulerId": "qq-fujianjian",
+    "polityId": "qian_qin",
+    "sort": 82
+  },
+  {
+    "id": "qq-fupi-taiping",
+    "name": "太安",
+    "fromYear": 385,
+    "toYear": 386,
+    "rulerId": "qq-fupi",
+    "polityId": "qian_qin",
+    "sort": 83
+  },
+  {
+    "id": "qq-fudeng-taichu",
+    "name": "太初",
+    "fromYear": 386,
+    "toYear": 394,
+    "rulerId": "qq-fudeng",
+    "polityId": "qian_qin",
+    "sort": 84
+  },
+  {
+    "id": "qq-fuchong-yanchu",
+    "name": "延初",
+    "fromYear": 394,
+    "toYear": 394,
+    "rulerId": "qq-fuchong",
+    "polityId": "qian_qin",
+    "sort": 85
+  },
+  {
+    "id": "hy-murongchui-yanyuan",
+    "name": "燕元",
+    "fromYear": 384,
+    "toYear": 386,
+    "rulerId": "hy-murongchui",
+    "polityId": "hou_yan",
+    "sort": 90
+  },
+  {
+    "id": "hy-murongchui-jianxing",
+    "name": "建兴",
+    "fromYear": 386,
+    "toYear": 396,
+    "rulerId": "hy-murongchui",
+    "polityId": "hou_yan",
+    "sort": 91
+  },
+  {
+    "id": "hy-murongbao-yongkang",
+    "name": "永康",
+    "fromYear": 396,
+    "toYear": 398,
+    "rulerId": "hy-murongbao",
+    "polityId": "hou_yan",
+    "sort": 92
+  },
+  {
+    "id": "hy-murongsheng-jianping",
+    "name": "建平",
+    "fromYear": 398,
+    "toYear": 401,
+    "rulerId": "hy-murongsheng",
+    "polityId": "hou_yan",
+    "sort": 93,
+    "note": "含长乐。"
+  },
+  {
+    "id": "hy-murongxi-guangshi",
+    "name": "光始",
+    "fromYear": 401,
+    "toYear": 406,
+    "rulerId": "hy-murongxi",
+    "polityId": "hou_yan",
+    "sort": 94
+  },
+  {
+    "id": "hy-murongxi-jianshi",
+    "name": "建始",
+    "fromYear": 407,
+    "toYear": 407,
+    "rulerId": "hy-murongxi",
+    "polityId": "hou_yan",
+    "sort": 95
+  },
+  {
+    "id": "hq-yaochang-baique",
+    "name": "白雀",
+    "fromYear": 384,
+    "toYear": 386,
+    "rulerId": "hq-yaochang",
+    "polityId": "hou_qin",
+    "sort": 100
+  },
+  {
+    "id": "hq-yaochang-jianchu",
+    "name": "建初",
+    "fromYear": 386,
+    "toYear": 393,
+    "rulerId": "hq-yaochang",
+    "polityId": "hou_qin",
+    "sort": 101
+  },
+  {
+    "id": "hq-yaoxing-huangchu",
+    "name": "皇初",
+    "fromYear": 394,
+    "toYear": 399,
+    "rulerId": "hq-yaoxing",
+    "polityId": "hou_qin",
+    "sort": 102
+  },
+  {
+    "id": "hq-yaoxing-hongshi",
+    "name": "弘始",
+    "fromYear": 399,
+    "toYear": 416,
+    "rulerId": "hq-yaoxing",
+    "polityId": "hou_qin",
+    "sort": 103
+  },
+  {
+    "id": "hq-yaohong-yonghe",
+    "name": "永和",
+    "fromYear": 416,
+    "toYear": 417,
+    "rulerId": "hq-yaohong",
+    "polityId": "hou_qin",
+    "sort": 104
+  },
+  {
+    "id": "xq-qifuguoren-jianyi",
+    "name": "建义",
+    "fromYear": 385,
+    "toYear": 388,
+    "rulerId": "xq-qifuguoren",
+    "polityId": "xi_qin",
+    "sort": 110
+  },
+  {
+    "id": "xq-qifuqiangui-taichu",
+    "name": "太初",
+    "fromYear": 388,
+    "toYear": 412,
+    "rulerId": "xq-qifuqiangui",
+    "polityId": "xi_qin",
+    "sort": 111,
+    "note": "含更始；失国年份仍挂此号便于按年检索。"
+  },
+  {
+    "id": "xq-qifuchipan-yongkang",
+    "name": "永康",
+    "fromYear": 412,
+    "toYear": 419,
+    "rulerId": "xq-qifuchipan",
+    "polityId": "xi_qin",
+    "sort": 112
+  },
+  {
+    "id": "xq-qifuchipan-jianhong",
+    "name": "建弘",
+    "fromYear": 420,
+    "toYear": 428,
+    "rulerId": "xq-qifuchipan",
+    "polityId": "xi_qin",
+    "sort": 113
+  },
+  {
+    "id": "xq-qifumomo-yonghong",
+    "name": "永弘",
+    "fromYear": 428,
+    "toYear": 431,
+    "rulerId": "xq-qifumomo",
+    "polityId": "xi_qin",
+    "sort": 114
+  },
+  {
+    "id": "hl-lvguang-taian",
+    "name": "太安",
+    "fromYear": 386,
+    "toYear": 389,
+    "rulerId": "hl-lvguang",
+    "polityId": "hou_liang",
+    "sort": 120
+  },
+  {
+    "id": "hl-lvguang-linjia",
+    "name": "麟嘉",
+    "fromYear": 389,
+    "toYear": 396,
+    "rulerId": "hl-lvguang",
+    "polityId": "hou_liang",
+    "sort": 121
+  },
+  {
+    "id": "hl-lvguang-longfei",
+    "name": "龙飞",
+    "fromYear": 396,
+    "toYear": 399,
+    "rulerId": "hl-lvguang",
+    "polityId": "hou_liang",
+    "sort": 122
+  },
+  {
+    "id": "hl-lvshao-longfei",
+    "name": "龙飞",
+    "fromYear": 399,
+    "toYear": 399,
+    "rulerId": "hl-lvshao",
+    "polityId": "hou_liang",
+    "sort": 123
+  },
+  {
+    "id": "hl-lvzuan-xianning",
+    "name": "咸宁",
+    "fromYear": 399,
+    "toYear": 401,
+    "rulerId": "hl-lvzuan",
+    "polityId": "hou_liang",
+    "sort": 124
+  },
+  {
+    "id": "hl-lvlong-shending",
+    "name": "神鼎",
+    "fromYear": 401,
+    "toYear": 403,
+    "rulerId": "hl-lvlong",
+    "polityId": "hou_liang",
+    "sort": 125
+  },
+  {
+    "id": "nl-wugu-taichu",
+    "name": "太初",
+    "fromYear": 397,
+    "toYear": 399,
+    "rulerId": "nl-wugu",
+    "polityId": "nan_liang",
+    "sort": 130
+  },
+  {
+    "id": "nl-lilugu-jianhe",
+    "name": "建和",
+    "fromYear": 399,
+    "toYear": 402,
+    "rulerId": "nl-lilugu",
+    "polityId": "nan_liang",
+    "sort": 131
+  },
+  {
+    "id": "nl-nutan-hongchang",
+    "name": "弘昌",
+    "fromYear": 402,
+    "toYear": 414,
+    "rulerId": "nl-nutan",
+    "polityId": "nan_liang",
+    "sort": 132,
+    "note": "含嘉平。"
+  },
+  {
+    "id": "bl-duanye-shenxi",
+    "name": "神玺",
+    "fromYear": 397,
+    "toYear": 399,
+    "rulerId": "bl-duanye",
+    "polityId": "bei_liang",
+    "sort": 140
+  },
+  {
+    "id": "bl-duanye-tianxi",
+    "name": "天玺",
+    "fromYear": 399,
+    "toYear": 401,
+    "rulerId": "bl-duanye",
+    "polityId": "bei_liang",
+    "sort": 141
+  },
+  {
+    "id": "bl-mengxun-yongan",
+    "name": "永安",
+    "fromYear": 401,
+    "toYear": 412,
+    "rulerId": "bl-mengxun",
+    "polityId": "bei_liang",
+    "sort": 142
+  },
+  {
+    "id": "bl-mengxun-xuanshi",
+    "name": "玄始",
+    "fromYear": 412,
+    "toYear": 428,
+    "rulerId": "bl-mengxun",
+    "polityId": "bei_liang",
+    "sort": 143
+  },
+  {
+    "id": "bl-mengxun-chengxuan",
+    "name": "承玄",
+    "fromYear": 428,
+    "toYear": 433,
+    "rulerId": "bl-mengxun",
+    "polityId": "bei_liang",
+    "sort": 144
+  },
+  {
+    "id": "bl-mujian-yonghe",
+    "name": "永和",
+    "fromYear": 433,
+    "toYear": 439,
+    "rulerId": "bl-mujian",
+    "polityId": "bei_liang",
+    "sort": 145
+  },
+  {
+    "id": "ny-murongde-jianping",
+    "name": "建平",
+    "fromYear": 398,
+    "toYear": 405,
+    "rulerId": "ny-murongde",
+    "polityId": "nan_yan",
+    "sort": 150
+  },
+  {
+    "id": "ny-murongchao-taishang",
+    "name": "太上",
+    "fromYear": 405,
+    "toYear": 410,
+    "rulerId": "ny-murongchao",
+    "polityId": "nan_yan",
+    "sort": 151
+  },
+  {
+    "id": "xl-liga-gengzi",
+    "name": "庚子",
+    "fromYear": 400,
+    "toYear": 404,
+    "rulerId": "xl-liga",
+    "polityId": "xi_liang",
+    "sort": 160
+  },
+  {
+    "id": "xl-liga-jianchu",
+    "name": "建初",
+    "fromYear": 405,
+    "toYear": 417,
+    "rulerId": "xl-liga",
+    "polityId": "xi_liang",
+    "sort": 161
+  },
+  {
+    "id": "xl-lixin-jiaxing",
+    "name": "嘉兴",
+    "fromYear": 417,
+    "toYear": 420,
+    "rulerId": "xl-lixin",
+    "polityId": "xi_liang",
+    "sort": 162
+  },
+  {
+    "id": "xl-lixun-yongjian",
+    "name": "永建",
+    "fromYear": 420,
+    "toYear": 421,
+    "rulerId": "xl-lixun",
+    "polityId": "xi_liang",
+    "sort": 163
+  },
+  {
+    "id": "hx-helian-longsheng",
+    "name": "龙升",
+    "fromYear": 407,
+    "toYear": 413,
+    "rulerId": "hx-helian",
+    "polityId": "hu_xia",
+    "sort": 170
+  },
+  {
+    "id": "hx-helian-fengxiang",
+    "name": "凤翔",
+    "fromYear": 413,
+    "toYear": 418,
+    "rulerId": "hx-helian",
+    "polityId": "hu_xia",
+    "sort": 171
+  },
+  {
+    "id": "hx-helian-changwu",
+    "name": "昌武",
+    "fromYear": 418,
+    "toYear": 419,
+    "rulerId": "hx-helian",
+    "polityId": "hu_xia",
+    "sort": 172
+  },
+  {
+    "id": "hx-helian-zhenxing",
+    "name": "真兴",
+    "fromYear": 419,
+    "toYear": 425,
+    "rulerId": "hx-helian",
+    "polityId": "hu_xia",
+    "sort": 173
+  },
+  {
+    "id": "hx-helianchang-chengguang",
+    "name": "承光",
+    "fromYear": 425,
+    "toYear": 428,
+    "rulerId": "hx-helianchang",
+    "polityId": "hu_xia",
+    "sort": 174
+  },
+  {
+    "id": "hx-helianding-shengguang",
+    "name": "胜光",
+    "fromYear": 428,
+    "toYear": 431,
+    "rulerId": "hx-helianding",
+    "polityId": "hu_xia",
+    "sort": 175
+  },
+  {
+    "id": "by-gaoyun-zhengshi",
+    "name": "正始",
+    "fromYear": 407,
+    "toYear": 409,
+    "rulerId": "by-gaoyun",
+    "polityId": "bei_yan",
+    "sort": 180
+  },
+  {
+    "id": "by-fengba-taiping",
+    "name": "太平",
+    "fromYear": 409,
+    "toYear": 430,
+    "rulerId": "by-fengba",
+    "polityId": "bei_yan",
+    "sort": 181
+  },
+  {
+    "id": "by-fenghong-daxing",
+    "name": "大兴",
+    "fromYear": 430,
+    "toYear": 436,
+    "rulerId": "by-fenghong",
+    "polityId": "bei_yan",
+    "sort": 182
+  },
+  {
+    "id": "dai-yilu-daiwang",
+    "name": "代王",
+    "fromYear": 315,
+    "toYear": 316,
+    "rulerId": "dai-yilu",
+    "polityId": "dai",
+    "sort": 190,
+    "note": "以王号记年。"
+  },
+  {
+    "id": "dai-yulv-daiwang",
+    "name": "代王",
+    "fromYear": 316,
+    "toYear": 321,
+    "rulerId": "dai-yulv",
+    "polityId": "dai",
+    "sort": 191
+  },
+  {
+    "id": "dai-heyan-daiwang",
+    "name": "代王",
+    "fromYear": 321,
+    "toYear": 325,
+    "rulerId": "dai-heyan",
+    "polityId": "dai",
+    "sort": 192
+  },
+  {
+    "id": "dai-hena-daiwang",
+    "name": "代王",
+    "fromYear": 325,
+    "toYear": 337,
+    "rulerId": "dai-hena",
+    "polityId": "dai",
+    "sort": 193
+  },
+  {
+    "id": "dai-shiyijian-jianguo",
+    "name": "建国",
+    "fromYear": 338,
+    "toYear": 376,
+    "rulerId": "dai-shiyijian",
+    "polityId": "dai",
+    "sort": 194
+  },
+  {
+    "id": "rw-ranmin-yongxing",
+    "name": "永兴",
+    "fromYear": 350,
+    "toYear": 352,
+    "rulerId": "rw-ranmin",
+    "polityId": "ran_wei",
+    "sort": 200
+  },
+  {
+    "id": "xy-muronghong-yanxing",
+    "name": "燕兴",
+    "fromYear": 384,
+    "toYear": 384,
+    "rulerId": "xy-muronghong",
+    "polityId": "xi_yan",
+    "sort": 210
+  },
+  {
+    "id": "xy-murongchong-gengshi",
+    "name": "更始",
+    "fromYear": 384,
+    "toYear": 386,
+    "rulerId": "xy-murongchong",
+    "polityId": "xi_yan",
+    "sort": 211
+  },
+  {
+    "id": "xy-murongyong-zhongxing",
+    "name": "中兴",
+    "fromYear": 386,
+    "toYear": 394,
+    "rulerId": "xy-murongyong",
+    "polityId": "xi_yan",
+    "sort": 212
+  }
+]

@@ -1,0 +1,166 @@
+[
+  {
+    "id": "ns-taizu",
+    "name": "太祖",
+    "personalName": "赵匡胤",
+    "fromYear": 960,
+    "toYear": 976,
+    "polityId": "northern_song",
+    "sort": 1
+  },
+  {
+    "id": "ns-taizong",
+    "name": "太宗",
+    "personalName": "赵炅",
+    "fromYear": 976,
+    "toYear": 997,
+    "polityId": "northern_song",
+    "sort": 2
+  },
+  {
+    "id": "ns-zhenzong",
+    "name": "真宗",
+    "personalName": "赵恒",
+    "fromYear": 997,
+    "toYear": 1022,
+    "polityId": "northern_song",
+    "sort": 3
+  },
+  {
+    "id": "ns-renzong",
+    "name": "仁宗",
+    "personalName": "赵祯",
+    "fromYear": 1022,
+    "toYear": 1063,
+    "polityId": "northern_song",
+    "sort": 4
+  },
+  {
+    "id": "ns-yingzong",
+    "name": "英宗",
+    "personalName": "赵曙",
+    "fromYear": 1063,
+    "toYear": 1067,
+    "polityId": "northern_song",
+    "sort": 5
+  },
+  {
+    "id": "ns-shenzong",
+    "name": "神宗",
+    "personalName": "赵顼",
+    "fromYear": 1067,
+    "toYear": 1085,
+    "polityId": "northern_song",
+    "sort": 6
+  },
+  {
+    "id": "ns-zhezong",
+    "name": "哲宗",
+    "personalName": "赵煦",
+    "fromYear": 1085,
+    "toYear": 1100,
+    "polityId": "northern_song",
+    "sort": 7
+  },
+  {
+    "id": "ns-huizong",
+    "name": "徽宗",
+    "personalName": "赵佶",
+    "fromYear": 1100,
+    "toYear": 1125,
+    "polityId": "northern_song",
+    "sort": 8
+  },
+  {
+    "id": "ns-qinzong",
+    "name": "钦宗",
+    "personalName": "赵桓",
+    "fromYear": 1125,
+    "toYear": 1127,
+    "polityId": "northern_song",
+    "sort": 9,
+    "note": "1127靖康之变被俘，北宋亡。"
+  },
+  {
+    "id": "ss-gaozong",
+    "name": "高宗",
+    "personalName": "赵构",
+    "fromYear": 1127,
+    "toYear": 1162,
+    "polityId": "southern_song",
+    "sort": 10
+  },
+  {
+    "id": "ss-xiaozong",
+    "name": "孝宗",
+    "personalName": "赵昚",
+    "fromYear": 1162,
+    "toYear": 1189,
+    "polityId": "southern_song",
+    "sort": 11
+  },
+  {
+    "id": "ss-guangzong",
+    "name": "光宗",
+    "personalName": "赵惇",
+    "fromYear": 1189,
+    "toYear": 1194,
+    "polityId": "southern_song",
+    "sort": 12
+  },
+  {
+    "id": "ss-ningzong",
+    "name": "宁宗",
+    "personalName": "赵扩",
+    "fromYear": 1194,
+    "toYear": 1224,
+    "polityId": "southern_song",
+    "sort": 13
+  },
+  {
+    "id": "ss-lizong",
+    "name": "理宗",
+    "personalName": "赵昀",
+    "fromYear": 1224,
+    "toYear": 1264,
+    "polityId": "southern_song",
+    "sort": 14
+  },
+  {
+    "id": "ss-duzong",
+    "name": "度宗",
+    "personalName": "赵禥",
+    "fromYear": 1264,
+    "toYear": 1274,
+    "polityId": "southern_song",
+    "sort": 15
+  },
+  {
+    "id": "ss-gongdi",
+    "name": "恭帝",
+    "personalName": "赵㬎",
+    "fromYear": 1274,
+    "toYear": 1276,
+    "polityId": "southern_song",
+    "sort": 16
+  },
+  {
+    "id": "ss-duanzong",
+    "name": "端宗",
+    "personalName": "赵昰",
+    "fromYear": 1276,
+    "toYear": 1278,
+    "polityId": "southern_song",
+    "sort": 17
+  },
+  {
+    "id": "ss-modi",
+    "name": "卫王（末帝）",
+    "personalName": "赵昺",
+    "fromYear": 1278,
+    "toYear": 1279,
+    "polityId": "southern_song",
+    "sort": 18,
+    "note": "1279崖山海战，南宋亡。"
+  }
+]

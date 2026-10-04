@@ -1,0 +1,81 @@
+{
+  "items": [
+    {
+      "id": "liu_song",
+      "name": "刘宋",
+      "fromYear": 420,
+      "toYear": 479,
+      "note": "南朝宋，420年刘裕代晋，479年萧道成代宋。"
+    },
+    {
+      "id": "southern_qi",
+      "name": "南齐",
+      "fromYear": 479,
+      "toYear": 502,
+      "note": "479年萧道成建齐，502年萧衍代齐。"
+    },
+    {
+      "id": "liang",
+      "name": "梁",
+      "fromYear": 502,
+      "toYear": 557,
+      "note": "502年萧衍建梁，557年陈霸先代梁。"
+    },
+    {
+      "id": "chen",
+      "name": "陈",
+      "fromYear": 557,
+      "toYear": 589,
+      "note": "557年陈霸先建陈，589年隋灭陈。"
+    },
+    {
+      "id": "northern_wei",
+      "name": "北魏",
+      "fromYear": 386,
+      "toYear": 534,
+      "note": "386年拓跋珪重建代国，改称魏；534年分裂为东魏、西魏。"
+    },
+    {
+      "id": "eastern_wei",
+      "name": "东魏",
+      "fromYear": 534,
+      "toYear": 550,
+      "note": "534年高欢立元善见，550年高洋代东魏。"
+    },
+    {
+      "id": "western_wei",
+      "name": "西魏",
+      "fromYear": 535,
+      "toYear": 556,
+      "note": "535年宇文泰立元宝炬，556年宇文觉代西魏，557年北周正式建立。"
+    },
+    {
+      "id": "northern_qi",
+      "name": "北齐",
+      "fromYear": 550,
+      "toYear": 577,
+      "note": "550年高洋建齐，577年被北周所灭。"
+    },
+    {
+      "id": "northern_zhou",
+      "name": "北周",
+      "fromYear": 557,
+      "toYear": 581,
+      "note": "557年宇文觉称天王，581年杨坚代周。"
+    },
+    {
+      "id": "sui",
+      "name": "隋",
+      "fromYear": 581,
+      "toYear": 618,
+      "note": "581年杨坚代周建隋，618年隋炀帝被杀，李渊建唐。"
+    },
+    {
+      "id": "tang",
+      "name": "唐",
+      "fromYear": 618,
+      "toYear": 907,
+      "note": "618年李渊建唐，907年朱温代唐。"
+    }
+  ]
+}

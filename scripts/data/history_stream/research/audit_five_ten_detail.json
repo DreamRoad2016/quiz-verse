@@ -1,0 +1,112 @@
+{
+  "fiveDynasties": [
+    {
+      "id": "later_liang",
+      "name": "后梁",
+      "fromYear": 907,
+      "toYear": 923,
+      "note": "朱温建立，都开封，后迁洛阳。"
+    },
+    {
+      "id": "later_tang",
+      "name": "后唐",
+      "fromYear": 923,
+      "toYear": 936,
+      "note": "李存勖建立，都洛阳。"
+    },
+    {
+      "id": "later_jin",
+      "name": "后晋",
+      "fromYear": 936,
+      "toYear": 947,
+      "note": "石敬瑭建立，都开封。"
+    },
+    {
+      "id": "later_han",
+      "name": "后汉",
+      "fromYear": 947,
+      "toYear": 951,
+      "note": "刘知远建立，都开封。"
+    },
+    {
+      "id": "later_zhou",
+      "name": "后周",
+      "fromYear": 951,
+      "toYear": 960,
+      "note": "郭威建立，都开封。"
+    }
+  ],
+  "tenKingdoms": [
+    {
+      "id": "wu",
+      "name": "吴",
+      "fromYear": 902,
+      "toYear": 937,
+      "note": "杨行密建立，都扬州。"
+    },
+    {
+      "id": "southern_tang",
+      "name": "南唐",
+      "fromYear": 937,
+      "toYear": 975,
+      "note": "李昪建立，都金陵。"
+    },
+    {
+      "id": "wuyue",
+      "name": "吴越",
+      "fromYear": 907,
+      "toYear": 978,
+      "note": "钱镠建立，都杭州。"
+    },
+    {
+      "id": "chu",
+      "name": "楚",
+      "fromYear": 907,
+      "toYear": 951,
+      "note": "马殷建立，都潭州。"
+    },
+    {
+      "id": "min",
+      "name": "闽",
+      "fromYear": 909,
+      "toYear": 945,
+      "note": "王审知建立，都福州。"
+    },
+    {
+      "id": "southern_han",
+      "name": "南汉",
+      "fromYear": 917,
+      "toYear": 971,
+      "note": "刘龑建立，都广州。"
+    },
+    {
+      "id": "former_shu",
+      "name": "前蜀",
+      "fromYear": 907,
+      "toYear": 925,
+      "note": "王建建立，都成都。"
+    },
+    {
+      "id": "later_shu",
+      "name": "后蜀",
+      "fromYear": 934,
+      "toYear": 965,
+      "note": "孟知祥建立，都成都。"
+    },
+    {
+      "id": "jingnan",
+      "name": "荆南（南平）",
+      "fromYear": 924,
+      "toYear": 963,
+      "note": "高季兴建立，都荆州。"
+    },
+    {
+      "id": "northern_han",
+      "name": "北汉",
+      "fromYear": 951,
+      "toYear": 979,
+      "note": "刘崇建立，都太原。"
+    }
+  ],
+  "warnings": []
+}

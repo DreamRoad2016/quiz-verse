@@ -1,0 +1,5 @@
+[
+  {"id": "xin-wangmang-shijianguo", "name": "始建国", "fromYear": 9, "toYear": 13, "rulerId": "xin-wangmang", "polityId": "xin", "sort": 10},
+  {"id": "xin-wangmang-tianfeng", "name": "天凤", "fromYear": 14, "toYear": 19, "rulerId": "xin-wangmang", "polityId": "xin", "sort": 20},
+  {"id": "xin-wangmang-dihuang", "name": "地皇", "fromYear": 20, "toYear": 23, "rulerId": "xin-wangmang", "polityId": "xin", "sort": 30, "note": "23年新亡。"}
+]

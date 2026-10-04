@@ -1,0 +1,103 @@
+[
+  {
+    "id": "cw-wendi",
+    "name": "文帝",
+    "personalName": "曹丕",
+    "fromYear": 220,
+    "toYear": 226,
+    "polityId": "cao_wei",
+    "sort": 1
+  },
+  {
+    "id": "cw-mingdi",
+    "name": "明帝",
+    "personalName": "曹叡",
+    "fromYear": 226,
+    "toYear": 239,
+    "polityId": "cao_wei",
+    "sort": 2
+  },
+  {
+    "id": "cw-qiwang",
+    "name": "齐王",
+    "personalName": "曹芳",
+    "fromYear": 239,
+    "toYear": 254,
+    "polityId": "cao_wei",
+    "sort": 3
+  },
+  {
+    "id": "cw-gaogui",
+    "name": "高贵乡公",
+    "personalName": "曹髦",
+    "fromYear": 254,
+    "toYear": 260,
+    "polityId": "cao_wei",
+    "sort": 4
+  },
+  {
+    "id": "cw-yuandi",
+    "name": "元帝",
+    "personalName": "曹奂",
+    "fromYear": 260,
+    "toYear": 265,
+    "polityId": "cao_wei",
+    "sort": 5
+  },
+  {
+    "id": "sh-zhaolie",
+    "name": "昭烈帝",
+    "personalName": "刘备",
+    "fromYear": 221,
+    "toYear": 223,
+    "polityId": "shu_han",
+    "sort": 10
+  },
+  {
+    "id": "sh-houzhu",
+    "name": "后主",
+    "personalName": "刘禅",
+    "fromYear": 223,
+    "toYear": 263,
+    "polityId": "shu_han",
+    "sort": 11
+  },
+  {
+    "id": "wu-dadi",
+    "name": "大帝",
+    "personalName": "孙权",
+    "fromYear": 222,
+    "toYear": 252,
+    "polityId": "eastern_wu",
+    "sort": 20,
+    "note": "222年称帝；此前为吴王。"
+  },
+  {
+    "id": "wu-sunliang",
+    "name": "会稽王",
+    "personalName": "孙亮",
+    "fromYear": 252,
+    "toYear": 258,
+    "polityId": "eastern_wu",
+    "sort": 21
+  },
+  {
+    "id": "wu-sunxiu",
+    "name": "景帝",
+    "personalName": "孙休",
+    "fromYear": 258,
+    "toYear": 264,
+    "polityId": "eastern_wu",
+    "sort": 22
+  },
+  {
+    "id": "wu-sunhao",
+    "name": "末帝",
+    "personalName": "孙皓",
+    "fromYear": 264,
+    "toYear": 280,
+    "polityId": "eastern_wu",
+    "sort": 23,
+    "note": "初封乌程侯；史称吴末帝。"
+  }
+]
