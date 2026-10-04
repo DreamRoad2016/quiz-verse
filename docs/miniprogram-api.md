@@ -123,6 +123,11 @@ server {
 - 谱系：`id,name,personalName?,polityId,sort,note?`（`lineages/`；夏商世系）
 - 浏览页（深层入口）：`/vault/q/2026/history-stream/hub.html`（`/history/stream.html` 会跳转至此）
 - UI：时间轴 + 选中年 Year Pack（`?year=`）；主次为时局/大事 → 本年人物/出典 → 在位/年号 → 谱系
+- **小程序（miniprogram-1）**：底部 Tab「今天」+「源流」；源流读 `meta` / `eras` / `year` / `events/{id}`  
+  - P0：Year Pack 列表 + 事件详情  
+  - P1：分享深链 `pages/stream/index?y=`、政权摘要、邻近钩子、人物/谱系展示  
+  - **布局 A**：首屏年卡（摘要+大事+台上短签）；吸顶 `‹ 年 ›` 翻年（无底栏拇指条）；更多进抽屉  
+  - 工程路径 `/Users/captain/WeChatProjects/miniprogram-1`
 - 设计见 `docs/09_历史功能模块.md`、`docs/10_历史源流_中国朝代设计.md`
 
 ### `/api/catalog` 字段要点

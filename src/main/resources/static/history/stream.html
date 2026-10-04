@@ -2,11 +2,75 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=/vault/q/2026/history-stream/hub.html" />
-  <title>历史源流</title>
-  <script>location.replace('/vault/q/2026/history-stream/hub.html');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>历史源流 · 中国史时间轴</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&family=Noto+Sans+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/history/stream.css" />
 </head>
 <body>
-  <p><a href="/vault/q/2026/history-stream/hub.html">进入历史源流</a></p>
+  <div class="wrap">
+    <div class="chrome">
+      <div class="person-search">
+        <div class="ps-input-wrap">
+          <span class="ps-icon" aria-hidden="true">🔎</span>
+          <input id="personSearch" type="search" placeholder="查人 · 输入姓名 / 字 / 庙号（如 曹操、王羲之、岳飞、曹丕）"
+            autocomplete="off" spellcheck="false" />
+        </div>
+        <div class="person-results" id="personResults" hidden></div>
+      </div>
+      <div class="eras" id="eras"></div>
+      <div class="timebar">
+        <div class="year-box">
+          <span>年份</span>
+          <input id="centerYear" type="number" />
+        </div>
+        <input id="centerRange" type="range" />
+        <div class="radius-row" id="radiusRow">
+          <button type="button" class="radius" data-radius="10">±10</button>
+          <button type="button" class="radius" data-radius="50">±50</button>
+          <button type="button" class="radius" data-radius="100">±100</button>
+          <button type="button" class="radius" data-radius="200">±200</button>
+          <button type="button" class="radius" data-radius="500">±500</button>
+        </div>
+        <div class="extras">
+          <label><input id="layerReign" type="checkbox" /> 年号</label>
+          <label><input id="showFragment" type="checkbox" /> 割据</label>
+          <label><input id="kindBattle" type="checkbox" checked /> 战</label>
+          <label><input id="kindPolitics" type="checkbox" checked /> 时局</label>
+          <label><input id="kindCulture" type="checkbox" checked /> 文</label>
+        </div>
+      </div>
+      <div class="range-meta" id="rangeMeta">加载中…</div>
+      <div class="err" id="err" hidden></div>
+    </div>
+
+    <div class="stage">
+      <div class="board-shell" id="boardShell">
+        <div class="board" id="board"></div>
+        <div class="year-line" id="yearLine"><span class="year-line-label"></span></div>
+        <div class="cursor-line" id="cursorLine"><div class="cursor-badge"></div></div>
+        <div class="board-tooltip" id="boardTooltip"></div>
+      </div>
+      <aside class="year-pack" id="yearPack" aria-label="本年信息">
+        <div class="yp-nav">
+          <button type="button" id="ypPrev" title="上一年（←）">←</button>
+          <div class="yp-year" id="ypYear">…</div>
+          <button type="button" id="ypNext" title="下一年（→）">→</button>
+        </div>
+        <p class="yp-headline" id="ypHeadline">点轴上任意处查看该年</p>
+        <div id="ypBody"><div class="empty-inline">加载中…</div></div>
+      </aside>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/history-stream/stream.data.js"></script>
+  <script src="/js/history-stream/stream.timeline.js"></script>
+  <script src="/js/history-stream/stream.yearpack.js"></script>
+  <script src="/js/history-stream/stream.search.js"></script>
+  <script src="/js/history-stream/stream.app.js"></script>
 </body>
 </html>

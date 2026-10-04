@@ -7,6 +7,7 @@ import net.quizverse.historystream.model.StreamFigure;
 import net.quizverse.historystream.model.StreamGroup;
 import net.quizverse.historystream.model.StreamLineagePerson;
 import net.quizverse.historystream.model.StreamMetaMarker;
+import net.quizverse.historystream.model.StreamPersonHit;
 import net.quizverse.historystream.model.StreamPolity;
 import net.quizverse.historystream.model.StreamReign;
 import net.quizverse.historystream.model.StreamRuler;
@@ -120,6 +121,14 @@ public class HistoryStreamController {
     @GetMapping("/year")
     public StreamYearPack year(@RequestParam int y) {
         return registry.yearPack(y);
+    }
+
+    /** 查人：姓名 / 字 / 庙号，返回统一命中项（统治者 + 重要人物）。 */
+    @GetMapping("/search")
+    public List<StreamPersonHit> search(
+            @RequestParam(required = false) String q,
+            @RequestParam(required = false) Integer limit) {
+        return registry.searchPeople(q, limit);
     }
 
     private static Set<String> parseTiers(String tiers) {

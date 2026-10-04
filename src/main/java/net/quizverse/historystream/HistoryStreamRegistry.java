@@ -8,6 +8,7 @@ import net.quizverse.historystream.model.StreamFigure;
 import net.quizverse.historystream.model.StreamGroup;
 import net.quizverse.historystream.model.StreamLineagePerson;
 import net.quizverse.historystream.model.StreamMetaMarker;
+import net.quizverse.historystream.model.StreamPersonHit;
 import net.quizverse.historystream.model.StreamPolitiesDocument;
 import net.quizverse.historystream.model.StreamPolity;
 import net.quizverse.historystream.model.StreamReign;
@@ -353,6 +354,32 @@ public class HistoryStreamRegistry {
                 .collect(Collectors.toList());
     }
 
+    /** 查人：按 姓名/字/庙号 匹配统治者与重要人物，返回统一命中项（精确 > 前缀 > 包含）。 */
+    public List<StreamPersonHit> searchPeople(String q, Integer limit) {
+        if (q == null || q.isBlank()) {
+            return List.of();
+        }
+        String needle = q.trim().toLowerCase(Locale.ROOT);
+        int max = limit != null && limit > 0 ? Math.min(limit, 50) : 20;
+
+        List<StreamPersonHit> hits = new ArrayList<>();
+        for (StreamRuler r : rulersSorted) {
+            int score = matchScore(r.getName(), r.getPersonalName(), needle);
+            if (score < 9) {
+                hits.add(toHit(r, score));
+            }
+        }
+        for (StreamFigure f : figuresSorted) {
+            int score = matchScore(f.getName(), f.getPersonalName(), needle);
+            if (score < 9) {
+                hits.add(toHit(f, score));
+            }
+        }
+        // 稳定排序：先按评分（精确优先），同分保持「先帝/王、后人物」及各自 sort 序。
+        hits.sort(Comparator.comparingInt(StreamPersonHit::getSortScore));
+        return hits.size() > max ? hits.subList(0, max) : hits;
+    }
+
     public StreamPolity findPolity(String polityId) {
         if (polityId == null || polityId.isBlank()) {
             return null;
@@ -426,24 +453,22 @@ public class HistoryStreamRegistry {
         }
         pack.setLineages(lineageBlocks);
 
-        List<StreamEvent> earlier = eventsSorted.stream()
-                .filter(e -> e.getYear() < year)
-                .collect(Collectors.toList());
-        List<StreamEvent> later = eventsSorted.stream()
-                .filter(e -> e.getYear() > year)
-                .collect(Collectors.toList());
-        if (!earlier.isEmpty()) {
-            StreamEvent last = earlier.get(earlier.size() - 1);
+        // eventsSorted 已按 year 升序；二分定位最近事件，避免全量扫描。
+        int firstGe = lowerBoundYear(eventsSorted, year);   // 第一个 year >= 选中年
+        int prevIdx = firstGe - 1;                           // 最后一个 year < 选中年
+        int nextIdx = upperBoundYear(eventsSorted, year);    // 第一个 year > 选中年
+        if (prevIdx >= 0) {
+            StreamEvent last = eventsSorted.get(prevIdx);
             pack.setPrevRecordedYear(last.getYear());
             pack.setPrevRecorded(toHook(last, year));
         }
-        if (!later.isEmpty()) {
-            StreamEvent first = later.get(0);
+        if (nextIdx < eventsSorted.size()) {
+            StreamEvent first = eventsSorted.get(nextIdx);
             pack.setNextRecordedYear(first.getYear());
             pack.setNextRecorded(toHook(first, year));
         }
-        pack.setBeforeHooks(hooksFrom(earlier, year, true));
-        pack.setAfterHooks(hooksFrom(later, year, false));
+        pack.setBeforeHooks(hooksBefore(prevIdx, year));
+        pack.setAfterHooks(hooksAfter(nextIdx, year));
         pack.setHeadline(buildHeadline(pack));
         return pack;
     }
@@ -547,30 +572,58 @@ public class HistoryStreamRegistry {
         return tier == null ? "" : tier.trim().toLowerCase(Locale.ROOT);
     }
 
-    private List<StreamYearPack.YearHook> hooksFrom(List<StreamEvent> ordered, int year, boolean before) {
-        List<StreamEvent> windowed = new ArrayList<>();
-        if (before) {
-            for (int i = ordered.size() - 1; i >= 0 && windowed.size() < HOOK_LIMIT; i--) {
-                StreamEvent e = ordered.get(i);
-                if (year - e.getYear() > HOOK_SPAN) {
-                    break;
-                }
-                windowed.add(e);
-            }
-        } else {
-            for (int i = 0; i < ordered.size() && windowed.size() < HOOK_LIMIT; i++) {
-                StreamEvent e = ordered.get(i);
-                if (e.getYear() - year > HOOK_SPAN) {
-                    break;
-                }
-                windowed.add(e);
-            }
-        }
+    /** 选中年之前、落在邻近窗内的事件（近→远，最多 HOOK_LIMIT 个）。 */
+    private List<StreamYearPack.YearHook> hooksBefore(int prevIdx, int year) {
         List<StreamYearPack.YearHook> out = new ArrayList<>();
-        for (StreamEvent e : windowed) {
+        for (int i = prevIdx; i >= 0 && out.size() < HOOK_LIMIT; i--) {
+            StreamEvent e = eventsSorted.get(i);
+            if (year - e.getYear() > HOOK_SPAN) {
+                break;
+            }
             out.add(toHook(e, year));
         }
         return out;
+    }
+
+    /** 选中年之后、落在邻近窗内的事件（近→远，最多 HOOK_LIMIT 个）。 */
+    private List<StreamYearPack.YearHook> hooksAfter(int nextIdx, int year) {
+        List<StreamYearPack.YearHook> out = new ArrayList<>();
+        for (int i = nextIdx; i < eventsSorted.size() && out.size() < HOOK_LIMIT; i++) {
+            StreamEvent e = eventsSorted.get(i);
+            if (e.getYear() - year > HOOK_SPAN) {
+                break;
+            }
+            out.add(toHook(e, year));
+        }
+        return out;
+    }
+
+    /** 第一个 year >= 目标年 的索引（eventsSorted 按 year 升序）。 */
+    private static int lowerBoundYear(List<StreamEvent> sorted, int year) {
+        int lo = 0, hi = sorted.size();
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1;
+            if (sorted.get(mid).getYear() < year) {
+                lo = mid + 1;
+            } else {
+                hi = mid;
+            }
+        }
+        return lo;
+    }
+
+    /** 第一个 year > 目标年 的索引（eventsSorted 按 year 升序）。 */
+    private static int upperBoundYear(List<StreamEvent> sorted, int year) {
+        int lo = 0, hi = sorted.size();
+        while (lo < hi) {
+            int mid = (lo + hi) >>> 1;
+            if (sorted.get(mid).getYear() <= year) {
+                lo = mid + 1;
+            } else {
+                hi = mid;
+            }
+        }
+        return lo;
     }
 
     private static StreamYearPack.YearHook toHook(StreamEvent e, int selectedYear) {
@@ -666,9 +719,17 @@ public class HistoryStreamRegistry {
         if (!pack.getEras().isEmpty()) {
             sb.append(" · ").append(pack.getEras().get(0).getLabel());
         }
-        pack.getReigns().stream().findFirst().ifPresent(r ->
-                sb.append(" · ").append(r.getName())
-                        .append(r.getYearOfEra() == 1 ? "元年" : r.getYearOfEra() + "年"));
+        Set<String> spineIds = pack.getPolities().stream()
+                .filter(p -> "spine".equals(p.getTier()))
+                .map(StreamYearPack.YearPolity::getId)
+                .collect(Collectors.toSet());
+        StreamYearPack.YearReign mainReign = pack.getReigns().stream()
+                .filter(r -> spineIds.isEmpty() || spineIds.contains(r.getPolityId()))
+                .findFirst().orElse(null);
+        if (mainReign != null) {
+            sb.append(" · ").append(mainReign.getName())
+                    .append(mainReign.getYearOfEra() == 1 ? "元年" : mainReign.getYearOfEra() + "年");
+        }
         pack.getPolities().stream()
                 .filter(p -> "spine".equals(p.getTier()))
                 .findFirst()
@@ -676,8 +737,13 @@ public class HistoryStreamRegistry {
         if (!pack.getEvents().isEmpty()) {
             sb.append(" · ").append(pack.getEvents().get(0).getTitle());
         } else {
-            pack.getRulers().stream().findFirst().ifPresent(r ->
-                    sb.append(" · ").append(r.getName()).append("在位第").append(r.getYearOfReign()).append("年"));
+            StreamYearPack.YearRuler mainRuler = pack.getRulers().stream()
+                    .filter(r -> spineIds.isEmpty() || spineIds.contains(r.getPolityId()))
+                    .findFirst().orElse(null);
+            if (mainRuler != null) {
+                sb.append(" · ").append(mainRuler.getName())
+                        .append("在位第").append(mainRuler.getYearOfReign()).append("年");
+            }
             sb.append(" · 本年无大事记载");
         }
         return sb.toString();
@@ -715,5 +781,66 @@ public class HistoryStreamRegistry {
             return 2;
         }
         return 3;
+    }
+
+    /** 姓名/字 任一字段的匹配评分：0 精确 / 1 前缀 / 2 包含 / 9 不匹配。 */
+    private static int matchScore(String name, String personalName, String needle) {
+        return Math.min(fieldScore(name, needle), fieldScore(personalName, needle));
+    }
+
+    private static int fieldScore(String s, String needle) {
+        if (s == null || s.isBlank()) {
+            return 9;
+        }
+        String lower = s.toLowerCase(Locale.ROOT);
+        if (lower.equals(needle)) {
+            return 0;
+        }
+        if (lower.startsWith(needle)) {
+            return 1;
+        }
+        if (lower.contains(needle)) {
+            return 2;
+        }
+        return 9;
+    }
+
+    private String polityName(String polityId) {
+        StreamPolity p = findPolity(polityId);
+        return p != null ? p.getName() : null;
+    }
+
+    private StreamPersonHit toHit(StreamRuler r, int score) {
+        StreamPersonHit h = new StreamPersonHit();
+        h.setId(r.getId());
+        h.setName(r.getName());
+        h.setPersonalName(r.getPersonalName());
+        h.setKind("ruler");
+        h.setFromYear(r.getFromYear());
+        h.setToYear(r.getToYear());
+        h.setPolityId(r.getPolityId());
+        h.setPolityName(polityName(r.getPolityId()));
+        h.setRoleLabel("帝王");
+        h.setUncertain(r.isUncertain());
+        h.setNote(r.getNote());
+        h.setSortScore(score);
+        return h;
+    }
+
+    private StreamPersonHit toHit(StreamFigure f, int score) {
+        StreamPersonHit h = new StreamPersonHit();
+        h.setId(f.getId());
+        h.setName(f.getName());
+        h.setPersonalName(f.getPersonalName());
+        h.setKind("figure");
+        h.setFromYear(f.getFromYear());
+        h.setToYear(f.getToYear());
+        h.setPolityId(f.getPolityId());
+        h.setPolityName(polityName(f.getPolityId()));
+        h.setRoleLabel(figureRoleLabel(f.getRole()));
+        h.setUncertain(f.isUncertain());
+        h.setNote(f.getNote());
+        h.setSortScore(score);
+        return h;
     }
 }

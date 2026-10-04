@@ -194,6 +194,14 @@ class HistoryStreamYearPackTest {
     }
 
     @Test
+    void headlinePrefersSpinePolityReignInSplitEra() {
+        // 三国 221 年：曹魏（spine）黄初 vs 蜀汉（parallel）章武，headline 应取主线政权年号
+        StreamYearPack pack = registry.yearPack(221);
+        assertTrue(pack.getHeadline().contains("黄初"));
+        assertFalse(pack.getHeadline().contains("章武"));
+    }
+
+    @Test
     void springAutumnWarringStatesRoyalLines() {
         assertTrue(registry.yearPack(-685).getRulers().stream().anyMatch(r -> "sq-huan".equals(r.getId())));
         assertTrue(registry.yearPack(-356).getRulers().stream().anyMatch(r -> "se-xiaogong".equals(r.getId())));
