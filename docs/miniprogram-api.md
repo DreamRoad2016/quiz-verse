@@ -2,6 +2,8 @@
 
 面向微信小程序「猜宇宙」与网页试用。`aliyun` profile 默认开启鉴权。
 
+> **历史模块投放原则**（与 [09](./09_历史功能模块.md) 一致）：**小程序是用户主产品面**；后端 `/api/history/*` + `content/history/` 是能力与数据真相源；Web 静态页（含 `/history/stream.html`）只是功能试验场 / demo，**不为 Web 流量或主站入口排期**。下文接口契约同时服务小程序与 demo。
+
 ## 鉴权流程
 
 ```text
@@ -102,6 +104,7 @@ server {
 | GET | `/api/history/stream/reigns?from=&to=&polityId=&rulerId=` | 年号段（先秦无年号） |
 | GET | `/api/history/stream/lineages?polityId=` | 谱系（夏商等有名无可靠绝对年，不上轴） |
 | GET | `/api/history/stream/year?y=` | **选中年信息包**：时局 / 大事 / 人物 / 出典挂件 / 在位 / 年号 / 邻近钩子 |
+| GET | `/api/history/stream/search?q=&limit=` | **查人**：匹配 `name` / `personalName` / `aliases`（精确 > 前缀 > 包含）；rulers + figures（默认 limit 20，上限 50） |
 
 ### `/api/history/events` 字段要点
 
@@ -117,18 +120,18 @@ server {
 - 年份：公元整数，公元前为负；`from`/`to` 闭区间
 - 政权：`id,name,shortName,fromYear,toYear,tier,axis,groupId,lane,capital,sort,uncertain,note`
 - 事件：`eventId,year,endYear?,title,summary?,description?,kind`（`battle`/`politics`/`culture`）,`polityIds[],importance,tags[],idioms[]`
-- 人物：`id,name,personalName?,fromYear,toYear,polityId,sort,note?,uncertain?,yearPrecision?,onTimeline?`（`rulers/`）
-- 非帝人物：`id,name,role,fromYear,toYear,polityId?,note?`（`figures/`；活跃窗，不上轴）
+- 人物：`id,name,personalName?,aliases?,fromYear,toYear,polityId,sort,note?,uncertain?,yearPrecision?,onTimeline?`（`rulers/`）
+- 非帝人物：`id,name,role,fromYear,toYear,polityId?,personalName?,aliases?,note?,relatedEventIds?`（`figures/`；活跃窗，不上轴；约 90 人）
+- 帝/王亦可有可选 `aliases`（与 `name` / `personalName` 一并参与搜索）
 - 年号：`id,name,fromYear,toYear,rulerId,polityId,sort,note?`（`reigns/`；先秦不适用）
 - 谱系：`id,name,personalName?,polityId,sort,note?`（`lineages/`；夏商世系）
-- 浏览页（深层入口）：`/vault/q/2026/history-stream/hub.html`（`/history/stream.html` 会跳转至此）
-- UI：时间轴 + 选中年 Year Pack（`?year=`）；主次为时局/大事 → 本年人物/出典 → 在位/年号 → 谱系
-- **小程序（miniprogram-1）**：底部 Tab「今天」+「源流」；源流读 `meta` / `eras` / `year` / `events/{id}`  
-  - P0：Year Pack 列表 + 事件详情  
-  - P1：分享深链 `pages/stream/index?y=`、政权摘要、邻近钩子、人物/谱系展示  
-  - **布局 A**：首屏年卡（摘要+大事+台上短签）；吸顶 `‹ 年 ›` 翻年（无底栏拇指条）；更多进抽屉  
-  - 工程路径 `/Users/captain/WeChatProjects/miniprogram-1`
-- 设计见 `docs/09_历史功能模块.md`、`docs/10_历史源流_中国朝代设计.md`
+- 查人命中：`id,name,personalName,kind(ruler|figure),fromYear,toYear,polityId,polityName,roleLabel,uncertain,note`
+- **用户面**：小程序（工程 `/Users/captain/WeChatProjects/miniprogram-1`）— 底部 Tab「今天」+「源流」  
+  - 读 `meta` / `eras` / `year` / `events/{id}`（查人接 `/search`）  
+  - 分享深链 `pages/stream/index?y=`；政权摘要、邻近钩子、人物/谱系  
+  - **布局 A**：首屏年卡；吸顶 `‹ 年 ›` 翻年（无底栏拇指条）；更多进抽屉  
+- **Web demo**（非流量入口）：`/history/stream.html`（Year Pack 三层 + 查人）；调试页 `/vault/q/2026/history-stream/hub.html`  
+- 设计见 `docs/09_历史功能模块.md`、`docs/10_历史源流_中国朝代设计.md`、`docs/11_历史源流_查年体验优化方案.md`
 
 ### `/api/catalog` 字段要点
 

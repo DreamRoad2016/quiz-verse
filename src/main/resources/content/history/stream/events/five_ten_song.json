@@ -108,10 +108,50 @@
     "summary": "太祖收宿将兵权，以文驭武的北宋立国术成型。",
     "description": "建隆二年赵匡胤宴请石守信等，劝解兵权、多买田宅。此后以文臣知州、强干弱枝，五代骄兵局面被压住。",
     "kind": "politics",
-    "polityIds": ["northern_song"],
+    "polityIds": [
+      "northern_song"
+    ],
     "importance": 5,
-    "tags": ["政治"],
-    "idioms": ["杯酒释兵权"]
+    "tags": [
+      "政治"
+    ],
+    "idioms": [
+      "杯酒释兵权"
+    ]
+  },
+  {
+    "eventId": "HS-NS-0986-YONGXI",
+    "year": 986,
+    "title": "雍熙北伐",
+    "summary": "宋三路攻辽，东路军岐沟关大败，此后对辽转守。",
+    "description": "公元986年（雍熙三年），太宗再攻幽燕。曹彬等在岐沟关失利，杨业被俘殉国。北宋收复燕云的大规模进攻基本结束。",
+    "kind": "battle",
+    "polityIds": [
+      "northern_song",
+      "liao"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-NS-0993-WANGXIAOBO",
+    "year": 993,
+    "title": "王小波、李顺起义",
+    "summary": "四川王小波、李顺起义，提出「均贫富」。",
+    "description": "淳化四年。填补雍熙北伐（986）至澶渊（1004）之间的北宋内部节点。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "民变"
+    ],
+    "idioms": [
+      "均贫富"
+    ]
   },
   {
     "eventId": "HS-NS-1004-CHANYUAN",
@@ -120,9 +160,14 @@
     "summary": "辽军南下至澶州，寇准力促真宗亲征，宋辽对峙于黄河。",
     "description": "景德元年萧太后、辽圣宗攻至澶州。真宗渡河，宋军士气稍振。次年和议，见1005澶渊之盟。此条记战事本身。",
     "kind": "battle",
-    "polityIds": ["northern_song", "liao"],
+    "polityIds": [
+      "northern_song",
+      "liao"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-NS-1005-CHANYUAN",
@@ -139,6 +184,9 @@
     "tags": [
       "政治",
       "外交"
+    ],
+    "idioms": [
+      "澶渊之盟"
     ]
   },
   {
@@ -148,9 +196,13 @@
     "summary": "真宗卒，仁宗即位，刘太后听政，后开启庆历、嘉祐局面。",
     "description": "乾兴元年真宗崩，赵祯即位。明道二年亲政。在位最久，庆历新政与宋夏和战均在此朝。",
     "kind": "politics",
-    "polityIds": ["northern_song"],
+    "polityIds": [
+      "northern_song"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-WX-1038-EMP",
@@ -174,9 +226,14 @@
     "summary": "西夏伏击宋军于好水川，任福等战死，宋陕西大挫。",
     "description": "庆历元年元昊诱宋军入好水川。任福轻进中伏。与三川口、定川寨同为宋夏大战，促成日后和议。",
     "kind": "battle",
-    "polityIds": ["northern_song", "western_xia"],
+    "polityIds": [
+      "northern_song",
+      "western_xia"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-NS-1043-QINGLI",
@@ -201,9 +258,46 @@
     "summary": "宋夏议和，元昊称臣，宋赐岁币，陕西战事暂缓。",
     "description": "庆历四年宋夏达成和议：元昊对宋称臣，宋岁赐银绢茶。三川口、好水川等战后双方均难再大打，鼎立格局稳定一段时间。",
     "kind": "politics",
-    "polityIds": ["northern_song", "western_xia"],
+    "polityIds": [
+      "northern_song",
+      "western_xia"
+    ],
     "importance": 3,
-    "tags": ["政治", "外交"]
+    "tags": [
+      "政治",
+      "外交"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1045-QINGLIEND",
+    "year": 1045,
+    "title": "庆历新政罢废",
+    "summary": "范仲淹等罢政，庆历新政中止。",
+    "description": "庆历五年。与1043新政、1044和议衔接，标明仁宗朝改革短暂。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "改革"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1065-TONGJIAN",
+    "year": 1065,
+    "title": "《资治通鉴》始修",
+    "summary": "英宗命司马光设局修《通鉴》，神宗朝续成。",
+    "description": "治平二年开局。填补庆历后至熙宁变法（1069）的文化节点；成书见1084条。",
+    "kind": "culture",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 4,
+    "tags": [
+      "文化",
+      "史学"
+    ]
   },
   {
     "eventId": "HS-NS-1069-REFORM",
@@ -220,17 +314,6 @@
       "政治",
       "改革"
     ]
-  },
-  {
-    "eventId": "HS-NS-1100-HUIZONG",
-    "year": 1100,
-    "title": "宋徽宗即位",
-    "summary": "哲宗卒，端王赵佶即位，蔡京等随后柄政。",
-    "description": "元符三年徽宗即位。崇宁以后「丰亨豫大」，花石纲与党争并行，至宣和、靖康而北宋崩。",
-    "kind": "politics",
-    "polityIds": ["northern_song"],
-    "importance": 3,
-    "tags": ["政治"]
   },
   {
     "eventId": "HS-NS-1084-ZIZHI",
@@ -255,9 +338,28 @@
     "summary": "哲宗即位，高太后听政，司马光废新法。",
     "description": "元祐元年神宗已卒，太皇太后用司马光、吕公著，罢青苗、免役等。新党旧党之争转入党锢化，至绍圣再翻盘。",
     "kind": "politics",
-    "polityIds": ["northern_song"],
+    "polityIds": [
+      "northern_song"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1100-HUIZONG",
+    "year": 1100,
+    "title": "宋徽宗即位",
+    "summary": "哲宗卒，端王赵佶即位，蔡京等随后柄政。",
+    "description": "元符三年徽宗即位。崇宁以后「丰亨豫大」，花石纲与党争并行，至宣和、靖康而北宋崩。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-JIN-1115-FOUND",
@@ -272,6 +374,22 @@
     "importance": 5,
     "tags": [
       "政治"
+    ]
+  },
+  {
+    "eventId": "HS-NS-1120-FANGA",
+    "year": 1120,
+    "title": "方腊起义",
+    "summary": "睦州方腊起事，震动东南，旋被镇压。",
+    "description": "宣和二年方腊在睦州起兵，一度攻占多州。童贯率军镇压。起义暴露北宋东南赋役与花石纲之弊，距靖康之变仅数年。",
+    "kind": "politics",
+    "polityIds": [
+      "northern_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "社会",
+      "战争"
     ]
   },
   {
@@ -324,6 +442,9 @@
     "tags": [
       "战争",
       "亡国"
+    ],
+    "idioms": [
+      "靖康耻"
     ]
   },
   {
@@ -333,9 +454,15 @@
     "summary": "韩世忠截金兀术于江上，金军北归受阻。",
     "description": "建炎四年韩世忠以八千人困金军于黄天荡四十余日。未能全歼，但稳定江淮，为后来岳飞北伐保存东南。与郾城条不重复。",
     "kind": "battle",
-    "polityIds": ["southern_song", "jin"],
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
     "importance": 4,
-    "tags": ["战争", "宋金"]
+    "tags": [
+      "战争",
+      "宋金"
+    ]
   },
   {
     "eventId": "HS-SS-1140-YANCHENG",
@@ -401,9 +528,13 @@
     "summary": "完颜亮迁都中都（燕京），金朝重心转入汉地。",
     "description": "贞元元年金以燕京为中都。海陵想灭宋统一，至1161采石败死。迁都标志女真政权进一步中原化。",
     "kind": "politics",
-    "polityIds": ["jin"],
+    "polityIds": [
+      "jin"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-SS-1161-CAISHI",
@@ -423,15 +554,36 @@
     ]
   },
   {
-    "eventId": "HS-MON-1211-YEHU",
-    "year": 1211,
-    "title": "蒙古伐金",
-    "summary": "成吉思汗攻金，野狐岭大破金军，河北震动。",
-    "description": "太祖六年蒙古南下，会河堡、野狐岭等役金军主力受损。金被迫迁都汴京（1214），中原进入蒙金长期战争。",
-    "kind": "battle",
-    "polityIds": ["jin", "mongol_empire"],
+    "eventId": "HS-SS-1164-LONGXING",
+    "year": 1164,
+    "title": "隆兴和议",
+    "summary": "宋金再定和约，改君臣为叔侄，岁币略减。",
+    "description": "隆兴二年宋金议和：金宋为叔侄之国，岁币减十万，疆界大体仍绍兴之旧。此后数十年相对稳定，至开禧北伐再破。",
+    "kind": "politics",
+    "polityIds": [
+      "southern_song",
+      "jin"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "政治",
+      "外交"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1179-BAILU",
+    "year": 1179,
+    "title": "朱熹兴复白鹿洞书院",
+    "summary": "朱熹知南康军，重建白鹿洞，理学讲学制度化。",
+    "description": "淳熙六年。揭示学规，后来书院取法。人物窗见朱熹条。此条只记书院，不写庆元党禁。",
+    "kind": "culture",
+    "polityIds": [
+      "southern_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "文化"
+    ]
   },
   {
     "eventId": "HS-SS-1189-CHANWEI",
@@ -440,9 +592,28 @@
     "summary": "孝宗禅位于光宗，南宋中期权力交接。",
     "description": "淳熙十六年孝宗禅位。光宗后与太上皇失和，至绍熙内禅于宁宗。此条记孝宗退位。",
     "kind": "politics",
-    "polityIds": ["southern_song"],
+    "polityIds": [
+      "southern_song"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1194-NINGZONG",
+    "year": 1194,
+    "title": "宋宁宗即位",
+    "summary": "光宗禅位，宁宗即位，韩侂胄渐掌朝政。",
+    "description": "绍熙内禅。填补孝宗内禅（1189）至开禧北伐（1206）空档。",
+    "kind": "politics",
+    "polityIds": [
+      "southern_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-SS-1206-KAIXI",
@@ -459,6 +630,39 @@
     "tags": [
       "政治",
       "宋金"
+    ]
+  },
+  {
+    "eventId": "HS-MON-1211-YEHU",
+    "year": 1211,
+    "title": "蒙古伐金",
+    "summary": "成吉思汗攻金，野狐岭大破金军，河北震动。",
+    "description": "太祖六年蒙古南下，会河堡、野狐岭等役金军主力受损。金被迫迁都汴京（1214），中原进入蒙金长期战争。",
+    "kind": "battle",
+    "polityIds": [
+      "jin",
+      "mongol_empire"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-XIA-1227-FALL",
+    "year": 1227,
+    "title": "蒙古灭西夏",
+    "summary": "成吉思汗病卒前后，西夏国亡。",
+    "description": "公元1227年蒙古攻破中兴府，西夏亡。西夏立国约190年，与辽、金、宋并立的格局结束，蒙古转而全力经略金与宋。",
+    "kind": "politics",
+    "polityIds": [
+      "western_xia",
+      "mongol_empire"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "亡国"
     ]
   },
   {
@@ -480,6 +684,52 @@
     ]
   },
   {
+    "eventId": "HS-MON-1241-OGODEI",
+    "year": 1241,
+    "title": "窝阔台汗卒",
+    "summary": "蒙古大汗窝阔台卒，西征与伐宋节奏一度放缓。",
+    "description": "填补灭金（1234）至灭大理（1253）之间的蒙古汗位节点。",
+    "kind": "politics",
+    "polityIds": [
+      "mongol_empire"
+    ],
+    "importance": 3,
+    "tags": [
+      "蒙古"
+    ]
+  },
+  {
+    "eventId": "HS-MON-1253-DALI",
+    "year": 1253,
+    "title": "蒙古灭大理",
+    "summary": "忽必烈率军入云南，大理国亡。",
+    "description": "蒙哥命忽必烈、兀良合台绕道吐蕃攻大理。段氏降，云南纳入蒙古经略，形成对南宋的大包围。",
+    "kind": "battle",
+    "polityIds": [
+      "mongol_empire"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-SS-1259-DIAOYU",
+    "year": 1259,
+    "title": "钓鱼城之战",
+    "summary": "宋军坚守合州钓鱼城，蒙哥汗卒于军前。",
+    "description": "开庆元年蒙哥攻四川，顿兵钓鱼城。蒙哥死，蒙古西路军撤退，忽必烈与阿里不哥争位，南宋获得喘息。",
+    "kind": "battle",
+    "polityIds": [
+      "southern_song",
+      "mongol_empire"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争"
+    ]
+  },
+  {
     "eventId": "HS-SS-1273-XIANGYANG",
     "year": 1273,
     "title": "襄阳陷落",
@@ -496,83 +746,6 @@
     ]
   },
   {
-    "eventId": "HS-NS-0986-YONGXI",
-    "year": 986,
-    "title": "雍熙北伐",
-    "summary": "宋三路攻辽，东路军岐沟关大败，此后对辽转守。",
-    "description": "公元986年（雍熙三年），太宗再攻幽燕。曹彬等在岐沟关失利，杨业被俘殉国。北宋收复燕云的大规模进攻基本结束。",
-    "kind": "battle",
-    "polityIds": ["northern_song", "liao"],
-    "importance": 4,
-    "tags": ["战争"]
-  },
-  {
-    "eventId": "HS-NS-1120-FANGA",
-    "year": 1120,
-    "title": "方腊起义",
-    "summary": "睦州方腊起事，震动东南，旋被镇压。",
-    "description": "宣和二年方腊在睦州起兵，一度攻占多州。童贯率军镇压。起义暴露北宋东南赋役与花石纲之弊，距靖康之变仅数年。",
-    "kind": "politics",
-    "polityIds": ["northern_song"],
-    "importance": 3,
-    "tags": ["社会", "战争"]
-  },
-  {
-    "eventId": "HS-SS-1164-LONGXING",
-    "year": 1164,
-    "title": "隆兴和议",
-    "summary": "宋金再定和约，改君臣为叔侄，岁币略减。",
-    "description": "隆兴二年宋金议和：金宋为叔侄之国，岁币减十万，疆界大体仍绍兴之旧。此后数十年相对稳定，至开禧北伐再破。",
-    "kind": "politics",
-    "polityIds": ["southern_song", "jin"],
-    "importance": 4,
-    "tags": ["政治", "外交"]
-  },
-  {
-    "eventId": "HS-SS-1179-BAILU",
-    "year": 1179,
-    "title": "朱熹兴复白鹿洞书院",
-    "summary": "朱熹知南康军，重建白鹿洞，理学讲学制度化。",
-    "description": "淳熙六年。揭示学规，后来书院取法。人物窗见朱熹条。此条只记书院，不写庆元党禁。",
-    "kind": "culture",
-    "polityIds": ["southern_song"],
-    "importance": 3,
-    "tags": ["文化"]
-  },
-  {
-    "eventId": "HS-XIA-1227-FALL",
-    "year": 1227,
-    "title": "蒙古灭西夏",
-    "summary": "成吉思汗病卒前后，西夏国亡。",
-    "description": "公元1227年蒙古攻破中兴府，西夏亡。西夏立国约190年，与辽、金、宋并立的格局结束，蒙古转而全力经略金与宋。",
-    "kind": "politics",
-    "polityIds": ["western_xia", "mongol_empire"],
-    "importance": 4,
-    "tags": ["战争", "亡国"]
-  },
-  {
-    "eventId": "HS-MON-1253-DALI",
-    "year": 1253,
-    "title": "蒙古灭大理",
-    "summary": "忽必烈率军入云南，大理国亡。",
-    "description": "蒙哥命忽必烈、兀良合台绕道吐蕃攻大理。段氏降，云南纳入蒙古经略，形成对南宋的大包围。",
-    "kind": "battle",
-    "polityIds": ["mongol_empire"],
-    "importance": 4,
-    "tags": ["战争"]
-  },
-  {
-    "eventId": "HS-SS-1259-DIAOYU",
-    "year": 1259,
-    "title": "钓鱼城之战",
-    "summary": "宋军坚守合州钓鱼城，蒙哥汗卒于军前。",
-    "description": "开庆元年蒙哥攻四川，顿兵钓鱼城。蒙哥死，蒙古西路军撤退，忽必烈与阿里不哥争位，南宋获得喘息。",
-    "kind": "battle",
-    "polityIds": ["southern_song", "mongol_empire"],
-    "importance": 4,
-    "tags": ["战争"]
-  },
-  {
     "eventId": "HS-SS-1279-YASHAN",
     "year": 1279,
     "title": "崖山海战，南宋亡",
@@ -587,6 +760,9 @@
     "tags": [
       "战争",
       "亡国"
+    ],
+    "idioms": [
+      "崖山之后"
     ]
   }
 ]

@@ -74,7 +74,8 @@
     "toYear": 705,
     "polityId": "tang",
     "sort": 8,
-    "note": "称帝改周，年号周；产品时间轴仍挂 tang。"
+    "note": "称帝改周，年号周；产品时间轴仍挂 tang。",
+    "aliases": ["武曌", "则天皇帝"]
   },
   {
     "id": "tang_xuanzong",

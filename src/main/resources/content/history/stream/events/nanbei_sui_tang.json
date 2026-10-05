@@ -37,9 +37,14 @@
     "summary": "北魏太武帝南征至长江瓜步，刘宋沿江防守，无功而还。",
     "description": "元嘉二十七年北魏大举南下，军至瓜步山，扬言渡江。宋文帝沿江设防，魏军粮尽北撤，江淮残破。南北均势未破。",
     "kind": "battle",
-    "polityIds": ["northern_wei", "liu_song"],
+    "polityIds": [
+      "northern_wei",
+      "liu_song"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-ND-0453-YUANJIA",
@@ -48,9 +53,29 @@
     "summary": "刘劭杀宋文帝，孝武帝起兵入建康，元嘉之治结束。",
     "description": "元嘉三十年刘劭弑父自立。武陵王刘骏（孝武帝）讨斩之。南朝宋由相对安定转入骨肉相残。",
     "kind": "politics",
-    "polityIds": ["liu_song"],
+    "polityIds": [
+      "liu_song"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-ND-0466-MINGDI",
+    "year": 466,
+    "title": "宋明帝即位与内战",
+    "summary": "刘彧杀前废帝自立，讨晋安王，南朝宋内战再起。",
+    "description": "泰始二年前后。填补元嘉之末（453）至萧齐代宋（479）的南朝空档。",
+    "kind": "politics",
+    "polityIds": [
+      "liu_song"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治",
+      "南朝"
+    ]
   },
   {
     "eventId": "HS-ND-0479-NQI",
@@ -75,9 +100,14 @@
     "summary": "孝文帝太和九年计口授田，与三长制配套，汉化与财政改革并行。",
     "description": "太和九年均田。政府把荒地、口分桑田按丁配给，与租调制相接。迁洛（494）前的制度铺垫，不重复迁都条。",
     "kind": "politics",
-    "polityIds": ["northern_wei"],
+    "polityIds": [
+      "northern_wei"
+    ],
     "importance": 4,
-    "tags": ["经济", "政治"]
+    "tags": [
+      "经济",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0494-LUOYANG",
@@ -112,15 +142,37 @@
     ]
   },
   {
+    "eventId": "HS-ND-0507-ZHONGLI",
+    "year": 507,
+    "title": "钟离之战",
+    "summary": "梁军大破北魏于钟离，淮上防线得固。",
+    "description": "天监六年钟离大捷。填补梁建（502）至六镇（523）之间北南战争节点。",
+    "kind": "battle",
+    "polityIds": [
+      "liang",
+      "northern_wei"
+    ],
+    "importance": 4,
+    "tags": [
+      "战争",
+      "南北朝"
+    ]
+  },
+  {
     "eventId": "HS-ND-0523-LIUZHEN",
     "year": 523,
     "title": "六镇起义",
     "summary": "怀荒等边镇镇民起事，北魏边防体系动摇。",
     "description": "正光四年沃野、怀荒等六镇相继兵变。边镇武人与镇民反抗苛政，乱事蔓延河北，加速北魏分裂。",
     "kind": "politics",
-    "polityIds": ["northern_wei"],
+    "polityIds": [
+      "northern_wei"
+    ],
     "importance": 4,
-    "tags": ["战争", "社会"]
+    "tags": [
+      "战争",
+      "社会"
+    ]
   },
   {
     "eventId": "HS-ND-0528-HEYIN",
@@ -129,9 +181,13 @@
     "summary": "尔朱荣沉胡太后及大臣于河阴，北魏朝局崩坏。",
     "description": "武泰元年尔朱荣以清君侧入洛，杀胡太后、幼主及公卿两千余人。孝庄帝被立，权在尔朱。六镇乱后的北魏中央名存实亡。",
     "kind": "politics",
-    "polityIds": ["northern_wei"],
+    "polityIds": [
+      "northern_wei"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0534-SPLIT",
@@ -165,6 +221,9 @@
     "tags": [
       "战争",
       "政治"
+    ],
+    "idioms": [
+      "侯景之乱"
     ]
   },
   {
@@ -206,9 +265,14 @@
     "summary": "北周禁佛道，毁寺还俗，与会昌并称法难。",
     "description": "建德三年武帝断佛道二教，籍寺产、勒僧尼。为灭齐集中人力物力，亦是北朝皇权压宗教的节点。",
     "kind": "culture",
-    "polityIds": ["northern_zhou"],
+    "polityIds": [
+      "northern_zhou"
+    ],
     "importance": 3,
-    "tags": ["宗教", "政治"]
+    "tags": [
+      "宗教",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0577-ZHOU-QI",
@@ -258,6 +322,24 @@
     "tags": [
       "政治",
       "战争"
+    ],
+    "idioms": [
+      "天下一统"
+    ]
+  },
+  {
+    "eventId": "HS-ND-0598-GAOLI",
+    "year": 598,
+    "title": "隋文帝伐高句丽",
+    "summary": "开皇末隋大军东征高句丽，无功而还。",
+    "description": "开皇十八年。上承灭陈统一（589），下启大运河与炀帝再征，标明隋对外用兵的早期挫折。",
+    "kind": "battle",
+    "polityIds": [
+      "sui"
+    ],
+    "importance": 3,
+    "tags": [
+      "战争"
     ]
   },
   {
@@ -274,6 +356,9 @@
     "tags": [
       "经济",
       "工程"
+    ],
+    "idioms": [
+      "大运河"
     ]
   },
   {
@@ -283,9 +368,14 @@
     "summary": "山东王薄等起兵，隋末大乱表面化。",
     "description": "大业七年征高丽、水旱相仍，长白山王薄作《无向辽东浪死歌》。此后翟让、李密、窦建德等继起，至617李渊起兵。",
     "kind": "politics",
-    "polityIds": ["sui"],
+    "polityIds": [
+      "sui"
+    ],
     "importance": 4,
-    "tags": ["社会", "战争"]
+    "tags": [
+      "社会",
+      "战争"
+    ]
   },
   {
     "eventId": "HS-ND-0617-TAIYUAN",
@@ -294,9 +384,13 @@
     "summary": "隋太原留守李渊起兵西进，次年建唐。",
     "description": "大业十三年李渊自晋阳进军关中，克长安，立代王侑。隋末群雄中率先据关陇，为618称帝铺路。",
     "kind": "politics",
-    "polityIds": ["sui"],
+    "polityIds": [
+      "sui"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0618-TANG-FOUND",
@@ -321,9 +415,13 @@
     "summary": "李世民破窦建德、降王世充，中原大局底定。",
     "description": "武德四年秦王先困洛阳，再于虎牢擒窦建德，王世充降。唐统一战争的关键一役。",
     "kind": "battle",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 5,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-ND-0626-XUANWUMEN",
@@ -338,6 +436,9 @@
     "importance": 5,
     "tags": [
       "政治"
+    ],
+    "idioms": [
+      "玄武门之变"
     ]
   },
   {
@@ -353,6 +454,9 @@
     "importance": 5,
     "tags": [
       "政治"
+    ],
+    "idioms": [
+      "贞观之治"
     ]
   },
   {
@@ -362,9 +466,14 @@
     "summary": "玄奘赴天竺求法，贞观末携经归来，译场成为盛唐佛教高峰。",
     "description": "贞观三年前后西行，经西域、中亚至那烂陀。十九年归长安。与太宗朝经营西域同一代，是中外交通与译经史节点。",
     "kind": "culture",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["文化", "宗教"]
+    "tags": [
+      "文化",
+      "宗教"
+    ]
   },
   {
     "eventId": "HS-ND-0630-JIELI",
@@ -373,9 +482,14 @@
     "summary": "李靖破东突厥，颉利被俘，河北称唐太宗为天可汗。",
     "description": "贞观四年唐军阴山破突厥。东突厥汗国亡，西北诸部尊太宗为天可汗，唐对漠南的控制确立。",
     "kind": "battle",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 5,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-ND-0640-GAOCHANG",
@@ -384,9 +498,14 @@
     "summary": "侯君集平高昌，置西州，安西都护府随之设立。",
     "description": "贞观十四年唐灭麴氏高昌。天山南路纳入府州体制，丝绸之路官道再通，为后来安西四镇铺垫。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["政治", "西域"]
+    "tags": [
+      "政治",
+      "西域"
+    ]
   },
   {
     "eventId": "HS-ND-0645-ANSHI",
@@ -395,9 +514,13 @@
     "summary": "太宗亲征高句丽，顿兵安市城下无功而还。",
     "description": "贞观十九年唐军破辽东诸城，久攻安市不下，秋后班师。此役说明盛唐对外用兵亦有限度，高宗朝才灭高句丽。",
     "kind": "battle",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 3,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-ND-0655-WUHOU",
@@ -406,9 +529,13 @@
     "summary": "高宗废王皇后，立武昭仪，武氏由此预政。",
     "description": "永徽六年废王立武。长孙无忌等顾命大臣失势。临朝称制见660，称帝见690，三条不重复。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0660-WUHOU",
@@ -417,9 +544,13 @@
     "summary": "高宗病风，武则天预政，称「二圣」。",
     "description": "显庆五年前后高宗苦风眩，皇后武氏决奏事。此后数十年政在武后，至690称帝。产品仍挂 tang。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0668-GAOGOULI",
@@ -428,9 +559,29 @@
     "summary": "唐与新罗联军破平壤，高句丽亡，辽东置安东都护府。",
     "description": "总章元年李勣等克平壤，高句丽国除。与百济之灭（660）相接，唐在东北的经营达于高峰，旋因地方难治而收缩。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-ND-0683-GAOZONG",
+    "year": 683,
+    "title": "唐高宗卒，中宗即位",
+    "summary": "高宗崩，中宗李显即位，武后临朝称制格局确定。",
+    "description": "弘道元年。填补灭高句丽（668）至武周称帝（690）之间的武后专权节点。",
+    "kind": "politics",
+    "polityIds": [
+      "tang"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ND-0690-WUZHOU",
@@ -443,6 +594,21 @@
       "tang"
     ],
     "importance": 5,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-ND-0705-SHENLONG",
+    "year": 705,
+    "title": "神龙政变",
+    "summary": "张柬之等逼武则天退位，中宗复位，复唐国号。",
+    "description": "神龙元年禁中政变，武周结束。中宗复位后韦后、安乐公主干政，至710睿宗、712玄宗才稳定李唐。",
+    "kind": "politics",
+    "polityIds": [
+      "tang"
+    ],
+    "importance": 4,
     "tags": [
       "政治"
     ]
@@ -461,18 +627,10 @@
     "tags": [
       "政治",
       "文化"
+    ],
+    "idioms": [
+      "开元盛世"
     ]
-  },
-  {
-    "eventId": "HS-ND-0705-SHENLONG",
-    "year": 705,
-    "title": "神龙政变",
-    "summary": "张柬之等逼武则天退位，中宗复位，复唐国号。",
-    "description": "神龙元年禁中政变，武周结束。中宗复位后韦后、安乐公主干政，至710睿宗、712玄宗才稳定李唐。",
-    "kind": "politics",
-    "polityIds": ["tang"],
-    "importance": 4,
-    "tags": ["政治"]
   },
   {
     "eventId": "HS-ND-0725-FENGSHAN",
@@ -481,9 +639,33 @@
     "summary": "开元十三年玄宗封禅泰山，盛唐自我确认的典礼。",
     "description": "封禅是古代帝王告成于天地的最高礼仪。开元十三年玄宗东封，与开元盛世记忆绑定，距天宝变乱尚有三十年。",
     "kind": "culture",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 3,
-    "tags": ["文化", "政治"]
+    "tags": [
+      "文化",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-ND-0742-TIANBAO",
+    "year": 742,
+    "title": "改元天宝",
+    "summary": "玄宗改元天宝，盛唐转入后期，边将与权相势力渐张。",
+    "description": "天宝元年。上承封禅（725），下接怛罗斯（751）与安史（755），收紧开元—安史空档。",
+    "kind": "politics",
+    "polityIds": [
+      "tang"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治",
+      "盛唐"
+    ],
+    "idioms": [
+      "天宝年间"
+    ]
   },
   {
     "eventId": "HS-ND-0751-TALAS",
@@ -492,9 +674,14 @@
     "summary": "高仙芝与大食战于怛罗斯，唐军败，造纸术西传常系于此。",
     "description": "天宝十年安西节度高仙芝在怛罗斯败于阿拔斯王朝。唐在中亚的扩张受挫。造纸工匠被俘西传的说法流传甚广，可作文化附记。",
     "kind": "battle",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 3,
-    "tags": ["战争", "文化"]
+    "tags": [
+      "战争",
+      "文化"
+    ]
   },
   {
     "eventId": "HS-ND-0755-ANSHI",
@@ -510,6 +697,9 @@
     "tags": [
       "战争",
       "政治"
+    ],
+    "idioms": [
+      "安史之乱"
     ]
   },
   {
@@ -526,6 +716,9 @@
     "tags": [
       "政治",
       "战争"
+    ],
+    "idioms": [
+      "马嵬坡"
     ]
   },
   {
@@ -574,6 +767,22 @@
     "tags": [
       "政治",
       "安史"
+    ]
+  },
+  {
+    "eventId": "HS-ND-0771-LIUYAN",
+    "year": 771,
+    "title": "刘晏疏通江淮漕运",
+    "summary": "代宗朝刘晏整顿漕路，支撑安史后国家财赋转运。",
+    "description": "约大历年间刘晏为转运使。填补安史平定（763）至两税法（780）的中唐空档。",
+    "kind": "politics",
+    "polityIds": [
+      "tang"
+    ],
+    "importance": 3,
+    "tags": [
+      "经济",
+      "政治"
     ]
   },
   {

@@ -13,6 +13,9 @@
     "tags": [
       "文化",
       "思想"
+    ],
+    "idioms": [
+      "焚书坑儒"
     ]
   },
   {
@@ -45,6 +48,9 @@
     "tags": [
       "战争",
       "社会"
+    ],
+    "idioms": [
+      "揭竿而起"
     ]
   },
   {
@@ -95,6 +101,30 @@
     "importance": 4,
     "tags": [
       "战争"
+    ],
+    "idioms": [
+      "官渡之战"
+    ]
+  },
+  {
+    "eventId": "HS-3K-0207-LONGZHONG",
+    "year": 207,
+    "title": "三顾茅庐与隆中对",
+    "summary": "刘备三访诸葛亮，定联孙抗曹、跨有荆益之策。",
+    "description": "建安十二年前后刘备得诸葛亮。成语「三顾茅庐」「初出茅庐」本此。赤壁前夕的战略定调。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han",
+      "shu_han"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治",
+      "三国"
+    ],
+    "idioms": [
+      "三顾茅庐",
+      "初出茅庐"
     ]
   },
   {
@@ -113,6 +143,9 @@
     "importance": 5,
     "tags": [
       "战争"
+    ],
+    "idioms": [
+      "赤壁鏖兵"
     ]
   },
   {
@@ -122,9 +155,14 @@
     "summary": "刘备取成都，刘璋降，蜀汉根据地形成。",
     "description": "建安十九年围成都，刘璋开城。此后刘备以益州为根本，220年代称帝。与赤壁得荆州相接，不重复208、221条。",
     "kind": "politics",
-    "polityIds": ["eastern_han"],
+    "polityIds": [
+      "eastern_han"
+    ],
     "importance": 4,
-    "tags": ["政治", "三国"]
+    "tags": [
+      "政治",
+      "三国"
+    ]
   },
   {
     "eventId": "HS-3K-0219-FAN",
@@ -222,6 +260,9 @@
     "tags": [
       "战争",
       "三国"
+    ],
+    "idioms": [
+      "街亭失守"
     ]
   },
   {
@@ -267,9 +308,13 @@
     "summary": "司马懿乘曹爽陪曹芳祭陵，闭城夺权，魏政归司马氏。",
     "description": "正始十年司马懿发动高平陵之变，诛曹爽。此后曹魏军政逐步转入司马氏之手，为代魏立晋铺路。",
     "kind": "politics",
-    "polityIds": ["cao_wei"],
+    "polityIds": [
+      "cao_wei"
+    ],
     "importance": 5,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-3K-0263-SHUFALL",
@@ -286,6 +331,9 @@
     "tags": [
       "战争",
       "亡国"
+    ],
+    "idioms": [
+      "乐不思蜀"
     ]
   },
   {
@@ -329,9 +377,13 @@
     "summary": "武帝卒，惠帝即位，贾后与宗室争权，八王之乱将起。",
     "description": "太熙元年司马衷即位。杨骏辅政旋被贾后所杀，诸王兵权介入宫廷，291年后内战表面化。",
     "kind": "politics",
-    "polityIds": ["western_jin"],
+    "polityIds": [
+      "western_jin"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-JIN-0301-BAWANG",
@@ -363,6 +415,9 @@
     "tags": [
       "战争",
       "社会"
+    ],
+    "idioms": [
+      "永嘉之乱"
     ]
   },
   {
@@ -372,10 +427,16 @@
     "summary": "祖逖中流击楫，经营河南，东晋北伐的先声。",
     "description": "建兴元年前后祖逖请缨，渡江誓清中原。收复谯、梁一带，石勒不敢窥河南。卒后进地复失。此条在永嘉与建东晋之间。",
     "kind": "battle",
-    "polityIds": ["western_jin"],
+    "polityIds": [
+      "western_jin"
+    ],
     "importance": 4,
-    "tags": ["战争"],
-    "idioms": ["中流击楫"]
+    "tags": [
+      "战争"
+    ],
+    "idioms": [
+      "中流击楫"
+    ]
   },
   {
     "eventId": "HS-JIN-0317-EJIN",
@@ -394,15 +455,36 @@
     ]
   },
   {
+    "eventId": "HS-JIN-0321-ZUTI",
+    "year": 321,
+    "title": "祖逖卒于雍丘",
+    "summary": "北伐主将祖逖病卒，河南诸坞堡离心，北伐中辍。",
+    "description": "大兴四年祖逖卒。与中流击楫（313）呼应，标明东晋初年北伐窗口关闭。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_jin"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治",
+      "北伐"
+    ]
+  },
+  {
     "eventId": "HS-JIN-0353-LANTING",
     "year": 353,
     "title": "兰亭雅集",
     "summary": "王羲之等会稽山阴修禊，书《兰亭集序》。",
     "description": "永和九年三月三日。士族文艺的教材节点，行书典范。与北伐、桓温专兵同一东晋前中期。",
     "kind": "culture",
-    "polityIds": ["eastern_jin"],
+    "polityIds": [
+      "eastern_jin"
+    ],
     "importance": 3,
-    "tags": ["文化", "文献"]
+    "tags": [
+      "文化",
+      "文献"
+    ]
   },
   {
     "eventId": "HS-JIN-0369-FANGTOU",
@@ -411,20 +493,13 @@
     "summary": "桓温北伐前燕，至枋头粮尽退军，大败。",
     "description": "太和四年桓温自兖州进至枋头，燕军切断粮道，晋军奔还。北伐受挫，桓温威望受损，转而谋废立。",
     "kind": "battle",
-    "polityIds": ["eastern_jin"],
+    "polityIds": [
+      "eastern_jin"
+    ],
     "importance": 3,
-    "tags": ["战争"]
-  },
-  {
-    "eventId": "HS-JIN-0399-SUNEN",
-    "year": 399,
-    "title": "孙恩起事",
-    "summary": "五斗米道孙恩在会稽起兵，冲击东晋江东。",
-    "description": "隆安三年孙恩破会稽，号征东将军。北府兵刘牢之、刘裕等镇压，乱事延至403年前后。江东残破，为刘裕崛起提供舞台。",
-    "kind": "politics",
-    "polityIds": ["eastern_jin"],
-    "importance": 3,
-    "tags": ["社会", "战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-JIN-0383-FEISHUI",
@@ -443,6 +518,22 @@
     "idioms": [
       "风声鹤唳",
       "草木皆兵"
+    ]
+  },
+  {
+    "eventId": "HS-JIN-0399-SUNEN",
+    "year": 399,
+    "title": "孙恩起事",
+    "summary": "五斗米道孙恩在会稽起兵，冲击东晋江东。",
+    "description": "隆安三年孙恩破会稽，号征东将军。北府兵刘牢之、刘裕等镇压，乱事延至403年前后。江东残破，为刘裕崛起提供舞台。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_jin"
+    ],
+    "importance": 3,
+    "tags": [
+      "社会",
+      "战争"
     ]
   }
 ]

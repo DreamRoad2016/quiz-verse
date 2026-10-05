@@ -20,6 +20,8 @@ public class StreamFigure {
     private int sort;
     private String note;
     private boolean uncertain;
+    /** 字号以外的通行别称（如「卧龙」「东坡」），供 /search 匹配 */
+    private List<String> aliases = new ArrayList<>();
     private List<String> relatedEventIds = new ArrayList<>();
 
     public String getId() {
@@ -100,6 +102,14 @@ public class StreamFigure {
 
     public void setUncertain(boolean uncertain) {
         this.uncertain = uncertain;
+    }
+
+    public List<String> getAliases() {
+        return aliases;
+    }
+
+    public void setAliases(List<String> aliases) {
+        this.aliases = aliases != null ? aliases : new ArrayList<>();
     }
 
     public List<String> getRelatedEventIds() {

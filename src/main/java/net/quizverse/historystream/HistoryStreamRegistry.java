@@ -166,6 +166,9 @@ public class HistoryStreamRegistry {
                 log.warn("Duplicate stream ruler id {}, skipping later copy", raw.getId());
                 continue;
             }
+            if (raw.getAliases() == null) {
+                raw.setAliases(new ArrayList<>());
+            }
             rulersById.put(raw.getId(), raw);
         }
         List<StreamRuler> rulerList = new ArrayList<>(rulersById.values());
@@ -188,6 +191,9 @@ public class HistoryStreamRegistry {
             }
             if (raw.getRelatedEventIds() == null) {
                 raw.setRelatedEventIds(new ArrayList<>());
+            }
+            if (raw.getAliases() == null) {
+                raw.setAliases(new ArrayList<>());
             }
             figuresById.put(raw.getId(), raw);
         }
@@ -354,7 +360,7 @@ public class HistoryStreamRegistry {
                 .collect(Collectors.toList());
     }
 
-    /** 查人：按 姓名/字/庙号 匹配统治者与重要人物，返回统一命中项（精确 > 前缀 > 包含）。 */
+    /** 查人：按 姓名 / 字 / 庙号 / aliases 匹配统治者与重要人物（精确 > 前缀 > 包含）。 */
     public List<StreamPersonHit> searchPeople(String q, Integer limit) {
         if (q == null || q.isBlank()) {
             return List.of();
@@ -364,13 +370,13 @@ public class HistoryStreamRegistry {
 
         List<StreamPersonHit> hits = new ArrayList<>();
         for (StreamRuler r : rulersSorted) {
-            int score = matchScore(r.getName(), r.getPersonalName(), needle);
+            int score = matchScore(needle, r.getName(), r.getPersonalName(), r.getAliases());
             if (score < 9) {
                 hits.add(toHit(r, score));
             }
         }
         for (StreamFigure f : figuresSorted) {
-            int score = matchScore(f.getName(), f.getPersonalName(), needle);
+            int score = matchScore(needle, f.getName(), f.getPersonalName(), f.getAliases());
             if (score < 9) {
                 hits.add(toHit(f, score));
             }
@@ -783,9 +789,15 @@ public class HistoryStreamRegistry {
         return 3;
     }
 
-    /** 姓名/字 任一字段的匹配评分：0 精确 / 1 前缀 / 2 包含 / 9 不匹配。 */
-    private static int matchScore(String name, String personalName, String needle) {
-        return Math.min(fieldScore(name, needle), fieldScore(personalName, needle));
+    /** 姓名 / 字 / aliases 任一字段的匹配评分：0 精确 / 1 前缀 / 2 包含 / 9 不匹配。 */
+    private static int matchScore(String needle, String name, String personalName, List<String> aliases) {
+        int best = Math.min(fieldScore(name, needle), fieldScore(personalName, needle));
+        if (aliases != null) {
+            for (String alias : aliases) {
+                best = Math.min(best, fieldScore(alias, needle));
+            }
+        }
+        return best;
     }
 
     private static int fieldScore(String s, String needle) {

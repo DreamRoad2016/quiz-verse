@@ -92,9 +92,17 @@
     "summary": "高祖被匈奴困于白登，汉初对匈奴转入和亲。",
     "description": "汉七年刘邦击韩王信，被冒顿围平城白登山七日。陈平设计得脱。此后娄敬议和亲，汉匈关系以羁縻为主，至武帝才转攻势。",
     "kind": "battle",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ],
+    "idioms": [
+      "白登之围"
+    ]
   },
   {
     "eventId": "HS-HAN-0196-HANXIN",
@@ -103,10 +111,16 @@
     "summary": "高祖夷韩信三族，汉初功臣问题表面化。",
     "description": "汉十一年吕后、萧何诱杀韩信于长乐宫。与彭越、英布等相继被除，中央对异姓王的清洗基本完成。成语「成也萧何败也萧何」后起。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["政治"],
-    "idioms": ["成也萧何，败也萧何"]
+    "tags": [
+      "政治"
+    ],
+    "idioms": [
+      "成也萧何，败也萧何"
+    ]
   },
   {
     "eventId": "HS-HAN-0180-WENDI",
@@ -115,9 +129,13 @@
     "summary": "诸吕平定后，代王刘恒入京即位，文景之治开端。",
     "description": "高后卒，大臣诛诸吕，迎立代王。文帝尚节俭、除肉刑、与民休息，与景帝并称文景。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-HAN-0167-ROUXING",
@@ -126,9 +144,14 @@
     "summary": "缇萦上书后，文帝废黥、劓等肉刑，改笞。",
     "description": "文帝十三年齐太仓令淳于公获罪，少女缇萦随至长安上书。诏除肉刑，以笞杖代之。是文景「与民休息」的法制节点。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 3,
-    "tags": ["法制", "政治"]
+    "tags": [
+      "法制",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-HAN-0154-QIGUO",
@@ -137,9 +160,17 @@
     "summary": "吴楚等七国以诛晁错为名起兵，周亚夫平定，王国问题基本解决。",
     "description": "景帝三年晁错削藩，吴王濞联合楚、赵等反。周亚夫断粮道，三月而平。此后诸侯王国进一步被削弱，中央集权加强。",
     "kind": "battle",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 5,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ],
+    "idioms": [
+      "七国之乱"
+    ]
   },
   {
     "eventId": "HS-HAN-0141-WUDI",
@@ -171,6 +202,9 @@
     "tags": [
       "外交",
       "交通"
+    ],
+    "idioms": [
+      "凿空西域"
     ]
   },
   {
@@ -180,9 +214,17 @@
     "summary": "武帝采董仲舒议，罢黜百家、表章六经，儒学成为官学。",
     "description": "元光元年前后董仲舒天人三策。太学、经术取士渐成制度。即位条只记刘彻登基，此条记意识形态转向。",
     "kind": "culture",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 5,
-    "tags": ["文化", "政治"]
+    "tags": [
+      "文化",
+      "政治"
+    ],
+    "idioms": [
+      "独尊儒术"
+    ]
   },
   {
     "eventId": "HS-HAN-0127-TUIEN",
@@ -191,9 +233,16 @@
     "summary": "武帝用主父偃策，令诸侯王分国邑予子弟，王国自弱。",
     "description": "元朔二年前后推行推恩。诸侯王子弟皆得侯，地愈分愈小，七国之乱后再削藩，中央集权制度定型。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ],
+    "idioms": [
+      "推恩令"
+    ]
   },
   {
     "eventId": "HS-HAN-0119-MOBEI",
@@ -208,6 +257,9 @@
     "importance": 5,
     "tags": [
       "战争"
+    ],
+    "idioms": [
+      "封狼居胥"
     ]
   },
   {
@@ -217,20 +269,14 @@
     "summary": "武帝遣军灭南越国，岭南置郡。",
     "description": "元鼎六年汉军破番禺，南越亡。随后设南海等郡，岭南纳入汉郡县体系，与西南夷开拓同一时期。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
-  },
-  {
-    "eventId": "HS-HAN-0060-DUHU",
-    "year": -60,
-    "title": "设西域都护",
-    "summary": "汉置西域都护，郑吉为首任，西域正式纳入汉官体系。",
-    "description": "神爵二年郑吉为都护，治乌垒。此后西域诸国领护于汉，丝绸之路有了军政保障。取通行纪年。",
-    "kind": "politics",
-    "polityIds": ["western_han"],
-    "importance": 4,
-    "tags": ["政治", "外交"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-HAN-0099-SUWU",
@@ -239,10 +285,17 @@
     "summary": "苏武持节被扣，北海牧羊十余年，昭帝时归汉。",
     "description": "天汉元年苏武使匈奴，因变故被留。不肯降，居北海。始元六年还。是忠节故事的教材节点，与盐铁、霍光同一昭帝朝收束。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 3,
-    "tags": ["外交", "人物"],
-    "idioms": ["苏武牧羊"]
+    "tags": [
+      "外交",
+      "人物"
+    ],
+    "idioms": [
+      "苏武牧羊"
+    ]
   },
   {
     "eventId": "HS-HAN-0091-SHIJI",
@@ -258,6 +311,9 @@
     "tags": [
       "文献",
       "文化"
+    ],
+    "idioms": [
+      "史家之绝唱"
     ]
   },
   {
@@ -267,9 +323,14 @@
     "summary": "昭帝朝郡国贤良文学与桑弘羊辩盐铁官营，后成《盐铁论》。",
     "description": "始元六年霍光主持盐铁之议。文学主张罢榷，御史大夫桑弘羊坚持官营。会议反映武帝以后与民休息和财政集权的张力。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["政治", "经济"]
+    "tags": [
+      "政治",
+      "经济"
+    ]
   },
   {
     "eventId": "HS-HAN-0074-HUOGUANG",
@@ -278,9 +339,29 @@
     "summary": "昭帝卒，霍光废刘贺，迎立刘询，昭宣中兴开端。",
     "description": "元平元年昭帝无嗣。昌邑王刘贺即位二十余日被废，霍光立武帝曾孙刘询为宣帝。权在霍氏，但此后吏治与边防相对稳定。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-HAN-0060-DUHU",
+    "year": -60,
+    "title": "设西域都护",
+    "summary": "汉置西域都护，郑吉为首任，西域正式纳入汉官体系。",
+    "description": "神爵二年郑吉为都护，治乌垒。此后西域诸国领护于汉，丝绸之路有了军政保障。取通行纪年。",
+    "kind": "politics",
+    "polityIds": [
+      "western_han"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-HAN-0051-HUHANYE",
@@ -289,9 +370,14 @@
     "summary": "匈奴呼韩邪入朝称臣，汉匈关系转入羁縻。",
     "description": "甘露三年呼韩邪朝见宣帝于甘泉。此后匈奴分裂中的南匈奴附汉，边塞压力减轻，为昭君出塞铺垫。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 4,
-    "tags": ["外交", "政治"]
+    "tags": [
+      "外交",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-HAN-0033-ZHAOJUN",
@@ -300,9 +386,17 @@
     "summary": "宫女王昭君嫁匈奴呼韩邪单于，汉匈和亲的象征节点。",
     "description": "竟宁元年元帝以宫人王嫱（昭君）嫁呼韩邪。此后边塞相对安定，昭君和亲成为汉匈关系的教材记忆。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 3,
-    "tags": ["政治", "外交"]
+    "tags": [
+      "政治",
+      "外交"
+    ],
+    "idioms": [
+      "昭君出塞"
+    ]
   },
   {
     "eventId": "HS-HAN-0008-JUSHE",
@@ -311,9 +405,13 @@
     "summary": "平帝卒后王莽称假皇帝，次年即真。",
     "description": "初始元年前后王莽居摄践祚，立孺子婴。外戚专政转为代汉准备，公元9年建立新朝。",
     "kind": "politics",
-    "polityIds": ["western_han"],
+    "polityIds": [
+      "western_han"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-HAN-0009-XIN",
@@ -339,9 +437,16 @@
     "summary": "刘秀以少胜多破王莽军主力，新朝崩溃在即。",
     "description": "地皇四年昆阳，刘秀突围调集援军，大破王邑、王寻。同年更始入长安，王莽死，新朝亡。此条记决战。",
     "kind": "battle",
-    "polityIds": ["xin"],
+    "polityIds": [
+      "xin"
+    ],
     "importance": 5,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ],
+    "idioms": [
+      "昆阳之战"
+    ]
   },
   {
     "eventId": "HS-HAN-0025-GUANGWU",
@@ -389,6 +494,9 @@
     "tags": [
       "科技",
       "文化"
+    ],
+    "idioms": [
+      "蔡侯纸"
     ]
   },
   {
@@ -405,6 +513,9 @@
     "tags": [
       "战争",
       "社会"
+    ],
+    "idioms": [
+      "苍天已死"
     ]
   }
 ]

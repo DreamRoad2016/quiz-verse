@@ -39,9 +39,13 @@
     "summary": "忽必烈去世，孙成宗即位，大一统局面转入守成。",
     "description": "至元三十一年忽必烈卒。他定国号、都大都、灭南宋，奠定元朝规模。此后帝位更迭频繁，吏治与财政压力逐渐加重。",
     "kind": "politics",
-    "polityIds": ["yuan"],
+    "polityIds": [
+      "yuan"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-YUAN-1313-KEJU",
@@ -50,9 +54,29 @@
     "summary": "仁宗下诏恢复科举，以程朱《四书》取士。",
     "description": "皇庆二年诏行科举，延祐元年开科。蒙古、色目与汉人、南人分榜，但仍使理学进入官方取士，影响明清科举文本。",
     "kind": "culture",
-    "polityIds": ["yuan"],
+    "polityIds": [
+      "yuan"
+    ],
     "importance": 3,
-    "tags": ["文化", "政治"]
+    "tags": [
+      "文化",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-YUAN-1323-NANPO",
+    "year": 1323,
+    "title": "南坡之变",
+    "summary": "铁失等弑英宗硕德八剌，元中期政变再起。",
+    "description": "至治三年。填补复科举（1313）至顺帝即位（1333）的元中期空档。",
+    "kind": "politics",
+    "polityIds": [
+      "yuan"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-YUAN-1333-SHUNDI",
@@ -61,9 +85,13 @@
     "summary": "妥懽帖睦尔即位，元朝进入最后三十余年。",
     "description": "至顺四年宁宗卒，妥懽帖睦尔即位于上都。权臣伯颜、脱脱先后柄政，至正以后民变蜂起。",
     "kind": "politics",
-    "polityIds": ["yuan"],
+    "polityIds": [
+      "yuan"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-YUAN-1351-HONGJIN",
@@ -88,9 +116,13 @@
     "summary": "朱元璋大破陈友谅，长江上游争霸结束。",
     "description": "至正二十三年鄱阳湖水战，陈友谅中流矢死。朱元璋随后称吴王，为1368建明扫清劲敌。红巾条只记起事，此条只记决战。",
     "kind": "battle",
-    "polityIds": ["yuan"],
+    "polityIds": [
+      "yuan"
+    ],
     "importance": 5,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-MING-1368-FOUND",
@@ -110,15 +142,49 @@
     ]
   },
   {
+    "eventId": "HS-MING-1380-CHENGXIANG",
+    "year": 1380,
+    "title": "废丞相",
+    "summary": "胡惟庸案后，太祖罢中书省，权分六部。",
+    "description": "洪武十三年诛胡惟庸，废丞相。皇帝直接统六部，明代皇权高度集中，内阁后来只是顾问班子，不能恢复相权。",
+    "kind": "politics",
+    "polityIds": [
+      "ming"
+    ],
+    "importance": 5,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-MING-1393-LANYU",
+    "year": 1393,
+    "title": "蓝玉案",
+    "summary": "朱元璋诛凉国公蓝玉，株连将臣，洪武晚期清洗高峰。",
+    "description": "洪武二十六年。填补废丞相（1380）至建文即位（1398）空档。",
+    "kind": "politics",
+    "polityIds": [
+      "ming"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治"
+    ]
+  },
+  {
     "eventId": "HS-MING-1398-JIANWEN",
     "year": 1398,
     "title": "建文帝即位",
     "summary": "太祖卒，太孙朱允炆即位，次年削藩引发靖难。",
     "description": "洪武三十一年朱元璋死，皇太孙即位。建文削周、齐诸藩，燕王朱棣不安，1399年起兵。此条记继位，夺位见1402。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1402-JINGNAN",
@@ -150,6 +216,9 @@
     "tags": [
       "外交",
       "文化"
+    ],
+    "idioms": [
+      "七下西洋"
     ]
   },
   {
@@ -169,26 +238,19 @@
     ]
   },
   {
-    "eventId": "HS-MING-1380-CHENGXIANG",
-    "year": 1380,
-    "title": "废丞相",
-    "summary": "胡惟庸案后，太祖罢中书省，权分六部。",
-    "description": "洪武十三年诛胡惟庸，废丞相。皇帝直接统六部，明代皇权高度集中，内阁后来只是顾问班子，不能恢复相权。",
-    "kind": "politics",
-    "polityIds": ["ming"],
-    "importance": 5,
-    "tags": ["政治"]
-  },
-  {
     "eventId": "HS-MING-1421-BEIJING",
     "year": 1421,
     "title": "迁都北京",
     "summary": "成祖以北京为京师，南京为留都。",
     "description": "永乐十九年正式迁都北京，就近防御蒙古，也巩固靖难后的政治中心。南北两京体制延续至明亡。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1435-YINGZONG",
@@ -197,9 +259,13 @@
     "summary": "宣宗卒，英宗幼年即位，宦官王振渐用事。",
     "description": "宣德十年朱祁镇即位。宣宗朝的「仁宣之治」结束，王振引导亲征，至土木之变。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1449-TUMUBAO",
@@ -214,6 +280,9 @@
     "importance": 5,
     "tags": [
       "战争"
+    ],
+    "idioms": [
+      "土木之变"
     ]
   },
   {
@@ -223,9 +292,28 @@
     "summary": "英宗复位，于谦被杀，景帝废。",
     "description": "景泰八年石亨、徐有贞等拥太上皇英宗复辟，改元天顺。于谦以「谋逆」被诛。土木后的抗战人事被清算。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-MING-1477-XICHANG",
+    "year": 1477,
+    "title": "汪直设西厂",
+    "summary": "宪宗宠宦官汪直，设西厂，特务政治再张。",
+    "description": "成化十三年。填补夺门（1457）至弘治（1487）的成化朝空档。",
+    "kind": "politics",
+    "polityIds": [
+      "ming"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1487-HONGZHI",
@@ -234,9 +322,13 @@
     "summary": "宪宗卒，孝宗即位，史称弘治中兴的开端。",
     "description": "成化二十三年朱祐樘即位。任用王恕、马文升等，朝政相对清明，为明中期少有的整饬期。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1506-ZHENGDE",
@@ -245,9 +337,13 @@
     "summary": "孝宗卒，武宗即位，宦官刘瑾等「八虎」乱政。",
     "description": "弘治十八年朱厚照即位。刘瑾矫旨专权，至正德五年被诛。朝政昏乱，为宁王之乱埋下吏治败坏。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1519-NINGWANG",
@@ -256,9 +352,14 @@
     "summary": "宁王朱宸濠在南昌起兵，王守仁迅速平定。",
     "description": "正德十四年朱宸濠反。王守仁（阳明）起兵，四十余日平南昌。武宗仍南下「亲征」，朝政昏乱，距嘉靖改元仅两年。",
     "kind": "battle",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1521-JIAJING",
@@ -267,9 +368,13 @@
     "summary": "武宗无嗣，兴献王子朱厚熜入继，次年改元嘉靖。",
     "description": "正德十六年武宗卒。杨廷和等迎立朱厚熜。大礼议由此起，至嘉靖三年廷杖伏阙诸臣。即位与议礼分条。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1524-DALI",
@@ -278,9 +383,30 @@
     "summary": "世宗追尊生父，左顺门哭谏诸臣遭廷杖，皇权压过杨廷和一系。",
     "description": "嘉靖三年。争论是否考孝宗。张璁等迎合帝意，伏阙被杖死者十余人。此后议礼新贵柄政。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-MING-1535-FOULANGJI",
+    "year": 1535,
+    "title": "葡人入居濠镜澳（约）",
+    "summary": "嘉靖中葡人在濠镜澳贸易居住渐成事实，海疆格局变化。",
+    "description": "约嘉靖十四年前后地方官默许租居。填补大礼议（1524）至壬寅宫变（1542）的对外接触节点。",
+    "kind": "politics",
+    "polityIds": [
+      "ming"
+    ],
+    "importance": 3,
+    "tags": [
+      "边疆",
+      "中外"
+    ],
+    "uncertain": true
   },
   {
     "eventId": "HS-MING-1542-RENYIN",
@@ -289,9 +415,13 @@
     "summary": "宫女杨金英等试图缢杀世宗，事败，帝移居西苑，长期不视朝。",
     "description": "嘉靖二十一年。与方士、斋醮同一代。此后世宗深居西苑，严嵩等日重。",
     "kind": "politics",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-MING-1550-GENGXU",
@@ -300,9 +430,13 @@
     "summary": "俺答汗兵临北京城下，明廷震恐。",
     "description": "嘉靖二十九年蒙古俺答入古北口，直逼京师。严嵩等主和避战，京师戒严。此后明在蓟辽加紧边防，隆庆时才与俺答封贡。",
     "kind": "battle",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-MING-1561-TAIZHOU",
@@ -311,9 +445,13 @@
     "summary": "戚继光在台州连破倭寇，东南抗倭转折。",
     "description": "嘉靖四十年戚家军在台州、温州一带多战告捷。与俞大猷等配合，倭患此后显著减轻。",
     "kind": "battle",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-MING-1572-ZHANG",
@@ -332,15 +470,35 @@
     ]
   },
   {
+    "eventId": "HS-MING-1582-ZHANGDIE",
+    "year": 1582,
+    "title": "张居正卒",
+    "summary": "首辅张居正卒，考成法与一条鞭改革失去主持。",
+    "description": "万历十年。上承1572改革，下接援朝（1593），收紧万历前中期空档。",
+    "kind": "politics",
+    "polityIds": [
+      "ming"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "改革"
+    ]
+  },
+  {
     "eventId": "HS-MING-1593-PINGRANG",
     "year": 1593,
     "title": "平壤之战",
     "summary": "明军入朝，收复平壤，万历援朝转折。",
     "description": "万历二十一年李如松等攻克平壤，日军南退。援朝之役（1592–1598）是明后期大规模对外用兵，消耗军费，也暂时稳定朝鲜。",
     "kind": "battle",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-MING-1601-RICCI",
@@ -349,9 +507,14 @@
     "summary": "耶稣会士利玛窦获准居京师，西学与历算开始进入明廷视野。",
     "description": "万历二十九年利玛窦至北京，贡自鸣钟等，后留居。与徐光启合译几何，是明清西学东渐的教材节点。",
     "kind": "culture",
-    "polityIds": ["ming"],
+    "polityIds": [
+      "ming"
+    ],
     "importance": 3,
-    "tags": ["文化", "外交"]
+    "tags": [
+      "文化",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-HJ-1616-FOUND",
@@ -367,6 +530,45 @@
     "importance": 5,
     "tags": [
       "政治"
+    ]
+  },
+  {
+    "eventId": "HS-MING-1619-SARHU",
+    "year": 1619,
+    "title": "萨尔浒之战",
+    "summary": "明四路攻后金，主力在萨尔浒覆没。",
+    "description": "万历四十七年杨镐分兵，努尔哈赤集中击破杜松等部。明在辽东转入守势，后金势力扩展。",
+    "kind": "battle",
+    "polityIds": [
+      "ming",
+      "hou_jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争"
+    ],
+    "idioms": [
+      "萨尔浒之战"
+    ]
+  },
+  {
+    "eventId": "HS-MING-1626-NINGYUAN",
+    "year": 1626,
+    "title": "宁远之战",
+    "summary": "袁崇焕凭城击退后金，努尔哈赤受伤后退兵。",
+    "description": "天启六年。填补萨尔浒（1619）至清国号（1636）的辽东关键战役。",
+    "kind": "battle",
+    "polityIds": [
+      "ming",
+      "hou_jin"
+    ],
+    "importance": 5,
+    "tags": [
+      "战争",
+      "辽东"
+    ],
+    "idioms": [
+      "宁远大捷"
     ]
   },
   {
@@ -409,31 +611,31 @@
     "summary": "清廷强制剃发易服，江南抗清与屠城随之而起。",
     "description": "顺治二年下「留头不留发」之令。扬州、江阴等地反抗被镇压。入关条只记1644，此条记征服与衣冠冲突。",
     "kind": "politics",
-    "polityIds": ["qing", "ming"],
+    "polityIds": [
+      "qing",
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["政治", "社会"]
+    "tags": [
+      "政治",
+      "社会"
+    ]
   },
   {
-    "eventId": "HS-MING-1619-SARHU",
-    "year": 1619,
-    "title": "萨尔浒之战",
-    "summary": "明四路攻后金，主力在萨尔浒覆没。",
-    "description": "万历四十七年杨镐分兵，努尔哈赤集中击破杜松等部。明在辽东转入守势，后金势力扩展。",
+    "eventId": "HS-QING-1659-NANJING",
+    "year": 1659,
+    "title": "郑成功攻南京",
+    "summary": "郑成功由海道北伐，围攻南京不利而退。",
+    "description": "顺治十六年。上承剃发令（1645），下接入台（1661），标明南明余波与清初东南战事。",
     "kind": "battle",
-    "polityIds": ["ming", "hou_jin"],
-    "importance": 5,
-    "tags": ["战争"]
-  },
-  {
-    "eventId": "HS-QING-1689-NERCHINSK",
-    "year": 1689,
-    "title": "尼布楚条约",
-    "summary": "中俄划定东部边界，清保持黑龙江流域。",
-    "description": "康熙二十八年中俄签订《尼布楚条约》，以格尔必齐河、外兴安岭等为界。这是清与欧洲国家的正式边界条约，此后东北相对稳定。",
-    "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing",
+      "ming"
+    ],
     "importance": 4,
-    "tags": ["外交", "政治"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-QING-1661-ZHENGGONG",
@@ -442,9 +644,14 @@
     "summary": "郑成功率军攻克荷兰据点，以台湾为抗清基地。",
     "description": "永历十五年郑成功自厦门渡海，围攻热兰遮城，荷兰人次年投降。郑氏在台设承天府。统一台湾见1683。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-QING-1673-SANFAN",
@@ -453,9 +660,14 @@
     "summary": "吴三桂等起兵，南方数省脱离清廷控制。",
     "description": "康熙十二年议撤藩，吴三桂在云南反，尚之信、耿精忠响应。战事延至1681年平定，清中央对南方的控制由此加强。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-QING-1683-TAIWAN",
@@ -471,6 +683,9 @@
     "tags": [
       "战争",
       "政治"
+    ],
+    "idioms": [
+      "康熙平台"
     ]
   },
   {
@@ -480,9 +695,33 @@
     "summary": "清军两度进攻雅克萨俄军，迫使俄国谈判。",
     "description": "康熙二十四年克雅克萨，二十五年再围。战争本身见此条，划界见1689《尼布楚条约》，两条不重复。",
     "kind": "battle",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ]
+  },
+  {
+    "eventId": "HS-QING-1689-NERCHINSK",
+    "year": 1689,
+    "title": "尼布楚条约",
+    "summary": "中俄划定东部边界，清保持黑龙江流域。",
+    "description": "康熙二十八年中俄签订《尼布楚条约》，以格尔必齐河、外兴安岭等为界。这是清与欧洲国家的正式边界条约，此后东北相对稳定。",
+    "kind": "politics",
+    "polityIds": [
+      "qing"
+    ],
+    "importance": 4,
+    "tags": [
+      "外交",
+      "政治"
+    ],
+    "idioms": [
+      "尼布楚条约"
+    ]
   },
   {
     "eventId": "HS-QING-1696-ZHAOMO",
@@ -491,9 +730,28 @@
     "summary": "康熙三征噶尔丹，昭莫多歼其主力。",
     "description": "康熙三十五年清军与准噶尔战于昭莫多（今蒙古国境内）。噶尔丹势衰，次年饮药死。清对漠北控制加强。",
     "kind": "battle",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
+  },
+  {
+    "eventId": "HS-QING-1716-KANGXI",
+    "year": 1716,
+    "title": "《康熙字典》成书",
+    "summary": "官修字书告成，成为清代字书代表。",
+    "description": "康熙五十五年。填补昭莫多（1696）至清军入藏（1720）的文化节点。",
+    "kind": "culture",
+    "polityIds": [
+      "qing"
+    ],
+    "importance": 3,
+    "tags": [
+      "文化"
+    ]
   },
   {
     "eventId": "HS-QING-1720-XIZANG",
@@ -502,9 +760,14 @@
     "summary": "清军驱准保藏，册封达赖，西藏纳入清直接军事保护。",
     "description": "康熙五十九年清军击败据藏准部，护七世达赖入拉萨。此后驻藏大臣制度逐步形成。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["政治", "战争"]
+    "tags": [
+      "政治",
+      "战争"
+    ]
   },
   {
     "eventId": "HS-QING-1723-YONGZHENG",
@@ -528,9 +791,13 @@
     "summary": "雍正以军机房处理西北军务，后成中枢，内阁虚衔化。",
     "description": "雍正七年前后为对准部用兵设军机处。皇帝面授、军机大臣承旨，决策更密更快。清代君主集权的制度节点。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-QING-1736-QIANLONG",
@@ -548,15 +815,36 @@
     ]
   },
   {
+    "eventId": "HS-QING-1747-JINCHUAN",
+    "year": 1747,
+    "title": "第一次金川之役",
+    "summary": "乾隆朝用兵大小金川，西南用兵序幕。",
+    "description": "乾隆十二年。填补乾隆即位（1736）至平准噶尔（1755）空档。",
+    "kind": "battle",
+    "polityIds": [
+      "qing"
+    ],
+    "importance": 3,
+    "tags": [
+      "战争",
+      "边疆"
+    ]
+  },
+  {
     "eventId": "HS-QING-1755-ZHUNGEER",
     "year": 1755,
     "title": "清平准噶尔",
     "summary": "乾隆出兵伊犁，准噶尔汗国崩溃。",
     "description": "乾隆二十年清军入伊犁，达瓦齐被俘。准部旋因阿睦尔撒纳再乱，至二十二年底底定，为后来定回部铺路。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-QING-1759-XINJIANG",
@@ -565,20 +853,29 @@
     "summary": "乾隆平定准部和回部，设伊犁将军。",
     "description": "乾隆二十四年清军平定大小和卓，天山南北纳入版图，后设伊犁将军。西域经营是康乾武功的收束，也奠定近代新疆治理框架。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
-    "eventId": "HS-QING-1796-BAILIAN",
-    "year": 1796,
-    "title": "川楚白莲教起义",
-    "summary": "白莲教起事，清由盛转衰的标志之一。",
-    "description": "嘉庆元年川楚陕白莲教大规模起事，耗饷数年。乾隆刚内禅，吏治与流民问题爆发，清全盛局面明显动摇。",
-    "kind": "politics",
-    "polityIds": ["qing"],
+    "eventId": "HS-QING-1773-SJKU",
+    "year": 1773,
+    "title": "开馆修《四库全书》",
+    "summary": "乾隆下诏开四库全书馆，大规模整理典籍。",
+    "description": "乾隆三十八年开馆；告成见1782条。填补定西域（1759）至全书告成之间。",
+    "kind": "culture",
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["社会", "战争"]
+    "tags": [
+      "文化"
+    ]
   },
   {
     "eventId": "HS-QING-1782-SJKU",
@@ -587,9 +884,14 @@
     "summary": "乾隆敕修大型丛书大体完成，亦伴随禁书与文字狱。",
     "description": "乾隆四十七年第一份《四库全书》缮成。收罗历代典籍，同时抽毁违碍书籍。是清代文化工程，也是思想控制的标本。",
     "kind": "culture",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["文献", "文化"]
+    "tags": [
+      "文献",
+      "文化"
+    ]
   },
   {
     "eventId": "HS-QING-1793-MACARTNEY",
@@ -598,9 +900,30 @@
     "summary": "英使见乾隆，求增开口岸被拒，中西体制碰撞表面化。",
     "description": "乾隆五十八年英使马戛尔尼至热河。跪拜礼仪与通商要求均未达成。此后清仍限广州一口，至鸦片战争前中英矛盾累积。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 3,
-    "tags": ["外交", "政治"]
+    "tags": [
+      "外交",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-QING-1796-BAILIAN",
+    "year": 1796,
+    "title": "川楚白莲教起义",
+    "summary": "白莲教起事，清由盛转衰的标志之一。",
+    "description": "嘉庆元年川楚陕白莲教大规模起事，耗饷数年。乾隆刚内禅，吏治与流民问题爆发，清全盛局面明显动摇。",
+    "kind": "politics",
+    "polityIds": [
+      "qing"
+    ],
+    "importance": 4,
+    "tags": [
+      "社会",
+      "战争"
+    ]
   },
   {
     "eventId": "HS-QING-1813-TIANLI",
@@ -609,9 +932,29 @@
     "summary": "天理教攻入紫禁城，嘉庆朝内忧表面化。",
     "description": "嘉庆十八年林清等在京起事，太监接应攻皇宫，旋败。与川楚白莲教余波相接，显示盛清之后的社会危机。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 3,
-    "tags": ["社会", "政治"]
+    "tags": [
+      "社会",
+      "政治"
+    ]
+  },
+  {
+    "eventId": "HS-QING-1820-DAOGUANG",
+    "year": 1820,
+    "title": "道光帝即位",
+    "summary": "嘉庆崩，道光即位，清王朝转入近代前夜。",
+    "description": "嘉庆二十五年。填补癸酉之变（1813）至虎门销烟（1839）的帝系节点。",
+    "kind": "politics",
+    "polityIds": [
+      "qing"
+    ],
+    "importance": 3,
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-QING-1839-XIAOYAN",
@@ -620,9 +963,17 @@
     "summary": "林则徐在广州销毁鸦片，次年战争爆发。",
     "description": "道光十九年林则徐收缴鸦片，于虎门销毁。英国以此为借口准备武力，1840年鸦片战争开始。销烟是近代史开端前夜。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["外交", "政治"]
+    "tags": [
+      "外交",
+      "政治"
+    ],
+    "idioms": [
+      "虎门销烟"
+    ]
   },
   {
     "eventId": "HS-QING-1840-OPIUM",
@@ -647,9 +998,17 @@
     "summary": "中英议和：割香港岛、开口岸、协定关税，近代不平等条约之始。",
     "description": "道光二十二年《南京条约》在江宁签订。战争本身见1840条。此条只记条约，不重复开战。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["外交", "政治"]
+    "tags": [
+      "外交",
+      "政治"
+    ],
+    "idioms": [
+      "南京条约"
+    ]
   },
   {
     "eventId": "HS-QING-1851-TAIPING",
@@ -674,9 +1033,14 @@
     "summary": "第二次鸦片战争中圆明园被焚，清签《北京条约》。",
     "description": "咸丰十年联军入京，焚掠圆明园。增开口岸、割九龙司等。此后洋务自强与辛酉政变接踵。开战与条约与1840/1842条不重复。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-QING-1861-YANGWU",
@@ -692,6 +1056,9 @@
     "tags": [
       "政治",
       "经济"
+    ],
+    "idioms": [
+      "中体西用"
     ]
   },
   {
@@ -701,9 +1068,13 @@
     "summary": "湘军攻克天京，太平天国中央覆灭。",
     "description": "同治三年曾国荃部破城，洪秀全已死。金田起事见1851条，此条只记失败。余部转战数年而终。",
     "kind": "battle",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-QING-1878-XINJIANG",
@@ -712,9 +1083,14 @@
     "summary": "清军平定阿古柏势力，新疆重入版图，后建行省。",
     "description": "光绪四年清军收复和阗等地，阿古柏政权瓦解。1884设新疆省。是洋务时期边疆经略的收束。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-QING-1884-ZHONGFA",
@@ -723,9 +1099,14 @@
     "summary": "清法因越南开战，马江失利，次年镇南关、谅山清军获胜。",
     "description": "光绪十年法军攻福建水师。刘永福、冯子材等在陆地取胜，但《中法新约》仍使越南脱离清藩属。洋务海军暴露问题。",
     "kind": "battle",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-QING-1894-JIAWU",
@@ -734,9 +1115,14 @@
     "summary": "中日开战，北洋海军覆没。",
     "description": "光绪二十年因朝鲜问题中日开战。黄海、威海战败，洋务自强受挫。议和见次年《马关条约》条。",
     "kind": "battle",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-QING-1895-MAGUAN",
@@ -745,9 +1131,17 @@
     "summary": "清对日割台湾、赔款、开口岸，刺激维新与革命。",
     "description": "光绪二十一年《马关条约》。开战见1894条。此后台湾抗日、公车上书，不与戊戌条重复。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["外交", "政治"]
+    "tags": [
+      "外交",
+      "政治"
+    ],
+    "idioms": [
+      "马关条约"
+    ]
   },
   {
     "eventId": "HS-QING-1898-WUXU",
@@ -756,9 +1150,17 @@
     "summary": "光绪推行百日维新，慈禧发动政变，新政失败。",
     "description": "光绪二十四年康有为、梁启超等推动变法，103日而止。谭嗣同等遇难，维新派分化，革命思潮转盛。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["政治", "改革"]
+    "tags": [
+      "政治",
+      "改革"
+    ],
+    "idioms": [
+      "戊戌变法"
+    ]
   },
   {
     "eventId": "HS-QING-1900-YIHETUAN",
@@ -767,9 +1169,14 @@
     "summary": "义和团起事，八国联军入京，次年《辛丑条约》。",
     "description": "光绪二十六年华北义和团杀教士、围使馆，清廷宣战。联军占北京，慈禧西逃。1901年巨额赔款，清统治进一步失能。",
     "kind": "politics",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 5,
-    "tags": ["战争", "外交"]
+    "tags": [
+      "战争",
+      "外交"
+    ]
   },
   {
     "eventId": "HS-QING-1905-KEJU",
@@ -778,9 +1185,14 @@
     "summary": "清廷停废科举，兴学堂，士人进身之路改道。",
     "description": "光绪三十一年诏停科举。延续千余年的考试取士终结，新式学堂与留学成为正途，加速知识人与清廷疏离。",
     "kind": "culture",
-    "polityIds": ["qing"],
+    "polityIds": [
+      "qing"
+    ],
     "importance": 4,
-    "tags": ["文化", "政治"]
+    "tags": [
+      "文化",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1911-XINHAI",
@@ -797,6 +1209,9 @@
     "tags": [
       "政治",
       "革命"
+    ],
+    "idioms": [
+      "辛亥革命"
     ]
   },
   {
@@ -837,9 +1252,13 @@
     "summary": "袁氏接受二十一条后称帝，改元洪宪，护国运动旋起。",
     "description": "1915年底袁世凯称帝。蔡锷等在云南起义。83日而败。民国成立见1912条，此条只记帝制复辟尝试。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1919-WUSI",
@@ -848,9 +1267,14 @@
     "summary": "巴黎和会外交失败，学生罢课，新文化与爱国运动高潮。",
     "description": "1919年5月4日北京学生抗议转签对德和约。运动扩及商人罢市，北洋政府未敢签字。此后马克思主义传播加速，亦是现代思想史节点。",
     "kind": "culture",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 5,
-    "tags": ["文化", "政治"]
+    "tags": [
+      "文化",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1921-CCP",
@@ -859,9 +1283,13 @@
     "summary": "中共一大在上海召开，随即转至嘉兴南湖。",
     "description": "1921年7月。五四后马克思主义小组成党。此后与国民党两度合作、分裂，至1949年产品截断。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 5,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1927-NANCHANG",
@@ -870,9 +1298,13 @@
     "summary": "国共分裂后，中共在南昌发动武装起义。",
     "description": "1927年8月1日。此前清党、分共已使第一次合作破裂。此条记武装反抗的教材节点，不另写四一二细节。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1928-YIZHI",
@@ -881,9 +1313,13 @@
     "summary": "张学良宣布服从南京国民政府，北伐在形式上完成。",
     "description": "1928年底东北改挂青天白日旗。全国至少在名义上统一于南京，至九一八而再裂。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1931-918",
@@ -892,9 +1328,13 @@
     "summary": "日本关东军攻占沈阳，不久占领东北，伪满洲国随后出现。",
     "description": "1931年9月18日沈阳北大营遭袭。国民政府侧重安内，东北迅速沦陷。局部抗战开始，至1937年全面抗战。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 5,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-ROC-1935-ZUNYI",
@@ -903,9 +1343,13 @@
     "summary": "长征途中中共改组领导，毛泽东进入决策核心。",
     "description": "1935年1月。纠正军事错误，此后转战西北。长征过程不另铺开，只留此教材节点。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 4,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1936-XIAN",
@@ -914,9 +1358,13 @@
     "summary": "张学良、杨虎城扣蒋，促成停止内战、一致抗日。",
     "description": "1936年12月12日西安兵谏。经谈判蒋介石返宁，国共第二次合作条件成熟，次年全面抗战。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 5,
-    "tags": ["政治"]
+    "tags": [
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1937-WAR",
@@ -940,9 +1388,14 @@
     "summary": "日本投降，中国抗战结束；随后进入国共内战。",
     "description": "1945年8月日本宣布投降，9月举行受降。全面抗战见1937条。此条只记胜利与结束，不重复开战。",
     "kind": "politics",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 5,
-    "tags": ["战争", "政治"]
+    "tags": [
+      "战争",
+      "政治"
+    ]
   },
   {
     "eventId": "HS-ROC-1948-SANDA",
@@ -951,9 +1404,13 @@
     "summary": "辽沈、淮海、平津相继展开，国民党军主力被歼。",
     "description": "1948年秋至1949年初。开国见1949条，此条只记决战。产品以1949截断。",
     "kind": "battle",
-    "polityIds": ["republic_of_china"],
+    "polityIds": [
+      "republic_of_china"
+    ],
     "importance": 5,
-    "tags": ["战争"]
+    "tags": [
+      "战争"
+    ]
   },
   {
     "eventId": "HS-ROC-1949-PRC",

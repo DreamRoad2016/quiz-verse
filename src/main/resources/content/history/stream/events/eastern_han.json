@@ -16,6 +16,25 @@
     ]
   },
   {
+    "eventId": "HS-EH-0043-MAYUAN",
+    "year": 43,
+    "title": "马援平交趾",
+    "summary": "光武朝马援南征，平定交趾征侧、征贰之乱。",
+    "description": "建武十九年伏波将军马援破交趾。后世以「马革裹尸」概括其志。填补光武统一后至明帝白马寺之间的东汉空档。",
+    "kind": "battle",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 3,
+    "tags": [
+      "战争",
+      "边疆"
+    ],
+    "idioms": [
+      "马革裹尸"
+    ]
+  },
+  {
     "eventId": "HS-EH-0067-BAIMA",
     "year": 67,
     "title": "白马寺约建，佛教东传节点",
@@ -44,6 +63,25 @@
     "importance": 4,
     "tags": [
       "战争"
+    ],
+    "idioms": [
+      "燕然勒功"
+    ]
+  },
+  {
+    "eventId": "HS-EH-0121-BANCHOU",
+    "year": 121,
+    "title": "班勇再通西域",
+    "summary": "班超子班勇出任西域长史，东汉再度经略西域。",
+    "description": "延光二年班勇将兵出屯。上承班超、蔡伦造纸节点，下接张衡地动仪，收紧东汉中期空档。",
+    "kind": "politics",
+    "polityIds": [
+      "eastern_han"
+    ],
+    "importance": 3,
+    "tags": [
+      "边疆",
+      "政治"
     ]
   },
   {
@@ -53,9 +91,14 @@
     "summary": "张衡制成地动仪，为古代测震仪器的代表。",
     "description": "阳嘉元年张衡为太史令，作候风地动仪。具体形制后世复原有异说，教材常以此年记东汉科技高峰。",
     "kind": "culture",
-    "polityIds": ["eastern_han"],
+    "polityIds": [
+      "eastern_han"
+    ],
     "importance": 4,
-    "tags": ["科技", "文化"]
+    "tags": [
+      "科技",
+      "文化"
+    ]
   },
   {
     "eventId": "HS-EH-0159-LIANGJI",
@@ -79,9 +122,14 @@
     "summary": "宦官指李膺等为党人，收捕禁锢，士大夫与宦官冲突公开化。",
     "description": "延熹九年第一次党锢。桓帝纳宦官言，禁锢党人。不久赦归，但矛盾未解，至建宁二年再兴大狱。",
     "kind": "politics",
-    "polityIds": ["eastern_han"],
+    "polityIds": [
+      "eastern_han"
+    ],
     "importance": 4,
-    "tags": ["政治", "社会"]
+    "tags": [
+      "政治",
+      "社会"
+    ]
   },
   {
     "eventId": "HS-EH-0169-DANGGU",
@@ -122,9 +170,15 @@
     "summary": "献帝迁许，曹操挟天子以令诸侯，北方争霸格局改写。",
     "description": "建安元年曹操迎汉献帝都许。此后征伐皆用汉廷诏令，官渡前已占政治先机。",
     "kind": "politics",
-    "polityIds": ["eastern_han"],
+    "polityIds": [
+      "eastern_han"
+    ],
     "importance": 5,
-    "tags": ["政治"],
-    "idioms": ["挟天子以令诸侯"]
+    "tags": [
+      "政治"
+    ],
+    "idioms": [
+      "挟天子以令诸侯"
+    ]
   }
 ]

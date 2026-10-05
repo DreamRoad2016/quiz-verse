@@ -10,285 +10,25 @@
     "sort": 1,
     "note": "辅武王、摄成王，东征与制礼。窗取克商后约十年。",
     "uncertain": true,
-    "relatedEventIds": ["HS-PQ-1046-MUYE", "HS-PQ-1042-ZHOUGONG"]
+    "relatedEventIds": [
+      "HS-PQ-1046-MUYE",
+      "HS-PQ-1042-ZHOUGONG"
+    ]
   },
   {
-    "id": "fig_guan_zhong",
-    "name": "管仲",
-    "personalName": "夷吾",
-    "role": "minister",
-    "fromYear": -685,
-    "toYear": -645,
-    "polityId": "state_qi",
-    "sort": 10,
-    "note": "齐桓公任为相，通货积财，九合诸侯。与葵丘会盟同一代。",
-    "relatedEventIds": ["HS-PQ-0685-GUANZHONG"]
-  },
-  {
-    "id": "fig_sun_wu",
-    "name": "孙武",
-    "personalName": "长卿",
-    "role": "general",
-    "fromYear": -512,
-    "toYear": -506,
-    "polityId": "state_wu",
-    "sort": 11,
-    "note": "吴王阖闾用为将，柏举入郢。窗取伐楚前后。",
-    "uncertain": true,
-    "relatedEventIds": ["HS-PQ-0506-BAIJU"]
-  },
-  {
-    "id": "fig_zhang_liang",
-    "name": "张良",
-    "personalName": "子房",
-    "role": "minister",
-    "fromYear": -209,
-    "toYear": -186,
-    "polityId": "western_han",
-    "sort": 20,
-    "note": "下邳归刘邦，运筹帷幄。楚汉至汉初功成身退。卒年取通行约年。",
-    "uncertain": true,
-    "relatedEventIds": ["HS-HAN-0206-HONGMEN", "HS-HAN-0202-FOUND"]
-  },
-  {
-    "id": "fig_han_xin",
-    "name": "韩信",
-    "role": "general",
-    "fromYear": -206,
-    "toYear": -196,
-    "polityId": "western_han",
-    "sort": 21,
-    "note": "汉中拜将，破赵下齐，垓下合围。汉十一年夷三族。",
-    "relatedEventIds": ["HS-HAN-0203-CHENGGAO", "HS-HAN-0202-GAIXIA", "HS-HAN-0196-HANXIN"]
-  },
-  {
-    "id": "fig_sima_qian",
-    "name": "司马迁",
-    "personalName": "子长",
+    "id": "fig_laozi",
+    "name": "老子",
+    "personalName": "李耳",
     "role": "scholar",
-    "fromYear": -108,
-    "toYear": -91,
-    "polityId": "western_han",
-    "sort": 30,
-    "note": "嗣父谈为太史令，李陵祸后发愤完成《史记》。活跃窗取任太史至书成约年。",
+    "fromYear": -520,
+    "toYear": -480,
+    "polityId": "eastern_zhou",
+    "sort": 4,
+    "note": "传统与孔子同时代略早；生卒无定说。",
     "uncertain": true,
-    "relatedEventIds": ["HS-HAN-0091-SHIJI"]
-  },
-  {
-    "id": "fig_dong_zhongshu",
-    "name": "董仲舒",
-    "role": "scholar",
-    "fromYear": -140,
-    "toYear": -104,
-    "polityId": "western_han",
-    "sort": 29,
-    "note": "对策至晚年居家著书。独尊儒术节点同窗。",
-    "uncertain": true,
-    "relatedEventIds": ["HS-HAN-0134-RUJIA"]
-  },
-  {
-    "id": "fig_su_wu",
-    "name": "苏武",
-    "personalName": "子卿",
-    "role": "minister",
-    "fromYear": -99,
-    "toYear": -81,
-    "polityId": "western_han",
-    "sort": 32,
-    "note": "出使被扣至归汉。与苏武出使节点同窗。",
-    "relatedEventIds": ["HS-HAN-0099-SUWU"]
-  },
-  {
-    "id": "fig_ban_chao",
-    "name": "班超",
-    "personalName": "仲升",
-    "role": "general",
-    "fromYear": 73,
-    "toYear": 102,
-    "polityId": "eastern_han",
-    "sort": 31,
-    "note": "永平出使至永元还朝。与班超出使节点同窗。",
-    "relatedEventIds": ["HS-HAN-0073-BANCHOU"]
-  },
-  {
-    "id": "fig_zhuge_liang",
-    "name": "诸葛亮",
-    "personalName": "孔明",
-    "role": "minister",
-    "fromYear": 207,
-    "toYear": 234,
-    "polityId": "shu_han",
-    "sort": 40,
-    "note": "隆中对以后辅刘备、刘禅，五丈原卒于军。",
-    "relatedEventIds": ["HS-3K-0208-CHIBI", "HS-3K-0214-YIZHOU", "HS-3K-0228-JIETING", "HS-3K-0234-ZHUGE"]
-  },
-  {
-    "id": "fig_wei_zheng",
-    "name": "魏征",
-    "personalName": "玄成",
-    "role": "minister",
-    "fromYear": 627,
-    "toYear": 643,
-    "polityId": "tang",
-    "sort": 50,
-    "note": "贞观谏臣，以直言著。卒于贞观十七年。",
-    "relatedEventIds": ["HS-ND-0627-ZHENGUAN"]
-  },
-  {
-    "id": "fig_xuan_zang",
-    "name": "玄奘",
-    "personalName": "陈祎",
-    "role": "scholar",
-    "fromYear": 629,
-    "toYear": 645,
-    "polityId": "tang",
-    "sort": 50,
-    "note": "西行至归长安译经前。与贞观求法节点同窗。",
-    "relatedEventIds": ["HS-ND-0629-XUANZANG"]
-  },
-  {
-    "id": "fig_li_bai",
-    "name": "李白",
-    "personalName": "太白",
-    "role": "poet",
-    "fromYear": 742,
-    "toYear": 762,
-    "polityId": "tang",
-    "sort": 51,
-    "note": "供奉翰林至安史乱中从永王璘，长流夜郎后病卒。窗取天宝初至宝应。",
-    "uncertain": true,
-    "relatedEventIds": ["HS-ND-0755-ANSHI"]
-  },
-  {
-    "id": "fig_du_fu",
-    "name": "杜甫",
-    "personalName": "子美",
-    "role": "poet",
-    "fromYear": 755,
-    "toYear": 770,
-    "polityId": "tang",
-    "sort": 51,
-    "note": "安史乱起至漂泊卒于湘。与李白窗相交。",
-    "relatedEventIds": ["HS-ND-0755-ANSHI"]
-  },
-  {
-    "id": "fig_li_su",
-    "name": "李愬",
-    "role": "general",
-    "fromYear": 814,
-    "toYear": 821,
-    "polityId": "tang",
-    "sort": 52,
-    "note": "元和淮西之役主将，雪夜入蔡州。",
-    "relatedEventIds": ["HS-TANG-0817-CAIZHOU"]
-  },
-  {
-    "id": "fig_han_yu",
-    "name": "韩愈",
-    "personalName": "退之",
-    "role": "scholar",
-    "fromYear": 803,
-    "toYear": 824,
-    "polityId": "tang",
-    "sort": 53,
-    "note": "永贞前后至长庆吏部。谏佛骨、古文与同一代。",
-    "relatedEventIds": ["HS-TANG-0805-YONGZHEN"]
-  },
-  {
-    "id": "fig_zu_ti",
-    "name": "祖逖",
-    "personalName": "士稚",
-    "role": "general",
-    "fromYear": 313,
-    "toYear": 321,
-    "polityId": "eastern_jin",
-    "sort": 40,
-    "note": "中流击楫至卒于雍丘。窗跨西晋残局与东晋初。",
-    "relatedEventIds": ["HS-JIN-0313-ZUTI"]
-  },
-  {
-    "id": "fig_huan_wen",
-    "name": "桓温",
-    "role": "general",
-    "fromYear": 345,
-    "toYear": 373,
-    "polityId": "eastern_jin",
-    "sort": 42,
-    "note": "永和以后专兵，347灭成汉。卒于宁康元年。",
-    "relatedEventIds": ["HS-SK-0347-CHENGHAN"]
-  },
-  {
-    "id": "fig_wang_xizhi",
-    "name": "王羲之",
-    "personalName": "逸少",
-    "role": "poet",
-    "fromYear": 347,
-    "toYear": 361,
-    "polityId": "eastern_jin",
-    "sort": 41,
-    "note": "永和前后会稽内史至兰亭。窗取永和至升平。",
-    "uncertain": true,
-    "relatedEventIds": ["HS-JIN-0353-LANTING"]
-  },
-  {
-    "id": "fig_wang_meng",
-    "name": "王猛",
-    "personalName": "景略",
-    "role": "minister",
-    "fromYear": 357,
-    "toYear": 375,
-    "polityId": "qian_qin",
-    "sort": 43,
-    "note": "苻坚谋主，370灭燕主将之一。",
-    "relatedEventIds": ["HS-SK-0370-YANFALL", "HS-SK-0376-NORTHUNI"]
-  },
-  {
-    "id": "fig_wang_anshi",
-    "name": "王安石",
-    "personalName": "介甫",
-    "role": "minister",
-    "fromYear": 1069,
-    "toYear": 1086,
-    "polityId": "northern_song",
-    "sort": 60,
-    "note": "熙宁变法至元祐元年卒。与司马光《通鉴》成书年代相交。",
-    "relatedEventIds": ["HS-NS-1069-REFORM"]
-  },
-  {
-    "id": "fig_su_shi",
-    "name": "苏轼",
-    "personalName": "子瞻",
-    "role": "poet",
-    "fromYear": 1071,
-    "toYear": 1101,
-    "polityId": "northern_song",
-    "sort": 62,
-    "note": "熙宁通判杭州至建中靖国卒。与变法同代。",
-    "relatedEventIds": ["HS-NS-1069-REFORM"]
-  },
-  {
-    "id": "fig_yue_fei",
-    "name": "岳飞",
-    "personalName": "鹏举",
-    "role": "general",
-    "fromYear": 1126,
-    "toYear": 1142,
-    "polityId": "southern_song",
-    "sort": 70,
-    "note": "自东京保卫至郾城班师，绍兴十一年遇害。",
-    "relatedEventIds": ["HS-NS-1126-KAIFENG", "HS-SS-1140-YANCHENG", "HS-SS-1142-YUE"]
-  },
-  {
-    "id": "fig_zhu_xi",
-    "name": "朱熹",
-    "personalName": "元晦",
-    "role": "scholar",
-    "fromYear": 1179,
-    "toYear": 1200,
-    "polityId": "southern_song",
-    "sort": 71,
-    "note": "白鹿洞书院至庆元党禁前后。卒于庆元六年。",
-    "relatedEventIds": ["HS-SS-1179-BAILU", "HS-SS-1189-CHANWEI"]
+    "aliases": [
+      "老聃"
+    ]
   },
   {
     "id": "fig_kongzi",
@@ -300,7 +40,13 @@
     "polityId": "eastern_zhou",
     "sort": 5,
     "note": "生年至卒年取《史记》传统。与诞生节点同窗。",
-    "relatedEventIds": ["HS-PQ-0551-KONGZI", "HS-PQ-0479-KONGZI"]
+    "relatedEventIds": [
+      "HS-PQ-0551-KONGZI",
+      "HS-PQ-0479-KONGZI"
+    ],
+    "aliases": [
+      "仲尼"
+    ]
   },
   {
     "id": "fig_mengzi",
@@ -313,7 +59,24 @@
     "sort": 6,
     "note": "游齐梁、著书立说的活跃窗，卒年取通行约年。",
     "uncertain": true,
-    "relatedEventIds": ["HS-PQ-0356-SHANGRANG"]
+    "relatedEventIds": [
+      "HS-PQ-0356-SHANGRANG"
+    ]
+  },
+  {
+    "id": "fig_zhuangzi",
+    "name": "庄子",
+    "personalName": "周",
+    "role": "scholar",
+    "fromYear": -350,
+    "toYear": -300,
+    "polityId": "eastern_zhou",
+    "sort": 7,
+    "note": "蒙人，与《庄子》成书传统年代重叠。",
+    "uncertain": true,
+    "aliases": [
+      "庄周"
+    ]
   },
   {
     "id": "fig_shang_yang",
@@ -325,7 +88,39 @@
     "polityId": "state_qin",
     "sort": 8,
     "note": "孝公变法至车裂。窗取变法至孝公卒。",
-    "relatedEventIds": ["HS-PQ-0356-SHANGRANG"]
+    "relatedEventIds": [
+      "HS-PQ-0356-SHANGRANG"
+    ]
+  },
+  {
+    "id": "fig_xunzi",
+    "name": "荀子",
+    "personalName": "况",
+    "role": "scholar",
+    "fromYear": -298,
+    "toYear": -238,
+    "polityId": "state_zhao",
+    "sort": 8,
+    "note": "游学稷下至春申君兰陵令前后。",
+    "uncertain": true,
+    "aliases": [
+      "荀卿"
+    ]
+  },
+  {
+    "id": "fig_bai_qi",
+    "name": "白起",
+    "role": "general",
+    "fromYear": -293,
+    "toYear": -257,
+    "polityId": "state_qin",
+    "sort": 9,
+    "note": "伊阙至长平。窗止于赐死前。",
+    "relatedEventIds": [
+      "HS-PQ-0293-YIQUE",
+      "HS-PQ-0278-YING",
+      "HS-PQ-0260-CHANGPING"
+    ]
   },
   {
     "id": "fig_qu_yuan",
@@ -338,18 +133,19 @@
     "sort": 9,
     "note": "郢破后沉江传说系于此年。生年从略。",
     "uncertain": true,
-    "relatedEventIds": ["HS-PQ-0278-YING"]
+    "relatedEventIds": [
+      "HS-PQ-0278-YING"
+    ]
   },
   {
-    "id": "fig_bai_qi",
-    "name": "白起",
-    "role": "general",
-    "fromYear": -293,
-    "toYear": -257,
+    "id": "fig_lu_buwei",
+    "name": "吕不韦",
+    "role": "minister",
+    "fromYear": -250,
+    "toYear": -235,
     "polityId": "state_qin",
     "sort": 9,
-    "note": "伊阙至长平。窗止于赐死前。",
-    "relatedEventIds": ["HS-PQ-0293-YIQUE", "HS-PQ-0278-YING", "HS-PQ-0260-CHANGPING"]
+    "note": "相秦至免相迁蜀。与《吕氏春秋》同代。"
   },
   {
     "id": "fig_han_fei",
@@ -360,7 +156,320 @@
     "polityId": "state_han",
     "sort": 9,
     "note": "使秦至死。法家收束人物。",
-    "relatedEventIds": ["HS-PQ-0233-HANFEI"]
+    "relatedEventIds": [
+      "HS-PQ-0233-HANFEI"
+    ]
+  },
+  {
+    "id": "fig_guan_zhong",
+    "name": "管仲",
+    "personalName": "夷吾",
+    "role": "minister",
+    "fromYear": -685,
+    "toYear": -645,
+    "polityId": "state_qi",
+    "sort": 10,
+    "note": "齐桓公任为相，通货积财，九合诸侯。与葵丘会盟同一代。",
+    "relatedEventIds": [
+      "HS-PQ-0685-GUANZHONG"
+    ]
+  },
+  {
+    "id": "fig_sun_wu",
+    "name": "孙武",
+    "personalName": "长卿",
+    "role": "general",
+    "fromYear": -512,
+    "toYear": -506,
+    "polityId": "state_wu",
+    "sort": 11,
+    "note": "吴王阖闾用为将，柏举入郢。窗取伐楚前后。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-PQ-0506-BAIJU"
+    ],
+    "aliases": [
+      "孙子"
+    ]
+  },
+  {
+    "id": "fig_li_si",
+    "name": "李斯",
+    "role": "minister",
+    "fromYear": -237,
+    "toYear": -208,
+    "polityId": "qin",
+    "sort": 12,
+    "note": "客卿至二世被腰斩。焚书与始皇崩均在窗内。",
+    "relatedEventIds": [
+      "HS-QIN-0213-FENSHU",
+      "HS-QIN-0210-SHIHUANG"
+    ]
+  },
+  {
+    "id": "fig_meng_tian",
+    "name": "蒙恬",
+    "role": "general",
+    "fromYear": -221,
+    "toYear": -210,
+    "polityId": "qin",
+    "sort": 13,
+    "note": "统一后北击匈奴、筑长城至赐死。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-QIN-0210-SHIHUANG"
+    ]
+  },
+  {
+    "id": "fig_xiang_yu",
+    "name": "项羽",
+    "personalName": "籍",
+    "role": "general",
+    "fromYear": -209,
+    "toYear": -202,
+    "polityId": "state_chu",
+    "sort": 19,
+    "note": "起兵至乌江自刎。巨鹿、鸿门、垓下同窗。",
+    "relatedEventIds": [
+      "HS-QIN-0207-JULU",
+      "HS-HAN-0206-HONGMEN",
+      "HS-HAN-0202-GAIXIA"
+    ],
+    "aliases": [
+      "西楚霸王"
+    ]
+  },
+  {
+    "id": "fig_zhang_liang",
+    "name": "张良",
+    "personalName": "子房",
+    "role": "minister",
+    "fromYear": -209,
+    "toYear": -186,
+    "polityId": "western_han",
+    "sort": 20,
+    "note": "下邳归刘邦，运筹帷幄。楚汉至汉初功成身退。卒年取通行约年。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-HAN-0206-HONGMEN",
+      "HS-HAN-0202-FOUND"
+    ]
+  },
+  {
+    "id": "fig_han_xin",
+    "name": "韩信",
+    "role": "general",
+    "fromYear": -206,
+    "toYear": -196,
+    "polityId": "western_han",
+    "sort": 21,
+    "note": "汉中拜将，破赵下齐，垓下合围。汉十一年夷三族。",
+    "relatedEventIds": [
+      "HS-HAN-0203-CHENGGAO",
+      "HS-HAN-0202-GAIXIA",
+      "HS-HAN-0196-HANXIN"
+    ],
+    "aliases": [
+      "淮阴侯"
+    ]
+  },
+  {
+    "id": "fig_zhang_qian",
+    "name": "张骞",
+    "role": "minister",
+    "fromYear": -138,
+    "toYear": -126,
+    "polityId": "western_han",
+    "sort": 25,
+    "note": "建元出使至元朔归汉。",
+    "relatedEventIds": [
+      "HS-HAN-0138-ZHANGQIAN"
+    ]
+  },
+  {
+    "id": "fig_wei_qing",
+    "name": "卫青",
+    "personalName": "仲卿",
+    "role": "general",
+    "fromYear": -129,
+    "toYear": -119,
+    "polityId": "western_han",
+    "sort": 26,
+    "note": "元光以后出击匈奴至漠北。",
+    "relatedEventIds": [
+      "HS-HAN-0119-MOBEI"
+    ]
+  },
+  {
+    "id": "fig_huo_qubing",
+    "name": "霍去病",
+    "role": "general",
+    "fromYear": -123,
+    "toYear": -117,
+    "polityId": "western_han",
+    "sort": 27,
+    "note": "元狩前后河西、漠北诸役。",
+    "relatedEventIds": [
+      "HS-HAN-0119-MOBEI"
+    ]
+  },
+  {
+    "id": "fig_dong_zhongshu",
+    "name": "董仲舒",
+    "role": "scholar",
+    "fromYear": -140,
+    "toYear": -104,
+    "polityId": "western_han",
+    "sort": 29,
+    "note": "对策至晚年居家著书。独尊儒术节点同窗。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-HAN-0134-RUJIA"
+    ]
+  },
+  {
+    "id": "fig_sima_qian",
+    "name": "司马迁",
+    "personalName": "子长",
+    "role": "scholar",
+    "fromYear": -108,
+    "toYear": -91,
+    "polityId": "western_han",
+    "sort": 30,
+    "note": "嗣父谈为太史令，李陵祸后发愤完成《史记》。活跃窗取任太史至书成约年。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-HAN-0091-SHIJI"
+    ]
+  },
+  {
+    "id": "fig_wang_chong",
+    "name": "王充",
+    "personalName": "仲任",
+    "role": "scholar",
+    "fromYear": 60,
+    "toYear": 90,
+    "polityId": "eastern_han",
+    "sort": 30,
+    "note": "著《论衡》的活跃窗。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_ban_gu",
+    "name": "班固",
+    "personalName": "孟坚",
+    "role": "scholar",
+    "fromYear": 62,
+    "toYear": 92,
+    "polityId": "eastern_han",
+    "sort": 30,
+    "note": "续父彪《汉书》至下狱卒。与班超同代。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-HAN-0073-BANCHOU"
+    ]
+  },
+  {
+    "id": "fig_ban_chao",
+    "name": "班超",
+    "personalName": "仲升",
+    "role": "general",
+    "fromYear": 73,
+    "toYear": 102,
+    "polityId": "eastern_han",
+    "sort": 31,
+    "note": "永平出使至永元还朝。与班超出使节点同窗。",
+    "relatedEventIds": [
+      "HS-HAN-0073-BANCHOU"
+    ]
+  },
+  {
+    "id": "fig_su_wu",
+    "name": "苏武",
+    "personalName": "子卿",
+    "role": "minister",
+    "fromYear": -99,
+    "toYear": -81,
+    "polityId": "western_han",
+    "sort": 32,
+    "note": "出使被扣至归汉。与苏武出使节点同窗。",
+    "relatedEventIds": [
+      "HS-HAN-0099-SUWU"
+    ]
+  },
+  {
+    "id": "fig_cai_lun",
+    "name": "蔡伦",
+    "personalName": "敬仲",
+    "role": "scholar",
+    "fromYear": 97,
+    "toYear": 121,
+    "polityId": "eastern_han",
+    "sort": 32,
+    "note": "改进造纸奏报前后。",
+    "relatedEventIds": [
+      "HS-HAN-0105-PAPER"
+    ]
+  },
+  {
+    "id": "fig_wang_zhaojun",
+    "name": "王昭君",
+    "personalName": "嫱",
+    "role": "minister",
+    "fromYear": -33,
+    "toYear": -20,
+    "polityId": "western_han",
+    "sort": 33,
+    "note": "竟宁和亲出塞；窗取出塞后十余年。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-HAN-0033-ZHAOJUN"
+    ],
+    "aliases": [
+      "明妃"
+    ]
+  },
+  {
+    "id": "fig_zhang_heng",
+    "name": "张衡",
+    "personalName": "平子",
+    "role": "scholar",
+    "fromYear": 115,
+    "toYear": 139,
+    "polityId": "eastern_han",
+    "sort": 33,
+    "note": "两任太史令前后；地动仪系于阳嘉。",
+    "relatedEventIds": [
+      "HS-EH-0132-DIDONG"
+    ]
+  },
+  {
+    "id": "fig_dong_zhuo",
+    "name": "董卓",
+    "role": "general",
+    "fromYear": 189,
+    "toYear": 192,
+    "polityId": "eastern_han",
+    "sort": 34,
+    "note": "入洛废立至被诛。",
+    "relatedEventIds": [
+      "HS-EH-0189-DONGZHUO"
+    ]
+  },
+  {
+    "id": "fig_hua_tuo",
+    "name": "华佗",
+    "personalName": "元化",
+    "role": "scholar",
+    "fromYear": 190,
+    "toYear": 208,
+    "polityId": "eastern_han",
+    "sort": 34,
+    "note": "汉末名医；为曹操所杀传说系于建安末。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-EH-0196-XUDU"
+    ]
   },
   {
     "id": "fig_cao_cao",
@@ -372,7 +481,465 @@
     "polityId": "eastern_han",
     "sort": 35,
     "note": "挟天子至去世。官渡、赤壁均在窗内。",
-    "relatedEventIds": ["HS-EH-0196-XUDU", "HS-3K-0200-GUANDU", "HS-3K-0208-CHIBI"]
+    "relatedEventIds": [
+      "HS-EH-0196-XUDU",
+      "HS-3K-0200-GUANDU",
+      "HS-3K-0208-CHIBI"
+    ],
+    "aliases": [
+      "阿瞒"
+    ]
+  },
+  {
+    "id": "fig_zhou_yu",
+    "name": "周瑜",
+    "personalName": "公瑾",
+    "role": "general",
+    "fromYear": 206,
+    "toYear": 210,
+    "polityId": "eastern_wu",
+    "sort": 37,
+    "note": "赤壁主将至病卒。",
+    "relatedEventIds": [
+      "HS-3K-0208-CHIBI"
+    ]
+  },
+  {
+    "id": "fig_guan_yu",
+    "name": "关羽",
+    "personalName": "云长",
+    "role": "general",
+    "fromYear": 200,
+    "toYear": 220,
+    "polityId": "shu_han",
+    "sort": 38,
+    "note": "随刘备至樊城失荆州被杀。",
+    "relatedEventIds": [
+      "HS-3K-0208-CHIBI",
+      "HS-3K-0219-FAN"
+    ],
+    "aliases": [
+      "关云长"
+    ]
+  },
+  {
+    "id": "fig_sima_yi",
+    "name": "司马懿",
+    "personalName": "仲达",
+    "role": "minister",
+    "fromYear": 208,
+    "toYear": 251,
+    "polityId": "cao_wei",
+    "sort": 39,
+    "note": "仕曹至高平陵后卒。",
+    "relatedEventIds": [
+      "HS-3K-0234-WUZHANG",
+      "HS-WEI-0249-GAOPING"
+    ]
+  },
+  {
+    "id": "fig_zhuge_liang",
+    "name": "诸葛亮",
+    "personalName": "孔明",
+    "role": "minister",
+    "fromYear": 207,
+    "toYear": 234,
+    "polityId": "shu_han",
+    "sort": 40,
+    "note": "隆中对以后辅刘备、刘禅，五丈原卒于军。",
+    "relatedEventIds": [
+      "HS-3K-0207-LONGZHONG",
+      "HS-3K-0208-CHIBI",
+      "HS-3K-0214-YIZHOU",
+      "HS-3K-0228-JIETING",
+      "HS-3K-0234-ZHUGE"
+    ],
+    "aliases": [
+      "卧龙"
+    ]
+  },
+  {
+    "id": "fig_zu_ti",
+    "name": "祖逖",
+    "personalName": "士稚",
+    "role": "general",
+    "fromYear": 313,
+    "toYear": 321,
+    "polityId": "eastern_jin",
+    "sort": 40,
+    "note": "中流击楫至卒于雍丘。窗跨西晋残局与东晋初。",
+    "relatedEventIds": [
+      "HS-JIN-0313-ZUTI"
+    ]
+  },
+  {
+    "id": "fig_wang_xizhi",
+    "name": "王羲之",
+    "personalName": "逸少",
+    "role": "poet",
+    "fromYear": 347,
+    "toYear": 361,
+    "polityId": "eastern_jin",
+    "sort": 41,
+    "note": "永和前后会稽内史至兰亭。窗取永和至升平。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-JIN-0353-LANTING"
+    ]
+  },
+  {
+    "id": "fig_huan_wen",
+    "name": "桓温",
+    "role": "general",
+    "fromYear": 345,
+    "toYear": 373,
+    "polityId": "eastern_jin",
+    "sort": 42,
+    "note": "永和以后专兵，347灭成汉。卒于宁康元年。",
+    "relatedEventIds": [
+      "HS-SK-0347-CHENGHAN"
+    ]
+  },
+  {
+    "id": "fig_wang_meng",
+    "name": "王猛",
+    "personalName": "景略",
+    "role": "minister",
+    "fromYear": 357,
+    "toYear": 375,
+    "polityId": "qian_qin",
+    "sort": 43,
+    "note": "苻坚谋主，370灭燕主将之一。",
+    "relatedEventIds": [
+      "HS-SK-0370-YANFALL",
+      "HS-SK-0376-NORTHUNI"
+    ]
+  },
+  {
+    "id": "fig_xie_an",
+    "name": "谢安",
+    "personalName": "安石",
+    "role": "minister",
+    "fromYear": 373,
+    "toYear": 385,
+    "polityId": "eastern_jin",
+    "sort": 44,
+    "note": "桓温卒后秉政至淝水后。",
+    "relatedEventIds": [
+      "HS-JIN-0383-FEISHUI"
+    ]
+  },
+  {
+    "id": "fig_tao_yuanming",
+    "name": "陶渊明",
+    "personalName": "潜",
+    "role": "poet",
+    "fromYear": 405,
+    "toYear": 427,
+    "polityId": "eastern_jin",
+    "sort": 45,
+    "note": "辞彭泽令至卒。窗跨晋宋禅代。",
+    "uncertain": true,
+    "aliases": [
+      "陶潜",
+      "五柳先生"
+    ]
+  },
+  {
+    "id": "fig_zu_chongzhi",
+    "name": "祖冲之",
+    "personalName": "文远",
+    "role": "scholar",
+    "fromYear": 460,
+    "toYear": 500,
+    "polityId": "liu_song",
+    "sort": 45,
+    "note": "圆周率与《大明历》活跃于宋齐。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_li_daoyuan",
+    "name": "郦道元",
+    "personalName": "善长",
+    "role": "scholar",
+    "fromYear": 500,
+    "toYear": 527,
+    "polityId": "northern_wei",
+    "sort": 46,
+    "note": "注《水经》至关右被杀。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_jia_sixie",
+    "name": "贾思勰",
+    "role": "scholar",
+    "fromYear": 530,
+    "toYear": 540,
+    "polityId": "northern_wei",
+    "sort": 47,
+    "note": "著《齐民要术》约在东魏北齐之际；政权条挂北魏余绪。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_fang_xuanling",
+    "name": "房玄龄",
+    "personalName": "乔",
+    "role": "minister",
+    "fromYear": 618,
+    "toYear": 648,
+    "polityId": "tang",
+    "sort": 49,
+    "note": "随秦王至贞观末为相。",
+    "relatedEventIds": [
+      "HS-ND-0627-ZHENGUAN"
+    ]
+  },
+  {
+    "id": "fig_wei_zheng",
+    "name": "魏征",
+    "personalName": "玄成",
+    "role": "minister",
+    "fromYear": 627,
+    "toYear": 643,
+    "polityId": "tang",
+    "sort": 50,
+    "note": "贞观谏臣，以直言著。卒于贞观十七年。",
+    "relatedEventIds": [
+      "HS-ND-0627-ZHENGUAN"
+    ]
+  },
+  {
+    "id": "fig_xuan_zang",
+    "name": "玄奘",
+    "personalName": "陈祎",
+    "role": "scholar",
+    "fromYear": 629,
+    "toYear": 645,
+    "polityId": "tang",
+    "sort": 50,
+    "note": "西行至归长安译经前。与贞观求法节点同窗。",
+    "relatedEventIds": [
+      "HS-ND-0629-XUANZANG"
+    ]
+  },
+  {
+    "id": "fig_di_renjie",
+    "name": "狄仁杰",
+    "personalName": "怀英",
+    "role": "minister",
+    "fromYear": 686,
+    "toYear": 700,
+    "polityId": "tang",
+    "sort": 50,
+    "note": "武周朝名相，卒于久视元年。",
+    "relatedEventIds": [
+      "HS-ND-0690-WUZHOU"
+    ]
+  },
+  {
+    "id": "fig_jianzhen",
+    "name": "鉴真",
+    "role": "scholar",
+    "fromYear": 742,
+    "toYear": 763,
+    "polityId": "tang",
+    "sort": 51,
+    "note": "六次东渡至奈良建唐招提寺。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_li_bai",
+    "name": "李白",
+    "personalName": "太白",
+    "role": "poet",
+    "fromYear": 742,
+    "toYear": 762,
+    "polityId": "tang",
+    "sort": 51,
+    "note": "供奉翰林至安史乱中从永王璘，长流夜郎后病卒。窗取天宝初至宝应。",
+    "uncertain": true,
+    "relatedEventIds": [
+      "HS-ND-0755-ANSHI"
+    ],
+    "aliases": [
+      "青莲居士"
+    ]
+  },
+  {
+    "id": "fig_du_fu",
+    "name": "杜甫",
+    "personalName": "子美",
+    "role": "poet",
+    "fromYear": 755,
+    "toYear": 770,
+    "polityId": "tang",
+    "sort": 51,
+    "note": "安史乱起至漂泊卒于湘。与李白窗相交。",
+    "relatedEventIds": [
+      "HS-ND-0755-ANSHI"
+    ],
+    "aliases": [
+      "少陵",
+      "杜工部"
+    ]
+  },
+  {
+    "id": "fig_li_su",
+    "name": "李愬",
+    "role": "general",
+    "fromYear": 814,
+    "toYear": 821,
+    "polityId": "tang",
+    "sort": 52,
+    "note": "元和淮西之役主将，雪夜入蔡州。",
+    "relatedEventIds": [
+      "HS-TANG-0817-CAIZHOU"
+    ]
+  },
+  {
+    "id": "fig_han_yu",
+    "name": "韩愈",
+    "personalName": "退之",
+    "role": "scholar",
+    "fromYear": 803,
+    "toYear": 824,
+    "polityId": "tang",
+    "sort": 53,
+    "note": "永贞前后至长庆吏部。谏佛骨、古文与同一代。",
+    "relatedEventIds": [
+      "HS-TANG-0805-YONGZHEN"
+    ]
+  },
+  {
+    "id": "fig_liu_yuxi",
+    "name": "刘禹锡",
+    "personalName": "梦得",
+    "role": "poet",
+    "fromYear": 805,
+    "toYear": 842,
+    "polityId": "tang",
+    "sort": 53,
+    "note": "永贞党人，与柳宗元同贬。",
+    "relatedEventIds": [
+      "HS-TANG-0805-YONGZHEN"
+    ]
+  },
+  {
+    "id": "fig_liu_zongyuan",
+    "name": "柳宗元",
+    "personalName": "子厚",
+    "role": "scholar",
+    "fromYear": 805,
+    "toYear": 819,
+    "polityId": "tang",
+    "sort": 53,
+    "note": "永贞革新贬永州、柳州。",
+    "relatedEventIds": [
+      "HS-TANG-0805-YONGZHEN"
+    ],
+    "aliases": [
+      "柳柳州"
+    ]
+  },
+  {
+    "id": "fig_bai_juyi",
+    "name": "白居易",
+    "personalName": "乐天",
+    "role": "poet",
+    "fromYear": 806,
+    "toYear": 846,
+    "polityId": "tang",
+    "sort": 53,
+    "note": "元和至会昌，新乐府与闲适诗。",
+    "aliases": [
+      "香山居士"
+    ]
+  },
+  {
+    "id": "fig_huang_chao",
+    "name": "黄巢",
+    "role": "general",
+    "fromYear": 875,
+    "toYear": 884,
+    "polityId": "tang",
+    "sort": 54,
+    "note": "王仙芝死后主帅至狼虎谷败死。",
+    "relatedEventIds": [
+      "HS-ND-0875-HUANGCHAO",
+      "HS-TANG-0880-CHANGAN",
+      "HS-TANG-0884-HUANGEND"
+    ]
+  },
+  {
+    "id": "fig_bao_zheng",
+    "name": "包拯",
+    "personalName": "希仁",
+    "role": "minister",
+    "fromYear": 1040,
+    "toYear": 1062,
+    "polityId": "northern_song",
+    "sort": 58,
+    "note": "仁宗朝御史、开封府等职。",
+    "aliases": [
+      "包公",
+      "包青天"
+    ]
+  },
+  {
+    "id": "fig_fan_zhongyan",
+    "name": "范仲淹",
+    "personalName": "希文",
+    "role": "minister",
+    "fromYear": 1040,
+    "toYear": 1052,
+    "polityId": "northern_song",
+    "sort": 58,
+    "note": "庆历新政前后。",
+    "relatedEventIds": [
+      "HS-NS-1043-QINGLI"
+    ]
+  },
+  {
+    "id": "fig_bi_sheng",
+    "name": "毕昇",
+    "role": "scholar",
+    "fromYear": 1041,
+    "toYear": 1048,
+    "polityId": "northern_song",
+    "sort": 58,
+    "note": "胶泥活字传统系于庆历间。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_ouyang_xiu",
+    "name": "欧阳修",
+    "personalName": "永叔",
+    "role": "scholar",
+    "fromYear": 1030,
+    "toYear": 1072,
+    "polityId": "northern_song",
+    "sort": 59,
+    "note": "庆历至熙宁，古文与史馆。",
+    "relatedEventIds": [
+      "HS-NS-1043-QINGLI"
+    ],
+    "aliases": [
+      "醉翁"
+    ]
+  },
+  {
+    "id": "fig_wang_anshi",
+    "name": "王安石",
+    "personalName": "介甫",
+    "role": "minister",
+    "fromYear": 1069,
+    "toYear": 1086,
+    "polityId": "northern_song",
+    "sort": 60,
+    "note": "熙宁变法至元祐元年卒。与司马光《通鉴》成书年代相交。",
+    "relatedEventIds": [
+      "HS-NS-1069-REFORM"
+    ]
   },
   {
     "id": "fig_sima_guang",
@@ -384,67 +951,90 @@
     "polityId": "northern_song",
     "sort": 61,
     "note": "主编《通鉴》至元祐秉政。",
-    "relatedEventIds": ["HS-NS-1084-ZIZHI", "HS-NS-1086-YUANYOU"]
+    "relatedEventIds": [
+      "HS-NS-1084-ZIZHI",
+      "HS-NS-1086-YUANYOU"
+    ]
   },
   {
-    "id": "fig_qi_jiguang",
-    "name": "戚继光",
-    "personalName": "元敬",
+    "id": "fig_su_shi",
+    "name": "苏轼",
+    "personalName": "子瞻",
+    "role": "poet",
+    "fromYear": 1071,
+    "toYear": 1101,
+    "polityId": "northern_song",
+    "sort": 62,
+    "note": "熙宁通判杭州至建中靖国卒。与变法同代。",
+    "relatedEventIds": [
+      "HS-NS-1069-REFORM"
+    ],
+    "aliases": [
+      "东坡",
+      "苏东坡"
+    ]
+  },
+  {
+    "id": "fig_yue_fei",
+    "name": "岳飞",
+    "personalName": "鹏举",
     "role": "general",
-    "fromYear": 1555,
-    "toYear": 1583,
-    "polityId": "ming",
-    "sort": 80,
-    "note": "东南抗倭至蓟镇练兵。",
-    "relatedEventIds": ["HS-MING-1561-TAIZHOU"]
+    "fromYear": 1126,
+    "toYear": 1142,
+    "polityId": "southern_song",
+    "sort": 70,
+    "note": "自东京保卫至郾城班师，绍兴十一年遇害。",
+    "relatedEventIds": [
+      "HS-NS-1126-KAIFENG",
+      "HS-SS-1140-YANCHENG",
+      "HS-SS-1142-YUE"
+    ],
+    "aliases": [
+      "岳武穆"
+    ]
   },
   {
-    "id": "fig_zhang_juzheng",
-    "name": "张居正",
-    "personalName": "叔大",
-    "role": "minister",
-    "fromYear": 1572,
-    "toYear": 1582,
-    "polityId": "ming",
-    "sort": 81,
-    "note": "万历初首辅至卒。",
-    "relatedEventIds": ["HS-MING-1572-ZHANG"]
+    "id": "fig_lu_you",
+    "name": "陆游",
+    "personalName": "务观",
+    "role": "poet",
+    "fromYear": 1160,
+    "toYear": 1210,
+    "polityId": "southern_song",
+    "sort": 71,
+    "note": "南宋中期诗人，示儿等作。",
+    "aliases": [
+      "放翁"
+    ]
   },
   {
-    "id": "fig_zheng_he",
-    "name": "郑和",
-    "personalName": "三保",
-    "role": "general",
-    "fromYear": 1405,
-    "toYear": 1433,
-    "polityId": "ming",
-    "sort": 75,
-    "note": "七下西洋起迄。与永乐航海节点同窗。",
-    "relatedEventIds": ["HS-MING-1405-ZHENGHE"]
+    "id": "fig_xin_qiji",
+    "name": "辛弃疾",
+    "personalName": "幼安",
+    "role": "poet",
+    "fromYear": 1162,
+    "toYear": 1207,
+    "polityId": "southern_song",
+    "sort": 71,
+    "note": "南归至开禧前后。词与抗战议论同代。",
+    "aliases": [
+      "稼轩"
+    ]
   },
   {
-    "id": "fig_yu_qian",
-    "name": "于谦",
-    "personalName": "廷益",
-    "role": "minister",
-    "fromYear": 1449,
-    "toYear": 1457,
-    "polityId": "ming",
-    "sort": 76,
-    "note": "土木后守北京至夺门被杀。",
-    "relatedEventIds": ["HS-MING-1449-TUMUBAO", "HS-MING-1457-DUOMEN"]
-  },
-  {
-    "id": "fig_lin_zexu",
-    "name": "林则徐",
-    "personalName": "少穆",
-    "role": "minister",
-    "fromYear": 1838,
-    "toYear": 1842,
-    "polityId": "qing",
-    "sort": 90,
-    "note": "钦差禁烟至革职。",
-    "relatedEventIds": ["HS-QING-1839-XIAOYAN"]
+    "id": "fig_zhu_xi",
+    "name": "朱熹",
+    "personalName": "元晦",
+    "role": "scholar",
+    "fromYear": 1179,
+    "toYear": 1200,
+    "polityId": "southern_song",
+    "sort": 71,
+    "note": "白鹿洞书院至庆元党禁前后。卒于庆元六年。",
+    "relatedEventIds": [
+      "HS-SS-1179-BAILU",
+      "HS-SS-1189-CHANWEI"
+    ]
   },
   {
     "id": "fig_wen_tianxiang",
@@ -456,7 +1046,268 @@
     "polityId": "southern_song",
     "sort": 72,
     "note": "临安危亡至崖山。被俘不降，与亡宋节点同窗。",
-    "relatedEventIds": ["HS-YUAN-1276-DADU", "HS-SS-1279-YASHAN"]
+    "relatedEventIds": [
+      "HS-YUAN-1276-DADU",
+      "HS-SS-1279-YASHAN"
+    ]
+  },
+  {
+    "id": "fig_yelu_chucai",
+    "name": "耶律楚材",
+    "personalName": "晋卿",
+    "role": "minister",
+    "fromYear": 1218,
+    "toYear": 1244,
+    "polityId": "mongol_empire",
+    "sort": 73,
+    "note": "随成吉思汗西征至乃马真后称制前。"
+  },
+  {
+    "id": "fig_guan_hanqing",
+    "name": "关汉卿",
+    "role": "poet",
+    "fromYear": 1260,
+    "toYear": 1300,
+    "polityId": "yuan",
+    "sort": 74,
+    "note": "元曲四大家之首；生卒无确年。",
+    "uncertain": true
+  },
+  {
+    "id": "fig_zheng_he",
+    "name": "郑和",
+    "personalName": "三保",
+    "role": "general",
+    "fromYear": 1405,
+    "toYear": 1433,
+    "polityId": "ming",
+    "sort": 75,
+    "note": "七下西洋起迄。与永乐航海节点同窗。",
+    "relatedEventIds": [
+      "HS-MING-1405-ZHENGHE"
+    ]
+  },
+  {
+    "id": "fig_yu_qian",
+    "name": "于谦",
+    "personalName": "廷益",
+    "role": "minister",
+    "fromYear": 1449,
+    "toYear": 1457,
+    "polityId": "ming",
+    "sort": 76,
+    "note": "土木后守北京至夺门被杀。",
+    "relatedEventIds": [
+      "HS-MING-1449-TUMUBAO",
+      "HS-MING-1457-DUOMEN"
+    ]
+  },
+  {
+    "id": "fig_wang_yangming",
+    "name": "王阳明",
+    "personalName": "守仁",
+    "role": "scholar",
+    "fromYear": 1506,
+    "toYear": 1529,
+    "polityId": "ming",
+    "sort": 78,
+    "note": "龙场悟道至平宁王、讲学。",
+    "relatedEventIds": [
+      "HS-MING-1519-NINGWANG"
+    ],
+    "aliases": [
+      "王守仁"
+    ]
+  },
+  {
+    "id": "fig_qi_jiguang",
+    "name": "戚继光",
+    "personalName": "元敬",
+    "role": "general",
+    "fromYear": 1555,
+    "toYear": 1583,
+    "polityId": "ming",
+    "sort": 80,
+    "note": "东南抗倭至蓟镇练兵。",
+    "relatedEventIds": [
+      "HS-MING-1561-TAIZHOU"
+    ]
+  },
+  {
+    "id": "fig_hai_rui",
+    "name": "海瑞",
+    "personalName": "汝贤",
+    "role": "minister",
+    "fromYear": 1565,
+    "toYear": 1587,
+    "polityId": "ming",
+    "sort": 80,
+    "note": "嘉靖上疏下狱至万历南京吏部。",
+    "aliases": [
+      "海青天"
+    ]
+  },
+  {
+    "id": "fig_zhang_juzheng",
+    "name": "张居正",
+    "personalName": "叔大",
+    "role": "minister",
+    "fromYear": 1572,
+    "toYear": 1582,
+    "polityId": "ming",
+    "sort": 81,
+    "note": "万历初首辅至卒。",
+    "relatedEventIds": [
+      "HS-MING-1572-ZHANG"
+    ]
+  },
+  {
+    "id": "fig_xu_guangqi",
+    "name": "徐光启",
+    "personalName": "子先",
+    "role": "scholar",
+    "fromYear": 1604,
+    "toYear": 1633,
+    "polityId": "ming",
+    "sort": 82,
+    "note": "与利玛窦译书、编《农政全书》。",
+    "relatedEventIds": [
+      "HS-MING-1601-RICCI"
+    ]
+  },
+  {
+    "id": "fig_yuan_chonghuan",
+    "name": "袁崇焕",
+    "personalName": "元素",
+    "role": "general",
+    "fromYear": 1622,
+    "toYear": 1630,
+    "polityId": "ming",
+    "sort": 83,
+    "note": "宁远至被杀。",
+    "relatedEventIds": [
+      "HS-MING-1626-NINGYUAN"
+    ]
+  },
+  {
+    "id": "fig_zheng_chenggong",
+    "name": "郑成功",
+    "personalName": "森",
+    "role": "general",
+    "fromYear": 1646,
+    "toYear": 1662,
+    "polityId": "ming",
+    "sort": 84,
+    "note": "隆武赐姓至入台；抗清主将。",
+    "relatedEventIds": [
+      "HS-QING-1661-ZHENGGONG"
+    ],
+    "aliases": [
+      "国姓爷"
+    ]
+  },
+  {
+    "id": "fig_shi_lang",
+    "name": "施琅",
+    "personalName": "尊侯",
+    "role": "general",
+    "fromYear": 1681,
+    "toYear": 1683,
+    "polityId": "qing",
+    "sort": 85,
+    "note": "平台湾至设府县。",
+    "relatedEventIds": [
+      "HS-QING-1683-TAIWAN"
+    ]
+  },
+  {
+    "id": "fig_ji_yun",
+    "name": "纪昀",
+    "personalName": "晓岚",
+    "role": "scholar",
+    "fromYear": 1773,
+    "toYear": 1805,
+    "polityId": "qing",
+    "sort": 88,
+    "note": "总纂《四库全书》前后。",
+    "aliases": [
+      "纪晓岚"
+    ]
+  },
+  {
+    "id": "fig_lin_zexu",
+    "name": "林则徐",
+    "personalName": "少穆",
+    "role": "minister",
+    "fromYear": 1838,
+    "toYear": 1842,
+    "polityId": "qing",
+    "sort": 90,
+    "note": "钦差禁烟至革职。",
+    "relatedEventIds": [
+      "HS-QING-1839-XIAOYAN"
+    ]
+  },
+  {
+    "id": "fig_zeng_guofan",
+    "name": "曾国藩",
+    "personalName": "伯涵",
+    "role": "minister",
+    "fromYear": 1853,
+    "toYear": 1872,
+    "polityId": "qing",
+    "sort": 91,
+    "note": "湘军与洋务初兴。",
+    "relatedEventIds": [
+      "HS-QING-1851-TAIPING",
+      "HS-QING-1861-YANGWU"
+    ]
+  },
+  {
+    "id": "fig_li_hongzhang",
+    "name": "李鸿章",
+    "personalName": "少荃",
+    "role": "minister",
+    "fromYear": 1862,
+    "toYear": 1901,
+    "polityId": "qing",
+    "sort": 92,
+    "note": "淮军、北洋至辛丑议和。",
+    "relatedEventIds": [
+      "HS-QING-1861-YANGWU",
+      "HS-QING-1894-JIAWU"
+    ]
+  },
+  {
+    "id": "fig_kang_youwei",
+    "name": "康有为",
+    "personalName": "祖诒",
+    "role": "scholar",
+    "fromYear": 1895,
+    "toYear": 1898,
+    "polityId": "qing",
+    "sort": 93,
+    "note": "公车上书至戊戌政变。",
+    "relatedEventIds": [
+      "HS-QING-1898-WUXU"
+    ]
+  },
+  {
+    "id": "fig_liang_qichao",
+    "name": "梁启超",
+    "personalName": "卓如",
+    "role": "scholar",
+    "fromYear": 1895,
+    "toYear": 1898,
+    "polityId": "qing",
+    "sort": 94,
+    "note": "助康有为变法宣传。",
+    "relatedEventIds": [
+      "HS-QING-1898-WUXU"
+    ],
+    "aliases": [
+      "任公"
+    ]
   },
   {
     "id": "fig_sun_yat_sen",
@@ -468,6 +1319,13 @@
     "polityId": "republic_of_china",
     "sort": 100,
     "note": "武昌起义至让位于袁世凯的活跃窗，非一生。",
-    "relatedEventIds": ["HS-ROC-1911-XINHAI", "HS-ROC-1912-FOUND"]
+    "relatedEventIds": [
+      "HS-ROC-1911-XINHAI",
+      "HS-ROC-1912-FOUND"
+    ],
+    "aliases": [
+      "孙文",
+      "逸仙"
+    ]
   }
 ]

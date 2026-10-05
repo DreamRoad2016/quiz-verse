@@ -6,9 +6,14 @@
     "summary": "泾原兵在长安哗变，朱泚称帝，德宗出奔奉天，藩镇问题表面化。",
     "description": "建中四年。关中防军缺饷哗变，唐廷几乎倾覆。与河朔割据同一时代，说明安史后中央控制力已弱。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["政治", "唐"]
+    "tags": [
+      "政治",
+      "唐"
+    ]
   },
   {
     "eventId": "HS-TANG-0805-YONGZHEN",
@@ -17,9 +22,14 @@
     "summary": "顺宗即位，王叔文等改革，数月即败，史称二王八司马事件。",
     "description": "永贞元年。试图抑制宦官与藩镇，旋因顺宗内禅、宪宗即位而失败。柳宗元、刘禹锡等被贬。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 3,
-    "tags": ["政治", "唐"]
+    "tags": [
+      "政治",
+      "唐"
+    ]
   },
   {
     "eventId": "HS-TANG-0817-CAIZHOU",
@@ -28,9 +38,14 @@
     "summary": "李愬雪夜袭蔡州，擒吴元济，淮西平，宪宗中兴的军事高峰。",
     "description": "元和十二年。裴度督师，李愬入蔡。此后短暂出现元和中兴，藩镇并未根除。",
     "kind": "battle",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["战争", "唐"]
+    "tags": [
+      "战争",
+      "唐"
+    ]
   },
   {
     "eventId": "HS-TANG-0821-CHANGQING",
@@ -39,9 +54,14 @@
     "summary": "唐与吐蕃会盟，约定各守境土，史称长庆会盟。",
     "description": "长庆元年唐蕃盟于长安，次年会于拉萨。会盟碑今存。安史后唐对西北由攻转守，此为教材级外交节点。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 3,
-    "tags": ["外交", "唐"]
+    "tags": [
+      "外交",
+      "唐"
+    ]
   },
   {
     "eventId": "HS-TANG-0835-GANLU",
@@ -50,9 +70,29 @@
     "summary": "文宗谋诛宦官失败，朝臣被杀，宦官专权达于极点。",
     "description": "太和九年。李训、郑注以甘露为名诱杀宦官，事泄。南衙北司之争此后更一边倒。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["政治", "唐"]
+    "tags": [
+      "政治",
+      "唐"
+    ]
+  },
+  {
+    "eventId": "HS-TANG-0859-QIUFU",
+    "year": 859,
+    "title": "裘甫起义",
+    "summary": "浙东裘甫起事，唐末南方民变先声。",
+    "description": "大中十三年裘甫反。上承会昌灭佛（845），下启庞勋（868）与黄巢，收紧唐末空档。",
+    "kind": "politics",
+    "polityIds": [
+      "tang"
+    ],
+    "importance": 3,
+    "tags": [
+      "民变"
+    ]
   },
   {
     "eventId": "HS-TANG-0868-PANGXUN",
@@ -61,9 +101,14 @@
     "summary": "桂州戍卒北还哗变，庞勋据徐泗，唐末民变的前奏。",
     "description": "咸通九年。粮饷与久戍激变。数年即平，但唐廷财政与江淮控制已明显削弱。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 3,
-    "tags": ["政治", "唐"]
+    "tags": [
+      "政治",
+      "唐"
+    ]
   },
   {
     "eventId": "HS-TANG-0880-CHANGAN",
@@ -72,9 +117,14 @@
     "summary": "黄巢军破潼关入京，称齐帝，僖宗奔蜀。",
     "description": "广明元年。875年起义后至此占领两京。唐虽未亡，关中残破，藩镇益强。",
     "kind": "battle",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 5,
-    "tags": ["战争", "唐"]
+    "tags": [
+      "战争",
+      "唐"
+    ]
   },
   {
     "eventId": "HS-TANG-0884-HUANGEND",
@@ -83,8 +133,13 @@
     "summary": "黄巢在狼虎谷自杀，历时十年的黄巢之乱结束。",
     "description": "中和四年。李克用等镇压。余部与藩镇结合，朱温、李克用成为唐末真正对手。",
     "kind": "politics",
-    "polityIds": ["tang"],
+    "polityIds": [
+      "tang"
+    ],
     "importance": 4,
-    "tags": ["政治", "唐"]
+    "tags": [
+      "政治",
+      "唐"
+    ]
   }
 ]

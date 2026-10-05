@@ -6,9 +6,15 @@
     "summary": "匈奴刘渊于左国城称汉王，十六国分裂局面开始。",
     "description": "永兴元年刘渊称汉王，后称帝，都平阳。此为传统十六国之始。成汉李氏同年前后亦起于蜀。",
     "kind": "politics",
-    "polityIds": ["han_zhao", "western_jin"],
+    "polityIds": [
+      "han_zhao",
+      "western_jin"
+    ],
     "importance": 5,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0304-LIXIONG",
@@ -17,9 +23,14 @@
     "summary": "李雄据蜀称成都王，后称帝，史称成汉。",
     "description": "李特、李雄起于益州。304年李雄称王，306年称帝，国号成，后改汉。347年灭于东晋桓温。",
     "kind": "politics",
-    "polityIds": ["cheng_han"],
+    "polityIds": [
+      "cheng_han"
+    ],
     "importance": 4,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0316-JINFALL",
@@ -28,9 +39,15 @@
     "summary": "愍帝出降刘曜，西晋结束，次年司马睿建东晋。",
     "description": "建兴四年长安不守，愍帝降汉赵。北方进入十六国，晋室南渡。",
     "kind": "politics",
-    "polityIds": ["western_jin", "han_zhao"],
+    "polityIds": [
+      "western_jin",
+      "han_zhao"
+    ],
     "importance": 5,
-    "tags": ["政治", "改朝"]
+    "tags": [
+      "政治",
+      "改朝"
+    ]
   },
   {
     "eventId": "HS-SK-0319-SHILE",
@@ -39,9 +56,14 @@
     "summary": "石勒在襄国称赵王，后赵立国，与前赵东西对峙。",
     "description": "石勒先为汉赵将，后自立。330年称帝。后赵一度据有中原大部。",
     "kind": "politics",
-    "polityIds": ["hou_zhao"],
+    "polityIds": [
+      "hou_zhao"
+    ],
     "importance": 4,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0329-ZHAOFALL",
@@ -50,9 +72,15 @@
     "summary": "石勒俘杀刘曜，汉赵（前赵）亡。",
     "description": "洛阳之战后刘曜被擒。匈奴刘氏政权结束，中原主要转入后赵。",
     "kind": "battle",
-    "polityIds": ["hou_zhao", "han_zhao"],
+    "polityIds": [
+      "hou_zhao",
+      "han_zhao"
+    ],
     "importance": 4,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0337-QIANYAN",
@@ -61,9 +89,14 @@
     "summary": "慕容皝在龙城称燕王，前燕立国口径取此年。",
     "description": "慕容氏兴于辽西。337称王，后慕容俊称帝、迁蓟、邺。370年灭于前秦。",
     "kind": "politics",
-    "polityIds": ["qian_yan"],
+    "polityIds": [
+      "qian_yan"
+    ],
     "importance": 3,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0347-CHENGHAN",
@@ -72,9 +105,15 @@
     "summary": "东晋桓温伐蜀，成汉亡，益州复归江左。",
     "description": "永和三年桓温出兵，李势降。这是东晋少有的北伐实绩之一。",
     "kind": "battle",
-    "polityIds": ["eastern_jin", "cheng_han"],
+    "polityIds": [
+      "eastern_jin",
+      "cheng_han"
+    ],
     "importance": 4,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0350-RANMIN",
@@ -83,9 +122,15 @@
     "summary": "冉闵杀后赵石氏，称帝，国号魏，史称冉魏。",
     "description": "后赵内乱后冉闵自立。对胡人采取极端政策，中原再乱。352年败于前燕。",
     "kind": "politics",
-    "polityIds": ["ran_wei", "hou_zhao"],
+    "polityIds": [
+      "ran_wei",
+      "hou_zhao"
+    ],
     "importance": 4,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0351-FUJIAN",
@@ -94,9 +139,14 @@
     "summary": "氐族苻健据关中称天王、皇帝，前秦立国。",
     "description": "后赵崩溃后苻氏入长安。351年立国，357年苻坚即位，后统一北方。",
     "kind": "politics",
-    "polityIds": ["qian_qin"],
+    "polityIds": [
+      "qian_qin"
+    ],
     "importance": 4,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0352-RANFALL",
@@ -105,9 +155,15 @@
     "summary": "慕容恪俘冉闵，冉魏亡，前燕进入中原。",
     "description": "廉台之战冉闵被俘。前燕都蓟、后迁邺，与前秦东西分峙。",
     "kind": "battle",
-    "polityIds": ["qian_yan", "ran_wei"],
+    "polityIds": [
+      "qian_yan",
+      "ran_wei"
+    ],
     "importance": 3,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0370-YANFALL",
@@ -116,9 +172,15 @@
     "summary": "王猛攻克邺城，前燕亡，关东入秦。",
     "description": "建元六年前秦灭燕。苻坚势力达到高峰前的关键一仗。",
     "kind": "battle",
-    "polityIds": ["qian_qin", "qian_yan"],
+    "polityIds": [
+      "qian_qin",
+      "qian_yan"
+    ],
     "importance": 4,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0376-NORTHUNI",
@@ -127,21 +189,19 @@
     "summary": "前秦灭前凉、代国，北中国暂归一统。",
     "description": "太元元年灭凉、代。与东晋对峙。成语「投鞭断流」所形容的军势即此阶段。七年后淝水之战。",
     "kind": "politics",
-    "polityIds": ["qian_qin", "qian_liang", "dai"],
+    "polityIds": [
+      "qian_qin",
+      "qian_liang",
+      "dai"
+    ],
     "importance": 5,
-    "tags": ["政治", "十六国"],
-    "idioms": ["投鞭断流"]
-  },
-  {
-    "eventId": "HS-SK-0384-HOUYAN",
-    "year": 384,
-    "title": "慕容垂建后燕",
-    "summary": "淝水战后慕容垂复燕，都中山，史称后燕。",
-    "description": "384年称燕王。与后秦、西燕等同时并起，北方再次碎裂。",
-    "kind": "politics",
-    "polityIds": ["hou_yan"],
-    "importance": 4,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ],
+    "idioms": [
+      "投鞭断流"
+    ]
   },
   {
     "eventId": "HS-SK-0384-HOUQIN",
@@ -150,9 +210,30 @@
     "summary": "羌族姚苌在渭北称秦王，后入长安，史称后秦。",
     "description": "姚苌叛苻坚自立。393年姚苌卒，姚兴继位，一度称盛于关中。",
     "kind": "politics",
-    "polityIds": ["hou_qin"],
+    "polityIds": [
+      "hou_qin"
+    ],
     "importance": 4,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
+  },
+  {
+    "eventId": "HS-SK-0384-HOUYAN",
+    "year": 384,
+    "title": "慕容垂建后燕",
+    "summary": "淝水战后慕容垂复燕，都中山，史称后燕。",
+    "description": "384年称燕王。与后秦、西燕等同时并起，北方再次碎裂。",
+    "kind": "politics",
+    "polityIds": [
+      "hou_yan"
+    ],
+    "importance": 4,
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0386-WEI",
@@ -161,9 +242,15 @@
     "summary": "拓跋珪即代王位，改国号魏，北魏开始。",
     "description": "登国元年。代国亡于前秦后，拓跋部再起于盛乐。后为统一北方的北朝主线。",
     "kind": "politics",
-    "polityIds": ["northern_wei", "dai"],
+    "polityIds": [
+      "northern_wei",
+      "dai"
+    ],
     "importance": 5,
-    "tags": ["政治", "北朝"]
+    "tags": [
+      "政治",
+      "北朝"
+    ]
   },
   {
     "eventId": "HS-SK-0394-QINEND",
@@ -172,9 +259,14 @@
     "summary": "苻登战死，苻崇逃灭，前秦残余结束。",
     "description": "淝水后苻丕、苻登相继。394年尽灭。西燕亦同年前后亡于后燕。",
     "kind": "politics",
-    "polityIds": ["qian_qin"],
+    "polityIds": [
+      "qian_qin"
+    ],
     "importance": 3,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0407-HELIAN",
@@ -183,9 +275,15 @@
     "summary": "赫连勃勃称大夏天王，胡夏立国；同年后燕亦乱。",
     "description": "统万城后建。407年后燕慕容熙死，冯跋北燕继起。夏与北魏长期交兵。",
     "kind": "politics",
-    "polityIds": ["hu_xia", "hou_yan"],
+    "polityIds": [
+      "hu_xia",
+      "hou_yan"
+    ],
     "importance": 3,
-    "tags": ["政治", "十六国"]
+    "tags": [
+      "政治",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0410-NANYAN",
@@ -194,9 +292,15 @@
     "summary": "东晋刘裕攻克广固，南燕亡。",
     "description": "义熙六年。刘裕北伐的第一场大胜，为后来代晋铺路。",
     "kind": "battle",
-    "polityIds": ["eastern_jin", "nan_yan"],
+    "polityIds": [
+      "eastern_jin",
+      "nan_yan"
+    ],
     "importance": 4,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0417-HOUQINEND",
@@ -205,9 +309,15 @@
     "summary": "刘裕入长安，后秦亡；旋即南归，关中得而复失。",
     "description": "义熙十三年。姚泓降。刘裕急回建康争权，留子守长安，赫连夏与夏州势力随后进入关中。",
     "kind": "battle",
-    "polityIds": ["eastern_jin", "hou_qin"],
+    "polityIds": [
+      "eastern_jin",
+      "hou_qin"
+    ],
     "importance": 4,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   },
   {
     "eventId": "HS-SK-0431-XIAEND",
@@ -216,8 +326,15 @@
     "summary": "北魏攻灭赫连夏，同年西秦亦亡，西北并入北魏进程加速。",
     "description": "太武帝时。夏亡后北凉仍在，439年北凉降，北魏统一北方。",
     "kind": "battle",
-    "polityIds": ["northern_wei", "hu_xia", "xi_qin"],
+    "polityIds": [
+      "northern_wei",
+      "hu_xia",
+      "xi_qin"
+    ],
     "importance": 4,
-    "tags": ["战争", "十六国"]
+    "tags": [
+      "战争",
+      "十六国"
+    ]
   }
 ]

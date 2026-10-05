@@ -53,7 +53,7 @@ class HistoryStreamYearPackTest {
         assertNotNull(pack.getNextRecorded());
         assertTrue(pack.getHeadline().contains("嘉靖"));
         assertEquals(1524, pack.getPrevRecordedYear());
-        assertEquals(1542, pack.getNextRecordedYear());
+        assertEquals(1535, pack.getNextRecordedYear());
     }
 
     @Test
@@ -75,6 +75,32 @@ class HistoryStreamYearPackTest {
                 .getIdioms()
                 .contains("破釜沉舟"));
         assertTrue(pack.getFigures().stream().anyMatch(f -> "fig_zhang_liang".equals(f.getId())));
+    }
+
+    @Test
+    void longzhongAndNingyuanFillGapsWithIdioms() {
+        StreamYearPack longzhong = registry.yearPack(207);
+        assertTrue(longzhong.getEvents().stream().anyMatch(e -> "HS-3K-0207-LONGZHONG".equals(e.getEventId())));
+        assertTrue(longzhong.getEvents().stream()
+                .filter(e -> "HS-3K-0207-LONGZHONG".equals(e.getEventId()))
+                .findFirst()
+                .orElseThrow()
+                .getIdioms()
+                .contains("三顾茅庐"));
+
+        StreamYearPack ningyuan = registry.yearPack(1626);
+        assertTrue(ningyuan.getEvents().stream().anyMatch(e -> "HS-MING-1626-NINGYUAN".equals(e.getEventId())));
+        assertTrue(ningyuan.getFigures().stream().anyMatch(f -> "fig_yuan_chonghuan".equals(f.getId())));
+    }
+
+    @Test
+    void idiomCoverageAboveOneFifth() {
+        long total = registry.eventsInRange(null, null, null, null).size();
+        long withIdioms = registry.eventsInRange(null, null, null, null).stream()
+                .filter(e -> e.getIdioms() != null && !e.getIdioms().isEmpty())
+                .count();
+        assertTrue(total >= 340, () -> "eventCount=" + total);
+        assertTrue(withIdioms * 5 >= total, () -> "idioms=" + withIdioms + " total=" + total);
     }
 
     @Test

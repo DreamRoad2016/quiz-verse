@@ -2,6 +2,9 @@ package net.quizverse.historystream.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class StreamRuler {
 
@@ -22,6 +25,8 @@ public class StreamRuler {
      * 默认 true。
      */
     private boolean onTimeline = true;
+    /** 通行别称（如「武则天」相对庙号名），供 /search 匹配 */
+    private List<String> aliases = new ArrayList<>();
 
     public String getId() {
         return id;
@@ -109,5 +114,13 @@ public class StreamRuler {
 
     public void setOnTimeline(boolean onTimeline) {
         this.onTimeline = onTimeline;
+    }
+
+    public List<String> getAliases() {
+        return aliases;
+    }
+
+    public void setAliases(List<String> aliases) {
+        this.aliases = aliases != null ? aliases : new ArrayList<>();
     }
 }
